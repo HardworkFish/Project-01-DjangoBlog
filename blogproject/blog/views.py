@@ -2,6 +2,7 @@
 
 from django.shortcuts import render,get_object_or_404
 from .models import Post
+import markdown
 
 # 它首先接受了一个名为 request 的参数，这个 request 就是 Django 为我们封装好的 HTTP 请求，
 # 它是类 HttpRequest 的一个实例。然后我们便直接返回了一个 HTTP 响应给用户，这个 HTTP 响应
@@ -36,5 +37,11 @@ def index(request):
 
 def detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    post.body = markdown.markdown(post.body,
+                                  extensions=[
+                                      'markdown.extensions.extra',
+                                      'markdown.extensions.codehilite',
+                                      'markdown.extensions.toc',
+                                  ])
     return render(request, 'blog/detail.html', context={'post': post})
 
