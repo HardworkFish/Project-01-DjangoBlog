@@ -1,6 +1,6 @@
 # blig/views.py
 
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from .models import Post
 
 # 它首先接受了一个名为 request 的参数，这个 request 就是 Django 为我们封装好的 HTTP 请求，
@@ -32,4 +32,9 @@ def index(request):
     post_list = Post.objects.all().order_by('-created_time')
     return render(request, 'blog/index.html', context={'post_list': post_list})
 
+# 根据从 URL 捕获的文章 id（也就是 pk，这里 pk 和 id 是等价的）获取数据库中文章 id 为该值的记录，然后传递给模板。注意这里我们用到了从 django.shortcuts 模块导入的 get_object_or_404 方法，其作用就是当传入的 pk 对应的 Post 在数据库存在时，就返回对应的 post，如果不存在，就给用户返回一个 404 错误，表明用户请求的文章不存在。
+
+def detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, 'blog/detail.html', context={'post': post})
 

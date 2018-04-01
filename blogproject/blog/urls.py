@@ -7,6 +7,11 @@ from django.conf.urls import url
 
 from . import views
 
+# 当用户访问 <网站域名>/post/1/ 时，显示的是第一篇文章的内容，而当用户访问 <网站域名>/post/2/ 时，显示的是第二篇文章的内容，这里数字代表了第几篇文章，也就是数据库中 Post 记录的 id 值
+# 相当于 detail(request, pk=255)
+
+app_name = 'blog'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^post/(?P<pk>[0-9]+)/$', views.detail, name='detail'),
 ]
