@@ -95,8 +95,8 @@
                     <ul>                     
                       {% for date in date_list %}
                         <li>
-                            <a href="#">{{date.year}}</a>
-                        </li>
+                          <a href="{% url 'blog:archives' date.year date.month %}">{{ date.year }}年 {{ date.month }} 月</a>
+                         </li>
                         {% empty %}
                          暂无归档！
                         {% endfor %}
@@ -109,7 +109,9 @@
                     <ul>
                     {% for category in category_list %}
                         <li>
-                            <a href="#">{{category.name }}<span class="post-count">(13)</span></a>
+                            <li>
+                                <a href="{% url 'blog:category' category.pk %}">{{ category.name }} <span class="post-count">(13)</span></a>
+                            </li>
                         </li>
                         {% empty %}
                          暂无分类！

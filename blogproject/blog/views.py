@@ -1,7 +1,7 @@
 # blig/views.py
 
 from django.shortcuts import render,get_object_or_404
-from .models import Post
+from .models import Post, Category
 import markdown
 
 # 它首先接受了一个名为 request 的参数，这个 request 就是 Django 为我们封装好的 HTTP 请求，
@@ -44,4 +44,18 @@ def detail(request, pk):
                                       'markdown.extensions.toc',
                                   ])
     return render(request, 'blog/detail.html', context={'post': post})
+
+# 归档和分类视图中，使用 filter 来根据条件过滤
+def archives(request, year, month):
+    post_list = Post.objects.filter(created_time__year=year,
+                                    created_time__month=month
+                                    ).order_by('-created_time')
+    return render(request, 'blog/index.html', context={'post_list': post_list})
+
+# 根据传入的 pk 值（也就是被访问的分类的 id 值）从数据库中获取到这个分类
+# 通过 filter 函数过滤出了该分类下的全部文章。同样也和首页视图中一样对返回的文章列表进行了排序。
+def category(request, pk):
+    cate = get_object_or_404(Category, pk=pk)
+    post_list = Post.objects.filter(category=cate).order_by('-created_time')
+    return render(request, 'blog/index.html', context={'post_list': post_list})
 
