@@ -84,5 +84,9 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('blog:detail', kwargs={'pk': self.pk})
 
+    # 指定文章列表排序方式属性，先根据文章发布时间排序再根据文章标题排序
+    class Meta:
+        ordering = ['-created_time','title']
+
 
 
