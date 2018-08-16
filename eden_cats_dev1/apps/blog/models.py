@@ -21,7 +21,7 @@ class Tag(models.Model):
     modified_time = models.DateField(verbose_name='修改时间', default=now)
 
 
-class Post(models.Model):
+class Article(models.Model):
     # 文章状态
     STATUS_CHOICES = (
         ('draft', '草稿'),
@@ -54,5 +54,22 @@ class Post(models.Model):
     # 文章与作者的关系，多对一
     author = models.ForeignKey(User, verbose_name='作者', on_delete=models.CASCADE, blank=False, null=False)
 
+    # 更新文章浏览量
+    def viewed(self):
+        self.views += 1
+        self.save(update_fields=['views'])
 
+    # 上一篇
+    # id 比当前 id 小，状态为已发布， 发布内容不为空
+    def last_article(self):
+        return Article.objects.filter(id__lt=self.id, status='public', public_time__isnull=False).first()
 
+    def next_article(self):
+        return Article.objects.filter(id__gt=self.id, status='public', public_time__isnull=False).first()
+
+    class Meta: # 按文章创建日期降序排序
+        ordering = ['-pub_time'] 
+        verbose_name = '文章' # 指定后台显示模型名称
+        verbose_name_plural = '文章列表' # 指定后台显示模型复数名称
+        db_table = 'article' #数据库表
+        get_latest_by = 'created_time'
