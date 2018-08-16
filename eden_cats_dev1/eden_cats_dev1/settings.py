@@ -112,6 +112,8 @@ LANGUAGE_CODE = 'zh-hans'
 
 TIME_ZONE = 'Asia/Shanghai'
 
+PAGE_NUM = 3  # 每页显示 3 篇文章
+
 USE_I18N = True
 
 USE_L10N = True

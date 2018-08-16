@@ -13,12 +13,31 @@ class Category(models.Model):
     created_time = models.DateField(verbose_name='创建时间', default=now)
     modified_time = models.DateField(verbose_name='修改时间', default=now)
 
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['name']
+        verbose_name = '类别名称'
+        verbose_name_plural = '分类列表'
+        db_table = 'category'   # 数据库表名
+
 
 class Tag(models.Model):
     # 标签名
     name = models.CharField(verbose_name='标签名', max_length=100)
     created_time = models.DateField(verbose_name='创建时间', default=now)
     modified_time = models.DateField(verbose_name='修改时间', default=now)
+
+    # 使对象在后台显示更加友好
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['name']
+        verbose_name = '标签名称'   # 指定后台显示模型名称
+        verbose_name_plural = '标签列表'   # 指定后台显示模型复数
+        db_table = 'tag'    #数据库表名
 
 
 class Article(models.Model):
@@ -67,9 +86,9 @@ class Article(models.Model):
     def next_article(self):
         return Article.objects.filter(id__gt=self.id, status='public', public_time__isnull=False).first()
 
-    class Meta: # 按文章创建日期降序排序
-        ordering = ['-pub_time'] 
-        verbose_name = '文章' # 指定后台显示模型名称
-        verbose_name_plural = '文章列表' # 指定后台显示模型复数名称
-        db_table = 'article' #数据库表
+    class Meta:  # 按文章创建日期降序排序
+        ordering = ['-public_time']
+        verbose_name = '文章'  # 指定后台显示模型名称
+        verbose_name_plural = '文章列表'  # 指定后台显示模型复数名称
+        db_table = 'article'  # 数据库表
         get_latest_by = 'created_time'
