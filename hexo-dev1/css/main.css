@@ -243,10 +243,16 @@ a:hover {
 	border-bottom-color: #222
 }
 blockquote {
+
+	font-size: 18px;
+	word-spacing: 2.2pt;
+	line-height: 1.6;
+
 	margin: 0;
 	padding: 0 15px;
-	color: #666;
-	border-left: 4px solid #ddd
+	color: rgb(0, 0, 0);
+	border-left: 4px solid #ddd;
+	font-family: FZShuTi,"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
 }
 hr {
 	margin: 40px 0;

@@ -253,7 +253,7 @@ columnist.is-fixed {
 	/* the secondary navigation is covered by the main element */
 	z-index: 1;
 	width: 420px;
-	background-color: rgba(12, 11, 11, 0.92);
+	background-color: rgba(14, 14, 14, 0.59);
 	overflow-y: auto;
 	/* Force Hardware Acceleration in WebKit */
 	-webkit-transform: translateZ(0);
