@@ -164,7 +164,7 @@ textarea {
 body {
 	font-size: 14px;
 	line-height: 2;
-	background: #eee
+	background: #fff0
 }
 @media (min-width: 768px) and (max-width: 991px) {
 	body {
@@ -603,7 +603,7 @@ pre .javascript .function, pre .keyword {
 	position: relative;
 	padding: 15px;
 	margin-bottom: 20px;
-	border: 1px solid #eee;
+	border: 1px solid 1px solid rgb(238, 238, 238);
 	border-left-width: 5px;
 	border-radius: 3px
 }
@@ -866,7 +866,7 @@ pre .javascript .function, pre .keyword {
 	bottom: -100px;
 	right: 15px;
 	z-index: 1050;
-	padding: 0 6px;
+	padding: 0 8px;
 	width: initial;
 	background: #FF5723;
 	font-size: 12px;
@@ -905,7 +905,7 @@ pre .javascript .function, pre .keyword {
 }
 .headband {
 	height: 3px;
-	background: #222
+	background: #000
 }
 .site-meta {
 	margin: 0
@@ -1629,14 +1629,14 @@ img:hover {
 .site-author-name {
 	margin: 0;
 	text-align: center;
-	color: #222;
+	color: rgba(12, 110, 189, 0.85);
 	font-weight: 600
 }
 .site-description {
 	margin-top: 0;
 	text-align: center;
 	font-size: 13px;
-	color: #999
+	color: rgb(255, 255, 255);
 }
 .feed-link, .links-of-author {
 	margin-top: 20px
@@ -1664,7 +1664,7 @@ img:hover {
 }
 .site-state-item-name {
 	font-size: 13px;
-	color: #999
+	color: rgb(255, 255, 255);
 }
 .feed-link a {
 	padding: 0 15px;
@@ -1690,7 +1690,7 @@ img:hover {
 	width: 4px;
 	height: 4px;
 	border-radius: 50%;
-	background: #8aff46
+	background: rgb(138, 255, 70)
 }
 .links-of-blogroll {
 	font-size: 13px
@@ -2568,7 +2568,7 @@ to {
 }
 .site-meta {
 	padding: 20px 0;
-	background: #222
+	background: #000
 }
 .brand {
 	padding: 0;
@@ -2646,8 +2646,8 @@ to {
 .sidebar-inner {
 	box-sizing: border-box;
 	width: 240px;
-	color: #555;
-	background: #fff;
+	color: #fff;
+    background: #000;
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.06), 0 1px 5px 0 rgba(0,0,0,.12), 0 -1px .5px 0 rgba(0,0,0,.09);
 	border-radius: initial;
 	opacity: 0
@@ -2667,7 +2667,7 @@ to {
 	display: table
 }
 .sidebar a {
-	color: #555
+	color: rgb(255, 255, 255);
 }
 .sidebar a:hover {
 	color: #222
@@ -2770,11 +2770,11 @@ to {
 	background: #fff
 }
 .post-block {
-	box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.06), 0 1px 5px 0 rgba(0,0,0,.12);
+	box-shadow: 0 2px 2px 0 rgb(109, 109, 109), 0 3px 1px 2px rgba(0, 0, 0, 0.13), 0 1px 5px 2px rgba(0,0,0,.12);
 	border-radius: initial
 }
 #posts > article+ article .post-block, .comments, .pagination {
-	box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.06), 0 1px 5px 0 rgba(0,0,0,.12), 0 -1px .5px 0 rgba(0,0,0,.09);
+	box-shadow: 0 2px 2px 0 rgb(109, 109, 109), 0 3px 1px 2px rgba(0, 0, 0, 0.13), 0 1px 5px 2px rgba(0,0,0,.12);
 	border-radius: initial
 }
 #posts > article+ article .post-block {
@@ -2848,7 +2848,7 @@ to {
 	}
 	.post-block {
 		padding: 20px;
-		box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.06), 0 1px 5px 0 rgba(0,0,0,.12), 0 -1px .5px 0 rgba(0,0,0,.09);
+		box-shadow: 0 2px 2px 0 rgb(109, 109, 109), 0 3px 1px 2px rgba(0, 0, 0, 0.13), 0 1px 5px 2px rgba(0,0,0,.12);
 		border-radius: initial
 	}
 	.comments {
@@ -2877,7 +2877,7 @@ to {
 	.post-block {
 		padding: 12px;
 		min-height: auto;
-		box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.06), 0 1px 5px 0 rgba(0,0,0,.12), 0 -1px .5px 0 rgba(0,0,0,.09);
+		box-shadow: 0 2px 2px 0 rgb(109, 109, 109), 0 3px 1px 2px rgba(0, 0, 0, 0.13), 0 1px 5px 2px rgba(0,0,0,.12);
 		border-radius: initial
 	}
 	.comments {
