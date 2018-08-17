@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+	<head>
+		<!---------------meta--------------------->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+		<meta name="theme-color" content="#222">
+		<meta http-equiv="Cache-Control" content="no-transform">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<meta name="keywords" content="Python,Django,Eden's Cat,TRsky ">
+		<meta http-equiv="X-UA-Compatible" content="IE=11;IE=10;IE=9; IE8; IE=7; IE=EDGE">	
+		<meta name="description" content="爱分享，爱技术，爱生活。">	
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Eden&#39;s cats">
+		<meta property="og:url" content="http://blog.trskycooik.com/index.html">
+		<meta property="og:site_name" content="Eden&#39;s cats">
+		<meta property="og:description" content="爱分享，爱技术，爱生活。">
+		<meta property="og:locale" content="zh-Hans">
+		<!-----------------script------------------->
+		<script type="text/javascript" src="../js/src/love.js"></script>
+		<script src="../lib/pace/pace.min.js?v=1.0.2"></script>
+		<script src="../js/modernizr.js" type="text/javascript"></script>
+		<script src="../js/jquery-2.1.1.min.js" type="text/javascript"></script>
+		<script src="../js/main.js" type="text/javascript"></script>
+		
+		<!-------------------css----------------->
+		<link href="../lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+		<link href="../lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+		<link href="../lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+		<link href="../css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="../css/style.css" type="text/css">
+   		<link rel="stylesheet" href="../css/sidebar-menu.css">
+    	<!------------------images or else------------------>
+		<link rel="apple-touch-icon" sizes="180x180" href="../images/cat_head.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../images/cat_head.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../images/cat_head.png">
+		<link rel="mask-icon" href="../images/cat_head.png" color="#222">
+		<link rel="shortcut icon" type="image/x-icon" href="../images/cat.png" />
+		<link rel="alternate" href="/atom.xml" title="Eden's cats" type="application/atom+xml">
+		<link rel="canonical" href="http://blog.trskycooik.com/">
+		<!----------- body -------------->
+		<title>Eden's Cats</title>
+		
+		
+		<script type="text/javascript" id="hexo.configurations">
+			var NexT = window.NexT || {}, CONFIG = {
+				root : "/",
+				scheme : "Gemini",
+				version : "5.1.3",
+				sidebar : {
+					position : "left",
+					display : "post",
+					offset : 12,
+					b2t : !1,
+					scrollpercent : !0,
+					onmobile : !1
+				},
+				fancybox : !0,
+				tabs : !0,
+				motion : {
+					enable : !0,
+					async : !1,
+					transition : {
+						post_block : "fadeIn",
+						post_header : "slideDownIn",
+						post_body : "slideDownIn",
+						coll_header : "slideLeftIn",
+						sidebar : "slideUpIn"
+					}
+				},
+			
+			}
+		</script>
+		<!---- DaoVoice Chat ---->
+		<script>
+			! function(e, t, o, c, i, a, n) {
+				e.DaoVoiceObject = i, e[i] = e[i] ||
+				function() {
+					(e[i].q = e[i].q || []).push(arguments)
+				}, e[i].l = 1 * new Date, a = t.createElement("script"), n = t.getElementsByTagName("script")[0], a.async = 1, a.src = c, a.charset = "utf-8", n.parentNode.insertBefore(a, n)
+			}(window, document, 0, ("https:" == document.location.protocol ? "https:" : "http:") + "//widget.daovoice.io/widget/a0f99982.js", "daovoice"), daovoice("init", {
+				app_id : "a0f99982"
+			}), daovoice("update")
+		</script>
+	</head>	
+	<!------------- head end line ------------------------->
+	
+	<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+		<!-------- 专栏  SideBar Menu ------------->
+		<!-------- 控制开关 ------------------------>
+		<div class="columnist">
+			<a id="cd-menu-trigger" href="#0"> <span class="cd-menu-icon"></span> </a>
+		</div>
+		
+		<nav id="cd-lateral-nav">
+		<aside class="main-sidebar">
+	<section  class="sidebar-menu-list">
+	<ul class="sidebar-menu">
+	  <li class="header">博客专栏</li>
+
+	  <li class="treeview">
+		<a href="#">
+		  <i class="fa fa-book"></i> <span>学习与总结</span>
+		  <i class="fa fa-angle-left pull-right"></i>
+		</a>
+		<ul class="treeview-menu">
+		    <li>
+			<a href="#"><i class="fa fa-circle-o"></i> Linux <i class="fa fa-angle-left pull-right"></i></a>
+			<ul class="treeview-menu">
+			   <li>
+				<a href="#"><i class="fa fa-circle-o"></i> Linux 命令行 <i class="fa fa-angle-left pull-right"></i></a>
+				<ul class="treeview-menu">
+				  <li><a href="#"><i class="fa fa-circle-o"></i> cat</a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> sudo</a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> w </a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> mv</a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> pgrep</a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> ps</a></li>
+				</ul>
+			  </li>
+			  <li>
+				<a href="#"><i class="fa fa-circle-o"></i> Linux 源码解读 <i class="fa fa-angle-left pull-right"></i></a>
+				<ul class="treeview-menu">
+				  <li><a href="#"><i class="fa fa-circle-o"></i> Linux 内核解读之进程调度</a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> Linux 内核阶段之文件读写</a></li>
+				</ul>
+			  </li>
+			</ul>
+		  </li>
+		   <li>
+			<a href="#"><i class="fa fa-circle-o"></i> 算法与数据结构 <i class="fa fa-angle-left pull-right"></i></a>
+			<ul class="treeview-menu">
+			   <li>
+				<a href="#"><i class="fa fa-circle-o"></i> Python数据结构之树 <i class="fa fa-angle-left pull-right"></i></a>
+				<ul class="treeview-menu">
+				  <li><a href="#"><i class="fa fa-circle-o"></i> 二叉树</a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> 平衡树</a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> 二叉排序树 </a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> 结构树</a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> 搜索树</a></li>
+				</ul>
+			  </li>
+			  <li>
+				<a href="#"><i class="fa fa-circle-o"></i> Linux 源码解读 <i class="fa fa-angle-left pull-right"></i></a>
+				<ul class="treeview-menu">
+				  <li><a href="#"><i class="fa fa-circle-o"></i> Linux 内核解读之进程调度</a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> Linux 内核阶段之文件读写</a></li>
+				</ul>
+			  </li>
+			</ul>
+		  </li><li>
+			<a href="#"><i class="fa fa-circle-o"></i> Linux <i class="fa fa-angle-left pull-right"></i></a>
+			<ul class="treeview-menu">
+			   <li>
+				<a href="#"><i class="fa fa-circle-o"></i> Linux 命令行 <i class="fa fa-angle-left pull-right"></i></a>
+				<ul class="treeview-menu">
+				  <li><a href="#"><i class="fa fa-circle-o"></i> cat</a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> sudo</a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> w </a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> mv</a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> pgrep</a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> ps</a></li>
+				</ul>
+			  </li>
+			  <li>
+				<a href="#"><i class="fa fa-circle-o"></i> Linux 源码解读 <i class="fa fa-angle-left pull-right"></i></a>
+				<ul class="treeview-menu">
+				  <li><a href="#"><i class="fa fa-circle-o"></i> Linux 内核解读之进程调度</a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> Linux 内核阶段之文件读写</a></li>
+				</ul>
+			  </li>
+			</ul>
+		  </li>
+		
+		</ul>
+	  </li>
+	  <li class="treeview">
+		<a href="#">
+		  <i class="fa fa-book"></i> <span>学习与生活</span>
+		  <i class="fa fa-angle-left pull-right"></i>
+		</a>
+		<ul class="treeview-menu">
+		  <li><a href="#"><i class="fa fa-circle-o"></i> 实习</a></li>
+		  <li>
+			<a href="#"><i class="fa fa-circle-o"></i> 面试 <i class="fa fa-angle-left pull-right"></i></a>
+			<ul class="treeview-menu">
+			  <li><a href="#"><i class="fa fa-circle-o"></i> A 公司面试</a></li>
+			  <li>
+				<a href="#"><i class="fa fa-circle-o"></i> B公司面试 <i class="fa fa-angle-left pull-right"></i></a>
+				<ul class="treeview-menu">
+				  <li><a href="#"><i class="fa fa-circle-o"></i> 一轮</a></li>
+				  <li><a href="#"><i class="fa fa-circle-o"></i> 二轮</a></li>
+				</ul>
+			  </li>
+			</ul>
+		  </li>
+		  <li><a href="#"><i class="fa fa-circle-o"></i> 校园</a></li>
+		</ul>
+	  </li>
+	  	  <li class="treeview">
+		<a href="#">
+		  <i class="fa fa-book"></i> <span>上课不听讲</span>
+		  <i class="fa fa-angle-left pull-right"></i>
+		</a>
+		<ul class="treeview-menu">
+		  <li><a href="#"><i class="fa fa-circle-o"></i> 计算机网络</a></li>
+		  <li>
+			<a href="#"><i class="fa fa-circle-o"></i> 汇编语言程序设计 <i class="fa fa-angle-left pull-right"></i></a>
+			<ul class="treeview-menu">
+			  <li><a href="#"><i class="fa fa-circle-o"></i> 实现 Hanoi</a></li>
+			  <li>
+				<a href="#"><i class="fa fa-circle-o"></i> 实现音乐播放器 <i class="fa fa-angle-left pull-right"></i></a>
+			  </li>
+			</ul>
+		  </li>
+		   <li>
+			<a href="#"><i class="fa fa-circle-o"></i> 操作系统 <i class="fa fa-angle-left pull-right"></i></a>
+			<ul class="treeview-menu">
+			  <li><a href="#"><i class="fa fa-circle-o"></i> 进程调度</a></li>
+			  <li>
+				<a href="#"><i class="fa fa-circle-o"></i> 线程调度 <i class="fa fa-angle-left pull-right"></i></a>
+				<ul class="treeview-menu">
+			  <li><a href="#"><i class="fa fa-circle-o"></i> 伪代码实现</a></li>
+			  <li>
+				<a href="#"><i class="fa fa-circle-o"></i> 调度原理</a>
+			  </li>
+			</ul>
+			  </li>
+			</ul>
+		  </li>
+		  
+		</ul>
+	  </li>
+	  
+	</ul>
+  </section>
+ </aside>
+<script src="../js/sidebar-menu.js"></script>
+<script>
+$.sidebarMenu($('.sidebar-menu'))
+</script>
+		
+</nav>
+
+<!-----------------sidebar menu end --------------------------->
+    
+		<div class="container sidebar-position-left page-post-detail">
+			<div class="headband"></div>
+			<!--- Github svg view --->
+			<a href="https://github.com/HardworkFish" class="github-corner" aria-label="View source on Github">
+			<svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513;color:#fff;position:absolute;top:0;border:0;right:0" aria-hidden="true">
+				<path d="M0 0 115 115 130 115 142 142 250 250 250 0Z"></path>
+				<path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"></path>
+				<path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4L133.7 101.6C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8Z" fill="currentColor" class="octo-body"></path>
+			</svg> </a>
+			<style>
+				.github-corner:hover .octo-arm {
+					animation: octocat-wave 560ms ease-in-out
+				} @keyframes octocat-wave { 
+				0%, 100% { transform: rotate(0) } 
+				20%, 60% { transform: rotate(-25deg) } 
+				40%, 80% { transform: rotate(10deg) } }
+				@media (max-width: 500px) {
+					.github-corner:hover .octo-arm {
+						animation: none
+					}
+					.github-corner .octo-arm {
+						animation: octocat-wave 560ms ease-in-out
+					}
+				}
+			</style>
+			
+			<!--- left sidebar ------------->
+			<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+				<div class="header-inner">
+					<div class="site-brand-wrapper">
+						<div class="site-meta">
+							<div class="custom-logo-site-title">
+								<a href="/" class="brand" rel="start"> 
+								<span class="logo-line-before"> <i> </i> </span> 
+								<span class="site-title">Eden's cats</span> 
+								<span class="logo-line-after"> <i> </i> </span> </a>
+							</div>
+							<p class="site-subtitle">
+								TRsky的博客小站 <a style="color:#fff;text-decoration:none" href="http://blog.trskycooik.com/" target="view_window">(2018-08-12)</a>
+							</p>
+						</div>
+						<div class="site-nav-toggle">
+							<button>
+								<span class="btn-bar"></span>
+								<span class="btn-bar"></span>
+								<span class="btn-bar"></span>
+							</button>
+						</div>
+					</div>
+					<nav class="site-nav">
+						<ul id="menu" class="menu">
+							<li class="menu-item menu-item-home">
+								<a href="/" rel="section"> <i class="menu-item-icon fa fa-fw fa-home"></i>
+								<br>
+								首页</a>
+							</li>
+							<li class="menu-item menu-item-about">
+								<a href="/about/" rel="section"> <i class="menu-item-icon fa fa-fw fa-user"></i>
+								<br>
+								关于</a>
+							</li>
+							<li class="menu-item menu-item-tags">
+								<a href="/tags/" rel="section"> <i class="menu-item-icon fa fa-fw fa-tags"></i>
+								<br>
+								标签</a>
+							</li>
+							<li class="menu-item menu-item-categories">
+								<a href="/categories/" rel="section"> <i class="menu-item-icon fa fa-fw fa-th"></i>
+								<br>
+								分类</a>
+							</li>
+							<li class="menu-item menu-item-archives">
+								<a href="/archives/" rel="section"> <i class="menu-item-icon fa fa-fw fa-archive"></i>
+								<br>
+								归档</a>
+							</li>
+							<li class="menu-item menu-item-commonweal">
+								<a href="/404/" rel="section"> <i class="menu-item-icon fa fa-fw fa-heartbeat"></i>
+								<br>
+								公益404</a>
+							</li>
+							<li class="menu-item menu-item-search">
+								<a href="javascript:;" class="popup-trigger"> <i class="menu-item-icon fa fa-search fa-fw"></i>
+								<br>
+								搜索</a>
+							</li>
+						</ul>
+						<div class="site-search">
+							<div class="popup search-popup local-search-popup">
+								<div class="local-search-header clearfix">
+									<span class="search-icon"> <i class="fa fa-search"></i> </span>
+									<span class="popup-btn-close"> <i class="fa fa-times-circle"></i> </span>
+									<div class="local-search-input-wrapper">
+										<input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+									</div>
+								</div>
+								<div id="local-search-result"></div>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</header>
+
+			<!---------main body content ----------------------->
+		<!------------------------------------------------------------------------------------------->	
+				  
+      <main id="main" class="main">
+        <div class="main-inner">
+        <!---------------------------------article start------------------------------------------------------------------------------------>	
+		
+          <div class="content-wrap">
+            <div id="content" class="content">
+              <div id="posts" class="posts-expand">
+                <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                  <div class="post-block">
+                    <link itemprop="mainEntityOfPage" href="http://mtianyan.gitee.io/post/a5f911ea.html">
+                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                      <meta itemprop="name" content="TRsky">
+                      <meta itemprop="description" content="">
+                      <meta itemprop="image" content="../images/avatar.jpg"></span>
+                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                      <meta itemprop="name" content="TRsky's blog"></span>
+                    <header class="post-header">
+					<!-------------------------------------------------------------->
+                      <h1 class="post-title" itemprop="name headline">强力Django+杀手级Xadmin打造在线教育平台(十一)</h1>
+                      <div class="post-meta">
+                        <span class="post-time">
+                          <span class="post-meta-item-icon">
+                            <i class="fa fa-calendar-o"></i>
+                          </span>
+                          <span class="post-meta-item-text">发表于</span>
+                          <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-16T22:09:17+08:00">2018-01-16</time></span>
+                        <span class="post-category">
+                          <span class="post-meta-divider">|</span>
+							<i class="fa fa-folder-o"></i>
+                        </span>
+                        <span class="post-meta-item-text">分类于</span>
+                        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                          <a href="/categories/Django-Xadmin打造在线教育平台/" itemprop="url" rel="index">
+                            <span itemprop="name">Django+Xadmin打造在线教育平台</span></a>
+                        </span>
+                        </span>
+                        <span id="/post/a5f911ea.html" class="leancloud_visitors" data-flag-title="强力Django+杀手级Xadmin打造在线教育平台(十一)">
+                          <span class="post-meta-divider">|</span>
+                          <span class="post-meta-item-icon">
+                            <i class="fa fa-eye"></i>
+                          </span>
+                          <span class="post-meta-item-text">热度&#58;</span>
+                          <span class="leancloud-visitors-count"></span>
+                          <span>℃</span></span>
+                        <div class="post-wordcount">
+                          <span class="post-meta-item-icon">
+                            <i class="fa fa-file-word-o"></i>
+                          </span>
+                          <span class="post-meta-item-text">字数统计&#58;</span>
+                          <span title="字数统计">780</span>
+                          <span class="post-meta-divider">|</span>
+                          <span class="post-meta-item-icon">
+                            <i class="fa fa-clock-o"></i>
+                          </span>
+                          <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                          <span title="阅读时长">4</span></div>
+                      </div>
+                    </header>
+                    
+                   <!---moto --->
+                    <div class="post-body" itemprop="articleBody">
+                      <blockquote class="blockquote-center">
+                        <p>泰山不让土壤，故能成其大；河海不择细流，故能就其深。</p>
+                      </blockquote>
+                      <div class="note success">
+                        <p>细节决定成败，大体的网站已经做好了。
+                          <br>佛曰：给我把细节再搞一搞</p></div>
+                      <a id="more"></a>
+                      
+                <!--- article cotent --->
+    <h1 id="首页-全局功能细节和404以及500页面配置">
+     	<a href="#首页-全局功能细节和404以及500页面配置" class="headerlink" title="首页,全局功能细节和404以及500页面配置"></a>首页,全局功能细节和404以及500页面配置</h1>
+    <h2 id="登出和点击数以及收藏数完善">
+        <a href="#登出和点击数以及收藏数完善" class="headerlink" title="登出和点击数以及收藏数完善"></a>登出和点击数以及收藏数完善</h2>
+    <h3 id="退出登录">
+        <a href="#退出登录" class="headerlink" title="退出登录"></a>退出登录</h3>
+        <p>Python3+django2.0.1下</p>
+    <figure class="highlight plain">
+        <table><tr>
+        <td class="gutter"><pre>
+        <span class="line">1</span><br>
+        <span class="line">2</span><br>
+        <span class="line">3</span><br>
+        <span class="line">4</span><br>
+        <span class="line">5</span><br>
+        <span class="line">6</span><br></pre></td>
+        <td class="code"><pre>
+        <span class="line">class LogoutView(View):</span><br>
+        <span class="line">def get(self, request):</span><br>
+        <span class="line"># django自带的logout</span><br>
+        <span class="line">logout(request)</span><br>
+        <span class="line"># 重定向到首页,</span><br>
+        <span class="line">return HttpResponseRedirect(reverse(&quot;index&quot;))</span><br></pre></td></tr></table></figure>
+    <figure class="highlight plain">
+        <table><tr>
+        <td class="gutter"><pre>
+        <span class="line">1</span><br>
+        <span class="line">2</span><br></pre></td>
+        <td class="code"><pre>
+        <span class="line"># 退出功能url</span><br>
+        <span class="line">path(&apos;logout/&apos;, LogoutView.as_view(), name=&quot;logout&quot;),</span><br></pre></td></tr></table></figure>
+        <h3 id="点击数加1">
+        <a href="#点击数加1" class="headerlink" title="点击数加1"></a>点击数加1</h3>
+        <p>CourseInfoView学习人数加1</p>
+    <figure class="highlight plain"><table><tr>
+        <td class="gutter"><pre>
+        <span class="line">1</span><br>
+        <span class="line">2</span><br></pre></td>
+        <td class="code"><pre>
+        <span class="line">course.students += 1</span><br>
+        <span class="line">course.save()</span><br></pre></td></tr></table></figure>
+        <p><img src="http://myphoto.mtianyan.cn/blog/180115/kDd20GdFDb.png?imageslim" alt="mark"></p>
+        <p>TeacherDetailView：</p>
+    <figure class="highlight plain">
+        <table><tr>
+        <td class="gutter"><pre>
+        <span class="line">1</span><br>
+        <span class="line">2</span><br></pre></td>
+        <td class="code"><pre>
+        <span class="line">teacher.click_nums +=1</span><br>
+        <span class="line">teacher.save()</span><br></pre></td></tr></table></figure>
+        <p>OrgHomeView</p>
+    <figure class="highlight plain">
+        <table><tr>
+        <td class="gutter"><pre>
+        <span class="line">1</span><br>
+        <span class="line">2</span><br></pre></td>
+        <td class="code"><pre>
+        <span class="line">course_org.click_nums +=1</span><br>
+        <span class="line">course_org.save()</span><br></pre></td></tr></table></figure>
+        <p>收藏数统计</p>
+    <figure class="highlight plain">
+        <table><tr>
+        <td class="gutter"><pre>
+        <span class="line">1</span><br>
+        <span class="line">2</span><br>
+        <span class="line">3</span><br>
+        <span class="line">4</span><br>
+        <span class="line">5</span><br>
+        <span class="line">6</span><br>
+        <span class="line">7</span><br>
+        <span class="line">8</span><br>
+        <span class="line">9</span><br>
+        <span class="line">10</span><br>
+        <span class="line">11</span><br>
+        <span class="line">12</span><br>
+        <span class="line">13</span><br>
+        <span class="line">14</span><br>
+        <span class="line">15</span><br>
+        <span class="line">16</span><br>
+        <span class="line">17</span><br>
+        <span class="line">18</span><br>
+        <span class="line">19</span><br></pre></td>
+        <td class="code"><pre>
+        <span class="line">exist_records.delete()</span><br>
+        <span class="line">if int(type) == 1:</span><br>
+        <span class="line">course = Course.objects.get(id=int(id))</span><br>
+        <span class="line">course.fav_nums -=1</span><br>
+        <span class="line">if course.fav_nums &lt; 0:</span><br>
+        <span class="line">course.fav_nums = 0</span><br>
+        <span class="line">course.save()</span><br>
+        <span class="line">elif int(type) == 2:</span><br>
+        <span class="line">org = CourseOrg.objects.get(id=int(id))</span><br>
+        <span class="line">org.fav_nums -= 1</span><br>
+        <span class="line">if org.fav_nums &lt; 0:</span><br>
+        <span class="line">org.fav_nums = 0</span><br>
+        <span class="line">org.save()</span><br>
+        <span class="line">elif int(type) == 3:</span><br>
+        <span class="line">teacher = Teacher.objects.get(id=int(id))</span><br>
+        <span class="line">teacher.fav_nums -=1</span><br>
+        <span class="line">if teacher.fav_nums &lt; 0:</span><br>
+        <span class="line">teacher.fav_nums = 0</span><br>
+        <span class="line">teacher.save()</span><br></pre></td></tr></table></figure>
+   
+    <p>注意负数的处理：</p>
+    <p>修改消息已读</p>
+    <figure class="highlight plain">
+        <table><tr>
+        <td class="gutter"><pre>
+        <span class="line">1</span><br>
+        <span class="line">2</span><br>
+        <span class="line">3</span><br>
+        <span class="line">4</span><br>
+        <span class="line">5</span><br></pre></td>
+        <td class="code"><pre>
+        <span class="line"># 用户进入个人中心消息页面，清空未读消息记录</span><br>
+        <span class="line">all_unread_messages = UserMessage.objects.filter(user=request.user.id, has_read=False)</span><br>
+        <span class="line">for unread_message in all_unread_messages:</span><br>
+        <span class="line">unread_message.has_read = True</span><br>
+        <span class="line">unread_message.save()</span><br></pre></td></tr></table></figure>
+        <p>改进取出未读数字</p>
+    <figure class="highlight plain">
+        <table><tr>
+		<td class="gutter"><pre>
+        <span class="line">1</span><br></pre></td>
+        <td class="code"><pre>
+        <span class="line">return UserMessage.objects.filter(has_read=False, user=self.id).count()</span><br></pre></td></tr></table></figure>
+        <h2 id="首页功能开发">
+        <a href="#首页功能开发" class="headerlink" title="首页功能开发"></a>首页功能开发</h2>
+        <p>轮播图</p>
+        <p>公开课</p>
+        <p>授课机构</p>
+        <p>新建view</p>
+        <p>为课程添加字段:
+        <code>isbanner</code></p>
+        <figure class="highlight python">
+            <table><tr>
+            <td class="gutter"><pre>
+            <span class="line">1</span><br>
+            <span class="line">2</span><br>
+            <span class="line">3</span><br>
+            <span class="line">4</span><br>
+            <span class="line">5</span><br>
+            <span class="line">6</span><br>
+            <span class="line">7</span><br></pre></td>
+        <td class="code"><pre>
+		<span class="line">is_banner = models.BooleanField(default=<span class="keyword">False</span>, verbose_name=<span class="string">u"是否轮播"</span>)</span><br>
+		<span class="line">```</span><br>
+		<span class="line"></span><br>
+		<span class="line">url配置:</span><br>
+		<span class="line"></span><br>
+		<span class="line">```python</span><br>
+		<span class="line">path(<span class="string">''</span>, IndexView.as_view(), name=<span class="string">"index"</span>)</span><br></pre></td></tr></table></figure>
+        <p><img src="http://myphoto.mtianyan.cn/blog/180115/8IDjg5e8K0.png?imageslim" alt="mark"></p>
+        <p>使用django自带模板标签
+        <code>add</code>添加2</p>
+        <p>为
+		<code>courseOrg</code>添加字段
+		<code>tag</code></p>
+    <figure class="highlight python">
+		<table><tr>
+		<td class="gutter"><pre>
+		<span class="line">1</span><br></pre></td>
+        <td class="code"><pre>
+		<span class="line">tag = models.CharField(max_length=<span class="number">10</span>, default=<span class="string">u"国内名校"</span>,verbose_name=<span class="string">u"机构标签"</span>)</span><br></pre></td></tr></table></figure>
+        <p><img src="http://myphoto.mtianyan.cn/blog/180115/468aAaiajk.png?imageslim" alt="mark"></p>
+        <p>template内建标签被五整除</p>
+        <h2 id="配置全局404和500">
+        <a href="#配置全局404和500" class="headerlink" title="配置全局404和500"></a>配置全局404和500</h2>
+        <p>Mxonline3/urls.py</p>
+    <figure class="highlight python">
+        <table><tr>
+		<td class="gutter"><pre>
+		<span class="line">1</span><br>
+		<span class="line">2</span><br></pre></td>
+		<td class="code"><pre>
+		<span class="line"><span class="comment"># 全局404页面配置</span></span><br>
+		<span class="line">handler404 =<span class="string">'users.views.page_not_found'</span></span><br></pre></td></tr></table></figure>
+        <p>users/views.py</p>
+    <figure class="highlight python">
+		<table><tr>
+		<td class="gutter"><pre>
+		<span class="line">1</span><br>
+		<span class="line">2</span><br>
+		<span class="line">3</span><br>
+		<span class="line">4</span><br>
+		<span class="line">5</span><br>
+		<span class="line">6</span><br>
+		<span class="line">7</span><br>
+		<span class="line">8</span><br>
+		<span class="line">9</span><br>
+		<span class="line">10</span><br></pre></td>
+		<td class="code"><pre>
+		<span class="line"><span class="comment"># 404对应处理view</span></span><br>
+		<span class="line"></span><br>
+		<span class="line"><span class="function"><span class="keyword">def</span><span class="title">page_not_found</span><span class="params">(request)</span>:</span></span><br>
+		<span class="line"><span class="keyword">from</span>django.shortcuts<span class="keyword">import</span>render_to_response</span><br>
+		<span class="line">response = render_to_response(<span class="string">"404.html"</span>, &#123;</span><br>
+		<span class="line"></span><br><span class="line">&#125;)</span><br>
+		<span class="line"><span class="comment"># 设置response的状态码</span></span><br>
+		<span class="line">response.status_code =<span class="number">404</span></span><br>
+		<span class="line"><span class="keyword">return</span>response</span><br></pre></td></tr></table></figure>
+		<p>Debug = True 404是不起作用的</p>
+    <figure class="highlight plain">
+        <table><tr>
+        <td class="gutter"><pre>
+        <span class="line">1</span><br></pre></td>
+        <td class="code"><pre>
+        <span class="line">ALLOWED_HOSTS = [&apos;*&apos;]</span><br></pre></td></tr></table></figure>
+        <p>在debug为false情况下。</p>
+        <p>我们在访问media的时候配置过用serve来取<br>告诉它访问media的时候去哪个路径下找</p>
+        <p>debug为True</p>
+        <p>会自动前往STATICFILES——DIRS取文件的</p>
+        <p>一旦debug改为false，django就不会代管你的静态文件，</p>
+        <p>一般静态文件通过第三方http服务器代理转发。</p>
+        <p>nignx 和 Apache都会自动代理这些静态文件</p>
+        <p>方法1：我们自己url响应我们的static</p>
+    <figure class="highlight plain">
+        <table><tr>
+        <td class="gutter"><pre>
+        <span class="line">1</span><br></pre></td>
+        <td class="code"><pre>
+        <span class="line">STATIC_ROOT = os.path.join(BASE_DIR, &apos;static&apos;)</span><br></pre></td></tr></table></figure></div>
+				<!--- end 0f article --->
+                    <div>
+                      <div>
+                        <div style="text-align:center;color:#ccc;font-size:14px">-------------本文结束
+                          <i class="fa fa-paw"></i>&nbsp;感谢您的阅读-------------</div></div>
+                    </div>
+                    <div>
+                      <div class="my_post_copyright">
+                        <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+                        <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+                        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                        <p>
+                          <span>本文标题:</span>
+                          <a href="../post/a5f911ea.html">强力Django+杀手级Xadmin打造在线教育平台(十一)</a></p>
+                        <p>
+                          <span>文章作者:</span>
+                          <a href="/" title="访问 TRsky 的个人博客">TRsky</a></p>
+                        <p>
+                          <span>发布时间:</span>2018年01月16日 - 22:01</p>
+                        <p>
+                          <span>最后更新:</span>2018年01月16日 - 23:01</p>
+                        <p>
+                          <span>原始链接:</span>
+                          <a href="../post/a5f911ea.html" title="强力Django+杀手级Xadmin打造在线教育平台(十一)">http://mtianyan.gitee.io/post/a5f911ea.html</a>
+                          <span class="copy-path" title="点击复制文章链接">
+                            <i class="fa fa-clipboard" data-clipboard-text="http://mtianyan.gitee.io/post/a5f911ea.html" aria-label="复制成功！"></i>
+                          </span>
+                        </p>
+                        <p>
+                          <span>许可协议:</span>
+                          <i class="fa fa-creative-commons"></i>
+                          <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a>转载请保留原文链接及作者。</p></div>
+                      <script>var clipboard = new Clipboard(".fa-clipboard");
+                        $(".fa-clipboard").click(function() {
+                          clipboard.on("success",
+                          function() {
+                            swal({
+                              title: "",
+                              text: "复制成功",
+                              icon: "success",
+                              showConfirmButton: !0
+                            })
+                          })
+                        })</script>
+                    </div>
+                    <div>
+                      <div style="padding:10px 0;margin:20px auto;width:90%;text-align:center">
+                        <div>喵呜，饿了呀！给喵君喂条鱼吧</div>
+                        <button id="rewardButton" disable="enable" onclick='var qr=document.getElementById("QR");"none"===qr.style.display?qr.style.display="block":qr.style.display="none"'>
+                          <span>打赏</span></button>
+                        <div id="QR" style="display:none">
+                          <div id="wechat" style="display:inline-block">
+                            <img id="wechat_qr" src="../images/wechatpay.png" alt="TRsky 微信支付">
+                            <p>微信支付</p>
+                          </div>
+                          <div id="alipay" style="display:inline-block">
+                            <img id="alipay_qr" src="../images/alipay.png" alt="TRsky 支付宝">
+                            <p>支付宝</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <footer class="post-footer">
+                      <div class="post-tags">
+                        <a href="/tags/Python/" rel="tag">
+                          <i class="fa fa-tag"></i>Python</a>
+                        <a href="/tags/Django/" rel="tag">
+                          <i class="fa fa-tag"></i>Django</a>
+                        <a href="/tags/在线教育平台/" rel="tag">
+                          <i class="fa fa-tag"></i>在线教育平台</a>
+                      </div>
+                      <div class="post-widgets">
+                        <div id="needsharebutton-postbottom">
+                          <span class="btn">
+                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="post-nav">
+                        <div class="post-nav-next post-nav-item">
+                          <a href="../post/fe5291db.html" rel="next" title="强力Django+杀手级Xadmin打造在线教育平台(十)">
+                            <i class="fa fa-chevron-left"></i>强力Django+杀手级Xadmin打造在线教育平台(十)</a>
+                        </div>
+                        <span class="post-nav-divider"></span>
+                        <div class="post-nav-prev post-nav-item">
+                          <a href="/post/ac88a88.html" rel="prev" title="强力Django+杀手级Xadmin打造在线教育平台(十二)">强力Django+杀手级Xadmin打造在线教育平台(十二)
+                            <i class="fa fa-chevron-right"></i></a>
+                        </div>
+                      </div>
+                    </footer>
+                  </div>
+                </article>
+                <div class="post-spread">
+                  <div class="jiathis_style">
+                    <span class="jiathis_txt">分享到：</span>
+                    <a class="jiathis_button_fav">收藏夹</a>
+                    <a class="jiathis_button_copy">复制网址</a>
+                    <a class="jiathis_button_email">邮件</a>
+                    <a class="jiathis_button_weixin">微信</a>
+                    <a class="jiathis_button_qzone">QQ空间</a>
+                    <a class="jiathis_button_tqq">腾讯微博</a>
+                    <a class="jiathis_button_douban">豆瓣</a>
+                    <a class="jiathis_button_share">一键分享</a>
+                    <a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+                    <a class="jiathis_counter_style"></a>
+                  </div>
+                  <script type="text/javascript">var jiathis_config = {
+                      data_track_clickback: !0,
+                      summary: "",
+                      shortUrl: !1,
+                      hideMore: !1
+                    }</script>
+                  <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2154292" charset="utf-8"></script>
+                </div>
+              </div>
+            </div>
+            <!--- 来必力评论系统 --->
+            <div class="comments" id="comments">
+              <div id="Coments"></div>
+              <!-- 来必力City版安装代码 -->
+              <div id="lv-container" data-id="city" data-uid="MTAyMC8zODgwNS8xNTMzMw==">
+                <script type="text/javascript">(function(d, s) {
+                    var j, e = d.getElementsByTagName(s)[0];
+                    if (typeof LivereTower === 'function') {
+                      return;
+                    }
+                    j = d.createElement(s);
+                    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                    j.async = true;
+                    e.parentNode.insertBefore(j, e);
+                  })(document, 'script');</script>
+                <noscript>为正常使用来必力评论功能请激活JavaScript</noscript></div>
+              <!-- City版安装代码已完成 --></div>
+          </div>
+		<!----------------------------------article end----------------------------------------------------------------------------------->	
+		  
+		  
+		  <!---------------------sidebar-toggle ----------------->
+		  
+		
+          <div class="sidebar-toggle">
+            <div class="sidebar-toggle-line-wrap">
+              <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+              <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+              <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+            </div>
+          </div>
+          <aside id="sidebar" class="sidebar">
+            <div class="sidebar-inner">
+              <ul class="sidebar-nav motion-element">
+                <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li>
+                <li class="sidebar-nav-overview" data-target="site-overview-wrap">站点概览</li></ul>
+              <section class="site-overview-wrap sidebar-panel">
+                <div class="site-overview">
+                  <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <img class="site-author-image" itemprop="image" src="../images/avatar.jpg" alt="trsky">
+                    <p class="site-author-name" itemprop="name">TRsky</p>
+                    <p class="site-description motion-element" itemprop="description">爱分享，爱技术，爱生活。</p></div>
+                  <nav class="site-state motion-element">
+                    <div class="site-state-item site-state-posts">
+                      <a href="/archives/">
+                        <span class="site-state-item-count">34</span>
+                        <span class="site-state-item-name">日志</span></a>
+                    </div>
+                    <div class="site-state-item site-state-categories">
+                      <a href="/categories/index.html">
+                        <span class="site-state-item-count">5</span>
+                        <span class="site-state-item-name">分类</span></a>
+                    </div>
+                    <div class="site-state-item site-state-tags">
+                      <a href="/tags/index.html">
+                        <span class="site-state-item-count">22</span>
+                        <span class="site-state-item-name">标签</span></a>
+                    </div>
+                  </nav>
+                  <div class="feed-link motion-element">
+                    <a href="/atom.xml" rel="alternate">
+                      <i class="fa fa-rss"></i>RSS</a>
+                  </div>
+                  <div class="links-of-author motion-element">
+                    <span class="links-of-author-item">
+                      <a href="https://gitee.com/trsky" target="_blank" title="码云">
+                        <i class="fa fa-fw fa-cloud"></i>码云</a>
+                    </span>
+                    <span class="links-of-author-item">
+                      <a href="https://www.jianshu.com/u/db9a7a0daa1f" target="_blank" title="简书">
+                        <i class="fa fa-fw fa-book"></i>简书</a>
+                    </span>
+					<span class="links-of-author-item">
+                      <a href="http://music.163.com/#/user/home?id=316926790" target="_blank" title="网易云">
+                        <i class="fa fa-fw fa-music"></i>网易云</a>
+                    </span>
+                  </div>
+                  <div class="links-of-blogroll motion-element links-of-blogroll-block">
+                    <div class="links-of-blogroll-title">
+                      <i class="fa fa-fw fa-link"></i>友情链接</div>
+                    <ul class="links-of-blogroll-list">
+                      <li class="links-of-blogroll-item"><a href="http://blog.trskycooik.com/" title="本站孪生站(github托管)" target="_blank">本站孪生站(github托管)</a></li>
+                      <li class="links-of-blogroll-item"><a href="https://mirrors.scau.edu.cn/" title="SCAULUG开源镜像站" target="_blank">SCAULUG开源镜像站</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+              <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+                <div class="post-toc">
+                  <div class="post-toc-content">
+                    <ol class="nav">
+                      <li class="nav-item nav-level-1">
+                        <a class="nav-link" href="#首页-全局功能细节和404以及500页面配置">
+                          <span class="nav-number">1.</span>
+                          <span class="nav-text">首页,全局功能细节和404以及500页面配置</span></a>
+                        <ol class="nav-child">
+                          <li class="nav-item nav-level-2">
+                            <a class="nav-link" href="#登出和点击数以及收藏数完善">
+                              <span class="nav-number">1.1.</span>
+                              <span class="nav-text">登出和点击数以及收藏数完善</span></a>
+                            <ol class="nav-child">
+                              <li class="nav-item nav-level-3">
+                                <a class="nav-link" href="#退出登录">
+                                  <span class="nav-number">1.1.1.</span>
+                                  <span class="nav-text">退出登录</span></a>
+                              </li>
+                              <li class="nav-item nav-level-3">
+                                <a class="nav-link" href="#点击数加1">
+                                  <span class="nav-number">1.1.2.</span>
+                                  <span class="nav-text">点击数加1</span></a>
+                              </li>
+                            </ol>
+                          </li>
+                          <li class="nav-item nav-level-2">
+                            <a class="nav-link" href="#首页功能开发">
+                              <span class="nav-number">1.2.</span>
+                              <span class="nav-text">首页功能开发</span></a>
+                          </li>
+                          <li class="nav-item nav-level-2">
+                            <a class="nav-link" href="#配置全局404和500">
+                              <span class="nav-number">1.3.</span>
+                              <span class="nav-text">配置全局404和500</span></a>
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </aside>
+        </div>
+      </main>
+	  
+		<!--------------------------------------------------------------------------------------------------------------------->	
+			<!------footer----------------->
+			<footer id="footer" class="footer">
+				<div class="footer-inner">
+					<div class="copyright">
+						&copy; 2018 &mdash; <span itemprop="copyrightYear">2018</span>
+						<span class="with-love"> <i class="fa fa-user"></i> </span>
+						<span class="author" itemprop="copyrightHolder">TRsky</span>
+						<div class="theme-info">
+							<div class="powered-by"></div>
+							<span class="post-count">博客全站共178.0k字</span>
+						</div>
+					</div>
+					<div class="busuanzi-count">
+						<span class="site-uv">本站访客数 <span class="busuanzi-value" id="busuanzi_value_site_uv">1</span>人次</span>
+						<span class="site-pv">本站总访问量 <span class="busuanzi-value" id="busuanzi_value_site_pv">1</span>次</span>
+					</div>
+				</div>
+			</footer>
+			<!-------------back to top --------------------->
+			<div class="back-to-top">
+				<i class="fa fa-arrow-up"></i>
+				<span id="scrollpercent"> <span>0</span>%</span>
+			</div>
+			<div id="needsharebutton-float">
+				<span class="btn"> 
+				<i class="fa fa-share-alt" aria-hidden="true"></i> </span>
+			</div>
+		</div>
+		<script type="text/javascript">
+			"[object Function]" !== Object.prototype.toString.call(window.Promise) && (window.Promise = null)
+		</script>
+		<script type="text/javascript" src="../lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+		<script type="text/javascript" src="../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+		<script type="text/javascript" src="../lib/velocity/velocity.min.js?v=1.2.1"></script>
+		<script type="text/javascript" src="../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+		<script type="text/javascript" src="../lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+		<script type="text/javascript" src="../lib/canvas-nest/canvas-nest.min.js"></script>
+		<script type="text/javascript" src="../js/src/utils.js?v=5.1.3"></script>
+		<script type="text/javascript" src="../js/src/motion.js?v=5.1.3"></script>
+		<script type="text/javascript" src="../js/src/affix.js?v=5.1.3"></script>
+		<script type="text/javascript" src="../js/src/schemes/pisces.js?v=5.1.3"></script>
+		<script type="text/javascript" src="../js/src/scrollspy.js?v=5.1.3"></script>
+		<script type="text/javascript" src="../js/src/post-details.js?v=5.1.3"></script>
+		<script type="text/javascript" src="../js/src/bootstrap.js?v=5.1.3"></script>
+		<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+		<script type="text/javascript" src="../lib/needsharebutton/needsharebutton.js"></script>
+		<link rel="stylesheet" href="../lib/needsharebutton/needsharebutton.css">
+		<!--- needshare --->
+		<script>
+			pbOptions = {}, pbOptions.iconStyle = "default", pbOptions.boxForm = "horizontal", pbOptions.position = "bottomCenter", pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook", new needShareButton("#needsharebutton-postbottom", pbOptions), flOptions = {}, flOptions.iconStyle = "default", flOptions.boxForm = "horizontal", flOptions.position = "middleRight", flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook", new needShareButton("#needsharebutton-float", flOptions)
+		</script>
+
+		<!---------------支持数学公式------------------->
+
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			tex2jax: {
+			inlineMath: [['$', '$'], ["\\(", "\\)"]],
+			processEscapes: true,
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+			}
+			});
+		</script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Queue(function() {
+			var all = MathJax.Hub.getAllJax(),
+			i;
+			for (i = 0; i < all.length; i += 1) {
+			all[i].SourceElement().parentNode.className += ' has-jax';
+			}
+			});
+		</script>
+		<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		
+		<!------- a cue cat ------------>
+		<div id="hexo-helper-live2d">
+			<canvas id="live2dcanvas" width="150" height="300"></canvas>
+		</div>
+		<style>
+			#live2dcanvas {
+				position: fixed;
+				width: 150px;
+				height: 320px;
+				opacity: .7;
+				right: -30px;
+				z-index: 999;
+				pointer-events: none;
+				bottom: 80px
+			}
+		</style>
+		<script type="text/javascript" src="../live2d/device.min.js"></script>
+		<script type="text/javascript">
+			const loadScript = function loadScript(c, b) {
+				var a = document.createElement("script");
+				a.type = "text/javascript";
+				"undefined" != typeof b && (a.readyState ? a.onreadystatechange = function() {
+					if ("loaded" == a.readyState || "complete" == a.readyState)
+						a.onreadystatechange = null, b()
+				} : a.onload = function() {
+					b()
+				});
+				a.src = c;
+				document.body.appendChild(a)
+			};
+			(function() {
+				if (( typeof (device) != 'undefined') && (device.mobile())) {
+					document.getElementById("live2dcanvas").style.width = '150px';
+					document.getElementById("live2dcanvas").style.height = '300px';
+				} else if ( typeof (device) === 'undefined')
+					console.error('Cannot find current-device script.');
+				loadScript("../live2d/script.js", function() {
+					loadlive2d("live2dcanvas", "../live2d/assets/hijiki.model.json", 0.5);
+				});
+			})();
+		</script>
+
+	</body>
+
+</html>

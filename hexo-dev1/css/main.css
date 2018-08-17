@@ -558,12 +558,12 @@ pre .javascript .function, pre .keyword {
 .blockquote-center::before, .page-home .post-type-quote blockquote::before, .page-post-detail .post-type-quote blockquote::before {
 	top: -20px;
 	background-image: url(../images/quote-l.svg);
-	border-top: 1px solid #ccc
+	border-top: 2px solid rgb(0, 0, 0);
 }
 .blockquote-center::after, .page-home .post-type-quote blockquote::after, .page-post-detail .post-type-quote blockquote::after {
 	bottom: -20px;
 	background-image: url(../images/quote-r.svg);
-	border-bottom: 1px solid #ccc;
+	border-bottom: 2px solid rgb(0, 0, 0);
 	background-position: 100% 8px
 }
 .blockquote-center div, .blockquote-center p, .page-home .post-type-quote blockquote div, .page-home .post-type-quote blockquote p, .page-post-detail .post-type-quote blockquote div, .page-post-detail .post-type-quote blockquote p {
