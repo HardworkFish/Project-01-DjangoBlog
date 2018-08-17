@@ -24,7 +24,6 @@
 		<script src="../js/modernizr.js" type="text/javascript"></script>
 		<!-- Modernizr -->
    <!-- Fonts -->
-   <link rel="stylesheet" href="../css/sidebar-menu.css">
 
     <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -131,167 +130,121 @@
 		
 		<nav id="cd-lateral-nav">
 		
-<style type="text/css">
-.main-sidebar{
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: 100%;
-	min-height: 100%;
-	width: 230px;
-	z-index: 810;
-	background-color: #00000036;
- }
-</style>
-			<aside class="main-sidebar">
-<section  class="sidebar-menu-list">
-	<ul class="sidebar-menu">
-	  <li class="header">博客专栏</li>
+			<h2 id="title"><i class="fa fa-sitemap"></i> 博客专栏 </h2>
 
-	  <li class="treeview">
-		<a href="#">
-		  <i class="fa fa-book"></i> <span>学习与总结</span>
-		  <i class="fa fa-angle-left pull-right"></i>
-		</a>
-		<ul class="treeview-menu">
-		    <li>
-			<a href="#"><i class="fa fa-circle-o"></i> Linux <i class="fa fa-angle-left pull-right"></i></a>
-			<ul class="treeview-menu">
-			   <li>
-				<a href="#"><i class="fa fa-circle-o"></i> Linux 命令行 <i class="fa fa-angle-left pull-right"></i></a>
-				<ul class="treeview-menu">
-				  <li><a href="#"><i class="fa fa-circle-o"></i> cat</a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> sudo</a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> w </a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> mv</a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> pgrep</a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> ps</a></li>
-				</ul>
-			  </li>
-			  <li>
-				<a href="#"><i class="fa fa-circle-o"></i> Linux 源码解读 <i class="fa fa-angle-left pull-right"></i></a>
-				<ul class="treeview-menu">
-				  <li><a href="#"><i class="fa fa-circle-o"></i> Linux 内核解读之进程调度</a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> Linux 内核阶段之文件读写</a></li>
-				</ul>
-			  </li>
-			</ul>
-		  </li>
-		   <li>
-			<a href="#"><i class="fa fa-circle-o"></i> 算法与数据结构 <i class="fa fa-angle-left pull-right"></i></a>
-			<ul class="treeview-menu">
-			   <li>
-				<a href="#"><i class="fa fa-circle-o"></i> Python数据结构之树 <i class="fa fa-angle-left pull-right"></i></a>
-				<ul class="treeview-menu">
-				  <li><a href="#"><i class="fa fa-circle-o"></i> 二叉树</a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> 平衡树</a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> 二叉排序树 </a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> 结构树</a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> 搜索树</a></li>
-				</ul>
-			  </li>
-			  <li>
-				<a href="#"><i class="fa fa-circle-o"></i> Linux 源码解读 <i class="fa fa-angle-left pull-right"></i></a>
-				<ul class="treeview-menu">
-				  <li><a href="#"><i class="fa fa-circle-o"></i> Linux 内核解读之进程调度</a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> Linux 内核阶段之文件读写</a></li>
-				</ul>
-			  </li>
-			</ul>
-		  </li><li>
-			<a href="#"><i class="fa fa-circle-o"></i> Linux <i class="fa fa-angle-left pull-right"></i></a>
-			<ul class="treeview-menu">
-			   <li>
-				<a href="#"><i class="fa fa-circle-o"></i> Linux 命令行 <i class="fa fa-angle-left pull-right"></i></a>
-				<ul class="treeview-menu">
-				  <li><a href="#"><i class="fa fa-circle-o"></i> cat</a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> sudo</a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> w </a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> mv</a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> pgrep</a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> ps</a></li>
-				</ul>
-			  </li>
-			  <li>
-				<a href="#"><i class="fa fa-circle-o"></i> Linux 源码解读 <i class="fa fa-angle-left pull-right"></i></a>
-				<ul class="treeview-menu">
-				  <li><a href="#"><i class="fa fa-circle-o"></i> Linux 内核解读之进程调度</a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> Linux 内核阶段之文件读写</a></li>
-				</ul>
-			  </li>
-			</ul>
-		  </li>
-		
-		</ul>
-	  </li>
-	  <li class="treeview">
-		<a href="#">
-		  <i class="fa fa-book"></i> <span>学习与生活</span>
-		  <i class="fa fa-angle-left pull-right"></i>
-		</a>
-		<ul class="treeview-menu">
-		  <li><a href="#"><i class="fa fa-circle-o"></i> 实习</a></li>
-		  <li>
-			<a href="#"><i class="fa fa-circle-o"></i> 面试 <i class="fa fa-angle-left pull-right"></i></a>
-			<ul class="treeview-menu">
-			  <li><a href="#"><i class="fa fa-circle-o"></i> A 公司面试</a></li>
-			  <li>
-				<a href="#"><i class="fa fa-circle-o"></i> B公司面试 <i class="fa fa-angle-left pull-right"></i></a>
-				<ul class="treeview-menu">
-				  <li><a href="#"><i class="fa fa-circle-o"></i> 一轮</a></li>
-				  <li><a href="#"><i class="fa fa-circle-o"></i> 二轮</a></li>
-				</ul>
-			  </li>
-			</ul>
-		  </li>
-		  <li><a href="#"><i class="fa fa-circle-o"></i> 校园</a></li>
-		</ul>
-	  </li>
-	  	  <li class="treeview">
-		<a href="#">
-		  <i class="fa fa-book"></i> <span>上课不听讲</span>
-		  <i class="fa fa-angle-left pull-right"></i>
-		</a>
-		<ul class="treeview-menu">
-		  <li><a href="#"><i class="fa fa-circle-o"></i> 计算机网络</a></li>
-		  <li>
-			<a href="#"><i class="fa fa-circle-o"></i> 汇编语言程序设计 <i class="fa fa-angle-left pull-right"></i></a>
-			<ul class="treeview-menu">
-			  <li><a href="#"><i class="fa fa-circle-o"></i> 实现 Hanoi</a></li>
-			  <li>
-				<a href="#"><i class="fa fa-circle-o"></i> 实现音乐播放器 <i class="fa fa-angle-left pull-right"></i></a>
-			  </li>
-			</ul>
-		  </li>
-		   <li>
-			<a href="#"><i class="fa fa-circle-o"></i> 操作系统 <i class="fa fa-angle-left pull-right"></i></a>
-			<ul class="treeview-menu">
-			  <li><a href="#"><i class="fa fa-circle-o"></i> 进程调度</a></li>
-			  <li>
-				<a href="#"><i class="fa fa-circle-o"></i> 线程调度 <i class="fa fa-angle-left pull-right"></i></a>
-				<ul class="treeview-menu">
-			  <li><a href="#"><i class="fa fa-circle-o"></i> 伪代码实现</a></li>
-			  <li>
-				<a href="#"><i class="fa fa-circle-o"></i> 调度原理</a>
-			  </li>
-			</ul>
-			  </li>
-			</ul>
-		  </li>
-		  
-		</ul>
-	  </li>
-	  
-	</ul>
-  </section>
- </aside>
+			<style type="text/css">
+				#toggle {
+					min-height: 250px;
+					overflow-x: auto;
+					max-height: 850px;
+					overflow-y: auto;
+					
+					
+				}
+				#toggle::-webkit-scrollar{
+					display:none;
+				}
+			</style>
 
-<script src="../js/jquery-2.1.1.min.js" type="text/javascript"></script>
-<script src="../js/sidebar-menu.js"></script>
-<script>
-$.sidebarMenu($('.sidebar-menu'))
-</script>
+			<ul id="toggle">
+				<li>
+					<div>
+						<span class="menu-icons fa fa-book"></span>
+						<a href="#">Linux</a>
 
+					</div>
+					<ul>
+						<li>
+							<a href="#">Linux 防火墙</a>
+						</li>
+						<li>
+							<a href="#">IPtable</a>
+						</li>
+						<li>
+							<a href="#">Linux 文件系统</a>
+						</li>
+						<li>
+							<a href="#">Linux 内核深入理解</a>
+						</li>
+						<li>
+							<a href="#">Linux 集群的搭建</a>
+						</li>
+						<li>
+							<a href="#">Linux 发行版</a>
+						</li>
+						<li>
+							<a href="#">Linux 安装</a>
+						</li>
+						<li>
+							<a href="#">Linux 社区</a>
+						</li>
+					</ul>
+
+				</li>
+
+				<li>
+					<div>
+						<span class="menu-icons  fa fa-book"></span><a href="#">教程</a>
+						
+					</div>
+					<ul>
+						<li>
+							<a href="#">博客搭建全过程</a>
+						</li>
+						<li>
+							<a href="#">Zabbix实战</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<div>
+						<span class="menu-icons  fa fa-book"></span>
+						<a href="#">收录</a>
+					</div>
+					<ul>
+						<li>
+							<a href="#">文章收录</a>
+						</li>
+						<li>
+							<a href="#">博客以及网站收录</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<div>
+						<span class="menu-icons  fa fa-book"></span><a href="#">上课不听讲</a>
+						
+					</div>
+					<ul>
+						<li>
+							<a href="#">计算机网络</a>
+						</li>
+						<li>
+							<a href="#">操作系统</a>
+						</li>
+						<li>
+							<a href="#">汇编语言程序设计</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<div>
+						<span class="menu-icons  fa fa-book"></span><a href="#">学习与生活</a>
+						
+					</div>
+					<ul>
+						<li>
+							<a href="#">实习</a>
+						</li>
+						<li>
+							<a href="#">日常笔记</a>
+						</li>
+					</ul>
+				</li>
+
+			</ul>
 		
 </nav>
 

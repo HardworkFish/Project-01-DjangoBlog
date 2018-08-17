@@ -77,7 +77,7 @@ a {
 	left: 0;
 	height: 27px;
 	width: 100%;
-	z-index: 2000;
+	z-index: 3;
 	right: 30px;
 	bottom: 98px;
 	/* Force Hardware Acceleration in WebKit */
@@ -252,7 +252,7 @@ columnist.is-fixed {
 	visibility: hidden;
 	/* the secondary navigation is covered by the main element */
 	z-index: 1;
-	width: 230px;
+	width: 420px;
 	background-color: rgba(12, 11, 11, 0.92);
 	overflow-y: auto;
 	/* Force Hardware Acceleration in WebKit */
@@ -295,7 +295,7 @@ columnist.is-fixed {
 	display: block;
 	line-height: 2em;
 	padding: 0 16px 0 32px;
-	color: rgb(170, 181, 183);
+	color: #aab5b7;
 }
 
 #cd-lateral-nav a.current {

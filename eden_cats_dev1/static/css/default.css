@@ -46,8 +46,8 @@ body, html { font-size: 100%; 	padding: 0; margin: 0;}
 }
 
 body{
-	background: #f9f7f6;
-	color: #404d5b;
+	background: rgba(255, 255, 255, 0);
+	color: rgb(0, 0, 0);
 	font-weight: 500;
 	font-size: 1.05em;
 	font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
