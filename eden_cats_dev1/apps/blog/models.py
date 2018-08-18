@@ -51,7 +51,7 @@ class Article(models.Model):
     # 文章正文内容
     content = models.TextField(verbose_name='正文', blank=True, null=True)
     # 文章状态
-    status = models.CharField(verbose_name='文章状态', max_length=1, choices=STATUS_CHOICES, default='publish')
+    status = models.CharField(verbose_name='文章状态', max_length=10, choices=STATUS_CHOICES, default='publish')
     # 文章创建时间
     created_time = models.DateTimeField(verbose_name='创建时间', default=now)
     # 文章发布时间
@@ -87,6 +87,9 @@ class Article(models.Model):
 
     def next_article(self):
         return Article.objects.filter(id__gt=self.id, status='public', public_time__isnull=False).first()
+
+    def __str__(self):
+        return self.title
 
     class Meta:  # 按文章创建日期降序排序
         ordering = ['-public_time']
