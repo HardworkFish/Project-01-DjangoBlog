@@ -49,7 +49,9 @@ class Article(models.Model):
     # 文章标题
     title = models.CharField(verbose_name='标题', max_length=100)
     # 文章正文内容
-    body = models.TextField(verbose_name='正文', blank=True, null=True)
+    content = models.TextField(verbose_name='正文', blank=True, null=True)
+    # 文章状态
+    status = models.CharField(verbose_name='文章状态', max_length=1, choices=STATUS_CHOICES, default='publish')
     # 文章创建时间
     created_time = models.DateTimeField(verbose_name='创建时间', default=now)
     # 文章发布时间

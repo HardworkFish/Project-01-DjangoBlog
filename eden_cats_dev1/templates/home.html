@@ -4,6 +4,7 @@
 		<div class="content-wrap">
 						<div id="content" class="content">
 							<section id="posts" class="posts-expand">
+                                {% for post in post_list %}
 								<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
 									<div class="post-block" style="opacity: 1; display: block;">
 										<link itemprop="mainEntityOfPage" href="http://trskycooik.com">
@@ -15,53 +16,44 @@
 											<meta itemprop="name" content="Eden's Cats">
 										</span>
 										<header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
-											<h1 class="post-title" itemprop="name headline"><a class="post-title-link" href="/post/8b4c6c13.html" itemprop="url">强力Django+杀手级Xadmin打造在线教育平台 - 系列完整版</a></h1>
+											<h1 class="post-title" itemprop="name headline">
+                                                <a class="post-title-link" href="{% url 'detail' id=post.id %}" itemprop="url">
+                                                   {{ post.title }}</a></h1>
 											<div class="post-meta">
-												<span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span>
+												<span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span>
+                                                    <span class="post-meta-item-text">发表于</span>
 													<time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-17T00:15:31+08:00">
-														2018-01-17
+														{{ post.public_time|date:'Y-m-d H:i:s'}}
 													</time></span><span class="post-category"><span class="post-meta-divider">|</span>
                                                 <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span>
-                                                <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                                                <span class="post-meta-item-text">分类于</span>
+                                                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
                                                     <a href="/categories/Django-Xadmin打造在线教育平台/" itemprop="url" rel="index">
-                                                        <span itemprop="name">Django+Xadmin打造在线教育平台</span></a></span></span>
+                                                        <span itemprop="name">{{ post.category }}</span></a></span></span>
                                                 <span id="/post/8b4c6c13.html" class="leancloud_visitors" data-flag-title="强力Django+杀手级Xadmin打造在线教育平台 - 系列完整版">
                                                     <span class="post-meta-divider">|</span><span class="post-meta-item-icon">
                                                     <i class="fa fa-eye"></i></span> <span class="post-meta-item-text">热度:</span>
-                                                <span class="leancloud-visitors-count">5771</span> <span>℃</span></span>
+                                                <span class="leancloud-visitors-count">{{ post.views }}</span> <span>℃</span></span>
 												<div class="post-wordcount">
 													<span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span
-                                                    ><span class="post-meta-item-text">字数统计:</span><span title="字数统计">40,470</span>
-                                                    <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span>
-                                                    <span class="post-meta-item-text">阅读时长 ≈</span><span title="阅读时长">174&nbsp;min</span>
+                                                    ><span class="post-meta-item-text">字数统计:</span><span title="字数统计">{{ post.words }}</span>
+                                                    <span class="post-meta-divider">|</span><span class="post-meta-item-icon">
+                                                    <i class="fa fa-clock-o"></i></span>
+                                                    <span class="post-meta-item-text">阅读时长 ≈</span><span title="阅读时长"> {{ post.time }} &nbsp;min</span>
 												</div>
 											</div>
 										</header>
 										<div class="post-body" itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
 											<blockquote class="blockquote-center">
 												<p>
-													「比更大还更大」(Bigger than Bigger)
+													{{ post.slogan }}
 												</p>
 											</blockquote>
 											<div class="note">
-												<ul>
-													<li>
-														初级复习: 写一个留言板来复习Django基础知识
-													</li>
-													<li>
-														项目实战: 使用Django+xadmin搭建一个在线教育网站
-														<br>
-														最终成果: <a href="http://mxonline.mtianyan.cn" target="_blank" rel="noopener">http://mxonline.mtianyan.cn</a>
-													</li>
-												</ul>
-												<p>
-													GitHub代码仓库:
-													<br>
-													<a href="https://github.com/mtianyan/Mxonline2" target="_blank" rel="noopener">https://github.com/mtianyan/Mxonline2</a>
-												</p>
+												{{ post.content|truncatewords_html:100 }}
 											</div>
 											<div class="post-button text-center">
-												<a class="btn" href="/post/8b4c6c13.html#more" rel="contents">阅读全文 »</a>
+												<a class="btn" href="{ % url 'detail' id=post.id % }" rel="contents">阅读全文 »</a>
 											</div>
 										</div><div></div><div></div>
 										<footer class="post-footer">
@@ -69,416 +61,20 @@
 										</footer>
 									</div>
 								</article>
-								<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-									<div class="post-block" style="opacity: 1; display: block;">
-										<link itemprop="mainEntityOfPage" href="http://mtianyan.gitee.io/post/743baaa3.html">
-										<span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-											<meta itemprop="name" content="mtianyan">
-											<meta itemprop="description" content="">
-											<meta itemprop="image" content="/images/avatar.jpg">
-										</span><span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-											<meta itemprop="name" content="mtianyan's blog">
-										</span>
-										<header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
-											<h1 class="post-title" itemprop="name headline"><a class="post-title-link" href="/post/743baaa3.html" itemprop="url">强力Django+杀手级Xadmin打造在线教育平台(十三)</a></h1>
-											<div class="post-meta">
-												<span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span>
-													<time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-16T22:49:17+08:00">
-														2018-01-16
-													</time></span><span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Django-Xadmin打造在线教育平台/" itemprop="url" rel="index"><span itemprop="name">Django+Xadmin打造在线教育平台</span></a></span></span><span id="/post/743baaa3.html" class="leancloud_visitors" data-flag-title="强力Django+杀手级Xadmin打造在线教育平台(十三)"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">热度:</span><span class="leancloud-visitors-count">318</span> <span>℃</span></span>
-												<div class="post-wordcount">
-													<span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span><span class="post-meta-item-text">字数统计:</span><span title="字数统计">1,037</span><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span><span class="post-meta-item-text">阅读时长 ≈</span><span title="阅读时长">5</span>
-												</div>
-											</div>
-										</header>
-										<div class="post-body" itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
-											<blockquote class="blockquote-center">
-												<p>
-													大渣好 我系谷天绿 我四渣渣辉
-												</p>
-											</blockquote>
-											<div class="note success">
-												<p>
-													给大家推荐一款糙好玩的框架，探挽xadmin，淋没有挽过的船新版本
-													<br>
-													挤需体验三番钟,里一定会刚我一样爱象节款游戏
-												</p>
-											</div>
-											<div class="post-button text-center">
-												<a class="btn" href="/post/743baaa3.html#more" rel="contents">阅读全文 »</a>
-											</div>
-										</div><div></div><div></div>
-										<footer class="post-footer">
-											<div class="post-eof"></div>
-										</footer>
-									</div>
-								</article>
-								<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-									<div class="post-block" style="opacity: 1; display: block;">
-										<link itemprop="mainEntityOfPage" href="http://mtianyan.gitee.io/post/ac88a88.html">
-										<span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-											<meta itemprop="name" content="mtianyan">
-											<meta itemprop="description" content="">
-											<meta itemprop="image" content="{% static 'images/avatar.jpg' %}">
-										</span><span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-											<meta itemprop="name" content="mtianyan's blog">
-										</span>
-										<header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
-											<h1 class="post-title" itemprop="name headline"><a class="post-title-link" href="/post/ac88a88.html" itemprop="url">强力Django+杀手级Xadmin打造在线教育平台(十二)</a></h1>
-											<div class="post-meta">
-												<span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span>
-													<time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-16T22:09:17+08:00">
-														2018-01-16
-													</time></span><span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Django-Xadmin打造在线教育平台/" itemprop="url" rel="index"><span itemprop="name">Django+Xadmin打造在线教育平台</span></a></span></span><span id="/post/ac88a88.html" class="leancloud_visitors" data-flag-title="强力Django+杀手级Xadmin打造在线教育平台(十二)"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">热度:</span><span class="leancloud-visitors-count">160</span> <span>℃</span></span>
-												<div class="post-wordcount">
-													<span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span><span class="post-meta-item-text">字数统计:</span><span title="字数统计">355</span><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span><span class="post-meta-item-text">阅读时长 ≈</span><span title="阅读时长">2</span>
-												</div>
-											</div>
-								css		</header>
-										<div class="post-body" itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
-											<blockquote class="blockquote-center">
-												<p>
-													君子以思患而豫防之
-												</p>
-											</blockquote>
-											<div class="note success">
-												<p>
-													安全问题还是要搞一搞的: sql注入，xss攻击，crsf攻击。
-												</p>
-											</div>
-											<div class="post-button text-center">
-												<a class="btn" href="/post/ac88a88.html#more" rel="contents">阅读全文 »</a>
-											</div>
-										</div><div></div><div></div>
-										<footer class="post-footer">
-											<div class="post-eof"></div>
-										</footer>
-									</div>
-								</article>
-								<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-									<div class="post-block" style="opacity: 1; display: block;">
-										<link itemprop="mainEntityOfPage" href="http://mtianyan.gitee.io/post/a5f911ea.html">
-										<span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-											<meta itemprop="name" content="mtianyan">
-											<meta itemprop="description" content="">
-											<meta itemprop="image" content="/images/avatar.jpg">
-										</span><span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-											<meta itemprop="name" content="mtianyan's blog">
-										</span>
-										<header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
-											<h1 class="post-title" itemprop="name headline"><a class="post-title-link" href="/post/a5f911ea.html" itemprop="url">强力Django+杀手级Xadmin打造在线教育平台(十一)</a></h1>
-											<div class="post-meta">
-												<span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span>
-													<time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-16T22:09:17+08:00">
-														2018-01-16
-													</time></span><span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Django-Xadmin打造在线教育平台/" itemprop="url" rel="index"><span itemprop="name">Django+Xadmin打造在线教育平台</span></a></span></span><span id="/post/a5f911ea.html" class="leancloud_visitors" data-flag-title="强力Django+杀手级Xadmin打造在线教育平台(十一)"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">热度:</span><span class="leancloud-visitors-count">161</span> <span>℃</span></span>
-												<div class="post-wordcount">
-													<span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span><span class="post-meta-item-text">字数统计:</span><span title="字数统计">780</span><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span><span class="post-meta-item-text">阅读时长 ≈</span><span title="阅读时长">4</span>
-												</div>
-											</div>
-										</header>
-										<div class="post-body" itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
-											<blockquote class="blockquote-center">
-												<p>
-													泰山不让土壤，故能成其大；河海不择细流，故能就其深。
-												</p>
-											</blockquote>
-											<div class="note success">
-												<p>
-													细节决定成败，大体的网站已经做好了。
-													<br>
-													佛曰：给我把细节再搞一搞
-												</p>
-											</div>
-											<div class="post-button text-center">
-												<a class="btn" href="/post/a5f911ea.html#more" rel="contents">阅读全文 »</a>
-											</div>
-										</div><div></div><div></div>
-										<footer class="post-footer">
-											<div class="post-eof"></div>
-										</footer>
-									</div>
-								</article>
-								<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-									<div class="post-block" style="opacity: 1; display: block;">
-										<link itemprop="mainEntityOfPage" href="http://mtianyan.gitee.io/post/fe5291db.html">
-										<span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-											<meta itemprop="name" content="mtianyan">
-											<meta itemprop="description" content="">
-											<meta itemprop="image" content="/images/avatar.jpg">
-										</span><span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-											<meta itemprop="name" content="mtianyan's blog">
-										</span>
-										<header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
-											<h1 class="post-title" itemprop="name headline"><a class="post-title-link" href="/post/fe5291db.html" itemprop="url">强力Django+杀手级Xadmin打造在线教育平台(十)</a></h1>
-											<div class="post-meta">
-												<span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span>
-													<time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-15T22:09:17+08:00">
-														2018-01-15
-													</time></span><span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Django-Xadmin打造在线教育平台/" itemprop="url" rel="index"><span itemprop="name">Django+Xadmin打造在线教育平台</span></a></span></span><span id="/post/fe5291db.html" class="leancloud_visitors" data-flag-title="强力Django+杀手级Xadmin打造在线教育平台(十)"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">热度:</span><span class="leancloud-visitors-count">175</span> <span>℃</span></span>
-												<div class="post-wordcount">
-													<span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span><span class="post-meta-item-text">字数统计:</span><span title="字数统计">2,312</span><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span><span class="post-meta-item-text">阅读时长 ≈</span><span title="阅读时长">11</span>
-												</div>
-											</div>
-										</header>
-										<div class="post-body" itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
-											<blockquote class="blockquote-center">
-												<p>
-													不以个人为中心, 但我们得有个个人中心。
-												</p>
-											</blockquote>
-											<div class="note default">
-												<p>
-													做一做全局导航，做一做个人中心，做一做全局搜索。
-													<br>
-													洒洒水啦。
-												</p>
-											</div>
-											<div class="post-button text-center">
-												<a class="btn" href="/post/fe5291db.html#more" rel="contents">阅读全文 »</a>
-											</div>
-										</div><div></div><div></div>
-										<footer class="post-footer">
-											<div class="post-eof"></div>
-										</footer>
-									</div>
-								</article>
-								<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-									<div class="post-block" style="opacity: 1; display: block;">
-										<link itemprop="mainEntityOfPage" href="http://mtianyan.gitee.io/post/83fbe6af.html">
-										<span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-											<meta itemprop="name" content="mtianyan">
-											<meta itemprop="description" content="">
-											<meta itemprop="image" content="/images/avatar.jpg">
-										</span><span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-											<meta itemprop="name" content="mtianyan's blog">
-										</span>
-										<header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
-											<h1 class="post-title" itemprop="name headline"><a class="post-title-link" href="/post/83fbe6af.html" itemprop="url">强力Django+杀手级Xadmin打造在线教育平台(九)</a></h1>
-											<div class="post-meta">
-												<span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span>
-													<time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-14T22:09:17+08:00">
-														2018-01-14
-													</time></span><span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Django-Xadmin打造在线教育平台/" itemprop="url" rel="index"><span itemprop="name">Django+Xadmin打造在线教育平台</span></a></span></span><span id="/post/83fbe6af.html" class="leancloud_visitors" data-flag-title="强力Django+杀手级Xadmin打造在线教育平台(九)"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">热度:</span><span class="leancloud-visitors-count">127</span> <span>℃</span></span>
-												<div class="post-wordcount">
-													<span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span><span class="post-meta-item-text">字数统计:</span><span title="字数统计">568</span><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span><span class="post-meta-item-text">阅读时长 ≈</span><span title="阅读时长">3</span>
-												</div>
-											</div>
-										</header>
-										<div class="post-body" itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
-											<blockquote class="blockquote-center">
-												<p>
-													师者，所以传道受业解惑也 - 韩愈
-												</p>
-											</blockquote>
-											<div class="note">
-												<p>
-													上帝说得课程得有老师来讲！ 得有老师的详情 ！
-													<br>
-													老师应该可以收藏分享，我得看到老师是哪个机构，它讲了啥课。于是这章出现了。
-												</p>
-											</div>
-											<div class="post-button text-center">
-												<a class="btn" href="/post/83fbe6af.html#more" rel="contents">阅读全文 »</a>
-											</div>
-										</div><div></div><div></div>
-										<footer class="post-footer">
-											<div class="post-eof"></div>
-										</footer>
-									</div>
-								</article>
-								<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-									<div class="post-block" style="opacity: 1; display: block;">
-										<link itemprop="mainEntityOfPage" href="http://mtianyan.gitee.io/post/9f2a0c4b.html">
-										<span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-											<meta itemprop="name" content="mtianyan">
-											<meta itemprop="description" content="">
-											<meta itemprop="image" content="/images/avatar.jpg">
-										</span><span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-											<meta itemprop="name" content="mtianyan's blog">
-										</span>
-										<header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
-											<h1 class="post-title" itemprop="name headline"><a class="post-title-link" href="/post/9f2a0c4b.html" itemprop="url">强力Django+杀手级Xadmin打造在线教育平台(八)</a></h1>
-											<div class="post-meta">
-												<span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span>
-													<time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-13T22:09:17+08:00">
-														2018-01-13
-													</time></span><span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Django-Xadmin打造在线教育平台/" itemprop="url" rel="index"><span itemprop="name">Django+Xadmin打造在线教育平台</span></a></span></span><span id="/post/9f2a0c4b.html" class="leancloud_visitors" data-flag-title="强力Django+杀手级Xadmin打造在线教育平台(八)"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">热度:</span><span class="leancloud-visitors-count">197</span> <span>℃</span></span>
-												<div class="post-wordcount">
-													<span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span><span class="post-meta-item-text">字数统计:</span><span title="字数统计">3,330</span><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span><span class="post-meta-item-text">阅读时长 ≈</span><span title="阅读时长">15</span>
-												</div>
-											</div>
-										</header>
-										<div class="post-body" itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
-											<blockquote class="blockquote-center">
-												<p>
-													三年六班，三年六班，李子明，李子明同学，你妈妈拿了两罐旺仔牛奶给你
-												</p>
-											</blockquote>
-											<div class="note success">
-												<p>
-													上帝说得有课程！ 得有详情 ！点了开始学习，得有章节！章节得有视频。
-													<br>
-													课程还得能评论下，还得有相关课程。于是这章出现了。
-												</p>
-											</div>
-											<div class="post-button text-center">
-												<a class="btn" href="/post/9f2a0c4b.html#more" rel="contents">阅读全文 »</a>
-											</div>
-										</div><div></div><div></div>
-										<footer class="post-footer">
-											<div class="post-eof"></div>
-										</footer>
-									</div>
-								</article>
-								<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-									<div class="post-block" style="opacity: 1; display: block;">
-										<link itemprop="mainEntityOfPage" href="http://mtianyan.gitee.io/post/5678b347.html">
-										<span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-											<meta itemprop="name" content="mtianyan">
-											<meta itemprop="description" content="">
-											<meta itemprop="image" content="/images/avatar.jpg">
-										</span><span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-											<meta itemprop="name" content="mtianyan's blog">
-										</span>
-										<header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
-											<h1 class="post-title" itemprop="name headline"><a class="post-title-link" href="/post/5678b347.html" itemprop="url">强力Django+杀手级Xadmin打造在线教育平台(七)</a></h1>
-											<div class="post-meta">
-												<span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span>
-													<time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-12T22:09:17+08:00">
-														2018-01-12
-													</time></span><span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Django-Xadmin打造在线教育平台/" itemprop="url" rel="index"><span itemprop="name">Django+Xadmin打造在线教育平台</span></a></span></span><span id="/post/5678b347.html" class="leancloud_visitors" data-flag-title="强力Django+杀手级Xadmin打造在线教育平台(七)"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">热度:</span><span class="leancloud-visitors-count">197</span> <span>℃</span></span>
-												<div class="post-wordcount">
-													<span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span><span class="post-meta-item-text">字数统计:</span><span title="字数统计">5,292</span><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span><span class="post-meta-item-text">阅读时长 ≈</span><span title="阅读时长">23</span>
-												</div>
-											</div>
-										</header>
-										<div class="post-body" itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
-											<blockquote class="blockquote-center">
-												<p>
-													在绝望中寻找希望，人生终将辉煌 - 新东方
-												</p>
-											</blockquote>
-											<div class="note default">
-												<p>
-													作为一个正经的教育网站，我们更是拥有正规的机构合作: 比如来自火星的星星优培。
-												</p>
-												<ul>
-													<li>
-														完成授课机构的功能实现，
-													</li>
-												</ul>
-											</div>
-											<div class="post-button text-center">
-												<a class="btn" href="/post/5678b347.html#more" rel="contents">阅读全文 »</a>
-											</div>
-										</div><div></div><div></div>
-										<footer class="post-footer">
-											<div class="post-eof"></div>
-										</footer>
-									</div>
-								</article>
-								<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-									<div class="post-block" style="opacity: 1; display: block;">
-										<link itemprop="mainEntityOfPage" href="http://mtianyan.gitee.io/post/c970abcd.html">
-										<span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-											<meta itemprop="name" content="mtianyan">
-											<meta itemprop="description" content="">
-											<meta itemprop="image" content="/images/avatar.jpg">
-										</span><span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-											<meta itemprop="name" content="mtianyan's blog">
-										</span>
-										<header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
-											<h1 class="post-title" itemprop="name headline"><a class="post-title-link" href="/post/c970abcd.html" itemprop="url">强力Django+杀手级Xadmin打造在线教育平台(六)</a></h1>
-											<div class="post-meta">
-												<span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span>
-													<time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-11T22:09:17+08:00">
-														2018-01-11
-													</time></span><span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Django-Xadmin打造在线教育平台/" itemprop="url" rel="index"><span itemprop="name">Django+Xadmin打造在线教育平台</span></a></span></span><span id="/post/c970abcd.html" class="leancloud_visitors" data-flag-title="强力Django+杀手级Xadmin打造在线教育平台(六)"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">热度:</span><span class="leancloud-visitors-count">315</span> <span>℃</span></span>
-												<div class="post-wordcount">
-													<span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span><span class="post-meta-item-text">字数统计:</span><span title="字数统计">6,984</span><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span><span class="post-meta-item-text">阅读时长 ≈</span><span title="阅读时长">30</span>
-												</div>
-											</div>
-										</header>
-										<div class="post-body" itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
-											<blockquote class="blockquote-center">
-												<p>
-													矛盾的普遍性是指矛盾存在于一切事物的发展过程之中，矛盾存在于一切事物发展过程的始终。
-												</p>
-											</blockquote>
-											<div class="note">
-												<p>
-													我想只要是个系统，就少不了登录注册。这是我们需要首先处理的主要矛盾。
-												</p>
-												<ul>
-													<li>
-														完成登录 注册 找回密码 激活 验证码集成
-													</li>
-												</ul>
-											</div>
-											<div class="post-button text-center">
-												<a class="btn" href="/post/c970abcd.html#more" rel="contents">阅读全文 »</a>
-											</div>
-										</div><div></div><div></div>
-										<footer class="post-footer">
-											<div class="post-eof"></div>
-										</footer>
-									</div>
-								</article>
-								<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-									<div class="post-block" style="opacity: 1; display: block;">
-										<link itemprop="mainEntityOfPage" href="http://mtianyan.gitee.io/post/507fe3bf.html">
-										<span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-											<meta itemprop="name" content="mtianyan">
-											<meta itemprop="description" content="">
-											<meta itemprop="image" content="/images/avatar.jpg">
-										</span><span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-											<meta itemprop="name" content="mtianyan's blog">
-										</span>
-										<header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
-											<h1 class="post-title" itemprop="name headline"><a class="post-title-link" href="/post/507fe3bf.html" itemprop="url">强力Django+杀手级Xadmin打造在线教育平台(五)</a></h1>
-											<div class="post-meta">
-												<span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span>
-													<time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-10T22:09:17+08:00">
-														2018-01-10
-													</time></span><span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Django-Xadmin打造在线教育平台/" itemprop="url" rel="index"><span itemprop="name">Django+Xadmin打造在线教育平台</span></a></span></span><span id="/post/507fe3bf.html" class="leancloud_visitors" data-flag-title="强力Django+杀手级Xadmin打造在线教育平台(五)"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">热度:</span><span class="leancloud-visitors-count">398</span> <span>℃</span></span>
-												<div class="post-wordcount">
-													<span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span><span class="post-meta-item-text">字数统计:</span><span title="字数统计">4,487</span><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span><span class="post-meta-item-text">阅读时长 ≈</span><span title="阅读时长">20</span>
-												</div>
-											</div>
-										</header>
-										<div class="post-body" itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
-											<blockquote class="blockquote-center">
-												<p>
-													总之，我们要拿来。我们要或使用，或存放，或毁灭。 - 鲁迅
-												</p>
-											</blockquote>
-											<div class="note">
-												<p>
-													既然有django提供的强大admin,我们便要拿来用喽。
-												</p>
-												<ul>
-													<li>
-														使用xadmin，通过adminx,将已有model注册进后台。快速搭建可用的后台系统。
-													</li>
-												</ul>
-											</div>
-											<div class="post-button text-center">
-												<a class="btn" href="/post/507fe3bf.html#more" rel="contents">阅读全文 »</a>
-											</div>
-										</div><div></div><div></div>
-										<footer class="post-footer">
-											<div class="post-eof"></div>
-										</footer>
-									</div>
-								</article>
+								{% endfor %}
 							</section>
 							<nav class="pagination" style="opacity: 1; display: block;">
-								<span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">…</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+                                {% if post_list.object_list and post_list.paginator.num_pages > 1 %}
+								<span class="page-number current">1</span>
+                                <a class="page-number" href="/page/2/">2</a>
+                                <span class="space">…</span>
+                                <a class="page-number" href="/page/4/">4</a>
+                                <a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+                                {% endif %}
 							</nav>
 						</div>
 					</div>
-        {% include "leftSidebar.html" %}
+        {% block leftdownSidebar %}{% include "leftSidebar.html" %}{% endblock %}
 
 
 {% endblock %}

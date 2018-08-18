@@ -18,14 +18,14 @@ from django.urls import path
 from apps.blog import views
 from django.conf.urls import url, include
 from . import views
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     path('', views.home, name='home'),
-#     path('home/', views.home, name='home'),
-#     path('articles/<int:id>/', views.detail, name='detail'),
-# ]
-
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r' ', include('eden_cats_dev1.urls')),
+    path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+    path('home/', views.home, name='home'),
+    path('articles/<int:id>/', views.detail, name='detail'),
 ]
+
+# urlpatterns = [
+#     url(r'^admin/', admin.site.urls),
+    # url(r' ', include('eden_cats_dev1.urls')),
+# ]
