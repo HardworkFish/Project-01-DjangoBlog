@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load pagetag %}
 {% block content %}
 		<div class="content-wrap">
 						<div id="content" class="content">
@@ -80,11 +81,7 @@
                                         {% endif %}
 
                                     {% for pg in post_list.paginator.page_range %}
-                                        {% if post_list.number == pg%}
-                                              <span class="page-number current">{{ pg }}</span>
-                                            {% else %}
-                                            <a class="page-number" href="?page={{ pgr }}">{{ pg }}</a>
-                                        {% endif %}
+                                       {% pagination_pages post_list.number pg %}
                                     {% endfor %}
 
 
