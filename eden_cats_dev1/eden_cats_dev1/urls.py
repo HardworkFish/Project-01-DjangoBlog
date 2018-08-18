@@ -16,10 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from apps.blog import views
+from django.conf.urls import url, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('home/', views.home, name='home'),
-    path('/articles/<int:is>/', views.detail, name='detail'),
+    path('articles/<int:id>/', views.detail, name='detail'),
 ]
+
+# urlpatterns = [
+#     url(r'^$',views.home,name='home'),
+# ]

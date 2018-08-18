@@ -3,7 +3,15 @@ from apps.blog.models import Article
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import Http404
 from django.conf import settings
+from django.http import HttpResponse
 # Create your views here.
+
+
+def index(request):
+    return render(request, 'index.html', context={
+        'title': '我的博客首页',
+        'welcome': '欢迎访问我的博客首页'
+    })
 
 
 # 主页
@@ -17,7 +25,8 @@ def home(request):
         post_list = paginator.page(1)
     except EmptyPage:
         post_list = paginator.page(paginator.num_pages)
-    return render(request, 'home.html', {'post_list': post_list})
+    return render(request, 'home.html')
+
 
 # 文章详情页
 def detail(request, id):
