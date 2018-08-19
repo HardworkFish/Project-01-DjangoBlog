@@ -53,6 +53,59 @@ def detail(request, id):
     })
 
 
+def search_category(request, id):
+    posts = Article.objects.filter(category_id=str(id))
+    category = categories.get(id=str(id))
+    paginator = Paginator(posts, settings.PAGE_NUM)  # 每页显示数量
+    try:
+        page = request.GET.get('page')  # 获取 URL 中 Page 的参数值
+        post_list = paginator.page(page)
+    except PageNotAnInteger:
+        post_list = paginator.page(1)
+    except EmptyPage:
+        post_list = paginator.page(pagginator.num_pages)
+    return render(request, 'category.html', {
+        'post_lisr': post_list,
+        'category_list': categories,
+        'category': category,
+        'months': months
+    })
+
+
+def search_tag(request, tag):
+    posts = Article.objects.filter(tags__name__contains=tag)
+    paginator = Paginator(posts, settings.PAGE_NUM)
+    try:
+        page = request.GET.get('page')
+        post_list = paginator.page(page)
+    except PageNotAnInteger:
+        post_list = paginator.page(1)
+    except EmptyPage:
+        post_list = paginator.page(paginator.num_pages)
+    return render(request, 'tag.html', {
+        'post_list': post_list,
+        'category': categories,
+        'tag': tag,
+        'months': months
+    })
+
+
+def archives(request, year, month):
+        posts = Article.objects.filter(public_time__year=, public_time__month=month).order_by('-public_time')
+        paginator = Paginator(posts, settings.PAGE_NUM)
+        try:
+            page = request.GET.get('page')
+            post_list = paginator.page(page)
+        except PageNotAnInteger:
+            post_list = paginator.page(1)
+        except EmptyPage:
+            post_list = paginator.page(paginator.num_pages)
+        return render(request, 'archive.html', {
+            'post_list': post_list,
+            'category_list': categories,
+            'months': months,
+            'year_month': year + '年' + month + '月'
+        })
 
 
 # class IndexView(ListView):

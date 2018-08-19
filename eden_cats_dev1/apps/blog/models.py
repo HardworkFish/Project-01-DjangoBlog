@@ -71,7 +71,7 @@ class Article(models.Model):
     # 文章与分类的关联,多对一
     category = models.ForeignKey(Category, verbose_name='分类', on_delete=models.CASCADE, blank=False, null=False)
     # 文章与标签的关联，多对多
-    tag = models.ManyToManyField(Tag, verbose_name='标签', blank=True)
+    tags = models.ManyToManyField(Tag, verbose_name='标签', blank=True)
     # 文章与作者的关系，多对一
     author = models.ForeignKey(User, verbose_name='作者', on_delete=models.CASCADE, blank=False, null=False)
 
@@ -82,7 +82,7 @@ class Article(models.Model):
 
     # 上一篇
     # id 比当前 id 小，状态为已发布， 发布内容不为空
-    def last_article(self):
+    def prev_article(self):
         return Article.objects.filter(id__lt=self.id, status='public', public_time__isnull=False).first()
 
     def next_article(self):
