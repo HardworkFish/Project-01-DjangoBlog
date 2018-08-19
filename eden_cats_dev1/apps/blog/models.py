@@ -83,10 +83,11 @@ class Article(models.Model):
     # 上一篇
     # id 比当前 id 小，状态为已发布， 发布内容不为空
     def prev_article(self):
-        return Article.objects.filter(id__lt=self.id, status='public', public_time__isnull=False).first()
+        return Article.objects.filter(id__lt=self.id, status='publish', public_time__isnull=False).first()
 
-    def next_article(self):
-        return Article.objects.filter(id__gt=self.id, status='public', public_time__isnull=False).first()
+    # 下一篇
+    def next_article(self):  # id比当前id大，状态为已发布，发布时间不为空
+        return Article.objects.filter(id__gt=self.id, status='publish', public_time__isnull=False).first()
 
     def __str__(self):
         return self.title

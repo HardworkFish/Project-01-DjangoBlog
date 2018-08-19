@@ -41,7 +41,7 @@
                           <span class="post-meta-item-icon">
                             <i class="fa fa-eye"></i>
                           </span>
-                          <span class="post-meta-item-text">热度&#;</span>
+                          <span class="post-meta-item-text">热度:</span>
                           <span class="leancloud-visitors-count"></span>
                           <span>{{ post.views }}℃</span></span>
                         <div class="post-wordcount">
@@ -147,19 +147,22 @@
                       </div>
                     <!-- 上下篇文章切换 开始-->
                       <div class="post-nav">
-                          {% if prev_post %}
-                        <div class="post-nav-prev post-nav-item">
+                        {% if  prev_post %}
+
+
+                        <div class="post-nav-next post-nav-item">
                           <a href="{% url 'detail' id=prev_post.id %}" rel="next" title="{{ prev_post.title}}">
                             <i class="fa fa-chevron-left"></i>{{ prev_post.title }}</a>
                         </div>
-                          {% endif %}
+                        {% endif %}
+
                         <span class="post-nav-divider"></span>
-                      {% if next_post %}
-                        <div class="post-nav-next post-nav-item">
-                          <a href="{% url 'detail' id=next_post.id %}" rel="prev" title="{{ next_post.title }}">{{ next_post.title }}
-                            <i class="fa fa-chevron-right"></i></a>
+                        {% if next_post %}
+                        <div class="post-nav-prev post-nav-item">
+                          <a href="{% url 'detail' id=next_post.id %}" rel="prev" title="{{ next_post.title }}">
+                            <i class="fa fa-chevron-right"></i>{{ next_post.title }}</a>
                         </div>
-                      {% endif %}
+                        {% endif %}
                       </div>
                     <!-- 上下篇文章切换 结束-->
                     </footer>
