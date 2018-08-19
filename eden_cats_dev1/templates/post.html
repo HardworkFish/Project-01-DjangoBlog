@@ -13,7 +13,7 @@
                     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
                       <meta itemprop="name" content="{{ post.author }}">
                       <meta itemprop="description" content="{{ post.title }}">
-                      <meta itemprop="image" content="../images/avatar.jpg"></span>
+                      <meta itemprop="image" content="{% static 'images/avatar.jpg' %}"></span>
                     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
                       <meta itemprop="name" content="Eden's Cats"></span>
                     <header class="post-header">
@@ -64,7 +64,9 @@
                       <blockquote class="blockquote-center">
                         <p>{{ post.slogan }}</p>
                       </blockquote>
-                        {{ post.content }}
+                        {#striptags用于过滤正文中所有的HTML标签#}
+                        {#truncatechars用于截取正文前300个字符#}
+                        {{ post.content|safe|striptags }}
                     </div>
 				<!--- end 0f article --->
                     <div>
@@ -222,7 +224,7 @@
               <section class="site-overview-wrap sidebar-panel">
                 <div class="site-overview">
                   <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                    <img class="site-author-image" itemprop="image" src="../images/avatar.jpg" alt="trsky">
+                    <img class="site-author-image" itemprop="image" src="{% static 'images/avatar.jpg' %}" alt="TRsky">
                     <p class="site-author-name" itemprop="name">TRsky</p>
                     <p class="site-description motion-element" itemprop="description">爱分享，爱技术，爱生活。</p></div>
                   <nav class="site-state motion-element">
@@ -254,6 +256,10 @@
                     <span class="links-of-author-item">
                       <a href="https://www.jianshu.com/u/db9a7a0daa1f" target="_blank" title="简书">
                         <i class="fa fa-fw fa-book"></i>简书</a>
+                    </span>
+                      <span class="links-of-author-item">
+                      <a href="https://github.com/HardworkFish" target="_blank" title="Github">
+                        <i class="fa fa-fw fa-github"></i>Github</a>
                     </span>
 					<span class="links-of-author-item">
                       <a href="http://music.163.com/#/user/home?id=316926790" target="_blank" title="网易云">
