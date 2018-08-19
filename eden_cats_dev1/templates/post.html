@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
         <!---------------------------------article start------------------------------------------------------------------------------------>
@@ -8,7 +9,7 @@
               <div id="posts" class="posts-expand">
                 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
                   <div class="post-block">
-                    <link itemprop="mainEntityOfPage" href="{ % url 'detail' id=post.id % }">
+                    <link itemprop="mainEntityOfPage" href="{% url 'detail' id=post.id %}">
                     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
                       <meta itemprop="name" content="{{ post.author }}">
                       <meta itemprop="description" content="{{ post.title }}">
@@ -31,11 +32,11 @@
                         </span>
                         <span class="post-meta-item-text">分类于</span>
                         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                          <a href="/categories/Django-Xadmin打造在线教育平台/" itemprop="url" rel="index">
+                          <a href="{% url 'category_menu' id=post.category_id %}" itemprop="url" rel="index">
                             <span itemprop="name">{{ post.category }}</span></a>
                         </span>
                         </span>
-                        <span id="/post/a5f911ea.html" class="leancloud_visitors" data-flag-title="{{ post.title }}">
+                        <span id="{% url 'detail' id=post.id %}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
                           <span class="post-meta-divider">|</span>
                           <span class="post-meta-item-icon">
                             <i class="fa fa-eye"></i>
@@ -79,17 +80,17 @@
                         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
                         <p>
                           <span>本文标题:</span>
-                          <a href= "{ % url 'detail' id=post.id % }">{{ post.title }}</a></p>
+                          <a href= "{% url 'detail' id=post.id %}">{{ post.title }}</a></p>
                         <p>
                           <span>文章作者:</span>
-                          <a href="http://www.trskycooik.com" title="访问 TRsky 的个人博客">TRsky</a></p>
+                          <a href="http://www.trskycooik.com" title="访问 TRsky 的个人博客">{{ post.author }}</a></p>
                         <p>
                           <span>发布时间:</span>{{ post.public_time|date:'Y-m-d H:i' }}</p>
                         <p>
                           <span>最后更新:</span>{{ post.modified_time|date:'Y-m-d H:i' }}</p>
                         <p>
                           <span>原始链接:</span>
-                          <a href="{ % url 'detail' id=post.id %}" title="{{ post.title }}">{ % url 'detail' id=post.id %}</a>
+                          <a href="{% url 'detail' id=post.id %}" title="{{ post.title }}">{% url 'detail' id=post.id %}</a>
                           <span class="copy-path" title="点击复制文章链接">
                             <i class="fa fa-clipboard" data-clipboard-text="{ % url 'detail' id=post.id %}" aria-label="复制成功！"></i>
                           </span>
@@ -118,11 +119,11 @@
                           <span>打赏</span></button>
                         <div id="QR" style="display:none">
                           <div id="wechat" style="display:inline-block">
-                            <img id="wechat_qr" src="../images/wechatpay.png" alt="TRsky 微信支付">
+                            <img id="wechat_qr" src="{% static 'images/wechatpay.png' %}" alt="TRsky 微信支付">
                             <p>微信支付</p>
                           </div>
                           <div id="alipay" style="display:inline-block">
-                            <img id="alipay_qr" src="../images/alipay.png" alt="TRsky 支付宝">
+                            <img id="alipay_qr" src="{% static 'images/alipay.png' %}" alt="TRsky 支付宝">
                             <p>支付宝</p>
                           </div>
                         </div>

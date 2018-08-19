@@ -21,7 +21,7 @@ def index(request):
 
 # 主页
 def home(request):
-    posts = Article.objects.all().filter(status='public', public_time__isnull=False)   # 获取主页的全部 Article 对象, 状态为已发布，发布时间不为空
+    posts = Article.objects.all().filter(status='publish', public_time__isnull=False)   # 获取主页的全部 Article 对象, 状态为已发布，发布时间不为空
     paginator = Paginator(posts, settings.PAGE_NUM, 2)  # 每页显示数量，对应settings.py中的PAGE_NUM， 当只有2时候，合并为上一页
     page = request.GET.get('page')  # 获取URL中page参数的值
     try:
@@ -46,6 +46,7 @@ def detail(request, id):
     return render(request, 'post.html', {
         'post': post,
         'tags': tags,
+        'category_list': categories,
         'next_post': next_post,
         'prev_post': prev_post,
         'months': months
