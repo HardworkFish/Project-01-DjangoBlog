@@ -37,14 +37,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="83" column="58" lean-forward="false" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
+            <state relative-caret-position="216">
+              <caret line="65" column="79" lean-forward="true" selection-start-line="65" selection-start-column="79" selection-end-line="65" selection-end-column="79" />
               <folding>
                 <element signature="e#4166#4172#0#HTML" expanded="true" />
-                <element signature="e#5031#5066#0#HTML" expanded="true" />
+                <element signature="e#5200#5235#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,7 +72,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/apps/blog/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
@@ -144,11 +144,11 @@
         <option value="$PROJECT_DIR$/apps/blog/models.py" />
         <option value="$PROJECT_DIR$/apps/blog/views.py" />
         <option value="$PROJECT_DIR$/apps/blog/templatetags/__init__.py" />
-        <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/apps/blog/templatetags/pagetag.py" />
         <option value="$PROJECT_DIR$/eden_cats_dev1/urls.py" />
         <option value="$PROJECT_DIR$/eden_cats_dev1/settings.py" />
         <option value="$PROJECT_DIR$/apps/blog/admin.py" />
+        <option value="$PROJECT_DIR$/templates/home.html" />
       </list>
     </option>
   </component>
@@ -165,9 +165,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="718" />
-    <option name="y" value="27" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="-1" />
+    <option name="y" value="272" />
     <option name="width" value="1946" />
     <option name="height" value="888" />
   </component>
@@ -208,6 +208,24 @@
               <item name="eden_cats_dev1" type="b2602c69:ProjectViewProjectNode" />
               <item name="eden_cats_dev1" type="462c0819:PsiDirectoryNode" />
               <item name="eden_cats_dev1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eden_cats_dev1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eden_cats_dev1" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eden_cats_dev1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eden_cats_dev1" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="django-summernote" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eden_cats_dev1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eden_cats_dev1" type="462c0819:PsiDirectoryNode" />
+              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="django-summernote" type="462c0819:PsiDirectoryNode" />
+              <item name="2018-08-19" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="eden_cats_dev1" type="b2602c69:ProjectViewProjectNode" />
@@ -320,7 +338,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="718" y="27" width="1946" height="888" extended-state="0" />
+    <frame x="-1" y="272" width="1946" height="888" extended-state="1" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -425,7 +443,7 @@
           <caret line="122" column="55" lean-forward="false" selection-start-line="122" selection-start-column="55" selection-end-line="122" selection-end-column="55" />
           <folding>
             <element signature="e#4166#4172#0#HTML" expanded="true" />
-            <element signature="e#5031#5066#0#HTML" expanded="true" />
+            <element signature="e#5200#5235#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -650,17 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="83" column="58" lean-forward="false" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
-          <folding>
-            <element signature="e#4166#4172#0#HTML" expanded="true" />
-            <element signature="e#5031#5066#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/blog/templatetags/pagetag.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-90">
@@ -705,6 +712,17 @@
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="65" column="79" lean-forward="true" selection-start-line="65" selection-start-column="79" selection-end-line="65" selection-end-column="79" />
+          <folding>
+            <element signature="e#4166#4172#0#HTML" expanded="true" />
+            <element signature="e#5200#5235#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
