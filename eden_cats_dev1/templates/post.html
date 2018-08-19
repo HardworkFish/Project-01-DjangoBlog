@@ -133,12 +133,10 @@
                     </div>
                     <footer class="post-footer">
                       <div class="post-tags">
-                        <a href="/tags/Python/" rel="tag">
-                          <i class="fa fa-tag"></i>Python</a>
-                        <a href="/tags/Django/" rel="tag">
-                          <i class="fa fa-tag"></i>Django</a>
-                        <a href="/tags/在线教育平台/" rel="tag">
-                          <i class="fa fa-tag"></i>在线教育平台</a>
+                          {% for tag in tags %}
+                        <a href="{% url 'search_tag' tag=tag %}" rel="tag">
+                          <i class="fa fa-tag"></i>{{ tag }}</a>
+                          {% endfor %}
                       </div>
                       <div class="post-widgets">
                         <div id="needsharebutton-postbottom">
@@ -147,17 +145,23 @@
                           </span>
                         </div>
                       </div>
+                    <!-- 上下篇文章切换 开始-->
                       <div class="post-nav">
-                        <div class="post-nav-next post-nav-item">
-                          <a href="../post/fe5291db.html" rel="next" title="强力Django+杀手级Xadmin打造在线教育平台(十)">
-                            <i class="fa fa-chevron-left"></i>强力Django+杀手级Xadmin打造在线教育平台(十)</a>
-                        </div>
-                        <span class="post-nav-divider"></span>
+                          {% if prev_post %}
                         <div class="post-nav-prev post-nav-item">
-                          <a href="/post/ac88a88.html" rel="prev" title="强力Django+杀手级Xadmin打造在线教育平台(十二)">强力Django+杀手级Xadmin打造在线教育平台(十二)
+                          <a href="{% url 'detail' id=prev_post.id %}" rel="next" title="{{ prev_post.title}}">
+                            <i class="fa fa-chevron-left"></i>{{ prev_post.title }}</a>
+                        </div>
+                          {% endif %}
+                        <span class="post-nav-divider"></span>
+                      {% if next_post %}
+                        <div class="post-nav-next post-nav-item">
+                          <a href="{% url 'detail' id=next_post.id %}" rel="prev" title="{{ next_post.title }}">{{ next_post.title }}
                             <i class="fa fa-chevron-right"></i></a>
                         </div>
+                      {% endif %}
                       </div>
+                    <!-- 上下篇文章切换 结束-->
                     </footer>
                   </div>
                 </article>
