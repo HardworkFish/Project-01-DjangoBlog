@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from apps.blog import views
-from django.conf.urls import url, include
+# from apps.blog import views
+# from django.conf.urls import url, include
 from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,5 +31,5 @@ urlpatterns = [
 
 # urlpatterns = [
 #     url(r'^admin/', admin.site.urls),
-    # url(r' ', include('eden_cats_dev1.urls')),
+# url(r' ', include('eden_cats_dev1.urls')),
 # ]

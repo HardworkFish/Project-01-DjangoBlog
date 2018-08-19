@@ -53,6 +53,7 @@ def detail(request, id):
     })
 
 
+# 分类搜索
 def search_category(request, id):
     posts = Article.objects.filter(category_id=str(id))
     category = categories.get(id=str(id))
@@ -63,15 +64,16 @@ def search_category(request, id):
     except PageNotAnInteger:
         post_list = paginator.page(1)
     except EmptyPage:
-        post_list = paginator.page(pagginator.num_pages)
+        post_list = paginator.page(paginator.num_pages)
     return render(request, 'category.html', {
-        'post_lisr': post_list,
+        'post_list': post_list,
         'category_list': categories,
         'category': category,
         'months': months
     })
 
 
+# 标签搜索
 def search_tag(request, tag):
     posts = Article.objects.filter(tags__name__contains=tag)
     paginator = Paginator(posts, settings.PAGE_NUM)
@@ -91,7 +93,7 @@ def search_tag(request, tag):
 
 
 def archives(request, year, month):
-        posts = Article.objects.filter(public_time__year=, public_time__month=month).order_by('-public_time')
+        posts = Article.objects.filter(public_time__year=year, public_time__month=month).order_by('-public_time')
         paginator = Paginator(posts, settings.PAGE_NUM)
         try:
             page = request.GET.get('page')
@@ -186,4 +188,3 @@ def archives(request, year, month):
         #
         # print(data)
     # return data
-#
