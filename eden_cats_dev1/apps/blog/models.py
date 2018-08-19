@@ -61,13 +61,13 @@ class Article(models.Model):
     # 文章字数
     words = models.PositiveIntegerField(verbose_name='文章字数', default=0)
     # 文章阅读时长
-    time = models.DateTimeField(verbose_name='阅读时长', default=0)
+    time = models.PositiveIntegerField(verbose_name='阅读时长', default=0 )
     # 文章阅读量
     views = models.PositiveIntegerField(verbose_name='访问量', default=0)
     # 文章标语 slogan blank=True 表示数值可为空
     slogan = models.TextField(verbose_name='标语', blank=True, null=True)
     # 文章摘要
-    excerpt = models.CharField(max_length=200, blank=True)
+    excerpt = models.CharField(verbose_name='文章摘要', max_length=500, blank=True)
     # 文章与分类的关联,多对一
     category = models.ForeignKey(Category, verbose_name='分类', on_delete=models.CASCADE, blank=False, null=False)
     # 文章与标签的关联，多对多

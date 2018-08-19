@@ -7,6 +7,10 @@ from django.views.generic import ListView, DetailView
 # from django.http import HttpResponse
 # Create your views here.
 
+categories = Category.objects.all()  # 获取全部分类对象
+tags = Tag.objects.all()  # 获取全部的标签对象
+months = Article.objects.datetimes('public_time', 'month', order='DESC')
+
 
 def index(request):
     return render(request, 'index.html', context={
@@ -17,8 +21,8 @@ def index(request):
 
 # 主页
 def home(request):
-    posts = Article.objects.all()   # 获取主页的全部 Article 对象
-    paginator = Paginator(posts, settings.PAGE_NUM, 2  )  # 每页显示数量，对应settings.py中的PAGE_NUM
+    posts = Article.objects.all().filter(status='public', public_time__isnull=False)   # 获取主页的全部 Article 对象, 状态为已发布，发布时间不为空
+    paginator = Paginator(posts, settings.PAGE_NUM, 2)  # 每页显示数量，对应settings.py中的PAGE_NUM， 当只有2时候，合并为上一页
     page = request.GET.get('page')  # 获取URL中page参数的值
     try:
         post_list = paginator.page(page)
@@ -26,18 +30,26 @@ def home(request):
         post_list = paginator.page(1)
     except EmptyPage:
         post_list = paginator.page(paginator.num_pages)
-    return render(request, 'home.html', context={'post_list': post_list})
-    # return render(request, 'home.html', context={'post_list': post_list})
+    return render(request, 'home.html', context={'post_list': post_list, 'category_list': categories, 'months': months})
+
 
 # 文章详情页
 def detail(request, id):
     try:
         post = Article.objects.get(id=str(id))
         post.viewed()  # 更新文章浏览次数
-        tags = post.tags.all()  #获取文章对应的所有标签
+        tags = post.tags.all()  # 获取文章对应的所有标签
+        next_post = post.next_article()  # 下一篇文章对象
+        prev_post = post.prev_article()  # 上一篇文章对象
     except Article.DoesNotExist:
         raise Http404
-    return render(request, 'post.html', {'post': post, 'tags': tags})
+    return render(request, 'post.html', {
+        'post': post,
+        'tags': tags,
+        'next_post': next_post,
+        'prev_post': prev_post,
+        'months': months
+    })
 
 
 
