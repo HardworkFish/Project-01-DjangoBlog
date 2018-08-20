@@ -7,14 +7,16 @@
 						<div id="tags-cloud-content" class="tags-content">
 							<div id="posts" class="posts-expand">
 								<div class="post-block page">
-									<header class="post-header">
-										<h1 class="post-title" itemprop="name headline"></h1>
-									</header>
+
 									<div class="post-body">
+                                        <div class="tag-cloud">
+                                           <img src="/static/images/tags_cloud_title.png" itemprop="image" height="400" width="560">
+
+                                        </div>
 										<div class="tag-cloud">
-											<div class="tag-cloud-title">
-												目前共计 {{ tags_list.count }} 个标签
-											</div>
+											<header class="post-header">
+										<h1 class="post-title" itemprop="name headline">目前共计 {{ tags_list.count }} 个标签</h1>
+									        </header>
 											<div class="tag-cloud-tags">
 
 												<!---------------------->
@@ -122,7 +124,7 @@
 
                                 </div>
 
-                         
+
 
 
 
@@ -130,7 +132,8 @@
                                                    {% for tag in tags_list %}
 
 													<li>
-														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{  tag.name }}</font></font></a>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="small">
+                                                            <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{  tag.name }}</font></font></a>
 													</li>
                                                     {% empty %}
                                                     暂无标签
