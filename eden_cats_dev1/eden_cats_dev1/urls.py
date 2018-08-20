@@ -29,6 +29,7 @@ urlpatterns = [
     path('articles/<int:id>/', views.detail, name='detail'),
     path('category/<int:id>/', views.search_category, name='category_menu'),  # 分类搜索
     path('tag/<str:tag>/', views.search_tag, name='search_tag'),  # 标签搜索
+    path('tags/', views.tags_cloud, name='tags_cloud'),  # 标签
     path('archives/<str:year>/<str:month>', views.archives, name='archives'),  # 归档
     path('summernote/', include('django_summernote.urls')),
     path('jet/', include('jet.urls', 'jet')),  # Django jet urls

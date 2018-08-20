@@ -53,6 +53,7 @@ def detail(request, id):
     })
 
 
+
 # 分类搜索
 def search_category(request, id):
     posts = Article.objects.filter(category_id=str(id))
@@ -73,6 +74,18 @@ def search_category(request, id):
     })
 
 
+# 标签云
+def tags_cloud(request):
+    try:
+        posts = Article.objects.all().filter(status='publish', public_time__isnull=False)
+    except Tag.DoesNotExist:
+        return Http404
+    return  render(request, 'tags.html', {
+        'tags_list': tags,
+        'post_list': posts,
+    })
+
+
 # 标签搜索
 def search_tag(request, tag):
     posts = Article.objects.filter(tags__name__contains=tag)
@@ -90,6 +103,7 @@ def search_tag(request, tag):
         'tag': tag,
         'months': months
     })
+
 
 
 def archives(request, year, month):

@@ -1,5 +1,7 @@
 from django import template
 from django.utils.html import format_html
+from ..models import Article, Category, Tag
+from django.db.models.aggregates import Count
 register = template.Library()
 
 
@@ -20,3 +22,8 @@ def pagination_pages(curr_page, loop_page):
         return format_html(page_element)
     else:
         return ''
+
+
+@register.simple_tag
+def get_tags_cloud():
+    return Tag.objects.annotate(num_pots=Count('post')).filter(num_post__gt=0)
