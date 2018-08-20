@@ -349,7 +349,7 @@ table {
 	border: 1px solid #ddd;
 	font-size: 14px;
 	table-layout: fixed;
-	word-wrap:break-word;
+	word-wrap: break-all
 }
 .header-inner, .main-inner {
 	margin: 0 auto
@@ -959,7 +959,9 @@ pre .javascript .function, pre .keyword {
 		clear: both;
 		border-top: 1px solid #ddd
 	}
-
+	.post-body {
+		word-break: break-word
+	}
 }
 @media (min-width: 768px) and (max-width: 991px) {
 	.site-nav {
@@ -1174,7 +1176,8 @@ pre .javascript .function, pre .keyword {
 }
 .posts-expand .post-title {
 	text-align: center;
-	color:rgb(12, 16, 15);
+	word-break: break-word;
+	font-weight: 400
 }
 .posts-expand .post-title-link {
 	display: inline-block;
@@ -1606,7 +1609,7 @@ to {
 	border-radius: 80px;
 	-webkit-border-radius: 80px;
 	-moz-border-radius: 80px;
-	box-shadow: inset 0 -1px 0 rgb(51, 51, 51);
+	box-shadow: inset 0 -1px 0 #333 sf;
 	-webkit-transition: -webkit-transform 1s ease-out;
 	-moz-transition: -moz-transform 1s ease-out;
 	transition: transform 1s ease-out;
@@ -2518,6 +2521,7 @@ to {
 	.content-wrap {
 		width: 100%;
 		padding: 20px;
+		min-height: auto;
 		border-radius: initial
 	}
 	.sidebar {
@@ -2782,7 +2786,9 @@ to {
 #posts > article+ article .post-block {
 	margin-top: 12px
 }
-
+.comments {
+	margin: 12px initial initial
+}
 .posts-expand {
 	padding-top: initial
 }
@@ -2876,6 +2882,7 @@ to {
 	}
 	.post-block {
 		padding: 12px;
+		min-height: auto;
 		box-shadow: 0 2px 2px 0 rgb(109, 109, 109), 0 3px 1px 2px rgba(0, 0, 0, 0.13), 0 1px 5px 2px rgba(0,0,0,.12);
 		border-radius: initial
 	}

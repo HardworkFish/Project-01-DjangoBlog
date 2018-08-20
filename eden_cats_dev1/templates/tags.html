@@ -3,20 +3,17 @@
 {% load pagetag %}
     {% load static %}
 	<!----- tags start ----------->
+					<!----- arcticle start ----------->
 					<div class="content-wrap">
 						<div id="tags-cloud-content" class="tags-content">
 							<div id="posts" class="posts-expand">
 								<div class="post-block page">
-
+									<header class="post-header">
+										<h1 class="post-title" itemprop="name headline">目前共计 23 个标签</h1>
+									</header>
 									<div class="post-body">
-                                        <div class="tag-cloud">
-                                           <img src="/static/images/tags_cloud_title.png" itemprop="image" height="400" width="560">
-
-                                        </div>
 										<div class="tag-cloud">
-											<header class="post-header">
-										<h1 class="post-title" itemprop="name headline">目前共计 {{ tags_list.count }} 个标签</h1>
-									        </header>
+
 											<div class="tag-cloud-tags">
 
 												<!---------------------->
@@ -111,48 +108,125 @@
 													//]]>
 												</script>
 
+												<br>
+												</br>
 
+												<canvas id="tagcanvas" width="400" height="400"></canvas>
 
-                                    <canvas id="tagcanvas" width="420" height="420"></canvas>
-
-
+												<ul class="weighted" style="font-size: 50%" id="weightTags">
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1000</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">背景</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="large"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">帆布</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图表</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图表</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="huge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">云</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="red medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">云</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="red small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">例</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="red medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">山羊</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="red small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">goat1000</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="red large"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图形</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="red medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="red small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">HTML</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="red large"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">HTML5</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="red medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图片</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="green medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">JavaScript的</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="green medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">JPEG</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="green small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">jpegsaver</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="green large"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">jQuery的</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="green small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LIB</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="green medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图书馆</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="green small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">链接</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="green huge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PHP</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="green small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">插入</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="green medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">保护程序</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="purple small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">屏幕保护</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="purple small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">脚本</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="purple huge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SVG</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="purple medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">svggraph</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="purple huge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">标签</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="purple small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">tagcanvas</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="purple small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">标签云</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="purple small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文本</font></font></a>
+													</li>
+													<li>
+														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="purple small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">字</font></font></a>
+													</li>
+												</ul>
 
 											</div>
 										</div>
 									</div>
-
-
-                                </div>
-
-
-
-
-
-                                            	<ul class="weighted" style="font-size: 50%" id="weightTags">
-                                                   {% for tag in tags_list %}
-
-													<li>
-														<a href="http://www.goat1000.com/tagcanvas-styling.php#" class="small">
-                                                            <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{  tag.name }}</font></font></a>
-													</li>
-                                                    {% empty %}
-                                                    暂无标签
-                                                    {% endfor %}
-
-
-												</ul>
-
-
-
-
-
-                            </div>
-
-
-
+								</div>
+							</div>
 						</div>
 
 					</div>
+					<!---------------------sidebar-toggle ----------------->
 
     {% include "leftSidebar.html" %}
 {% endblock %}
