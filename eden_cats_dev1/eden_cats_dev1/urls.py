@@ -28,6 +28,7 @@ urlpatterns = [
     path('home/', views.home, name='home'),
     path('articles/<int:id>/', views.detail, name='detail'),
     path('category/<int:id>/', views.search_category, name='category_menu'),  # 分类搜索
+    path('categories/', views.category_show, name='category_show'),  # 归类页
     path('tag/<str:tag>/', views.search_tag, name='search_tag'),  # 标签搜索
     path('tags/', views.tags_cloud, name='tags_cloud'),  # 标签
     path('archives/<str:year>/<str:month>', views.archives, name='archives'),  # 归档

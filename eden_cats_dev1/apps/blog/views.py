@@ -33,6 +33,18 @@ def home(request):
     return render(request, 'home.html', context={'post_list': post_list, 'category_list': categories, 'months': months})
 
 
+# 博客归类页
+def category_show(request):
+    try:
+        posts = Article.objects.all().filter(status='publish', public_time__isnull=False)
+    except Category.DoesNotExist:
+        return Http404
+    return render(request, 'categories.html', {
+        'category_list': categories,
+        'post_list': posts,
+    })
+
+
 # 文章详情页
 def detail(request, id):
     try:

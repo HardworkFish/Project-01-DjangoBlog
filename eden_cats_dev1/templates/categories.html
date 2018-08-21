@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content%}
+
+
+								<div class="content-wrap">
+						<div id="content" class="content">
+							<div id="posts" class="posts-expand">
+								<div class="post-block page">
+									<header class="post-header">
+										<h1 class="post-title" itemprop="name headline"></h1>
+									</header>
+									<div class="post-body">
+										<div class="category-all-page">
+											<div class="category-all-title">
+												目前共计 {{ category_list.count }} 个分类
+											</div>
+											<div class="category-all">
+												<ul class="category-list">
+                                                    {% for category in category_list %}
+													<li class="category-list-item">
+														<a class="category-list-link" href="/categories/Django-Xadmin打造在线教育平台/">{{ category.name }}</a><span class="category-list-count">{{ category.article_set.count }}</span>
+													</li>
+                                                    {% empty %}
+                                                    Sorry，暂无归类！
+                                                    {% endfor %}
+												</ul>
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+    {% include "leftSidebar.html" %}
+
+{% endblock %}
