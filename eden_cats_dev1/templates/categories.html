@@ -18,7 +18,8 @@
 												<ul class="category-list">
                                                     {% for category in category_list %}
 													<li class="category-list-item">
-														<a class="category-list-link" href="/categories/Django-Xadmin打造在线教育平台/">{{ category.name }}</a><span class="category-list-count">{{ category.article_set.count }}</span>
+														<a class="category-list-link" href="{% url 'category_menu' id=category.id %}">{{ category.name }}</a>
+                                                        <span class="category-list-count">{{ category.article_set.count }}</span>
 													</li>
                                                     {% empty %}
                                                     Sorry，暂无归类！

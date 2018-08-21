@@ -69,7 +69,7 @@ def detail(request, id):
 def search_category(request, id):
     posts = Article.objects.filter(category_id=str(id))
     category = categories.get(id=str(id))
-    paginator = Paginator(posts, settings.PAGE_NUM)  # 每页显示数量
+    paginator = Paginator(posts, 8)  # 每页显示数量
     try:
         page = request.GET.get('page')  # 获取 URL 中 Page 的参数值
         post_list = paginator.page(page)
