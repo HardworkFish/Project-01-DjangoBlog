@@ -31,7 +31,7 @@
                                                 <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span>
                                                 <span class="post-meta-item-text">分类于</span>
                                                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                                                    <a href="/categories/Django-Xadmin打造在线教育平台/" itemprop="url" rel="index">
+                                                    <a href="{% url 'category_menu' id=post.category_id %}" itemprop="url" rel="index">
                                                         <span itemprop="name">{{ post.category }}</span></a></span>
                                                 </span>
                                                 <span id="{% url 'detail' id=post.id %} " class="leancloud_visitors" data-flag-title="{{ post.title }}">
