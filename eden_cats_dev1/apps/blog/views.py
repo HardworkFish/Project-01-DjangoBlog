@@ -100,7 +100,7 @@ def tags_cloud(request):
 # 标签搜索
 def search_tag(request, tag):
     posts = Article.objects.filter(tags__name__contains=tag)
-    paginator = Paginator(posts, settings.PAGE_NUM)
+    paginator = Paginator(posts, 10)
     try:
         page = request.GET.get('page')
         post_list = paginator.page(page)

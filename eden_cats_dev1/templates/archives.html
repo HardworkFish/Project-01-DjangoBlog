@@ -14,25 +14,25 @@
 
                         {% regroup post_list.object_list by created_time.year as date_by_year %}
 
-                        {% for year in date_by_year %}
+                        {% for years in date_by_year %}
                              <div class="collection-title">
-										<h1 class="archive-year" id="{{ year_month }}">{{ year.grouper }}年</h1>
+										<h1 class="archive-year" id="{{  years.grouper }}">{{ years.grouper }}年</h1>
 									</div>
 
-                            {% regroup year.list by created_time.month as date_by_month %}
+                            {% regroup years.list by created_time.month as date_by_month %}
 
-                            {% for month in date_by_month %}
+                            {% for months in date_by_month %}
 
                                     <div class="collection-title">
-										<h1 class="archive-year" id="{{ month.grouper }}">归档:&nbsp;{{ year.grouper }}年{{ month.grouper }}月</h1>
+										<h1 class="archive-year" id="{{ months.grouper }}">归档:&nbsp;{{ years.grouper }}年{{ months.grouper }}月</h1>
 									</div>
-                                   {% for post in month.list %}
+                                   {% for post in months.list %}
 									<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
 										<header class="post-header">
-											<h2 class="post-title"><a class="post-title-link" href="/post/855680b2.html" itemprop="url"><span itemprop="name">{{ post.title }}</span></a></h2>
+											<h2 class="post-title"><a class="post-title-link" href="{% url 'detail' id=post.id %}" itemprop="url"><span itemprop="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ post.title }}</span></a></h2>
 											<div class="post-meta">
 												<time class="post-time" itemprop="dateCreated" datetime="{{ post.public_time|date:'Y-m-d H:i'}}" content="{{ year_month }}">
-													{{ post.public_time|date:'Y-m-d' }}
+													{{ post.public_time|date:'Y-m-d H:i' }}
 												</time>
 											</div>
 										</header>
@@ -52,7 +52,7 @@
 
 							<nav class="pagination">
 
-                                     {% if post_list.object_list and post_list.paginator.num_pages > 1 %}
+                                     {% if post_list.object_list and post_list.paginator.num_pages > 0 %}
                                     {% if post_list.has_previous %}
                                           <a class="extend next" rel="next" href="?page={{ post_list.previous_page_number }}"><i class="fa fa-angle-left"></i></a>
                                         {% endif %}

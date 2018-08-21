@@ -124,7 +124,7 @@
 								                    {% for tag in tags_list %}
 													<li>
 
-                                                        <a href="#"
+                                                         <a href="{% url 'search_tag' tag=tag %}"
 													{% if tag.article_set.count <= 1 %}
                                                        class="blue small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
                                                     {% elif tag.article_set.count <= 2 %}

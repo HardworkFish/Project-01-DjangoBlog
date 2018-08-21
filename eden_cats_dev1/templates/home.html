@@ -77,7 +77,7 @@
 
                                 <nav class="pagination" >
 
-                                {% if post_list.object_list and post_list.paginator.num_pages > 1 %}
+                                {% if post_list.object_list and post_list.paginator.num_pages > 0 %}
                                     {% if post_list.has_previous %}
                                           <a class="extend next" rel="next" href="?page={{ post_list.previous_page_number }}"><i class="fa fa-angle-left"></i></a>
                                         {% endif %}
