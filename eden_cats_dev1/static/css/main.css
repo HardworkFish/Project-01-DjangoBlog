@@ -87,9 +87,7 @@ img {
 	height: auto
 }
 
-img .tags-cloud-title{
-	    border: 2px solid rgb(0, 0, 0);
-}
+
 svg:not(:root) {
 	overflow: hidden
 }

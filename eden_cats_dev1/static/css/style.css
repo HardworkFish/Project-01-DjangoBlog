@@ -206,6 +206,5 @@ columnist.is-fixed {
 }
 
 #tagcanvas {
-    background: #00ce0d;
-	border: 4px solid #aaa;
+        border: 1px solid rgb(158, 158, 158);
 }
