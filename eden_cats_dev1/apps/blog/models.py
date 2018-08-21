@@ -98,3 +98,16 @@ class Article(models.Model):
         verbose_name_plural = '文章列表'  # 指定后台显示模型复数名称
         db_table = 'article'  # 数据库表
         get_latest_by = 'created_time'
+
+
+# 统计博客信息
+class Counts(models.Model):
+    blog_nums = models.IntegerField(verbose_name='博客数目', default=0)
+    category_nums = models.IntegerField(verbose_name='分类数目', default=0)
+    tag_nums = models.IntegerField(verbose_name='标签数量', default=0)
+    visit_nums = models.IntegerField(verbose_name='网站访问量', default=0)
+
+    class Meta:
+        verbose_name = '数目统计'
+        verbose_name_plural = verbose_name
+
