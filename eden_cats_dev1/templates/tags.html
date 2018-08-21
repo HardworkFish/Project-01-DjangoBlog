@@ -70,6 +70,12 @@
 													a.red { color: #f00 }
 													a.green { color: #0c0 }
 													a.purple { color: #f09 }
+                                                    a.blue {color:rgb(30,144,255)}
+													a.pink {color:rgb(255,105,180)}
+													a.yellow{color:rgb(255,215,0)}
+													a.crimson{color: rgb(220,20,60)}
+                                                    a.deepskyblue{color: rgb(0,191,255)}
+                                                    a.organe{color: rgb(255,165,0)}
 
 													-->
 												</style>
@@ -113,39 +119,39 @@
 
 												<canvas id="tagcanvas" width="400" height="400"></canvas>
 
-												<ul class="weighted"  id="weightTags">
+												<ul class="weighted"  style="font-size: 50%" id="weightTags">
 								                    {% for tag in tags_list %}
 													<li>
 
-                                                        <a href="#" class="small" style="
+                                                        <a href="#"
 													{% if tag.article_set.count <= 1 %}
-                                                        font-size:4px; color:rgb(255, 52, 179);
+                                                       class="blue small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
                                                     {% elif tag.article_set.count <= 2 %}
-                                                        font-size:8px; color:rgb(0 ,255, 0);
+                                                       class="yellow small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
                                                     {% elif tag.article_set.count <= 3 %}
-                                                        font-size:10px; color:rgb(255 ,105, 180);
+                                                        class="green small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
                                                     {% elif tag.article_set.count <= 4 %}
-                                                        font-size:15px; color:rgb(255, 140, 105);
+                                                       class=" pink small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
                                                     {% elif tag.article_set.count <= 5 %}
-                                                        font-size:20px; color:rgb(255, 215, 0);
+                                                        class="purple medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
                                                     {% elif tag.article_set.count <= 8 %}
-                                                        font-size:27px; color:rgb(238 ,99, 99);
+                                                        class="yellow medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
                                                     {% elif tag.article_set.count <= 10 %}
-                                                        font-size:32px; color:rgb(255, 20, 147);
+                                                        class="red medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
                                                     {% elif tag.article_set.count <= 15 %}
-                                                        font-size:38px; color:rgb(205,38, 38);
+                                                         class=" purple medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
                                                     {% elif tag.article_set.count <= 20 %}
-                                                        font-size:43px; color:rgb(255 ,140 ,0);
+                                                        class=" crimson large"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
                                                     {% elif tag.article_set.count <= 30 %}
-                                                        font-size:56px; color:rgb(125, 38, 205);
+                                                        class=" blue large"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
                                                     {% elif tag.article_set.count <= 50 %}
-                                                        font-size:60px; color:rgb(255 ,215, 0);
+                                                       class=" deepskyblue huge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
                                                     {% elif tag.article_set.count <= 100 %}
-                                                        font-size:72px; color:rgb(34 ,139 ,34);
+                                                        class=" organe huge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
                                                     {% else %}
-                                                        font-size:80px; color:rgb(0 ,191 ,255);
-                                                    {% endif %}" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font>
-                                                   </a>
+                                                        class=" red huge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
+                                                    {% endif %}
+
 
 
                                                     </li>
