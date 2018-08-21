@@ -27,3 +27,8 @@ def pagination_pages(curr_page, loop_page):
 @register.simple_tag
 def get_tags_cloud():
     return Tag.objects.annotate(num_pots=Count('post')).filter(num_post__gt=0)
+
+
+@register.simple_tag
+def get_archives_show():
+    return Article.objects.dates('created_time', 'year', order='DESC')

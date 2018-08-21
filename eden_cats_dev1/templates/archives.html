@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+    {% load pagetag %}
+	<div class="content-wrap">
+
+						<div id="content" class="content">
+
+
+							<div class="post-block archive">
+
+								<div id="posts" class="posts-collapse">
+									<span class="archive-move-on"></span><span class="archive-page-counter">✧⁺⸜(●˙▾˙●)⸝⁺✧ 喵！已经有 {{ posts.count }} 篇日志了呀! 要加油啦。</span>
+
+
+                        {% regroup post_list.object_list by created_time.year as date_by_year %}
+
+                        {% for year in date_by_year %}
+                             <div class="collection-title">
+										<h1 class="archive-year" id="{{ year_month }}">{{ year.grouper }}年</h1>
+									</div>
+
+                            {% regroup year.list by created_time.month as date_by_month %}
+
+                            {% for month in date_by_month %}
+
+                                    <div class="collection-title">
+										<h1 class="archive-year" id="{{ month.grouper }}">归档:&nbsp;{{ year.grouper }}年{{ month.grouper }}月</h1>
+									</div>
+                                   {% for post in month.list %}
+									<article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+										<header class="post-header">
+											<h2 class="post-title"><a class="post-title-link" href="/post/855680b2.html" itemprop="url"><span itemprop="name">{{ post.title }}</span></a></h2>
+											<div class="post-meta">
+												<time class="post-time" itemprop="dateCreated" datetime="{{ post.public_time|date:'Y-m-d H:i'}}" content="{{ year_month }}">
+													{{ post.public_time|date:'Y-m-d' }}
+												</time>
+											</div>
+										</header>
+									</article>
+                                    {% endfor %}
+
+                                         {% endfor %}
+
+                          {% empty %}
+                            Sorry,暂无归档！
+                            {% endfor %}
+
+								</div>
+
+							</div>
+
+
+							<nav class="pagination">
+
+                                     {% if post_list.object_list and post_list.paginator.num_pages > 1 %}
+                                    {% if post_list.has_previous %}
+                                          <a class="extend next" rel="next" href="?page={{ post_list.previous_page_number }}"><i class="fa fa-angle-left"></i></a>
+                                        {% endif %}
+
+                                    {% for pg in post_list.paginator.page_range %}
+                                       {% pagination_pages post_list.number pg %}
+                                    {% endfor %}
+
+
+
+                                    {% if post_list.has_next %}
+                                    <a class="extend next" rel="next" href="?page={{ post_list.next_page_number }}"><i class="fa fa-angle-right"></i></a>
+                                        {% endif %}
+
+                                {% endif %}
+
+							</nav>
+						</div>
+					</div>
+
+
+
+
+{% include "leftSidebar.html" %}
+{% endblock %}

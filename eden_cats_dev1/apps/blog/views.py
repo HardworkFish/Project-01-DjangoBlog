@@ -10,7 +10,7 @@ from django.views.generic import ListView, DetailView
 categories = Category.objects.all()  # 获取全部分类对象
 tags = Tag.objects.all()  # 获取全部的标签对象
 months = Article.objects.datetimes('public_time', 'month', order='DESC')
-
+years = Article.objects.datetimes('public_time', 'year', order='DESC')
 
 def index(request):
     return render(request, 'index.html', context={
@@ -65,7 +65,6 @@ def detail(request, id):
     })
 
 
-
 # 分类搜索
 def search_category(request, id):
     posts = Article.objects.filter(category_id=str(id))
@@ -117,10 +116,11 @@ def search_tag(request, tag):
     })
 
 
-
-def archives(request, year, month):
-        posts = Article.objects.filter(public_time__year=year, public_time__month=month).order_by('-public_time')
-        paginator = Paginator(posts, settings.PAGE_NUM)
+def archives(request):
+# def archives(request, year, month):
+        posts = Article.objects.filter(status='publish', public_time__isnull=False).order_by('-public_time')
+        # posts = Article.objects.filter(public_time__year=year, public_time__month=month).order_by('-public_time')
+        paginator = Paginator(posts, 8)
         try:
             page = request.GET.get('page')
             post_list = paginator.page(page)
@@ -128,11 +128,13 @@ def archives(request, year, month):
             post_list = paginator.page(1)
         except EmptyPage:
             post_list = paginator.page(paginator.num_pages)
-        return render(request, 'archive.html', {
+        return render(request, 'archives.html', {
+            'posts': posts,
             'post_list': post_list,
             'category_list': categories,
             'months': months,
-            'year_month': year + '年' + month + '月'
+            'years': years,
+            # 'year_month': year + '年' + month + '月'
         })
 
 

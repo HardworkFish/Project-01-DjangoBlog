@@ -21,6 +21,7 @@ from django.conf.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
 # from django.views.static import serve
+from django.urls import re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,7 +32,8 @@ urlpatterns = [
     path('categories/', views.category_show, name='category_show'),  # 归类页
     path('tag/<str:tag>/', views.search_tag, name='search_tag'),  # 标签搜索
     path('tags/', views.tags_cloud, name='tags_cloud'),  # 标签
-    path('archives/<str:year>/<str:month>', views.archives, name='archives'),  # 归档
+    path('archives/', views.archives, name='archives'),  # 按月归档
+    # path('archives/', views.get_archives, name='get_archives'),  # 按月归档
     path('summernote/', include('django_summernote.urls')),
     path('jet/', include('jet.urls', 'jet')),  # Django jet urls
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET Dashboard URLS
