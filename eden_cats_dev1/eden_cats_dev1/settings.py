@@ -41,8 +41,20 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.blog',  # blog 应用
     'django_summernote',  # 富文本应用
+    # 'haystack',  # 搜索应用
 ]
 
+
+# 搜索
+# HAYSTACK_CONNECTIONS = {
+#     'default': {
+#         'ENGINE': 'blog.whoosh_cn_backend.WhooshEngine',
+#         'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+#     },
+# }
+#
+# HAYSTACK_SEARCH_RESULTS_PER_PAGE = 5
+# HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 # 主题
 JET_THEMES = [
