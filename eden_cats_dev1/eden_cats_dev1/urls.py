@@ -36,7 +36,8 @@ urlpatterns = [
     path('archives/', views.archives, name='archives'),  # 按月归档
     # path('archives/', views.get_archives, name='get_archives'),  # 按月归档
     path('rss/', BlogRssFeed(), name='rss'),  # Rss
-    path('search/', views.search, name='search'),  # 搜索
+    path('search/', include('haystack.urls')),  # 搜索
+    # path('search/', views.search, name='search'),  # 搜索
     path('summernote/', include('django_summernote.urls')),
     path('jet/', include('jet.urls', 'jet')),  # Django jet urls
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET Dashboard URLS

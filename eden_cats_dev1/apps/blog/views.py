@@ -139,7 +139,7 @@ def archives(request):
             # 'year_month': year + '年' + month + '月'
         })
 
-
+"""
 def search(request):
     q = request.GET.get('q')
     error_message = ''
@@ -153,3 +153,4 @@ def search(request):
         'error_message': error_message,
         'post_list': post_list,
     })
+"""

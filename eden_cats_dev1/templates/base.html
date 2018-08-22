@@ -46,7 +46,11 @@
 		<link rel="canonical" href="http://trskycooik.com/">
 		<!----------- body -------------->
 		<title>{% block title %} Eden's Cats {% endblock %}</title>
-
+ <style>
+        span.highlighted {
+            color: red;
+        }
+    </style>
 
 		<script type="text/javascript" id="hexo.configurations">
 			var NexT = window.NexT || {}, CONFIG = {
@@ -178,7 +182,7 @@
 							</li>
 							<li class="menu-item menu-item-search">
 								<a href="#" class="popup-trigger">
-								<form role="search" method="get" id="searchform" action="{% url 'search' %}">
+								<form role="search" method="get" id="searchform" action="{% url 'haystack_search' %}">
                            		 <i class="menu-item-icon fa fa-search fa-fw"></i>
                                 <input type="search" name="q" placeholder="search" required>
                         	    </form>
