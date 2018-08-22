@@ -13,6 +13,7 @@ tags = Tag.objects.all()  # 获取全部的标签对象
 months = Article.objects.datetimes('public_time', 'month', order='DESC')
 years = Article.objects.datetimes('public_time', 'year', order='DESC')
 
+
 def index(request):
     return render(request, 'index.html', context={
         'title': '我的博客首页',

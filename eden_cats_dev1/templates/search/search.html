@@ -80,11 +80,31 @@
 									</div>
 
 								</article>
+
+
+
                                     {% empty %}
                                     没有搜索到相关内容，请重新搜索!!!
 								{% endfor %}
 							</section>
+
+                 <nav class="pagination" >
+
+                                 {% if page.has_previous or page.has_next %}
+                                     <div>
+                                     {% if page.has_previous %} <a class="page-number" href="?q={{ query }}&amp;page={{ page.previous_page_number }}">&laquo; Prev
+                                         </a>{% endif %}
+                                     |
+                                      {% if page.has_next %} <a class="page-number" href="?q={{ query }}&amp;page={{ page.next_page_number }}">
+                                        Next &raquo;</a>{% endif %}
+                                    </div>
+                                {% endif %}
+
+
+							</nav>
 	        </div>
+
+
         </div>
 
  {% else %}
