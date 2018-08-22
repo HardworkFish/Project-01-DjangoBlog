@@ -20,6 +20,7 @@ from apps.blog import views
 from django.conf.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
+from apps.blog.feeds import BlogRssFeed
 # from django.views.static import serve
 from django.urls import re_path
 
@@ -34,6 +35,7 @@ urlpatterns = [
     path('tags/', views.tags_cloud, name='tags_cloud'),  # 标签
     path('archives/', views.archives, name='archives'),  # 按月归档
     # path('archives/', views.get_archives, name='get_archives'),  # 按月归档
+    path('rss/', BlogRssFeed(), name='rss'),
     path('summernote/', include('django_summernote.urls')),
     path('jet/', include('jet.urls', 'jet')),  # Django jet urls
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET Dashboard URLS
