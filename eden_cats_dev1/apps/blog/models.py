@@ -15,7 +15,7 @@ class About(models.Model):
     # priority
     priority = models.IntegerField(verbose_name='优先级',default=0)
     # 图片
-    image = models.ImageField(upload_to='photo')
+    image = models.ImageField(upload_to='photos')
 
     def __str__(self):
         return self.title
@@ -35,6 +35,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
 
     class Meta:
         ordering = ['name']

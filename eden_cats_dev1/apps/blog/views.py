@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from apps.blog.models import Article, Category, Tag
+from apps.blog.models import Article, Category, Tag, About
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import Http404
 from django.conf import settings
@@ -23,10 +23,19 @@ def index(request):
 
 # About me
 def about(request):
+    blocks = About.objects.all()
+    paginator = Paginator(blocks, settings.PAGE_NUM, 2)
+    block = request.GET.get('page')
+    try:
+        block_list = paginator.page(block)
+    except PageNotAnInteger:
+        block_list = paginator.page(1)
+    except EmptyPage:
+        block_list = paginator.page(paginator.num_pages)
     return render(request, 'about.html', context={
-        'title': '我的博客首页',
-        'welcome': '欢迎访问我的博客首页'
+        'block_list': block_list,
     })
+
 
 # 主页
 def home(request):
