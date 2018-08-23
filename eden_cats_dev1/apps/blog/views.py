@@ -179,3 +179,4 @@ def search(request):
         'post_list': post_list,
     })
 """
+

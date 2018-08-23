@@ -70,7 +70,8 @@ class Article(models.Model):
     # 文章标题
     title = models.CharField(verbose_name='标题', max_length=100)
     # 文章正文内容
-    content = models.TextField(verbose_name='正文', blank=True, null=True)
+    # content = models.TextField(verbose_name='正文', blank=True, null=True)
+    content = MDTextField(verbose_name='正文', blank=True, null=True)
     # 文章状态
     status = models.CharField(verbose_name='文章状态', max_length=10, choices=STATUS_CHOICES, default='publish')
     # 文章创建时间
@@ -88,7 +89,7 @@ class Article(models.Model):
     # 文章标语 slogan blank=True 表示数值可为空
     slogan = models.TextField(verbose_name='标语', blank=True, null=True)
     # 文章摘要
-    excerpt = models.CharField(verbose_name='文章摘要', max_length=500, blank=True)
+    digest = models.CharField(verbose_name='文章摘要', max_length=500, blank=True)
     # 文章与分类的关联,多对一
     category = models.ForeignKey(Category, verbose_name='分类', on_delete=models.CASCADE, blank=False, null=False)
     # 文章与标签的关联，多对多

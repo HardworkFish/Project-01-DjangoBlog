@@ -24,4 +24,4 @@ class ExampleModelAdmin(admin.ModelAdmin):
 # admin.site.register(About, PostAdmin)
 # admin.site.register(About)
 admin.site.register(About, ExampleModelAdmin)
-admin.site.register(Counts)
+admin.site.register(Counts, ExampleModelAdmin)

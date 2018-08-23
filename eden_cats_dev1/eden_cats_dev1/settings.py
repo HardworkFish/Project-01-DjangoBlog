@@ -234,3 +234,32 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 #     'sequence': True  # 是否开启序列图功能
 # }
 #
+
+MDEDITOR_CONFIGS = {
+    'default': {
+        'width': '90%',
+        'heigth': 500,
+        'toolbar': ["undo", "redo", "|",
+                    "bold", "del", "italic", "quote", "ucwords", "uppercase",
+                    "lowercase", "|",
+                    "h1", "h2", "h3", "h5", "h6", "|",
+                    "list-ul", "list-ol", "hr", "|",
+                    "link", "reference-link", "image", "code",
+                    "preformatted-text", "code-block", "table", "datetime",
+                    "emoji", "html-entities", "pagebreak", "goto-line", "|",
+                    "help", "info",
+                    "||", "preview", "watch", "fullscreen"],
+        'upload_image_formats': ["jpg", "JPG", "jpeg", "JPEG", "gif", "GIF",
+                                 "png", "PNG", "bmp", "BMP", "webp", "WEBP"],
+        'image_floder': 'editor',
+        'theme': 'default',  # dark / default
+        'preview_theme': 'default',  # dark / default
+        'editor_theme': 'default',  # pastel-on-dark / default
+        'toolbar_autofixed': True,
+        'search_replace': True,
+        'emoji': True,
+        'tex': True,
+        'flow_chart': True,
+        'sequence': True
+    }
+}

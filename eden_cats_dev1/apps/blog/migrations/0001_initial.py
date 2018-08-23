@@ -4,7 +4,7 @@ from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
 import django.utils.timezone
-
+import mdeditor.fields
 
 class Migration(migrations.Migration):
 
@@ -20,7 +20,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=100, verbose_name='标题')),
-                ('body', models.TextField(blank=True, null=True, verbose_name='正文')),
+                ('body', mdeditor.fields.MDTextField(blank=True, null=True, verbose_name='正文')),
+                # ('body', models.TextField(blank=True, null=True, verbose_name='正文')),
                 ('created_time', models.DateTimeField(default=django.utils.timezone.now, verbose_name='创建时间')),
                 ('public_time', models.DateTimeField(blank=True, null=True, verbose_name='发布时间')),
                 ('modified_time', models.DateTimeField(default=django.utils.timezone.now, verbose_name='修改时间')),

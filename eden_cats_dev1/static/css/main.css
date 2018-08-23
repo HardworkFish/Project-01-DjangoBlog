@@ -45,7 +45,6 @@ audio:not([controls]) {
 a {
 	background-color: transparent;
 	outline: 0;
-	border-bottom: 1px solid #999
 }
 a:active, a:hover {
 	outline: 0;
@@ -168,7 +167,7 @@ textarea {
 	overflow: auto
 }
 ::selection {
-	background: #262a30;
+	background: rgba(33, 150, 243, 0.9);
 	color: #fff
 }
 body {
@@ -254,15 +253,12 @@ a:hover {
 }
 blockquote {
 
-	font-size: 18px;
-	word-spacing: 2.2pt;
-	line-height: 1.6;
-
 	margin: 0;
-	padding: 0 15px;
-	color: rgb(0, 0, 0);
-	border-left: 4px solid #ddd;
-	font-family: FZShuTi,"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+    padding: 0 15px;
+    color: #333;
+    border-left: 4px solid rgb(33, 150, 243);
+    background: rgb(246, 246, 246);
+
 }
 hr {
 	margin: 40px 0;
@@ -379,7 +375,8 @@ td, th {
 }
 th {
 	padding-bottom: 10px;
-	font-weight: 700
+	font-weight: 700;
+    background: rgba(89, 103, 126, 0.54);
 }
 td {
 	border-bottom-width: 1px
@@ -884,7 +881,7 @@ pre .javascript .function, pre .keyword {
 	z-index: 1050;
 	padding: 0 8px;
 	width: initial;
-	background: #FF5723;
+	background: rgb(33, 150, 243);
 	font-size: 12px;
 	opacity: .6;
 	color: #fff;
@@ -1068,7 +1065,7 @@ pre .javascript .function, pre .keyword {
 	visibility: visible
 }
 .posts-expand .post-body ul li {
-	list-style: circle
+	list-style: disc
 }
 .posts-expand .post-body img {
 	box-sizing: border-box;
@@ -1528,7 +1525,7 @@ to {
 }
 .my_post_copyright a:hover {
 	color: rgb(244, 67, 54);
-	text-decoration: underline
+	text-decoration: none;
 }
 .my_post_copyright:hover .fa-clipboard {
 	color: #000
@@ -1555,7 +1552,6 @@ to {
 .post-body p a {
 	color: #0593d3;
 	border-bottom: none;
-	border-bottom: 1px solid #0593d3
 }
 .post-body p a:hover {
 	color: #fc6423;
@@ -1645,7 +1641,7 @@ img:hover {
 .site-author-name {
 	margin: 0;
 	text-align: center;
-	color: rgba(12, 110, 189, 0.85);
+	color: rgb(255, 255, 255);
 	font-weight: 600
 }
 .site-description {
@@ -2915,11 +2911,11 @@ code {
 }
 .highlight, pre {
 	margin: 5px 0;
-	padding: 5px;
+	padding: 18px;
 	border-radius: 3px
 }
 .highlight, code, pre {
-	border: 1px solid #d6d6d6
+	border: 1px solid rgb(247, 247, 247)
 }
 .post {
 	margin-top: 10px;
