@@ -217,3 +217,10 @@ columnist.is-fixed {
     position: absolute;
     left: 12px;
 }
+
+
+.fancybox-outer a:active, a:hover{
+    outline: 0;
+    background-color:rgba(255, 255, 255, 0);
+}
+

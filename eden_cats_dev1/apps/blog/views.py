@@ -3,6 +3,7 @@ from apps.blog.models import Article, Category, Tag, About
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import Http404
 from django.conf import settings
+from eden_cats_dev1.settings import MEDIA_URL
 import markdown
 from django.db.models import Q
 from django.views.generic import ListView, DetailView
@@ -35,6 +36,7 @@ def about(request):
         block_list = paginator.page(paginator.num_pages)
     return render(request, 'about.html', context={
         'block_list': block_list,
+        'MEDIA_URL': MEDIA_URL,
     })
 
 

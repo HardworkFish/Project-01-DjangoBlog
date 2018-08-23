@@ -14,7 +14,7 @@ class About(models.Model):
     content = MDTextField(verbose_name='详细内容', blank=True)
     # content = models.TextField(verbose_name='详细信息', blank=True, null=True)
     # priority
-    priority = models.IntegerField(verbose_name='优先级', default=0)
+    priority = models.PositiveIntegerField(verbose_name='优先级', default=10000)
     # 图片
     image = models.ImageField(upload_to='photos', blank=True, null=False)
 

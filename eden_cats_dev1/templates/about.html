@@ -3,8 +3,6 @@
     {% load pagetag %}
     {% load custom_filter %}
 
-{% load static %}
-
     <div class="content-wrap">
         <div id="content" class="content">
         <div id="posts" class="posts-expand">
@@ -42,8 +40,9 @@
 
             {% for block in block_list %}
             <div class="post-block page" >
-
-                <img class="tag_cat_avatar" src="/media/{{ block.image }}" alt="tag_cat_avatar">
+                {% if block.image %}
+                    <img class="tag_cat_avatar" src="{{ MEDIA_URL }}{{ block.image }}" alt="tag_cat_avatar">
+                {% endif %}
 
                 <div class="post-body">
                     <div id="about-detail">
