@@ -23,7 +23,7 @@ class About(models.Model):
     class Meta:
         ordering = ['priority']
         verbose_name = 'About'
-        verbose_name_plural = '信息模块列表'
+        verbose_name_plural = 'About模块列表'
         db_table = 'about'
 
 
