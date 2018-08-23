@@ -2,6 +2,7 @@
 {% load static %}
 {% load pagetag %}
 {% block content %}
+    {% load custom_filter %}
 		<div class="content-wrap">
 						<div id="content" class="content">
 							<section id="posts" class="posts-expand">
@@ -60,7 +61,9 @@
 											<div class="note">
                                                 {#striptags 用于过滤正文中的所有 HTML 标签 #}
                                                 {#truncatechars 用于截取正文前的300个字符 #}
-												{{ post.content|striptags|truncatechars:300 }}
+												  {{ post.content|striptags|truncatechars:100 |custom_markdown}}
+{#												{{post.content|safe}}#}
+
 											</div>
 											<div class="post-button text-center">
 												<a class="btn" href="{% url 'detail' id=post.id %}" rel="contents">阅读全文 »</a>

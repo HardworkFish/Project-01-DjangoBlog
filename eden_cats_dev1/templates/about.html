@@ -12,15 +12,19 @@
                         font-family: "Biaodian Pro Sans CNS", "Helvetica Neue", Helvetica, Arial, "Zhuyin Heiti", "Han Heiti", sans-serif;
                          font-size: 32px;}
 
-                  .post-block .tag_cat_avatar {
-                            width: 32%;
-                            height: 42%;
-                            position: absolute;
-                            right: 120px;
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                            opacity: 0.2;
-                  }
+                   .tag_cat_avatar {
+    width: 42%;
+    height: 42%;
+    position: initial;
+    right: 120px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.75;
+    display: block;
+    border: 23px;
+    box-shadow: 0px 2px 2px 0px;
+    /* padding: 0px; */
+}
                   @media (max-width: 767px){
 
 
@@ -37,10 +41,14 @@
                 </style>
 
             {% for block in block_list %}
-            <div class="post-block page" >
                 {% if block.image %}
+                    <br>
                     <img class="tag_cat_avatar" src="{{ MEDIA_URL }}{{ block.image }}" alt="tag_cat_avatar">
+                    <br>
+
                 {% endif %}
+            <div class="post-block page" >
+
 
                 <div class="post-body">
                     <div id="about-detail">
