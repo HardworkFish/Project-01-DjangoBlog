@@ -208,3 +208,12 @@ columnist.is-fixed {
 #tagcanvas {
         border: 1px solid rgb(158, 158, 158);
 }
+
+.button-style{
+    text-transform: inherit;
+    text-align: center;
+    background: rgba(255, 255, 255, 0);
+    border: rgb(255, 255, 255);
+    position: absolute;
+    left: 12px;
+}

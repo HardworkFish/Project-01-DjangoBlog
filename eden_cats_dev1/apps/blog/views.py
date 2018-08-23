@@ -21,6 +21,12 @@ def index(request):
     })
 
 
+# About me
+def about(request):
+    return render(request, 'about.html', context={
+        'title': '我的博客首页',
+        'welcome': '欢迎访问我的博客首页'
+    })
 
 # 主页
 def home(request):

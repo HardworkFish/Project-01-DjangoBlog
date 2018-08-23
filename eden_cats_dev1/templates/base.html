@@ -183,13 +183,15 @@
 								公益404</a>
 							</li>
 							<li class="menu-item menu-item-search">
-								<a href="#" class="popup-trigger">
-								<form role="search" method="get" id="searchform" action="{% url 'haystack_search' %}">
-                           		 <i class="menu-item-icon fa fa-search fa-fw"></i>
+								<a href="#" class="search-form">
+								<form role="search" method="get" class="search-button" action="{% url 'haystack_search' %}">
+                           		 <button type="submit" class="button-style"><i class="menu-item-icon fa fa-search fa-fw"></i></button>
                                 <input type="search" name="q" placeholder="search" required>
                         	    </form>
+                                    <br>
 								</a>
 							</li>
+                            <li></li>
 						</ul>
 					</nav>
 				</div>

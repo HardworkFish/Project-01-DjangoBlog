@@ -2237,8 +2237,12 @@ img:hover {
 }
 .category-all-page .category-list {
 	margin: 0;
-	padding: 0;
-	list-style: none
+    padding: 0;
+    list-style: none;
+    background-image: url(../images/black_cat.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .category-all-page .category-list-item {
 	margin: 5px 10px

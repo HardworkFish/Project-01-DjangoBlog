@@ -115,7 +115,11 @@ button {
 	overflow: visible
 }
 button, select {
-	text-transform: none
+	text-transform: inherit;
+    text-align: center;
+    background: rgba(255, 255, 255, 0);
+    border: rgb(255, 255, 255);
+
 }
 button, html input[type=button], input[type=reset], input[type=submit] {
 	-webkit-appearance: button;
@@ -129,7 +133,9 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 	padding: 0
 }
 input {
-	line-height: normal
+	line-height: normal;
+    position: absolute;
+    left: 42px;
 }
 input[type=checkbox], input[type=radio] {
 	box-sizing: border-box;
@@ -1519,7 +1525,7 @@ to {
 	border-bottom: 0
 }
 .my_post_copyright a:hover {
-	color: #a3d2a3;
+	color: rgb(244, 67, 54);
 	text-decoration: underline
 }
 .my_post_copyright:hover .fa-clipboard {

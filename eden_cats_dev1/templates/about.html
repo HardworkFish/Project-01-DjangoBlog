@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block content %}
+    {% load pagetag %}
+
+{% load static %}
+
+    <div class="content-wrap">
+        <div id="content" class="content">
+        <div id="posts" class="posts-expand">
+            <style>
+                  #about-detail .about-title {
+                        text-align: center;
+                        font-family: "Biaodian Pro Sans CNS", "Helvetica Neue", Helvetica, Arial, "Zhuyin Heiti", "Han Heiti", sans-serif;
+                         font-size: 42px;}
+
+                  .post-block .tag_cat_avatar {
+                            width: 32%;
+                            height: 42%;
+                            position: absolute;
+                            right: 120px;
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            opacity: 0.2;
+                  }
+                  @media (max-width: 767px){
+
+
+                    .post-block .tag_cat_avatar img {
+                     padding: initial !important;
+                    }
+                  }
+
+
+
+                   #about-detail {
+                        background: rgba(255, 255, 255, 0);
+                        padding: 42px;
+                        box-shadow: 0 2px 2px 0 rgb(109, 109, 109), 0 3px 1px 2px rgba(0, 0, 0, 0.13), 0 1px 5px 2px rgba(0,0,0,.12);
+                   }
+                </style>
+
+            <div class="post-block page" >
+
+                <img class="tag_cat_avatar" src="{% static  'images/tag_cat_avatar.png' %}" alt="tag_cat_avatar">
+
+                <div class="post-body">
+                    <div id="about-detail">
+                         <header class="post-header" >
+                            <h1 class="about-title" itemprop="name headline">About me</h1>
+                         </header>
+                    <h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2>
+                    <p>一只考研狗。热爱技术。</p><p>精通各种语言的helloworld。</p>
+                    <p><del>精通配各种环境</del>(经历一次配了一夜环境, 再也不敢吹精通了)，略懂修电脑。</p>
+                    <p>爱写博客。上课爱抄ppt做笔记，人称ppt复制者。lol万磁王成就达成者。</p><p>技术栈:</p>
+                    <ul><li>Python: <code>Django</code></li><li><del>java php Android</del></li></ul>
+                    <h2 id="做过的项目："><a href="#做过的项目：" class="headerlink" title="做过的项目："></a>做过的项目：</h2>
+                    <ul><li>Django结合Xadmin搭建的在线教育平台: <a href="http://mxonline.mtianyan.cn/" target="_blank" rel="noopener">http://mxonline.mtianyan.cn/</a></li>
+                        <li>未完待续</li></ul><h2 id="同性异性程序员交友交流群。">
+                    <a href="#同性异性程序员交友交流群。" class="headerlink" title="同性异性程序员交友交流群。"></a>同性异性程序员交友交流群。</h2>
+                        <ul>
+                            <li>慕课网实战资源共享群 ： 544043348</li>
+                            <li>c,c++,数据结构： 667615532</li>
+                            <li>有趣的python：619417153</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------------------------------->
+             <div class="post-block page" >
+
+                <div class="post-body">
+                    <div id="about-detail">
+                         <header class="post-header" >
+                            <h1 class="about-title" itemprop="name headline">About Website</h1>
+                         </header>
+                    <h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2>
+                    <p>一只考研狗。热爱技术。</p><p>精通各种语言的helloworld。</p>
+                    <p><del>精通配各种环境</del>(经历一次配了一夜环境, 再也不敢吹精通了)，略懂修电脑。</p>
+                    <p>爱写博客。上课爱抄ppt做笔记，人称ppt复制者。lol万磁王成就达成者。</p><p>技术栈:</p>
+                    <ul><li>Python: <code>Django</code></li><li><del>java php Android</del></li></ul>
+                    <h2 id="做过的项目："><a href="#做过的项目：" class="headerlink" title="做过的项目："></a>做过的项目：</h2>
+                    <ul><li>Django结合Xadmin搭建的在线教育平台: <a href="http://mxonline.mtianyan.cn/" target="_blank" rel="noopener">http://mxonline.mtianyan.cn/</a></li>
+                        <li>未完待续</li>
+                    </ul><h2 id="同性异性程序员交友交流群。">
+                    <a href="#同性异性程序员交友交流群。" class="headerlink" title="同性异性程序员交友交流群。"></a>同性异性程序员交友交流群。</h2>
+                        <ul><li>慕课网实战资源共享群 ： 544043348</li>
+                    <li>c,c++,数据结构： 667615532</li><li>有趣的python：619417153</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+    </div>
+
+
+{% include "leftSidebar.html" %}
+{% endblock %}

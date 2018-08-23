@@ -38,6 +38,7 @@ urlpatterns = [
     path('rss/', BlogRssFeed(), name='rss'),  # Rss
     path('search/', include('haystack.urls')),  # 搜索
     # path('search/', views.search, name='search'),  # 搜索
+    path('about/', views.about, name='about_me'),  # About me
     path('summernote/', include('django_summernote.urls')),
     path('jet/', include('jet.urls', 'jet')),  # Django jet urls
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET Dashboard URLS

@@ -7,6 +7,26 @@ from django.utils.timezone import now
 # 创建四个表：Category（分类）、Post（文章）、Tag（标签）、Links（友情链接）
 
 
+class About(models.Model):
+    # 信息模块：如关于我，关于博客
+    title = models.CharField(verbose_name='信息板块标题', max_length=100)
+    # 板块内容
+    content = models.TextField(verbose_name='详细信息', blank=True, null=True)
+    # priority
+    priority = models.IntegerField(verbose_name='优先级',default=0)
+    # 图片
+    image = models.ImageField(upload_to='photo')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['priority']
+        verbose_name = 'About'
+        verbose_name_plural = '信息模块列表'
+        db_table = 'about'
+
+
 class Category(models.Model):
     # 类名
     name = models.CharField(verbose_name='类别', max_length=100)
