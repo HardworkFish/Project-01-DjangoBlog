@@ -39,9 +39,10 @@ urlpatterns = [
     path('search/', include('haystack.urls')),  # 搜索
     # path('search/', views.search, name='search'),  # 搜索
     path('about/', views.about, name='about_me'),  # About me
-    path('summernote/', include('django_summernote.urls')),
+    # path('summernote/', include('django_summernote.urls')),  # 富文本框
     path('jet/', include('jet.urls', 'jet')),  # Django jet urls
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET Dashboard URLS
+    path('mdeditor/', include('mdeditor.urls')),
 ]
 
 if settings.DEBUG:

@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.timezone import now
-
+from mdeditor.fields import MDTextField
 # Create your models here.
 # 所有数据库表列 Id 自动创建
 # 创建四个表：Category（分类）、Post（文章）、Tag（标签）、Links（友情链接）
@@ -11,11 +11,12 @@ class About(models.Model):
     # 信息模块：如关于我，关于博客
     title = models.CharField(verbose_name='信息板块标题', max_length=100)
     # 板块内容
-    content = models.TextField(verbose_name='详细信息', blank=True, null=True)
+    content = MDTextField(verbose_name='详细内容', blank=True)
+    # content = models.TextField(verbose_name='详细信息', blank=True, null=True)
     # priority
-    priority = models.IntegerField(verbose_name='优先级',default=0)
+    priority = models.IntegerField(verbose_name='优先级', default=0)
     # 图片
-    image = models.ImageField(upload_to='photos')
+    image = models.ImageField(upload_to='photos', blank=True, null=False)
 
     def __str__(self):
         return self.title
@@ -35,7 +36,6 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-
 
     class Meta:
         ordering = ['name']

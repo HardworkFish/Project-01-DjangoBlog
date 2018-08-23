@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.blog',  # blog 应用
-    'django_summernote',  # 富文本应用
+    # 'django_summernote',  # 富文本应用
     'haystack',  # 搜索应用
+    'mdeditor',  # Markdown 应用
 ]
 
 
@@ -184,21 +185,52 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # 富文本编辑器设置
-SUMMERNOTE_CONFIG = {
-    # Using SummernoteWidget - iframe mode
-    'iframe': True,  # or set False to use SummernoteInplaceWidget - no iframe mode
+# SUMMERNOTE_CONFIG = {
+#     Using SummernoteWidget - iframe mode
+    # 'iframe': True,  # or set False to use SummernoteInplaceWidget - no iframe mode
 
     # Using Summernote Air-mode
-    'airMode': False,
+    # 'airMode': False,
 
     # Use native HTML tags (`<b>`, `<i>`, ...) instead of style attributes
-    'styleWithSpan': False,
+    # 'styleWithSpan': False,
 
     # Change editor size
-    'width': '80%',
-    'height': '480',
-
+    # 'width': '80%',
+    # 'height': '480',
+    #
     # Use proper language setting automatically (default)
-    'lang': 'zh-CN',
+    # 'lang': 'zh-CN',
 
-    }
+    # }
+
+# Markdown django-mdeditor
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+# MEDIA_URL = '/media/'
+
+
+# Markdown 语法设置
+# MDEDITOR_CONFIGS = {
+#     'width': '90%',  # 自定义编辑框宽度
+#     'heigth': 500,   # 自定义编辑框高度
+#     'toolbar': ["undo", "redo", "|",
+#                 "bold", "del", "italic", "quote", "ucwords", "uppercase", "lowercase", "|",
+#                 "h1", "h2", "h3", "h5", "h6", "|",
+#                 "list-ul", "list-ol", "hr", "|",
+#                 "link", "reference-link", "image", "code", "preformatted-text", "code-block", "table", "datetime",
+#                 "emoji", "html-entities", "pagebreak", "goto-line", "|",
+#                 "help", "info",
+#                 "||", "preview", "watch", "fullscreen"],  # 自定义编辑框工具栏
+#     'upload_image_formats': ["jpg", "jpeg", "gif", "png", "bmp", "webp"],  # 图片上传格式类型
+#     'image_floder': 'editor',  # 图片保存文件夹名称
+#     'theme': 'default',  # 编辑框主题 ，dark / default
+#     'preview_theme': 'default',  # 预览区域主题， dark / default
+#     'editor_theme': 'default',  # edit区域主题，pastel-on-dark / default
+#     'toolbar_autofixed': True,  # 工具栏是否吸顶
+#     'search_replace': True,  # 是否开启查找替换
+#     'emoji': True,  # 是否开启表情功能
+#     'tex': True,  # 是否开启 tex 图表功能
+#     'flow_chart': True,  # 是否开启流程图功能
+#     'sequence': True  # 是否开启序列图功能
+# }
+#

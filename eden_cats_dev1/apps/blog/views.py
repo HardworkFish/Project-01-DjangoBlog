@@ -3,6 +3,7 @@ from apps.blog.models import Article, Category, Tag, About
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import Http404
 from django.conf import settings
+import markdown
 from django.db.models import Q
 from django.views.generic import ListView, DetailView
 # from django.http import HttpResponse
@@ -73,6 +74,12 @@ def detail(request, id):
         prev_post = post.prev_article()  # 上一篇文章对象
     except Article.DoesNotExist:
         raise Http404
+    post.content = markdown.markdown(post.content,
+                                     extensions=[
+                                         'markdown.extensions.extra',
+                                         'markdown.extensions.codehilite',
+                                         'markdown.extensions.toc',
+                                     ])
     return render(request, 'post.html', {
         'post': post,
         'tags': tags,

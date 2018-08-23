@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     {% load pagetag %}
+    {% load custom_filter %}
 
 {% load static %}
 
@@ -9,9 +10,9 @@
         <div id="posts" class="posts-expand">
             <style>
                   #about-detail .about-title {
-                        text-align: center;
+                        text-align: left;
                         font-family: "Biaodian Pro Sans CNS", "Helvetica Neue", Helvetica, Arial, "Zhuyin Heiti", "Han Heiti", sans-serif;
-                         font-size: 42px;}
+                         font-size: 32px;}
 
                   .post-block .tag_cat_avatar {
                             width: 32%;
@@ -49,7 +50,7 @@
                          <header class="post-header" >
                             <h1 class="about-title" itemprop="name headline">{{ block.title }}</h1>
                          </header>
-                    {{ block.content|safe}}
+                    {{ block.content|custom_markdown|safe }}
                     </div>
                 </div>
             </div>
