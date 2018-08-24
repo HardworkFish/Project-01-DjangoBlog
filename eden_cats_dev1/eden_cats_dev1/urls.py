@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import django
 from django.contrib import admin
 from django.urls import path
 from apps.blog import views
@@ -21,7 +22,8 @@ from django.conf.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
 from apps.blog.feeds import BlogRssFeed
-# from django.views.static import serve
+from django.views.static import serve
+# from eden_cats_dev1.settings import STATIC_ROOT
 from django.urls import re_path
 
 urlpatterns = [
@@ -43,7 +45,17 @@ urlpatterns = [
     path('jet/', include('jet.urls', 'jet')),  # Django jet urls
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET Dashboard URLS
     path('mdeditor/', include('mdeditor.urls')),
+    # path('static/', serve, {'document_root': STATIC_ROOT}, name='static')  # debug=false
 ]
+
+
+# 配置全局404页面
+handler404 = 'apps.blog.views.page_not_found'
+
+# 配置全局505页面
+handler500 = 'apps.blog.views.server_error'
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

@@ -1,10 +1,5 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
 <title>Eden's Cats|404 Error</title>
@@ -16,8 +11,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href='css/fonts.googleapis.css rel='stylesheet' type='text/css'>
+<link href="{% static 'errors/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
 	<div class="main">
@@ -26,18 +20,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<h1>404 Error</h1>
 			</div>
 			<div class="agileits_main_grid_right">
-				<a href="/">return back</a>
+				<a href="/home">return back</a>
 			</div>
 			<div class="clear"> </div>
 		</div>
 		<div class="w3l_main_grid">
-			<img src="images/1.png" alt=" " class="img-responsive" />
+			<img src="{% static 'errors/images/1.png' %}" alt=" " class="img-responsive" />
 		</div>
 		<div class="agile_copy_right">
-			<p>&copy; 2018 404 Error. Sorry that!Page no found. 
+			<p> 2018 404 Error. Sorry that!Page no found.
 		</div>
 		<div class="agile_copy_right">
-			<p>Click me <a href="#">return back</a></p>
+			<p>Click me <a href="/home">return back</a></p>
 		</div>
 	</div>
 </body>

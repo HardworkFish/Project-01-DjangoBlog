@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from apps.blog.models import Article, Category, Tag, About
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import Http404
@@ -118,7 +118,7 @@ def tags_cloud(request):
         posts = Article.objects.all().filter(status='publish', public_time__isnull=False)
     except Tag.DoesNotExist:
         return Http404
-    return  render(request, 'tags.html', {
+    return render(request, 'tags.html', {
         'tags_list': tags,
         'post_list': posts,
     })
@@ -167,8 +167,8 @@ def archives(request):
 
 # 配置404 500错误页面
 def page_not_found(request):
-    return render(request, '404.html')
+    return render(request, 'errors/404.html')
 
 
-def page_errors(request):
-    return render(request, '500.html')
+def server_error(request):
+    return render(request, 'errors/500.html')
