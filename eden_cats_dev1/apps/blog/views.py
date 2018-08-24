@@ -164,19 +164,11 @@ def archives(request):
             # 'year_month': year + '年' + month + '月'
         })
 
-"""
-def search(request):
-    q = request.GET.get('q')
-    error_message = ''
 
-    if not q:
-        error_message = "请输入关键字"
-        return render(request, 'search.html', {'error_message': error_message})
+# 配置404 500错误页面
+def page_not_found(request):
+    return render(request, '404.html')
 
-    post_list = Article.objects.filter(Q(title__icontains=q) | Q(content__icontains=q))
-    return render(request, 'search.html', {
-        'error_message': error_message,
-        'post_list': post_list,
-    })
-"""
 
+def page_errors(request):
+    return render(request, '500.html')

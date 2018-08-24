@@ -16,7 +16,7 @@ class About(models.Model):
     # priority
     priority = models.PositiveIntegerField(verbose_name='优先级', default=10000)
     # 图片
-    image = models.ImageField(upload_to='photos', blank=True, null=False)
+    image = models.ImageField(upload_to='photos', blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -58,7 +58,24 @@ class Tag(models.Model):
         ordering = ['name']
         verbose_name = '标签名称'   # 指定后台显示模型名称
         verbose_name_plural = '标签列表'   # 指定后台显示模型复数
-        db_table = 'tag'    #数据库表名
+        db_table = 'tag'    # 数据库表名
+
+
+class Column(models.Model):
+    # 博客专栏
+    name = models.CharField(verbose_name='博客专栏', max_length=100)
+    created_time = models.DateField(verbose_name='创建时间', default=now)
+    modified_time = models.DateField(verbose_name='修改时间', default=now)
+    category = models.ForeignKey(Category, verbose_name='分类', on_delete=models.CASCADE, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['name']
+        verbose_name = '专栏名称'
+        verbose_name_plural = '专栏列表'
+        db_table = 'column'  # 数据库表名
 
 
 class Article(models.Model):
@@ -83,19 +100,21 @@ class Article(models.Model):
     # 文章字数
     words = models.PositiveIntegerField(verbose_name='文章字数', default=0)
     # 文章阅读时长
-    time = models.PositiveIntegerField(verbose_name='阅读时长', default=0 )
+    time = models.PositiveIntegerField(verbose_name='阅读时长', default=0)
     # 文章阅读量
     views = models.PositiveIntegerField(verbose_name='访问量', default=0)
     # 文章标语 slogan blank=True 表示数值可为空
     slogan = models.TextField(verbose_name='标语', blank=True, null=True)
     # 文章摘要
-    digest = models.CharField(verbose_name='文章摘要', max_length=500, blank=True)
-    # 文章与分类的关联,多对一
+    digest = MDTextField(verbose_name='文章摘要', max_length=500, blank=True)  # blank 为 True，字段可以为空
+    # 文章与分类的关系,多对一
     category = models.ForeignKey(Category, verbose_name='分类', on_delete=models.CASCADE, blank=False, null=False)
-    # 文章与标签的关联，多对多
+    # 文章与标签的关系，多对多
     tags = models.ManyToManyField(Tag, verbose_name='标签', blank=True)
     # 文章与作者的关系，多对一
     author = models.ForeignKey(User, verbose_name='作者', on_delete=models.CASCADE, blank=False, null=False)
+    # 文章专栏 文章与专栏的关系，多对一
+    column = models.ForeignKey(Column, verbose_name='专栏', on_delete=models.CASCADE, blank=True, null=True)
 
     # 更新文章浏览量
     def viewed(self):

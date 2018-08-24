@@ -218,9 +218,21 @@ columnist.is-fixed {
     left: 12px;
 }
 
-
+/*
 .fancybox-outer a:active, a:hover{
     outline: 0;
-    background-color:rgba(255, 255, 255, 0);
+    background-color:rgba(255, 255, 0, 1);
+}*/
+ .fancybox-nav .fancybox-next a:active, a:hover{
+    background-color: rgba(255, 255, 255, 0);
+
 }
 
+ .pagination a:hover{
+    background-color: #ccc;
+ }
+#slogan-content{
+    color: #1a68a5;
+    font-size: 18px;
+    background: #FFF;
+}

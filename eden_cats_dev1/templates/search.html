@@ -2,7 +2,7 @@
 {% load static %}
 {% load pagetag %}
 {% block content %}
-
+{% load custom_filter %}
     {% if error_message %}
     <p>{{ error_message }}</p>
 {% endif %}
@@ -56,15 +56,24 @@
 											</div>
 										</header>
 										<div class="post-body" itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
+                                            {% if post.slogan %}
 											<blockquote class="blockquote-center">
+                                           <div id="slogan-content">
 												<p>
-													{{ post.slogan }}
+													{{ post.slogan|safe }}
 												</p>
+                                           </div>
 											</blockquote>
+                                            {% endif %}
+                                         {% if post.digest %}
+                        <div class="note">
+                            {{ post.digest|custom_markdown|safe}}
+                        </div>
+                        {% endif %}
 											<div class="note">
                                                 {#striptags 用于过滤正文中的所有 HTML 标签 #}
                                                 {#truncatechars 用于截取正文前的300个字符 #}
-												{{ post.content|striptags|truncatechars:300 }}
+												{{ post.content|safe|truncatechars:200|custom_markdown }}
 											</div>
 											<div class="post-button text-center">
 												<a class="btn" href="{% url 'detail' id=post.id %}" rel="contents">阅读全文 »</a>

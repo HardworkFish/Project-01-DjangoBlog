@@ -1,6 +1,7 @@
 {% extends "../base.html" %}
 {% load static %}
 {% load pagetag %}
+{% load custom_filter %}
 {% block content %}
 
 
@@ -59,17 +60,28 @@
 											</div>
 										</header>
 										<div class="post-body" itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
+                                            {% if post.object.slogan %}
 											<blockquote class="blockquote-center">
+                                            <div id="slogan-content">
 												<p>
 												{% highlight post.object.slogan with query %}
 												</p>
+                                            </div>
 											</blockquote>
+                                            {% endif %}
+                                        {% if post.object.digest %}
+                                            <div class="note">
+                                               {% highlight  post.object.digest with query %}
+                                            </div>
+                                            {% endif %}
+
 											<div class="note">
                                                 {#striptags 用于过滤正文中的所有 HTML 标签 #}
                                                 {#truncatechars 用于截取正文前的300个字符 #}
 												{#% highlight (post.object.content|striptags|truncatechars:300) with query %#}
 												{% highlight post.object.content with query %}
 											</div>
+
 											<div class="post-button text-center">
 												<a class="btn" href="{% url 'detail' id=post.object.id %}" rel="contents">阅读全文 »</a>
 											</div>
