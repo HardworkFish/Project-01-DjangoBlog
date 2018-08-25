@@ -60,13 +60,28 @@ class Tag(models.Model):
         verbose_name_plural = '标签列表'   # 指定后台显示模型复数
         db_table = 'tag'    # 数据库表名
 
+# 一级菜单
+class ColumnCategory(models.Model):
+    name = models.CharField(verbose_name='专栏类别', max_length=100)
+    created_time = models.DateField(verbose_name='创建时间', default=now)
+    modified_time = models.DateField(verbose_name='修改时间', default=now)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'column_category'
+        verbose_name = '专栏类别'
+        verbose_name_plural = '专栏分类列表'
+
+
 
 class Column(models.Model):
     # 博客专栏
     name = models.CharField(verbose_name='博客专栏', max_length=100)
     created_time = models.DateField(verbose_name='创建时间', default=now)
     modified_time = models.DateField(verbose_name='修改时间', default=now)
-    category = models.ForeignKey(Category, verbose_name='分类', on_delete=models.CASCADE, blank=True, null=True)
+    category = models.ForeignKey(ColumnCategory, verbose_name='专栏列表', on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):
         return self.name
