@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from apps.blog.models import Article, Category, Tag, About
+from apps.blog.models import Article, Category, Tag, About, Column, ColumnCategory
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import Http404
 from django.conf import settings
@@ -14,6 +14,8 @@ categories = Category.objects.all()  # 获取全部分类对象
 tags = Tag.objects.all()  # 获取全部的标签对象
 months = Article.objects.datetimes('public_time', 'month', order='DESC')
 years = Article.objects.datetimes('public_time', 'year', order='DESC')
+columns = Column.objects.all()
+column_categories = ColumnCategory.objects.all()
 
 
 def index(request):
@@ -127,7 +129,7 @@ def tags_cloud(request):
 # 标签搜索
 def search_tag(request, tag):
     posts = Article.objects.filter(tags__name__contains=tag)
-    paginator = Paginator(posts, 10)
+    paginator = Paginator(posts, 8)
     try:
         page = request.GET.get('page')
         post_list = paginator.page(page)
@@ -140,6 +142,13 @@ def search_tag(request, tag):
         'category': categories,
         'tag': tag,
         'months': months
+    })
+
+
+def column_category(request):
+    return render(request, 'columns.html', {
+        'columns':columns,
+        'column_category_list': column_categories,
     })
 
 

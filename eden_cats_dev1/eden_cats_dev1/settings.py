@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # 'django_summernote',  # 富文本应用
     'haystack',  # 搜索应用
     'mdeditor',  # Markdown 应用
+    # 'mptt',  # 树存储结构目录应用
 ]
 
 
@@ -181,10 +182,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = 'static'  # debug=False
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    os.path.join(BASE_DIR, "recommend", "static"),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+#     os.path.join(BASE_DIR, "recommend", "static"),
+# ]
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
 
@@ -222,7 +223,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MDEDITOR_CONFIGS = {
     'default': {
         'width': '90%',
-        'heigth': 500,
+        'heigth': 1000,  # markdown 编辑框高度
         'toolbar': ["undo", "redo", "|",
                     "bold", "del", "italic", "quote", "ucwords", "uppercase",
                     "lowercase", "|",

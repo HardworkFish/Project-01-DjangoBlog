@@ -30,7 +30,7 @@ class About(models.Model):
 
 class Category(models.Model):
     # 类名
-    name = models.CharField(verbose_name='类别', max_length=100)
+    name = models.CharField(verbose_name='类别', max_length=100, unique=True)
     created_time = models.DateField(verbose_name='创建时间', default=now)
     modified_time = models.DateField(verbose_name='修改时间', default=now)
 
@@ -46,7 +46,7 @@ class Category(models.Model):
 
 class Tag(models.Model):
     # 标签名
-    name = models.CharField(verbose_name='标签名', max_length=100)
+    name = models.CharField(verbose_name='标签名', max_length=100, unique=True)
     created_time = models.DateField(verbose_name='创建时间', default=now)
     modified_time = models.DateField(verbose_name='修改时间', default=now)
 
@@ -60,9 +60,10 @@ class Tag(models.Model):
         verbose_name_plural = '标签列表'   # 指定后台显示模型复数
         db_table = 'tag'    # 数据库表名
 
+
 # 一级菜单
 class ColumnCategory(models.Model):
-    name = models.CharField(verbose_name='专栏类别', max_length=100)
+    name = models.CharField(verbose_name='专栏类别', max_length=100, unique=True)
     created_time = models.DateField(verbose_name='创建时间', default=now)
     modified_time = models.DateField(verbose_name='修改时间', default=now)
 
@@ -75,10 +76,9 @@ class ColumnCategory(models.Model):
         verbose_name_plural = '专栏分类列表'
 
 
-
 class Column(models.Model):
     # 博客专栏
-    name = models.CharField(verbose_name='博客专栏', max_length=100)
+    name = models.CharField(verbose_name='博客专栏', max_length=100, unique=True)
     created_time = models.DateField(verbose_name='创建时间', default=now)
     modified_time = models.DateField(verbose_name='修改时间', default=now)
     category = models.ForeignKey(ColumnCategory, verbose_name='专栏列表', on_delete=models.CASCADE, blank=True, null=True)

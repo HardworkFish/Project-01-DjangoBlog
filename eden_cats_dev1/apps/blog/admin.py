@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Category, Tag, Article, About, Counts, Column, ColumnCategory
 from django.db import models
 from mdeditor.widgets import MDEditorWidget
+from mptt.admin import MPTTModelAdmin
 # from django_summernote.admin import SummernoteModelAdmin
 # Register your models here.
 
@@ -31,13 +32,13 @@ class ArticleAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.TextField: {'widget': MDEditorWidget}
     }
-    list_display = ('id', 'title', 'author', 'created_time', 'category')
+    list_display = ('id', 'title', 'author', 'created_time', 'category', 'column')
     # list_per_page设置每页显示多少条记录，默认是100条
     list_per_page = 50
     # ordering设置默认排序字段，负号表示降序排序
     ordering = ('-public_time',)
     # list_editable 设置默认可编辑字段
-    list_editable = ['category', ]
+    list_editable = ['category', 'column', ]
     # 主要常用的3个后台筛选器
     list_filter = ('title', 'public_time', 'author', 'category')  # 过滤器
     #search_fields = ('title', 'content', 'category')  # 搜索字段
@@ -53,5 +54,14 @@ admin.site.register(Article, ArticleAdmin)
 #
 # admin.site.register(Counts, CountsAdmin)
 
-admin.site.register(Column)
-admin.site.register(ColumnCategory)
+class ColumnCategoryAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'created_time')
+
+admin.site.register(ColumnCategory, ColumnCategoryAdmin)
+
+
+class ColumnAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'created_time', 'category')
+    list_editable = ['category', ]
+
+admin.site.register(Column, ColumnAdmin)

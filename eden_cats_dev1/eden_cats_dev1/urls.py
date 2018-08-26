@@ -45,6 +45,7 @@ urlpatterns = [
     path('jet/', include('jet.urls', 'jet')),  # Django jet urls
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET Dashboard URLS
     path('mdeditor/', include('mdeditor.urls')),
+    path('columns/', views.column_category, name='column_categories'),  # 博客专栏
     # path('static/', serve, {'document_root': STATIC_ROOT}, name='static')  # debug=false
 ]
 
