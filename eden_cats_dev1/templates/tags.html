@@ -1,177 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-{% load pagetag %}
+    {% load pagetag %}
     {% load static %}
-	<!----- tags start ----------->
-					<!----- arcticle start ----------->
-					<div class="content-wrap">
-						<div id="tags-cloud-content" class="tags-content">
-							<div id="posts" class="posts-expand">
-								<div class="post-block page">
-                                 <img class="tags-cloud-title" itemprop="image" src="{% static 'images/tags_cloud_title.png' %} ">
+    <!----- tags start ----------->
+    <!----- arcticle start ----------->
+<div class="content-wrap">
+    <div id="content" class="content">
+    <img class="tag_cat_avatar" src={% static 'images/tags_cloud_title.png' %} alt="tags_cloud_title">
+        <div id="posts" class="posts-expand">
+            <div class="post-block page" >
+                <header class="post-header" >
+                    <h1 class="post-title" itemprop="name headline"></h1></header>
+                <div class="post-body" >
+                    <div class="tag-cloud">
+                        <div class="tag-cloud-title"> 目前共计{{ tags_list.count }} 个标签</div>
+                        <div class="tag-cloud-tags">
+                            {% for tag in tags_list %}
+                            <a href="{% url 'search_tag' tag=tag %}" style="font-size:{% widthratio tag.article_set.count 1 5 %}px;color:#363636">{{ tag.name }}</a>
+                              {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-									<div class="post-body">
-										<div class="tag-cloud">
-
-											<div class="tag-cloud-tags">
-
-												<!---------------------->
-												<style type="text/css">
-													<!--
-													/**
-													* GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
-													* (http://qbnz.com/highlighter/ and http://geshi.org/)
-													*/
-													.javascript  {font-family: 'Andale Mono', Consolas, monospace; font-size: 11px}
-													.javascript .imp {font-weight: bold; color: red;}
-													.javascript .kw1 {color: #000066; font-weight: bold;}
-													.javascript .kw2 {color: #003366; font-weight: bold;}
-													.javascript .kw3 {color: #000066;}
-													.javascript .kw5 {color: #FF0000;}
-													.javascript .co1 {color: #006600; font-style: italic;}
-													.javascript .co2 {color: #009966; font-style: italic;}
-													.javascript .coMULTI {color: #006600; font-style: italic;}
-													.javascript .es0 {color: #000099; font-weight: bold;}
-													.javascript .br0 {color: #009900;}
-													.javascript .sy0 {color: #339933;}
-													.javascript .st0 {color: #3366CC;}
-													.javascript .nu0 {color: #CC0000;}
-													.javascript .me1 {color: #660066;}
-													.javascript span.xtra { display:block; }
-
-													canvas {
-													float: left;
-													margin-bottom: 20px ;
-													float: unset;
-													margin-bottom: 20px;
-													position: relative;
-													}
-
-													ul.weighted {
-													float: left;
-													display: block;
-													overflow: auto;
-													padding: 21px;
-													margin: 120px 0 120px 0;
-													background-color: #fff;
-													border: 4px solid #aaa;
-													border-radius: 42px;
-													-moz-border-radius: 27px;
-													}
-													ul.weighted li { display: inline }
-													ul.weighted li a { margin: 2px }
-													.centred p { width: 320px; float: left; margin-left: 20px }
-													.preright { float: left }
-													.huge { font-family: Impact,sans-serif; font-size: 56px }
-													.large { font-family: 'Arial Black',sans-serif; font-size: 40px }
-													.medium { font-family: Verdana,sans-serif; font-size: 18px }
-													.small { font-family: Georgia,sans-serif; font-size: 11px }
-													a.red { color: #f00 }
-													a.green { color: #0c0 }
-													a.purple { color: #f09 }
-                                                    a.blue {color:rgb(30,144,255)}
-													a.pink {color:rgb(255,105,180)}
-													a.yellow{color:rgb(255,215,0)}
-													a.crimson{color: rgb(220,20,60)}
-                                                    a.deepskyblue{color: rgb(0,191,255)}
-                                                    a.organe{color: rgb(255,165,0)}
-
-													-->
-												</style>
-
-												<!--[if lt IE 9]><script type="text/javascript" src="excanvas.min.js"></script><![endif]-->
-												<script src="{% static 'js/tagcanvas.min.js' %}" type="text/javascript"></script>
-												<script type="text/javascript">
-													//<![CDATA[
-													window.onload = function() {
-														TagCanvas.textFont = 'Impact,"Arial Black",sans-serif';
-														TagCanvas.textColour = '#00f';
-														TagCanvas.textHeight = 25;
-														TagCanvas.outlineColour = '#f60';
-														TagCanvas.outlineThickness = 5;
-														TagCanvas.outlineOffset = 1;
-														TagCanvas.outlineMethod = 'block';
-														TagCanvas.maxSpeed = 0.12;
-														TagCanvas.minBrightness = 0.1;
-														TagCanvas.depth = 0.95;
-														TagCanvas.pulsateTo = 0.2;
-														TagCanvas.pulsateTime = 0.75;
-														TagCanvas.decel = 0.9;
-														TagCanvas.reverse = true;
-														TagCanvas.hideTags = false;
-														TagCanvas.shadow = '#ccf';
-														TagCanvas.shadowBlur = 3;
-														TagCanvas.fadeIn = 800;
-														try {TagCanvas.Start('tagcanvas', 'weightTags', {
-																textFont : null,
-																textColour : null,
-																weight : true
-															});
-														} catch(e) {
-														}
-													};
-													//]]>
-												</script>
-<canvas id="tagcanvas" width="400" height="400"></canvas>
-												<br>
-												</br>
-
-
-												<ul class="weighted"  style="font-size: 50%" id="weightTags">
-                                                <header class="post-header">
-										<h1 class="post-title" itemprop="name headline">目前共计 23 个标签</h1>
-									</header>
-								                    {% for tag in tags_list %}
-													<li>
-
-                                                         <a href="{% url 'search_tag' tag=tag %}"
-													{% if tag.article_set.count <= 1 %}
-                                                       class="blue small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
-                                                    {% elif tag.article_set.count <= 2 %}
-                                                       class="yellow small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
-                                                    {% elif tag.article_set.count <= 3 %}
-                                                        class="green small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
-                                                    {% elif tag.article_set.count <= 4 %}
-                                                       class=" pink small"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
-                                                    {% elif tag.article_set.count <= 5 %}
-                                                        class="purple medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
-                                                    {% elif tag.article_set.count <= 8 %}
-                                                        class="yellow medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
-                                                    {% elif tag.article_set.count <= 10 %}
-                                                        class="red medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
-                                                    {% elif tag.article_set.count <= 15 %}
-                                                         class=" purple medium"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
-                                                    {% elif tag.article_set.count <= 20 %}
-                                                        class=" crimson large"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
-                                                    {% elif tag.article_set.count <= 30 %}
-                                                        class=" blue large"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
-                                                    {% elif tag.article_set.count <= 50 %}
-                                                       class=" deepskyblue huge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
-                                                    {% elif tag.article_set.count <= 100 %}
-                                                        class=" organe huge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
-                                                    {% else %}
-                                                        class=" red huge"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{ tag.name }}({{ tag.article_set.count }})</font></font> </a>
-                                                    {% endif %}
-
-
-
-                                                    </li>
-
-                                                    {% empty %}
-                                                        暂无分类！
-                                                    {% endfor %}
-
-												</ul>
-
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
-					<!---------------------sidebar-toggle ----------------->
+    <!---------------------sidebar-toggle ----------------->
+</div>
 
     {% include "leftSidebar.html" %}
 {% endblock %}

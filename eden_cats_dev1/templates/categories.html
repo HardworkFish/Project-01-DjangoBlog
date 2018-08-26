@@ -1,39 +1,42 @@
 {% extends "base.html" %}
-{% block content%}
+{% load static %}
+{% block content %}
+    <div class="content-wrap">
+        <div id="content" class="content">
+            <img class="tag_cat_avatar" src={% static 'images/category_title.png' %} alt="category_title">
+            <div id="posts" class="posts-expand">
+                <div class="post-block page">
 
+                    <header class="post-header">
+                        <h1 class="post-title" itemprop="name headline"></h1>
+                    </header>
+                    <div class="post-body">
+                        <div class="category-all-page">
+                            <div class="category-all-title">
+                                目前共计 {{ category_list.count }} 个分类
+                            </div>
+                        <div class="category-cloud-body">
+                            <div class="category-all">
+                                <ul class="category-list">
+                                    {% for category in category_list %}
+                                        <li class="category-list-item">
+                                            <a class="category-list-link"
+                                               href="{% url 'category_menu' id=category.id %}">{{ category.name }}</a>
+                                            <span class="category-list-count">{{ category.article_set.count }}</span>
+                                        </li>
+                                    {% empty %}
+                                        Sorry，暂无归类！
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
 
-								<div class="content-wrap">
-						<div id="content" class="content">
-							<div id="posts" class="posts-expand">
-								<div class="post-block page">
-									<header class="post-header">
-										<h1 class="post-title" itemprop="name headline"></h1>
-									</header>
-									<div class="post-body">
-										<div class="category-all-page">
-											<div class="category-all-title">
-												目前共计 {{ category_list.count }} 个分类
-											</div>
-											<div class="category-all">
-												<ul class="category-list">
-                                                    {% for category in category_list %}
-													<li class="category-list-item">
-														<a class="category-list-link" href="{% url 'category_menu' id=category.id %}">{{ category.name }}</a>
-                                                        <span class="category-list-count">{{ category.article_set.count }}</span>
-													</li>
-                                                    {% empty %}
-                                                    Sorry，暂无归类！
-                                                    {% endfor %}
-												</ul>
-											</div>
-
-										</div>
-
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     {% include "leftSidebar.html" %}
 

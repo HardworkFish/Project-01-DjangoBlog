@@ -5,72 +5,35 @@
 
     <div class="content-wrap">
         <div id="content" class="content">
-        <div id="posts" class="posts-expand">
-            <style>
-                  #about-detail .about-title {
-                        text-align: left;
-                        font-family: "Biaodian Pro Sans CNS", "Helvetica Neue", Helvetica, Arial, "Zhuyin Heiti", "Han Heiti", sans-serif;
-                         font-size: 32px;}
-
-                   .tag_cat_avatar {
-    width: 42%;
-    height: 42%;
-    position: initial;
-    right: 120px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.75;
-    display: block;
-    border: 23px;
-    box-shadow: 0px 2px 2px 0px;
-    /* padding: 0px; */
-}
-                  @media (max-width: 767px){
+            <div id="posts" class="posts-expand">
 
 
-                    .post-block .tag_cat_avatar img {
-                     padding: initial !important;
-                    }
-                  }
-
-                   #about-detail {
-                        background: rgba(255, 255, 255, 0);
-                        padding: 42px;
-                        box-shadow: 0 2px 2px 0 rgb(109, 109, 109), 0 3px 1px 2px rgba(0, 0, 0, 0.13), 0 1px 5px 2px rgba(0,0,0,.12);
-                   }
-                </style>
-
-            {% for block in block_list %}
-                {% if block.image %}
-                    <br>
-                    <img class="tag_cat_avatar" src="{{ MEDIA_URL }}{{ block.image }}" alt="tag_cat_avatar">
-                    <br>
-
-                {% endif %}
-            <div class="post-block page" >
-
-
-                <div class="post-body">
-                    <div id="about-detail">
-                         <header class="post-header" >
-                            <h1 class="about-title" itemprop="name headline">{{ block.title }}</h1>
-                         </header>
-                    {{ block.content|custom_markdown|safe }}
+                {% for block in block_list %}
+                    {% if block.image %}
+                        <br>
+                        <img class="tag_cat_avatar" src="{{ MEDIA_URL }}{{ block.image }}" alt="tag_cat_avatar">
+                        <br>
+                    {% endif %}
+                    <div class="post-block page">
+                        <div class="post-body">
+                            <div id="about-detail">
+                                <header class="post-header">
+                                    <h1 class="about-title" itemprop="name headline">{{ block.title }}</h1>
+                                </header>
+                                {{ block.content|custom_markdown|safe }}
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
                 {% empty %}
-                |*´Å`)ﾉ Sorry！这里好像还没介绍呢！
+                    |*´Å`)ﾉ Sorry！这里好像还没介绍呢！
 
-            {% endfor %}
-
-
+                {% endfor %}
 
 
-        </div>
+            </div>
         </div>
     </div>
 
 
-{% include "leftSidebar.html" %}
+    {% include "leftSidebar.html" %}
 {% endblock %}

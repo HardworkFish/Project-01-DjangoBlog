@@ -795,6 +795,15 @@ pre .javascript .function, pre .keyword {
 .back-to-top, .menu, .pagination, .site-meta, .tag-cloud {
 	text-align: center
 }
+
+.tag-cloud-title{
+    font-size: 32px;
+    font-family: "Adobe Arabic";
+}
+
+.tag-cloud-tags{
+   box-shadow: 0 1px 1px 0 #9E9E9E, 0 3px 1px 2px rgba(0, 0, 0, 0.13), 0 1px 5px 2px rgba(0,0,0,.12);
+}
 .btn-bar {
 	display: block;
 	width: 22px;
@@ -872,6 +881,11 @@ pre .javascript .function, pre .keyword {
 .tag-cloud a {
 	display: inline-block;
 	margin: 10px
+}
+
+.tag-cloud a:hover{
+    text-decoration: underline;
+    background-color: #eee;
 }
 .back-to-top {
 	box-sizing: border-box;
@@ -1797,6 +1811,14 @@ img:hover {
 	text-align: center;
     font-size: 27px;
 }
+
+.category-all-title{
+    font-family: "Adobe Arabic";
+}
+.category-cloud-body{
+    box-shadow: 0 1px 1px 0 #9E9E9E, 0 3px 1px 2px rgba(0, 0, 0, 0.13), 0 1px 5px 2px rgba(0,0,0,.12);
+}
+
 .post-toc .nav .nav-child {
 	display: none
 }
@@ -2244,7 +2266,7 @@ img:hover {
 }
 .category-all-page .category-list {
 	margin: 0;
-    padding: 0;
+    padding: 2%;
     list-style: none;
     background-image: url(../images/black_cat.jpg);
     background-position: center;
@@ -2801,7 +2823,9 @@ to {
 	margin: 12px initial initial
 }
 .posts-expand {
-	padding-top: initial
+	padding-top: initial;
+    padding: 12px;
+
 }
 .post-nav-divider {
 	width: 4%
