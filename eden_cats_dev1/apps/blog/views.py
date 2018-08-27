@@ -146,8 +146,8 @@ def search_tag(request, tag):
 
 
 def column_category(request):
-    return render(request, 'columns.html', {
-        'columns':columns,
+    return render(request, 'columns.html',  {
+        'columns': columns,
         'column_category_list': column_categories,
     })
 
