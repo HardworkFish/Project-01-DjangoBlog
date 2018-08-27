@@ -7,6 +7,32 @@ from mdeditor.fields import MDTextField
 # 创建四个表：Category（分类）、Post（文章）、Tag（标签）、Links（友情链接）
 
 
+# 访问网站 ip 地址和次数
+class UserIp(models.Model):
+    ip = models.CharField(verbose_name='IP地址', max_length=50)  # ip地址
+    count = models.PositiveIntegerField(verbose_name='访问次数', default=0)  # 该 ip 访问次数
+    visit_time = models.DateField(verbose_name='最近访问时间')
+
+    def __str__(self):
+        return self.ip
+
+    class Meta:
+        verbose_name = '访问用户信息'
+        verbose_name_plural = '访问用户列表'
+
+
+# 网站访问总次数
+class VisitCount(models.Model):
+    count = models.PositiveIntegerField(verbose_name='网站访问总次数', default=0)  # 网站访问总次数
+
+    def __str__(self):
+        return str(self.count)
+
+    class Meta:
+        verbose_name = '网站访问总次数'
+        verbose_name_plural = verbose_name
+
+
 class About(models.Model):
     # 信息模块：如关于我，关于博客
     title = models.CharField(verbose_name='信息板块标题', max_length=100)
@@ -30,6 +56,8 @@ class About(models.Model):
 
 # 设置页面基本信息
 class BaseInfo(models.Model):
+    website_title = models.CharField(verbose_name='网站名称', max_length=300, blank=True, null=True)
+    small_website_title = models.CharField(verbose_name='网站小标题', max_length=300, blank=True, null=True)
     avatar = models.ImageField(upload_to='avatar', blank=True, null=True)
     user_name = models.CharField(verbose_name='用户昵称', max_length=100)
     slogan = models.TextField(verbose_name='用户标语', blank=True, null=True)

@@ -4,6 +4,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import Http404
 from django.conf import settings
 from eden_cats_dev1.settings import MEDIA_URL
+from .visit_info import refresh_visit_count, get_UserIP  # 当网站被访问，更新网站访问次数
 import markdown
 from django.db.models import Q
 from django.views.generic import ListView, DetailView
@@ -78,12 +79,11 @@ def detail(request, id):
         prev_post = post.prev_article()  # 上一篇文章对象
     except Article.DoesNotExist:
         raise Http404
-    post.content = markdown.markdown(post.content,
-                                     extensions=[
-                                         'markdown.extensions.extra',
-                                         'markdown.extensions.codehilite',
-                                         'markdown.extensions.toc',
-                                     ])
+    # post.content = markdown.markdown(post.content, extensions=[
+    #                                      'markdown.extensions.extra',
+    #                                      'markdown.extensions.codehilite',
+    #                                      'markdown.extensions.toc',
+    #                                  ])
     return render(request, 'post.html', {
         'post': post,
         'tags': tags,
