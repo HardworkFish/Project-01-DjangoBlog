@@ -1581,7 +1581,7 @@ to {
 }
 .sidebar-inner {
 	position: relative;
-	padding: 20px 10px;
+	padding: 20px 32px;
 	text-align: center
 }
 .site-overview {
@@ -1785,9 +1785,13 @@ img:hover {
 .post-toc ul {
     margin: 0;
     text-align: left;
-    list-style: none;
     font-size: 14px;
-    padding-left: 18px;
+    padding-left: 15px;
+    list-style: disc;
+}
+
+.post-toc li{
+    color:#FF5722;
 }
 
 .post-toc ul > ul{
@@ -1802,6 +1806,10 @@ img:hover {
 	color: #fc6423;
     border-bottom-color: #fc6423;
 }
+
+
+
+
 .post-toc .nav-item {
 	overflow: hidden;
 	text-overflow: ellipsis;
