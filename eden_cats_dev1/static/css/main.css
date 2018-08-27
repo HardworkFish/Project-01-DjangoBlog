@@ -1640,7 +1640,7 @@ to {
 	height: auto;
 	border: 1px solid #eee
 }
-.menu .menu-item a, .post-toc ol a {
+.menu .menu-item a, .post-toc ul a {
 	transition-duration: .2s;
 	transition-timing-function: ease-in-out;
 	transition-delay: 0s
@@ -1781,24 +1781,26 @@ img:hover {
 .post-toc {
 	overflow: auto
 }
-.post-toc ol {
-	margin: 0;
-	padding: 0 2px 5px 10px;
-	text-align: left;
-	list-style: none;
-	font-size: 14px
+
+.post-toc ul {
+    margin: 0;
+    text-align: left;
+    list-style: none;
+    font-size: 14px;
+    padding-left: 18px;
 }
-.post-toc ol > ol {
+
+.post-toc ul > ul{
 	padding-left: 0
 }
-.post-toc ol a {
+.post-toc ul a {
 	transition-property: all;
-	color: #666;
+	color: #ccc;
 	border-bottom-color: #ccc
 }
-.post-toc ol a:hover {
-	color: #000;
-	border-bottom-color: #000
+.post-toc ul a:hover {
+	color: #fc6423;
+    border-bottom-color: #fc6423;
 }
 .post-toc .nav-item {
 	overflow: hidden;

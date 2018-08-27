@@ -4,6 +4,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import Http404
 from django.conf import settings
 from eden_cats_dev1.settings import MEDIA_URL
+from apps.blog.templatetags import custom_filter
 from .visit_info import refresh_visit_count, get_UserIP  # 当网站被访问，更新网站访问次数
 import markdown
 from django.db.models import Q
@@ -84,6 +85,13 @@ def detail(request, id):
     #                                      'markdown.extensions.codehilite',
     #                                      'markdown.extensions.toc',
     #                                  ])
+    # post.content = custom_filter.custom_markdown(post.content)
+    # post.slogan = custom_filter.custom_markdown(post.slogan)
+    # md = custom_filter.toc_markdown
+    # post.content = md.convert(post.content)
+    # post.toc = md.toc
+    post = custom_filter.toc_markdown(post)
+
     return render(request, 'post.html', {
         'post': post,
         'tags': tags,
