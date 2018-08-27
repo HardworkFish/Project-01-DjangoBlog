@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-
-import re
 import markdown
 from django import template
 from django.template.defaultfilters import stringfilter

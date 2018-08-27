@@ -1,6 +1,6 @@
 from django import template
 from django.utils.html import format_html
-from ..models import Article, Category, Tag
+from ..models import Article, Tag
 from django.db.models.aggregates import Count
 register = template.Library()
 

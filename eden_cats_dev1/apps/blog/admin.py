@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Tag, Article, About, Counts, Column, ColumnCategory
+from .models import Category, Tag, Article, About, Column, ColumnCategory, FriendsLinks, BaseInfo
 from django.db import models
 from mdeditor.widgets import MDEditorWidget
 from mptt.admin import MPTTModelAdmin
@@ -41,7 +41,7 @@ class ArticleAdmin(admin.ModelAdmin):
     list_editable = ['category', 'column', ]
     # 主要常用的3个后台筛选器
     list_filter = ('title', 'public_time', 'author', 'category')  # 过滤器
-    #search_fields = ('title', 'content', 'category')  # 搜索字段
+    # search_fields = ('title', 'content', 'category')  # 搜索字段
     date_hierarchy = 'public_time'  # 详细时间分层筛选
     # 设置哪些字段可以点击进入编辑界面
     list_display_links = ('id', 'title')
@@ -65,3 +65,7 @@ class ColumnAdmin(admin.ModelAdmin):
     list_editable = ['category', ]
 
 admin.site.register(Column, ColumnAdmin)
+
+admin.site.register(BaseInfo)
+admin.site.register(FriendsLinks)
+

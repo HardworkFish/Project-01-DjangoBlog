@@ -28,8 +28,50 @@ class About(models.Model):
         db_table = 'about'
 
 
+# 设置页面基本信息
+class BaseInfo(models.Model):
+    avatar = models.ImageField(upload_to='avatar', blank=True, null=True)
+    user_name = models.CharField(verbose_name='用户昵称', max_length=100)
+    slogan = models.TextField(verbose_name='用户标语', blank=True, null=True)
+    created_time = models.DateField(verbose_name='创建时间', default=now)
+    modified_time = models.DateField(verbose_name='修改时间', default=now)
+
+    def __str__(self):
+        return '用户基本信息'
+
+    class Meta:
+        ordering = ['created_time']
+        verbose_name = '用户信息'
+        verbose_name_plural = '用户信息设置'
+        db_table = 'base_info'
+
+
+# 设置友情链接
+class FriendsLinks(models.Model):
+    # 文章状态
+    STATUS_CHOICES = (
+        ('hide', '隐藏'),
+        ('show', '显示'),
+    )
+    name = models.CharField(verbose_name='网站名称', max_length=100)
+    url = models.CharField(verbose_name='链接地址', max_length=300)
+    remark = models.TextField(verbose_name='备注信息', blank=True, null=True)
+    created_time = models.DateField(verbose_name='创建时间', default=now)
+    # 友情链接状态
+    status = models.CharField(verbose_name='显示状态', max_length=10, choices=STATUS_CHOICES, default='hide')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['name']
+        verbose_name = '友情链接'
+        verbose_name_plural = '友情链接列表'
+        db_table = 'friend_links'
+
+
+# 类名
 class Category(models.Model):
-    # 类名
     name = models.CharField(verbose_name='类别', max_length=100, unique=True)
     created_time = models.DateField(verbose_name='创建时间', default=now)
     modified_time = models.DateField(verbose_name='修改时间', default=now)
@@ -154,16 +196,4 @@ class Article(models.Model):
         verbose_name_plural = '文章列表'  # 指定后台显示模型复数名称
         db_table = 'article'  # 数据库表
         get_latest_by = 'created_time'
-
-
-# 统计博客信息
-class Counts(models.Model):
-    blog_nums = models.IntegerField(verbose_name='博客数目', default=0)
-    category_nums = models.IntegerField(verbose_name='分类数目', default=0)
-    tag_nums = models.IntegerField(verbose_name='标签数量', default=0)
-    visit_nums = models.IntegerField(verbose_name='网站访问量', default=0)
-
-    class Meta:
-        verbose_name = '数目统计'
-        verbose_name_plural = verbose_name
 

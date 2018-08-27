@@ -1,65 +1,82 @@
 {% load static %}
-
+{% load base_info %}
 <!--- left dowb sidebar ------------->
+<!---------------------sidebar-toggle ----------------->
+<div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+        <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+        <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+        <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+</div>
 
+<aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+            <div class="site-overview">
+                {% get_base_info as infos %}
+                {% for info in infos %}
+                    <div class="site-author motion-element" itemprop="author"   itemtype="http://schema.org/Person">
+                        <img class="site-author-image" itemprop="image" src="{% get_media_path %}{{ info.avatar }}" alt="avatar">
+                        <p class="site-author-name" itemprop="name">
+                            {{ info.user_name }}
+                        </p>
+                        <p class="site-description motion-element" itemprop="description">
+                            {{ info.slogan }}
+                        </p>
+                    </div>
+                {% endfor %}
+                <nav class="site-state motion-element">
+                    {% get_total_category as categories %}
+                    {% get_total_tag as tags %}
+                    {% get_total_article as articles %}
+                    <div class="site-state-item site-state-posts">
+                        <a href="/archives/"><span class="site-state-item-count">{{ articles.count }}</span> <span
+                                class="site-state-item-name">日志</span></a>
+                    </div>
+                    <div class="site-state-item site-state-categories">
+                        <a href="/categories/"><span class="site-state-item-count">{{ categories.count }}</span> <span
+                                class="site-state-item-name">分类</span></a>
+                    </div>
+                    <div class="site-state-item site-state-tags">
+                        <a href="/tags/"><span class="site-state-item-count">{{ tags.count }}</span> <span
+                                class="site-state-item-name">标签</span></a>
+                    </div>
+                </nav>
+                <div class="feed-link motion-element">
+                    <a href="{% url 'rss' %}" rel="alternate"><i class="fa fa-rss"></i> RSS</a>
+                </div>
+                <div class="links-of-author motion-element">
+                    <span class="links-of-author-item"> <a href="https://gitee.com/trsky" target="_blank" title="码云"> <i
+                            class="fa fa-fw fa-cloud"></i>码云</a> </span>
+                    <span class="links-of-author-item"> <a href="#" target="_blank" title="CSDN"> <i
+                            class="fa fa-fw fa-book"></i>CSDN</a> </span>
+                    <span class="links-of-author-item"> <a href="https://github.com/HardworkFish" target="_blank"
+                                                           title="Github"> <i class="fa fa-fw fa-github"></i>Github</a></span>
+                    <span class="links-of-author-item"> <a href="http://music.163.com/#/user/home?id=316926790"
+                                                           target="_blank" title="网易云"> <i
+                            class="fa fa-fw fa-music"></i>网易云</a> </span>
+                </div>
+                {% get_friends_links as links %}
+            {% if links.count > 0 %}
+                <div class="links-of-blogroll motion-element links-of-blogroll-block">
 
-					<!---------------------sidebar-toggle ----------------->
-					<div class="sidebar-toggle">
-						<div class="sidebar-toggle-line-wrap">
-							<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-                            <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-                            <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-						</div>
-					</div>
+                    <div class="links-of-blogroll-title">
+                        <i class="fa fa-fw fa-link"></i>友情链接
+                    </div>
+                    <ul class="links-of-blogroll-list">
 
-					<aside id="sidebar" class="sidebar" >
-						<div class="sidebar-inner" >
-							<section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-								<div class="site-overview" >
-									<div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-										<img class="site-author-image" itemprop="image" src="{%static 'images/avatar.jpg' %}" alt="TRsky">
-										<p class="site-author-name" itemprop="name">
-											TRsky
-										</p>
-										<p class="site-description motion-element" itemprop="description">
-											爱分享，爱技术，爱生活。
-										</p>
-									</div>
-									<nav class="site-state motion-element">
-										<div class="site-state-item site-state-posts">
-											<a href="/archives/"><span class="site-state-item-count">34</span> <span class="site-state-item-name">日志</span></a>
-										</div>
-										<div class="site-state-item site-state-categories">
-											<a href="/categories/"><span class="site-state-item-count">5</span> <span class="site-state-item-name">分类</span></a>
-										</div>
-										<div class="site-state-item site-state-tags">
-											<a href="/tags/"><span class="site-state-item-count">22</span> <span class="site-state-item-name">标签</span></a>
-										</div>
-									</nav>
-									<div class="feed-link motion-element">
-										<a href="{% url 'rss' %}" rel="alternate"><i class="fa fa-rss"></i> RSS</a>
-									</div>
-									<div class="links-of-author motion-element">
-										<span class="links-of-author-item"> <a href="https://gitee.com/trsky" target="_blank" title="码云"> <i class="fa fa-fw fa-cloud"></i>码云</a> </span>
-										<span class="links-of-author-item"> <a href="#" target="_blank" title="CSDN"> <i class="fa fa-fw fa-book"></i>CSDN</a> </span>
-                                        <span class="links-of-author-item"> <a href="https://github.com/HardworkFish" target="_blank" title="Github"> <i class="fa fa-fw fa-github"></i>Github</a></span>
-										<span class="links-of-author-item"> <a href="http://music.163.com/#/user/home?id=316926790" target="_blank" title="网易云"> <i class="fa fa-fw fa-music"></i>网易云</a> </span>
-									</div>
-									<div class="links-of-blogroll motion-element links-of-blogroll-block">
-										<div class="links-of-blogroll-title">
-											<i class="fa fa-fw fa-link"></i>友情链接
-										</div>
-										<ul class="links-of-blogroll-list">
-											<li class="links-of-blogroll-item">
-												<a href="http://blog.trskycooik.com/" title="本站孪生站(github托管)" target="_blank">本站孪生站(github托管)</a>
-											</li>
-											<li class="links-of-blogroll-item">
-												<a href="https://mirrors.scau.edu.cn/" title="SCAULUG开源镜像站" target="_blank">SCAULUG开源镜像站</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</section>
-						</div>
-					</aside>
+                        {% for link in links %}
+                        <li class="links-of-blogroll-item">
+                            <a href="{{ link.url }}" title="{{ link.remark }}" target="_blank">{{ link.name }}</a>
+                        </li>
+                            {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            </div>
+        </section>
+    </div>
+</aside>
 
