@@ -8,6 +8,7 @@
         <div id="content" class="content">
             <div id="posts" class="posts-expand">
                 <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                  <div class="post-block-sub">
                     <div class="post-block">
                         <link itemprop="mainEntityOfPage" href="{% url 'detail' id=post.id %}">
                         <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -84,7 +85,7 @@
                         <!--- end 0f article --->
                         <div>
                             <div>
-                                <div style="text-align:center;color:#ccc;font-size:21px">-------------本文结束
+                                <div style="text-align:center;color:#ccc;font-size:12px">-------------本文结束
                                     <i class="fa fa-paw"></i>&nbsp;感谢您的阅读-------------
                                 </div>
                             </div>
@@ -134,7 +135,7 @@
                             })</script>
                         </div>
                         <div>
-                            <div style="padding:10px 0;margin:20px auto;width:90%;text-align:center;font-size: 21px;">
+                            <div style="padding:10px 0;margin:20px auto;width:90%;text-align:center;font-size: 15px;">
                                 <div>喵呜，饿了呀！给喵君喂条鱼吧</div>
                                 <button id="rewardButton" disable="enable"
                                         onclick='var qr=document.getElementById("QR");"none"===qr.style.display?qr.style.display="block":qr.style.display="none"'>
@@ -186,6 +187,7 @@
                             <!-- 上下篇文章切换 结束-->
                         </footer>
                     </div>
+                  </div>
                 </article>
                 <div class="post-spread">
                     <div class="jiathis_style">

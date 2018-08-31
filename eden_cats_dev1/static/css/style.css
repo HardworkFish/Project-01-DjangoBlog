@@ -48,7 +48,7 @@ a {
     width: 100%;
     z-index: 2000;
     right: 30px;
-    bottom: 98px;
+    bottom: 160px;
     /* Force Hardware Acceleration in WebKit */
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;
@@ -83,7 +83,7 @@ columnist.is-fixed {
     position: absolute;
     right: 20px;
     height: 100%;
-    width: 59px;
+    width: 50px;
     background-color: #000000;
 }
 
@@ -109,7 +109,7 @@ columnist.is-fixed {
     -ms-transform: translateX(-50%) translateY(-50%);
     -o-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    width: 18px;
+    width: 12px;
     height: 2px;
     background-color: #FFF;
     /* these are the upper and lower lines in the menu menu */
@@ -228,7 +228,7 @@ columnist.is-fixed {
     background: rgba(255, 255, 255, 0);
     border: rgb(255, 255, 255);
     position: absolute;
-    left: 12px;
+    left: 6px;
 }
 
 /*
@@ -247,8 +247,9 @@ columnist.is-fixed {
 
 #slogan-content {
     color: rgba(0, 0, 0, 0.77);
-    font-size: 18px;
+    font-size: 12px;
     font-family: -webkit-pictograph;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 /*about page*/
@@ -258,10 +259,11 @@ columnist.is-fixed {
 }
 
 .tag_cat_avatar {
-    width: 42%;
-    height: 42%;
-    position: initial;
-    right: 120px;
+    width: 32%;
+    height: 32%;
+    text-align: center;
+    /* position: initial; */
+    /* right: 38px; */
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.75;
@@ -269,6 +271,8 @@ columnist.is-fixed {
     border: 23px;
     box-shadow: 0px 2px 2px 0px;
     /* padding: 0px; */
+    position: relative;
+    top: -35px;
 }
 
 @media (max-width: 767px) {
@@ -279,24 +283,35 @@ columnist.is-fixed {
 }
 
 #about-detail {
+    position: relative;
+    top: -62px;
     background: rgba(255, 255, 255, 0);
-    padding: 42px;
+    padding: 45px;
     box-shadow: 0 2px 2px 0 rgb(109, 109, 109), 0 3px 1px 2px rgba(0, 0, 0, 0.13), 0 1px 5px 2px rgba(0, 0, 0, .12);
 }
 
-.post-button-tag a{
+.post-button-tag a {
     color: #000;
-    font-size: 20px;
+    font-size: 14px;
+    float: left;
 }
 
-.post-button-tag a:hover{
-    color:#f44336;
+.post-button-tag a:hover {
+    color: #f44336;
 }
 
-ol li{
-    font-size: 25px;
+.post-block-sub {
+    padding: 32px;
+    background: rgba(158, 158, 158, 0);
+    box-shadow: 0 2px 2px 0 rgb(109, 109, 109), 0 3px 1px 2px rgba(0, 0, 0, 0.13), 0 1px 5px 2px rgba(0, 0, 0, .12);
+
 }
 
-dl dt{
-    font-size: 25px;
+ol li {
+    font-size: 14px;
 }
+
+dl dt {
+    font-size: 14px;
+}
+

@@ -2,60 +2,59 @@
 {% block content %}
     {% load pagetag %}
     <div class="content-wrap">
-
         <div id="content" class="content">
-            <div class="post-block archive">
+            <div class="post-block-sub">
+                <div class="post-block archive">
+                    <div id="posts" class="posts-collapse">
+                        <span class="archive-move-on"></span><span
+                            class="archive-page-counter">✧⁺⸜(●˙▾˙●)⸝⁺✧ 喵！已经有 {{ posts.count }} 篇日志了呀! 要加油啦。</span>
+                        {% regroup post_list.object_list by created_time.year as date_by_year %}
 
-                <div id="posts" class="posts-collapse">
-                    <span class="archive-move-on"></span><span
-                        class="archive-page-counter">✧⁺⸜(●˙▾˙●)⸝⁺✧ 喵！已经有 {{ posts.count }} 篇日志了呀! 要加油啦。</span>
-                    {% regroup post_list.object_list by created_time.year as date_by_year %}
-
-                    {% for years in date_by_year %}
-                        <div class="collection-title">
-                            <h1 class="archive-year" id="{{ years.grouper }}">{{ years.grouper }}年</h1>
-                        </div>
-
-                        {% regroup years.list by created_time.month as date_by_month %}
-
-                        {% for months in date_by_month %}
-
+                        {% for years in date_by_year %}
                             <div class="collection-title">
-                                <h1 class="archive-year" id="{{ months.grouper }}">
-                                    归档:&nbsp;{{ years.grouper }}年{{ months.grouper }}月</h1>
+                                <h1 class="archive-year" id="{{ years.grouper }}">{{ years.grouper }}年</h1>
                             </div>
-                            {% for post in months.list %}
-                                <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                                    <header class="post-header">
-                                        <h2 class="post-title"><a class="post-title-link"
-                                                                  href="{% url 'detail' id=post.id %}"
-                                                                  itemprop="url"><span itemprop="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ post.title }}</span></a>
-                                        </h2>
-                                        <div class="post-meta">
-                                            <time class="post-time" itemprop="dateCreated"
-                                                  datetime="{{ post.public_time|date:'Y-m-d H:i' }}"
-                                                  content="{{ year_month }}">
-                                                {{ post.public_time|date:'Y-m-d H:i' }}
-                                            </time>
-                                        </div>
-                                    </header>
-                                </article>
-                            {% endfor %}
-                        {% endfor %}
-                    {% empty %}
-                        Sorry,暂无归档！
-                    {% endfor %}
 
+                            {% regroup years.list by created_time.month as date_by_month %}
+
+                            {% for months in date_by_month %}
+
+                                <div class="collection-title">
+                                    <h1 class="archive-year" id="{{ months.grouper }}">
+                                        归档:&nbsp;{{ years.grouper }}年{{ months.grouper }}月</h1>
+                                </div>
+                                {% for post in months.list %}
+                                    <article class="post post-type-normal" itemscope
+                                             itemtype="http://schema.org/Article">
+                                        <header class="post-header">
+                                            <h2 class="post-title"><a class="post-title-link"
+                                                                      href="{% url 'detail' id=post.id %}"
+                                                                      itemprop="url"><span itemprop="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ post.title }}</span></a>
+                                            </h2>
+                                            <div class="post-meta">
+                                                <time class="post-time" itemprop="dateCreated"
+                                                      datetime="{{ post.public_time|date:'Y-m-d H:i' }}"
+                                                      content="{{ year_month }}">
+                                                    {{ post.public_time|date:'Y-m-d H:i' }}
+                                                </time>
+                                            </div>
+                                        </header>
+                                    </article>
+                                {% endfor %}
+                            {% endfor %}
+                        {% empty %}
+                            Sorry,暂无归档！
+                        {% endfor %}
+
+                    </div>
                 </div>
             </div>
             <nav class="pagination">
-
                 {% if post_list.object_list and post_list.paginator.num_pages > 0 %}
                     {% if post_list.has_previous %}
                         <a class="extend next" rel="next" href="?page={{ post_list.previous_page_number }}"><i
                                 class="fa fa-angle-left"></i></a>
                     {% endif %}
-
                     {% for pg in post_list.paginator.page_range %}
                         {% pagination_pages post_list.number pg %}
                     {% endfor %}
