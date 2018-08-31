@@ -32,3 +32,5 @@ def get_tags_cloud():
 @register.simple_tag
 def get_archives_show():
     return Article.objects.dates('created_time', 'year', order='DESC')
+
+

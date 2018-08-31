@@ -11,7 +11,7 @@ from mdeditor.fields import MDTextField
 class UserIp(models.Model):
     ip = models.CharField(verbose_name='IP地址', max_length=50)  # ip地址
     count = models.PositiveIntegerField(verbose_name='访问次数', default=0)  # 该 ip 访问次数
-    visit_time = models.DateField(verbose_name='最近访问时间')
+    visit_time = models.DateField(verbose_name='最近访问时间',blank=True, null=True, default=now)
 
     def __str__(self):
         return self.ip
@@ -169,11 +169,6 @@ class Article(models.Model):
         ('draft', '草稿'),
         ('publish', '发表'),
     )
-    # 文章标题
-    title = models.CharField(verbose_name='标题', max_length=100)
-    # 文章正文内容
-    # content = models.TextField(verbose_name='正文', blank=True, null=True)
-    content = MDTextField(verbose_name='正文', blank=True, null=True)
     # 文章状态
     status = models.CharField(verbose_name='文章状态', max_length=10, choices=STATUS_CHOICES, default='publish')
     # 文章创建时间
@@ -182,16 +177,21 @@ class Article(models.Model):
     public_time = models.DateTimeField(verbose_name='发布时间', blank=True, null=True)
     # 文章最后一次修改时间
     modified_time = models.DateTimeField(verbose_name='修改时间', default=now)
+    # 文章标题
+    title = models.CharField(verbose_name='标题', max_length=100)
+    # 文章标语 slogan blank=True 表示数值可为空
+    slogan = models.TextField(verbose_name='标语', blank=True, null=True)
+    # 文章摘要
+    digest = MDTextField(verbose_name='文章摘要', max_length=500, blank=True)  # blank 为 True，字段可以为空
+    # 文章正文内容
+    # content = models.TextField(verbose_name='正文', blank=True, null=True)
+    content = MDTextField(verbose_name='正文', blank=True, null=True)
     # 文章字数
     words = models.PositiveIntegerField(verbose_name='文章字数', default=0)
     # 文章阅读时长
     time = models.PositiveIntegerField(verbose_name='阅读时长', default=0)
     # 文章阅读量
     views = models.PositiveIntegerField(verbose_name='访问量', default=0)
-    # 文章标语 slogan blank=True 表示数值可为空
-    slogan = models.TextField(verbose_name='标语', blank=True, null=True)
-    # 文章摘要
-    digest = MDTextField(verbose_name='文章摘要', max_length=500, blank=True)  # blank 为 True，字段可以为空
     # 文章与分类的关系,多对一
     category = models.ForeignKey(Category, verbose_name='分类', on_delete=models.CASCADE, blank=False, null=False)
     # 文章与标签的关系，多对多

@@ -1,5 +1,5 @@
 from django import template
-from apps.blog.models import ColumnCategory, Article, Category, Tag, BaseInfo, FriendsLinks
+from apps.blog.models import ColumnCategory, Article, Category, Tag, BaseInfo, FriendsLinks, UserIp, VisitCount
 from eden_cats_dev1.settings import MEDIA_URL
 from django.db import models
 register = template.Library()
@@ -43,3 +43,16 @@ def get_base_info():
 @register.simple_tag
 def get_friends_links():
     return FriendsLinks.objects.filter(status='show')
+
+
+# 获取访问人数
+@register.simple_tag
+def get_visit_ip():
+    return UserIp.objects.all()
+
+
+# 获取访问次数
+@register.simple_tag
+def get_visit_count():
+    return VisitCount.objects.all()[0]
+

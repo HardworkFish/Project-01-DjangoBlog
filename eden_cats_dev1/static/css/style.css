@@ -246,9 +246,9 @@ columnist.is-fixed {
 }
 
 #slogan-content {
-    color: #1a68a5;
+    color: rgba(0, 0, 0, 0.77);
     font-size: 18px;
-    background: #FFF;
+    font-family: -webkit-pictograph;
 }
 
 /*about page*/
@@ -285,6 +285,11 @@ columnist.is-fixed {
     box-shadow: 0 2px 2px 0 rgb(109, 109, 109), 0 3px 1px 2px rgba(0, 0, 0, 0.13), 0 1px 5px 2px rgba(0, 0, 0, .12);
 }
 
-.post-toc{
+.post-button-tag a{
+    color: #000;
+    font-size: 20px;
+}
 
+.post-button-tag a:hover{
+    color:#f44336;
 }

@@ -6,8 +6,6 @@ def refresh_visit_count(request):
     count_nums.count += 1
     count_nums.save()
 
-
-def get_UserIP(request):
     if 'HTTP_X_FORWARDED_FOR' in request.META:
         client_ip = request.META['HTTP_X_FORWARDED_FOR']
         client_ip = client_ip.split(",")[0]

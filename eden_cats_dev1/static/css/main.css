@@ -4,7 +4,7 @@ body, sub, sup {
 	position: relative
 }
 a, body {
-	color: #555
+	color: #444
 }
 a, code {
 	word-wrap: break-word
@@ -84,7 +84,7 @@ img {
 	border: 0;
 	display: block;
 	margin: auto;
-	max-width: 100%;
+	max-width: 72%;
 	height: auto
 }
 
@@ -109,7 +109,7 @@ button, input, optgroup, select, textarea {
 	margin: 0
 }
 body, h1, h2, h3, h4, h5, h6 {
-	font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
+	font-family: UnifrakturMaguntiaLato, "PingFang SC", "Microsoft YaHei", sans-serif;
 	margin: 0
 }
 button {
@@ -171,7 +171,7 @@ textarea {
 	color: #fff
 }
 body {
-	font-size: 14px;
+	font-size: 21px;
 	line-height: 2;
 	background: #fff0
 }
@@ -245,7 +245,8 @@ h6 {
 	}
 }
 p {
-	margin: 0 0 20px
+	margin: 0 0 20px;
+	font-size: 27px;
 }
 a:hover {
 	color: #222;
@@ -257,7 +258,7 @@ blockquote {
     padding: 0 15px;
     color: #333;
     border-left: 4px solid rgb(33, 150, 243);
-    background: rgb(246, 246, 246);
+    background: rgba(246, 246, 246, 0);
 
 }
 hr {
@@ -433,7 +434,7 @@ code, pre {
 	font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace
 }
 .post-body, .posts-expand .post-meta, .site-title {
-	font-family: Lato, "PingFang SC", "Microsoft YaHei", sans-serif
+	font-family: UnifrakturMaguntia, Lato, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 code {
 	padding: 2px 4px;
@@ -772,7 +773,7 @@ pre .javascript .function, pre .keyword {
 	font-size: 14px;
 	color: #555;
 	background: #fff;
-	border: 2px solid #555;
+	border: 0.72px solid #555;
 	border-radius: 2px;
 	transition-property: background-color;
 	line-height: 2
@@ -946,8 +947,8 @@ pre .javascript .function, pre .keyword {
 	margin-right: 5px
 }
 .site-title {
-	font-size: 20px;
-	font-weight: 400
+	font-size: 32px;
+    font-weight: 400;
 }
 .site-subtitle {
 	margin-top: 10px;
@@ -1008,7 +1009,7 @@ pre .javascript .function, pre .keyword {
 }
 .menu .menu-item a {
 	display: block;
-	font-size: 13px;
+	font-size: 18px;
 	border-bottom: 1px solid transparent
 }
 .menu .menu-item .fa {
@@ -1235,8 +1236,8 @@ pre .javascript .function, pre .keyword {
 }
 .posts-expand .post-meta {
 	margin: 3px 0 60px;
-	color: #999;
-	font-size: 12px;
+	color: #444;
+	font-size: 21px;
 	text-align: center
 }
 .posts-expand .post-meta .post-category-list {
@@ -1516,7 +1517,7 @@ to {
 	padding: .5em 1em;
 	border: 1px solid #d3d3d3;
 	font-size: .93rem;
-	line-height: 1.6em;
+	line-height: 2.1em;
 	word-break: break-all;
 	background: rgba(255,255,255,.4)
 }
@@ -1627,16 +1628,15 @@ to {
 }
 .site-author-image {
 	border-radius: 80px;
-	-webkit-border-radius: 80px;
+	-webkit-border-radius: 810px;
 	-moz-border-radius: 80px;
-	box-shadow: inset 0 -1px 0 #333 sf;
 	-webkit-transition: -webkit-transform 1s ease-out;
 	-moz-transition: -moz-transform 1s ease-out;
 	transition: transform 1s ease-out;
 	display: block;
 	margin: 0 auto;
 	padding: 2px;
-	max-width: 120px;
+	max-width: 210px;
 	height: auto;
 	border: 1px solid #eee
 }
@@ -2491,14 +2491,14 @@ to {
 	top: 0;
 	overflow: hidden;
 	padding: 0;
-	width: 240px;
+	width: 320px;
 	background: #fff;
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.06), 0 1px 5px 0 rgba(0,0,0,.12);
 	border-radius: initial
 }
 @media (min-width: 1600px) {
 	.container .header-inner {
-		width: 240px
+		width: 320px
 	}
 }
 .main:after, .main:before {
@@ -2544,7 +2544,7 @@ to {
 .content-wrap {
 	float: right;
 	box-sizing: border-box;
-	width: calc(100% - 259px);
+	width: calc(100% - 342px);
 	min-height: 700px
 }
 .sidebar, .sidebar-position-right .content-wrap {
@@ -2574,7 +2574,7 @@ to {
 .sidebar {
 	position: static;
 	margin-top: 300px;
-	width: 240px;
+	width: 320px;
 	background: #eee;
 	box-shadow: none
 }
@@ -2694,7 +2694,7 @@ to {
 }
 .sidebar-inner {
 	box-sizing: border-box;
-	width: 240px;
+	width: 320px;
 	color: #fff;
     background: #000;
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.06), 0 1px 5px 0 rgba(0,0,0,.12), 0 -1px .5px 0 rgba(0,0,0,.09);
@@ -2815,12 +2815,16 @@ to {
 	border-radius: initial
 }
 .comments, .post-block {
-	padding: 40px;
+	padding: 56px;
 	background: #fff
+
 }
 .post-block {
 	box-shadow: 0 2px 2px 0 rgb(109, 109, 109), 0 3px 1px 2px rgba(0, 0, 0, 0.13), 0 1px 5px 2px rgba(0,0,0,.12);
-	border-radius: initial
+	border-radius: initial;
+    background-image:url("../images/home_cat.png") ;
+    background-repeat: no-repeat;
+    background-position: right;
 }
 #posts > article+ article .post-block, .comments, .pagination {
 	box-shadow: 0 2px 2px 0 rgb(109, 109, 109), 0 3px 1px 2px rgba(0, 0, 0, 0.13), 0 1px 5px 2px rgba(0,0,0,.12);
@@ -2955,6 +2959,5 @@ code {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding: 15px;
-	-webkit-box-shadow: 0 0 5px rgba(202,203,203,.5);
-	-moz-box-shadow: 0 0 5px rgba(202,203,204,.5)
+
 }

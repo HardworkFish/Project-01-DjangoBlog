@@ -5,7 +5,7 @@ from django.http import Http404
 from django.conf import settings
 from eden_cats_dev1.settings import MEDIA_URL
 from apps.blog.templatetags import custom_filter
-from .visit_info import refresh_visit_count, get_UserIP  # 当网站被访问，更新网站访问次数
+from .visit_info import refresh_visit_count  # 当网站被访问，更新网站访问次数
 import markdown
 from django.db.models import Q
 from django.views.generic import ListView, DetailView
@@ -29,6 +29,7 @@ def index(request):
 
 # About me
 def about(request):
+    refresh_visit_count(request)
     blocks = About.objects.all()
     paginator = Paginator(blocks, settings.PAGE_NUM, 2)
     block = request.GET.get('page')
@@ -46,6 +47,7 @@ def about(request):
 
 # 主页
 def home(request):
+    refresh_visit_count(request)
     posts = Article.objects.all().filter(status='publish', public_time__isnull=False)   # 获取主页的全部 Article 对象, 状态为已发布，发布时间不为空
     paginator = Paginator(posts, settings.PAGE_NUM, 2)  # 每页显示数量，对应settings.py中的PAGE_NUM， 当只有2时候，合并为上一页
     page = request.GET.get('page')  # 获取URL中page参数的值
@@ -60,6 +62,7 @@ def home(request):
 
 # 博客归类页
 def category_show(request):
+    refresh_visit_count(request)
     try:
         posts = Article.objects.all().filter(status='publish', public_time__isnull=False)
     except Category.DoesNotExist:
@@ -72,6 +75,7 @@ def category_show(request):
 
 # 文章详情页
 def detail(request, id):
+    refresh_visit_count(request)
     try:
         post = Article.objects.get(id=str(id))
         post.viewed()  # 更新文章浏览次数
@@ -124,6 +128,7 @@ def search_category(request, id):
 
 # 标签云
 def tags_cloud(request):
+    refresh_visit_count(request)
     try:
         posts = Article.objects.all().filter(status='publish', public_time__isnull=False)
     except Tag.DoesNotExist:
@@ -154,6 +159,7 @@ def search_tag(request, tag):
 
 
 def column_category(request):
+    refresh_visit_count(request)
     return render(request, 'columns.html',  {
         'columns': columns,
         'column_category_list': column_categories,
@@ -161,6 +167,7 @@ def column_category(request):
 
 
 def archives(request):
+        refresh_visit_count(request)
 # def archives(request, year, month):
         posts = Article.objects.filter(status='publish', public_time__isnull=False).order_by('-public_time')
         # posts = Article.objects.filter(public_time__year=year, public_time__month=month).order_by('-public_time')
