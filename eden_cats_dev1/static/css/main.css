@@ -354,9 +354,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 	border: 1px solid #ddd;
-	font-size: 14px;
+	font-size: 25px;
 	table-layout: fixed;
-	word-wrap: break-all
+	word-wrap: break-all;
 }
 .header-inner, .main-inner {
 	margin: 0 auto
@@ -1080,7 +1080,8 @@ pre .javascript .function, pre .keyword {
 	visibility: visible
 }
 .posts-expand .post-body ul li {
-	list-style: disc
+	list-style: disc;
+    font-size: 25px;
 }
 .posts-expand .post-body img {
 	box-sizing: border-box;
@@ -1300,7 +1301,7 @@ pre .javascript .function, pre .keyword {
 	position: relative;
 	display: block;
 	line-height: 25px;
-	font-size: 14px;
+	font-size: 21px;
 	color: #555;
 	border-bottom: none
 }
@@ -1535,7 +1536,7 @@ to {
 	width: 5em
 }
 .my_post_copyright a {
-	color: grey;
+	color: rgb(239, 68, 55);
 	border-bottom: 0
 }
 .my_post_copyright a:hover {
@@ -2870,23 +2871,23 @@ to {
 	font-size: 2.7em
 }
 .post-body h1 {
-	font-size: 1.6em
+	font-size: 2.6em
 }
 .post-body h2 {
-	font-size: 1.45em
+	font-size: 2.40em
 }
 .post-body h3 {
-	font-size: 1.3em;
+	font-size: 2.25em;
 	border-bottom: 1px dotted #eee
 }
 .post-body h4 {
-	font-size: 1.2em
+	font-size: 2.12em
 }
 .post-body h5 {
-	font-size: 1.07em
+	font-size: 2.0em
 }
 .post-body h6 {
-	font-size: 1.03em
+	font-size: 2.03em
 }
 @media (min-width: 768px) and (max-width: 991px) {
 	.content-wrap {
@@ -2945,7 +2946,8 @@ to {
 code {
 	color: #ff7600;
 	background: #fbf7f8;
-	margin: 2px
+	margin: 2px;
+    font-size: 27px;
 }
 .highlight, pre {
 	margin: 5px 0;
@@ -2953,7 +2955,8 @@ code {
 	border-radius: 3px
 }
 .highlight, code, pre {
-	border: 1px solid rgb(247, 247, 247)
+	border: 1px solid rgb(247, 247, 247);
+    font-size: 25px;
 }
 .post {
 	margin-top: 10px;

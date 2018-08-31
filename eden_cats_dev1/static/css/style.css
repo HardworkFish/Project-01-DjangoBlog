@@ -255,7 +255,6 @@ columnist.is-fixed {
 #about-detail .about-title {
     text-align: left;
     font-family: "Biaodian Pro Sans CNS", "Helvetica Neue", Helvetica, Arial, "Zhuyin Heiti", "Han Heiti", sans-serif;
-    font-size: 32px;
 }
 
 .tag_cat_avatar {
@@ -292,4 +291,12 @@ columnist.is-fixed {
 
 .post-button-tag a:hover{
     color:#f44336;
+}
+
+ol li{
+    font-size: 25px;
+}
+
+dl dt{
+    font-size: 25px;
 }
