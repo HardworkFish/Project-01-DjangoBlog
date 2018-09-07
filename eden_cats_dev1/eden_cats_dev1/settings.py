@@ -54,10 +54,54 @@ INSTALLED_APPS = [
     'apps.easy_comment',
     'notifications',
     'apps.online_status',
+    # 'django.contrib.auth',
+    'django.contrib.sites',
+    'allauth', # 用户注册与登录
+    'allauth.account', # 用户注册与登录
+    'allauth.socialaccount', # 用户注册与登录
+
+# 下面是第三方账号相关的，比如weibo和github
+    'allauth.socialaccount.providers.weibo',
+    'allauth.socialaccount.providers.github',
 ]
+
+
+
+
+
+# django-allauth相关设置
+AUTHENTICATION_BACKENDS = (
+# django admin所使用的用户登录与django-allauth无关
+    'django.contrib.auth.backends.ModelBackend',
+
+# `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+# 前面我们app里添加了django.contrib.sites,需要设置SITE_ID
+SITE_ID = 1
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+
+
+
+
+
+
 
 COMMENT_ENTRY_MODEL = 'blog.article' # 格式是 app_name+model_name
 AUTH_USER_MODEL = 'auth.user'     # 格式是 app_name+model_name
+ADMINS = (('TRsky', '625310581@qq.com'),)  # 网站管理员
+
+
+# 邮件通知
+# SEND_NOTIFICATION_EMAIL = True   # 开启邮件通知
+# SMTP设置
+# EMAIL_HOST = ''
+# EMAIL_HOST_USER = ''
+# EMAIL_HOST_PASSWORD = ''
+# EMAIL_PORT =
+# EMAIL_USE_SSL =
 
 
 #ckeditor setup
@@ -148,6 +192,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'online_status.middleware.OnlineStatusMiddleware',
 ]
 
 ROOT_URLCONF = 'eden_cats_dev1.urls'
