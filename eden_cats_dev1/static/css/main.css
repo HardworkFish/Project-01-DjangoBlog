@@ -1,8 +1,4 @@
-body, sub, sup {
-    /* you need to set this to assign to the main element a min height of 100% */
-    height: 100%;
-    position: relative
-}
+
 
 a, body {
     color: #444
@@ -3079,9 +3075,17 @@ img:hover {
 }
 
 .page-post-detail .comments {
-    overflow: hidden
+    overflow: hidden;
+    border: 1px solid #ddd;
+    padding: 46px;
+    background: #FFF0;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+    .page-post-detail .comments{
+        width: auto
+    }
+}
 .header {
     position: relative;
     margin: 0 auto;
@@ -3670,7 +3674,7 @@ code {
 }
 
 .highlight, code, pre {
-    border: 1px solid rgb(247, 247, 247);
+    /*border: 1px solid rgb(247, 247, 247);*/
     font-size: 14px;
 }
 

@@ -22,6 +22,7 @@ from django.conf.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
 from apps.blog.feeds import BlogRssFeed
+import notifications.urls
 from django.views.static import serve
 # from eden_cats_dev1.settings import STATIC_ROOT
 from django.urls import re_path
@@ -41,13 +42,16 @@ urlpatterns = [
     path('search/', include('haystack.urls')),  # 搜索
     # path('search/', views.search, name='search'),  # 搜索
     path('about/', views.about, name='about_me'),  # About me
-    # path('summernote/', include('django_summernote.urls')),  # 富文本框
+    path('summernote/', include('django_summernote.urls')),  # 富文本框
     path('jet/', include('jet.urls', 'jet')),  # Django jet urls
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET Dashboard URLS
     path('mdeditor/', include('mdeditor.urls')),
     path('columns/', views.column_category, name='column_categories'),  # 博客专栏
     # path('static/', serve, {'document_root': STATIC_ROOT}, name='static')  # debug=false
-]
+    path('', include('ckeditor_uploader.urls')),
+    path('', include('apps.easy_comment.urls')),
+    path('notifications/', include(notifications.urls, namespace='notifications')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 # 配置全局404页面

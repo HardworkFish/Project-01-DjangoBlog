@@ -188,24 +188,25 @@
                 </article>
             </div>
         </div>
+        <!------------comments-------------------->
+
+        <link rel="stylesheet" href="{% static 'easy_comment/css/editor.css' %}">
+        <!-- 评论框、评论列表和通知列表的样式 -->
+        <link rel="stylesheet" href="{% static 'easy_comment/css/comment.css' %}">
+        <!-- 代码块的高亮 -->
+        <link rel="stylesheet" href="{% static 'easy_comment/css/prism.css' %}">
+        <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
+
+        <!--------------comments end ------------------>
         <!--- 来必力评论系统 --->
         <div class="comments" id="comments">
-            <div id="Coments"></div>
-            <!-- 来必力City版安装代码 -->
-            <div id="lv-container" data-id="city" data-uid="MTAyMC8zODgwNS8xNTMzMw==">
-                <script type="text/javascript">(function (d, s) {
-                    var j, e = d.getElementsByTagName(s)[0];
-                    if (typeof LivereTower === 'function') {
-                        return;
-                    }
-                    j = d.createElement(s);
-                    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                    j.async = true;
-                    e.parentNode.insertBefore(j, e);
-                })(document, 'script');</script>
-                <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+            <div id="Coments">
+            <div>
+            {% include 'easy_comment/comment_form.html' with post=post %}
+            {% include 'easy_comment/comment_list.html' with post=post %}
             </div>
-            <!-- City版安装代码已完成 --></div>
+            </div>
+        </div>
     </div>
     <!----------------------------------article end----------------------------------------------------------------------------------->
     <!---------------------sidebar-toggle ----------------->

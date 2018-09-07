@@ -48,7 +48,47 @@ INSTALLED_APPS = [
     'haystack',  # 搜索应用
     'mdeditor',  # Markdown 应用
     # 'mptt',  # 树存储结构目录应用
+    'ckeditor',
+    'ckeditor_uploader',
+    'mptt',
+    'apps.easy_comment',
+    'notifications',
+    'apps.online_status',
 ]
+
+COMMENT_ENTRY_MODEL = 'blog.article' # 格式是 app_name+model_name
+AUTH_USER_MODEL = 'auth.user'     # 格式是 app_name+model_name
+
+
+#ckeditor setup
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+CKEDITOR_UPLOAD_PATH = 'upload/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_CONFIGS = {
+    'default': {
+        # 编辑器的宽高请根据你的页面自行设置
+        'width': '1030px',
+        'height': '150px',
+        'image_previewText': ' ',
+        'tabSpaces': 4,
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline', 'Format', 'RemoveFormat'],
+            ['NumberedList', 'BulletedList'],
+            ['Blockquote', 'CodeSnippet'],
+            ['Image', 'Link', 'Unlink'],
+        ],
+        'extraPlugins': ','.join(['codesnippet', 'uploadimage', 'prism', 'widget', 'lineutils', ]),
+    }
+}
+# 不允许非图片文件上传，默认为True
+CKEDITOR_ALLOW_NONIMAGE_FILES = False
+# 限制用户查看上传图片的权限， 只能看自己传的图片
+CKEDITOR_RESTRICT_BY_USER = True
+CKEDITOR_RESTRICT_BY_DATE = True
+# 在编辑器里浏览上传的图片时，图片会以路径分组，日期排序
+CKEDITOR_BROWSE_SHOW_DIRS = True
 
 
 # 搜索
