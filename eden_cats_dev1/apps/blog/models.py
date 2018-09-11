@@ -1,10 +1,40 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.utils.timezone import now
 from mdeditor.fields import MDTextField
 # Create your models here.
 # 所有数据库表列 Id 自动创建
 # 创建四个表：Category（分类）、Post（文章）、Tag（标签）、Links（友情链接）
+
+
+from imagekit.models import ProcessedImageField
+from imagekit.processors import ResizeToFill
+
+
+# 用户模型.
+# 第一种：采用的继承方式扩展用户信息（本系统采用）
+# 扩展：关联的方式去扩展用户信息
+
+class User(AbstractUser):
+    nickname = models.CharField(max_length=30, blank=True, null=True, verbose_name='昵称')
+    qq = models.CharField(max_length=20, blank=True, null=True, verbose_name='QQ号码')
+    url = models.URLField(max_length=100, blank=True, null=True, verbose_name='个人网页地址')
+    avatar = ProcessedImageField(upload_to='avatar',
+                                 default='avatar/default.png',
+                                 verbose_name='头像',
+                                 #图片将处理成85x85的尺寸
+                                 processors=[ResizeToFill(85, 85)],
+                                 format='JPEG',
+                                 options={'quality': 60})
+
+    class Meta:
+        # db_table = 'user'
+        verbose_name = '用户'
+        verbose_name_plural = verbose_name
+        ordering = ['-id']
+
+    def __str__(self):
+        return self.username
 
 
 # 访问网站 ip 地址和次数

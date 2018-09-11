@@ -26,9 +26,10 @@ SECRET_KEY = '=0dnupswsjy%ip$4f4&$02-e7uh-9+w595dsc@r$0v9)i)y298'
 # DEBUG = False
 DEBUG = True
 # ALLOWED_HOSTS = ['*']
-    # '127.0.0.1',  # Allow domain and subdomains
-    # 'localhost',  # Also allow FQDN and subdomains
-
+# ALLOWED_HOSTS = [
+#     '127.0.0.1',  # Allow domain and subdomains
+#     'localhost',  # Also allow FQDN and subdomains
+# ]
 # ALLOWED_HOSTS = []
 
 
@@ -60,11 +61,15 @@ INSTALLED_APPS = [
     'allauth.account', # 用户注册与登录
     'allauth.socialaccount', # 用户注册与登录
 
-# 下面是第三方账号相关的，比如weibo和github
+    # 下面是第三方账号相关的，比如weibo和github
     'allauth.socialaccount.providers.weibo',
     'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.baidu',
+    'crispy_forms',
+    'imagekit',
 ]
-
+# 使用bootstrap3的样式，前端需要引入相应的css
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 
 
@@ -82,15 +87,24 @@ AUTHENTICATION_BACKENDS = (
 SITE_ID = 1
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
+LOGIN_REDIRECT_URL = '/'
 
+# Email setting
+# SMTP服务器，使用sendclound的服务
+EMAIL_HOST = 'smtp587.sendcloud.net'
+EMAIL_HOST_USER = 'TRsky_STMP_Mail'
+EMAIL_HOST_PASSWORD = '#'
+EMAIL_PORT = 587
 
-
-
-
+# 是否使用了SSL 或者TLS
+# EMAIL_USE_SSL = True
+# EMAIL_USE_TLS = True
+# 默认发件人，默认使用的webmaster@localhost
+DEFAULT_FROM_EMAIL = 'TRsky <noreply@mail.trskycooik.com>'
 
 
 COMMENT_ENTRY_MODEL = 'blog.article' # 格式是 app_name+model_name
-AUTH_USER_MODEL = 'auth.user'     # 格式是 app_name+model_name
+AUTH_USER_MODEL = 'blog.User'     # 格式是 app_name+model_name
 ADMINS = (('TRsky', '625310581@qq.com'),)  # 网站管理员
 
 

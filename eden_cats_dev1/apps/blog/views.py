@@ -6,6 +6,8 @@ from django.conf import settings
 from eden_cats_dev1.settings import MEDIA_URL
 from apps.blog.templatetags import custom_filter
 from .visit_info import refresh_visit_count  # 当网站被访问，更新网站访问次数
+from .forms import UserDetailForm
+from django.contrib.auth.decorators import login_required
 import markdown
 from django.db.models import Q
 from django.views.generic import ListView, DetailView
@@ -25,6 +27,24 @@ def index(request):
         'title': '我的博客首页',
         'welcome': '欢迎访问我的博客首页'
     })
+
+
+# 使用 login_required 装饰器
+@login_required
+def account_profile(request):
+    message = []
+    # post 请求， 表明是在修改用户资料
+    if request.method == 'POST':
+        # 使用 getattr 可以获得一个 querydict，包含所要提交的内容
+        # required_dic = getattr(request, 'POST')
+        form = UserDetailForm(request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            form.save()
+            message.append('资料修改成功！')
+
+    # 如果是 get 请求，则使用 user 生成表单
+    form = UserDetailForm(instance=request.user)
+    return render(request, 'accounts/user_detail.html', context={'form': form, 'messages': message, })
 
 
 # About me

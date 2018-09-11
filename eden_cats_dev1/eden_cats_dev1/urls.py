@@ -52,11 +52,12 @@ urlpatterns = [
     path('', include('apps.easy_comment.urls')),
     path('notifications/', include(notifications.urls, namespace='notifications')),
     path('accounts/', include('allauth.urls')),
+    # path('accounts/profile/', views.account_profile, name='account_profile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 # 配置全局404页面
-# handler404 = 'apps.blog.views.page_not_found'
+# handler404 = 'apps.blog.views.page_not_found'4
 
 # 配置全局505页面
 # handler500 = 'apps.blog.views.server_error'

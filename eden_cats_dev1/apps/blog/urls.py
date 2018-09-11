@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 # from apps.blog import views
-# from django.conf.urls import url, include
+from django.conf.urls import url, include
 from . import views
+
+app_name = 'blog'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
@@ -28,6 +30,8 @@ urlpatterns = [
     path('archives/<str:year>/<str:month>', views.archives, name='archives'),  # 按月归档
     # path('archives/<str:year>/<str:month>', views.archives, name='archives'),  # 按月归档
     path('articles/<int:id>/', views.detail, name='detail'),
+    path('accounts/profile/', views.account_profile, name='account_profile'),
+    path('accounts/', include('allauth.urls'))
 ]
 
 # urlpatterns = [

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Tag, Article, About, Column, ColumnCategory, FriendsLinks, BaseInfo,VisitCount, UserIp
+from .models import Category, Tag, Article, About, Column, ColumnCategory, FriendsLinks, BaseInfo,VisitCount, UserIp, User
 from django.db import models
 from mdeditor.widgets import MDEditorWidget
 from mptt.admin import MPTTModelAdmin
@@ -70,3 +70,4 @@ admin.site.register(BaseInfo)
 admin.site.register(FriendsLinks)
 admin.site.register(UserIp)
 admin.site.register(VisitCount)
+admin.site.register(User)
