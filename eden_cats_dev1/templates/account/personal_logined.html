@@ -1,19 +1,78 @@
-{% if request.user.is_authenticated %}
-        <div class="butauthor author">
-          <div id="user_info">
-              <img src="{{ request.user.get_avatar_url}}" alt="头像"/>
-          </div>
-          <div id="dashboard">
-              <ul>
-                  <li style="color: #203e50">{{ request.user.username }}</li>
-                  <li><a href="{% url 'apps.blog:account_profile' %}">设置</a></li>
-                  <li><a href="{% url 'apps.notifications:unread' %}" target="_blank">
-                        消息
-                        <span class="unread-count"></span>
-                      </a>
-                  </li>
-                  <li><a href="{% url 'account_logout' %}?next={{ request.path }}">登出</a></li>
-              </ul>
-          </div>
-        </div>
-{% endif %}
+ {% load static %}
+{% load base_info %}
+{% load socialaccount %}
+{% load crispy_forms_tags %}
+<!--- left dowb sidebar ------------->
+<!---------------------sidebar-toggle ----------------->
+<div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+        <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+        <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+        <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+</div>
+
+<aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+            <div class="site-overview">
+
+                <div class="butauthor author">
+                    <div id="user_info">
+                          <img src="{{ request.user.avatar.url }}" alt="头像"/>
+                    </div>
+                    <div id="dashboard">
+                        <ul>
+                            <li style="color: #203e50">{{ request.user.username }}</li>
+                            <li><a href="{% url 'apps.blog:account_profile' %}">设置</a></li>
+                            <li><a{# href="{% url 'notifications:unread' %}"target="_blank"#}>
+                                消息
+                                <span class="unread-count"></span>
+                            </a>
+                            </li>
+                            <li><a href="{% url 'account_logout' %}?next={{ request.path }}">登出</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="feed-link motion-element">
+                    <a href="{% url 'rss' %}" rel="alternate"><i class="fa fa-rss"></i> RSS</a>
+                </div>
+                <div class="links-of-author motion-element">
+                    <span class="links-of-author-item"> <a href="https://gitee.com/trsky" target="_blank" title="码云"> <i
+                            class="fa fa-fw fa-cloud"></i>码云</a> </span>
+                    <span class="links-of-author-item"> <a href="#" target="_blank" title="CSDN"> <i
+                            class="fa fa-fw fa-book"></i>CSDN</a> </span>
+                    <span class="links-of-author-item"> <a href="https://github.com/HardworkFish" target="_blank"
+                                                           title="Github"> <i class="fa fa-fw fa-github"></i>Github</a></span>
+                    <span class="links-of-author-item"> <a href="http://music.163.com/#/user/home?id=316926790"
+                                                           target="_blank" title="网易云"> <i
+                            class="fa fa-fw fa-music"></i>网易云</a> </span>
+                </div>
+                {% get_friends_links as links %}
+                {% if links.count > 0 %}
+                    <div class="links-of-blogroll motion-element links-of-blogroll-block">
+
+                        <div class="links-of-blogroll-title">
+                            <i class="fa fa-fw fa-link"></i>友情链接
+                        </div>
+                        <ul class="links-of-blogroll-list">
+
+                            {% for link in links %}
+                                <li class="links-of-blogroll-item">
+                                    <a href="{{ link.url }}" title="{{ link.remark }}"
+                                       target="_blank">{{ link.name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+            </div>
+        </section>
+    </div>
+</aside>
+
+
+

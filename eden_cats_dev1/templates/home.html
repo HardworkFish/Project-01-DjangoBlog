@@ -143,5 +143,9 @@
 
         </div>
     </div>
-    {% include "leftSidebar.html" %}
+    {% if request.user.is_authenticated %}
+        {% include "account/personal_logined.html" %}
+    {% else %}
+        {% include "leftSidebar.html" %}
+    {% endif %}
 {% endblock %}

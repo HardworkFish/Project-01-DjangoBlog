@@ -3,58 +3,68 @@
     {% load pagetag %}
 
 
-<div class="content-wrap">
-	<div id="content" class="content">
-		<div class="post-block category" style="opacity: 1; display: block;">
-			<div id="posts" class="posts-collapse">
-				<div class="collection-title" style="opacity: 1; display: block; transform: translateX(0px);">
-					<h1>{{ category }}<small>分类</small></h1>
-				</div>
-                {% for post in post_list %}
-				<article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-					<header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
-						<h2 class="post-title"><a class="post-title-link" href="{% url 'detail' id=post.id %}" itemprop="url">
-                            <span itemprop="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ post.title }}</span></a></h2>
-						<div class="post-meta">
-							<time class="post-time" itemprop="dateCreated" datetime="{{ post.public_time|date:'Y-m-d H:i' }}" content="{{ post.public_time|date:'Y-m-d' }}">
-								{{ post.public_time|date:'Y-m-d H:i' }}
-							</time>
-						</div>
-					</header>
-				</article>
+    <div class="content-wrap">
+        <div id="content" class="content">
+            <div class="post-block category" style="opacity: 1; display: block;">
+                <div id="posts" class="posts-collapse">
+                    <div class="collection-title" style="opacity: 1; display: block; transform: translateX(0px);">
+                        <h1>{{ category }}
+                            <small>分类</small>
+                        </h1>
+                    </div>
+                    {% for post in post_list %}
+                        <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+                            <header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
+                                <h2 class="post-title"><a class="post-title-link" href="{% url 'detail' id=post.id %}"
+                                                          itemprop="url">
+                                    <span itemprop="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ post.title }}</span></a>
+                                </h2>
+                                <div class="post-meta">
+                                    <time class="post-time" itemprop="dateCreated"
+                                          datetime="{{ post.public_time|date:'Y-m-d H:i' }}"
+                                          content="{{ post.public_time|date:'Y-m-d' }}">
+                                        {{ post.public_time|date:'Y-m-d H:i' }}
+                                    </time>
+                                </div>
+                            </header>
+                        </article>
                     {% empty %}
-                    (；´д｀)ゞSorry 啊，暂相关文章！！！
-                {% endfor %}
+                        (；´д｀)ゞSorry 啊，暂相关文章！！！
+                    {% endfor %}
 
-			</div>
-		</div>
-
-
-
-<nav class="pagination" >
-
-                                {% if post_list.object_list and post_list.paginator.num_pages > 0 %}
-                                    {% if post_list.has_previous %}
-                                          <a class="extend next" rel="next" href="?page={{ post_list.previous_page_number }}"><i class="fa fa-angle-left"></i></a>
-                                        {% endif %}
-
-                                    {% for pg in post_list.paginator.page_range %}
-                                       {% pagination_pages post_list.number pg %}
-                                    {% endfor %}
+                </div>
+            </div>
 
 
+            <nav class="pagination">
 
-                                    {% if post_list.has_next %}
-                                    <a class="extend next" rel="next" href="?page={{ post_list.next_page_number }}"><i class="fa fa-angle-right"></i></a>
-                                        {% endif %}
+                {% if post_list.object_list and post_list.paginator.num_pages > 0 %}
+                    {% if post_list.has_previous %}
+                        <a class="extend next" rel="next" href="?page={{ post_list.previous_page_number }}"><i
+                                class="fa fa-angle-left"></i></a>
+                    {% endif %}
 
-                                {% endif %}
-
-							</nav>
-	</div>
-</div>
+                    {% for pg in post_list.paginator.page_range %}
+                        {% pagination_pages post_list.number pg %}
+                    {% endfor %}
 
 
 
-{% include "leftSidebar.html" %}
+                    {% if post_list.has_next %}
+                        <a class="extend next" rel="next" href="?page={{ post_list.next_page_number }}"><i
+                                class="fa fa-angle-right"></i></a>
+                    {% endif %}
+
+                {% endif %}
+
+            </nav>
+        </div>
+    </div>
+
+
+    {% if request.user.is_authenticated %}
+        {% include "account/personal_logined.html" %}
+    {% else %}
+        {% include "leftSidebar.html" %}
+    {% endif %}
 {% endblock %}

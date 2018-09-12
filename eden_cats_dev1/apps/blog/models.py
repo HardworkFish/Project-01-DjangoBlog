@@ -20,7 +20,7 @@ class User(AbstractUser):
     qq = models.CharField(max_length=20, blank=True, null=True, verbose_name='QQ号码')
     url = models.URLField(max_length=100, blank=True, null=True, verbose_name='个人网页地址')
     avatar = ProcessedImageField(upload_to='avatar',
-                                 default='avatar/default.png',
+                                 default='avatar/default.jpg',
                                  verbose_name='头像',
                                  #图片将处理成85x85的尺寸
                                  processors=[ResizeToFill(85, 85)],

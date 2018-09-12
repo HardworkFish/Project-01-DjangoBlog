@@ -6,7 +6,7 @@
     {% if request.user.is_authenticated %}
         <div class="comment-header">
             <a class="comment-avatar">
-                <img class="img-rounded" src="{% static 'easy_comment/image/default.png' %}">
+                <img class="img-rounded"  src="{{ request.user.avatar.url }}">
             </a>
             <span><strong>
             {{ request.user.username }}

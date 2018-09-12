@@ -201,10 +201,10 @@
         <!--- 来必力评论系统 --->
         <div class="comments" id="comments">
             <div id="Coments">
-            <div>
-            {% include 'easy_comment/comment_form.html' with post=post %}
-            {% include 'easy_comment/comment_list.html' with post=post %}
-            </div>
+                <div>
+                    {% include 'easy_comment/comment_form.html' with post=post %}
+                    {% include 'easy_comment/comment_list.html' with post=post %}
+                </div>
             </div>
         </div>
     </div>
@@ -225,39 +225,63 @@
             </ul>
             <section class="site-overview-wrap sidebar-panel">
                 <div class="site-overview">
-                    {% get_base_info as infos %}
-                    {% for info in infos %}
-                        <div class="site-author motion-element" itemprop="author" itemscope
-                             itemtype="http://schema.org/Person">
-                            <img class="site-author-image" itemprop="image" src="{% get_media_path %}{{ info.avatar }}"
-                                 alt="avatar">
-                            <p class="site-author-name" itemprop="name">{{ info.user_name }}</p>
-                            <p class="site-description motion-element" itemprop="description">{{ info.slogan }}</p>
-                        </div>
-                    {% endfor %}
-                    <nav class="site-state motion-element">
-                        {% get_total_category as categories %}
-                        {% get_total_tag as tags %}
-                        {% get_total_article as articles %}
-                        <div class="site-state-item site-state-posts">
-                            <a href="/archives/">
-                                <span class="site-state-item-count">{{ articles.count }}</span>
-                                <span class="site-state-item-name">日志</span></a>
-                        </div>
-                        <div class="site-state-item site-state-categories">
-                            <a href="/categories/">
-                                <span class="site-state-item-count">{{ categories.count }}</span>
-                                <span class="site-state-item-name">分类</span></a>
-                        </div>
-                        <div class="site-state-item site-state-tags">
-                            <a href="/tags/">
-                                <span class="site-state-item-count">{{ tags.count }}</span>
-                                <span class="site-state-item-name">标签</span></a>
-                        </div>
-                    </nav>
+                    {% if request.user.is_authenticated %}
+
+                        <div class="butauthor author">
+                    <div id="user_info">
+                          <img src="{{ request.user.avatar.url }}" alt="头像"/>
+                    </div>
+                    <div id="dashboard">
+                        <ul>
+                            <li style="color: #203e50">{{ request.user.username }}</li>
+                            <li><a href="{% url 'apps.blog:account_profile' %}">设置</a></li>
+                            <li><a{# href="{% url 'notifications:unread' %}"target="_blank"#}>
+                                消息
+                                <span class="unread-count"></span>
+                            </a>
+                            </li>
+                            <li><a href="{% url 'account_logout' %}?next={{ request.path }}">登出</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                    {% else %}
+
+                        {% get_base_info as infos %}
+                        {% for info in infos %}
+                            <div class="site-author motion-element" itemprop="author" itemscope
+                                 itemtype="http://schema.org/Person">
+                                <img class="site-author-image" itemprop="image"
+                                     src="{% get_media_path %}{{ info.avatar }}"
+                                     alt="avatar">
+                                <p class="site-author-name" itemprop="name">{{ info.user_name }}</p>
+                                <p class="site-description motion-element" itemprop="description">{{ info.slogan }}</p>
+                            </div>
+                        {% endfor %}
+                        <nav class="site-state motion-element">
+                            {% get_total_category as categories %}
+                            {% get_total_tag as tags %}
+                            {% get_total_article as articles %}
+                            <div class="site-state-item site-state-posts">
+                                <a href="/archives/">
+                                    <span class="site-state-item-count">{{ articles.count }}</span>
+                                    <span class="site-state-item-name">日志</span></a>
+                            </div>
+                            <div class="site-state-item site-state-categories">
+                                <a href="/categories/">
+                                    <span class="site-state-item-count">{{ categories.count }}</span>
+                                    <span class="site-state-item-name">分类</span></a>
+                            </div>
+                            <div class="site-state-item site-state-tags">
+                                <a href="/tags/">
+                                    <span class="site-state-item-count">{{ tags.count }}</span>
+                                    <span class="site-state-item-name">标签</span></a>
+                            </div>
+                        </nav>
+
+                    {% endif %}
                     <div class="feed-link motion-element">
-                        <a href="/atom.xml" rel="alternate">
-                            <i class="fa fa-rss"></i>RSS</a>
+                        <a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i>RSS</a>
                     </div>
                     <div class="links-of-author motion-element">
                     <span class="links-of-author-item">
