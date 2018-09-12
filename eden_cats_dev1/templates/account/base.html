@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="description" content="用户账号管理，使用django-allauth社交用户系统，支持Baidu、Github等社交账号登录。">
+    <meta name="keywords" content="django-allauth,社交用户系统,OAuth 2.0">
+
+    <title>{% block head_title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{% static 'css/account.css' %}" rel="stylesheet">
+</head>
+<body>
+
+{% block message %}
+    {% if messages %}
+        <div class="container">
+            {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-
+                    {{ message.tags }}{% else %}alert-secondary{% endif %} alert-dismissible rounded-0 fade show"
+                     role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block base_content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-8 col-md-6 offset-sm-2 offset-md-3 px-xl-5">
+                <div class="card rounded-0 px-3 px-lg-4">
+                    <div class="card-header text-center bg-white py-2">
+                        <h3 class="my-1 text-info">{% block user_title %}账号管理{% endblock %}</h3>
+                    </div>
+                    <div class="card-body card-login">{% block content %}{% endblock %}</div>
+                    {% block account_profile %}{% endblock account_profile %}
+                    {% if request.user.is_authenticated %}
+                        <div class="social-link">
+                            {% if request.path == '/accounts/profile/' %}
+                                <div class="social-header"><span>其他操作</span></div>
+                                <a href="{% url 'account_change_password' %}">修改密码</a>
+                                <a href="{% url 'account_logout' %}?next={{ request.path }}">登出</a>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_body %}
+{% endblock %}
+
+</body>
+</html>

@@ -93,7 +93,7 @@ LOGIN_REDIRECT_URL = '/'
 # SMTP服务器，使用sendclound的服务
 EMAIL_HOST = 'smtp587.sendcloud.net'
 EMAIL_HOST_USER = 'TRsky_STMP_Mail'
-EMAIL_HOST_PASSWORD = '#'
+EMAIL_HOST_PASSWORD = 'QshvCVKIwfwR4S27'
 EMAIL_PORT = 587
 
 # 是否使用了SSL 或者TLS

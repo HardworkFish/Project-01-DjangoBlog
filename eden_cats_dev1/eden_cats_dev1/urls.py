@@ -53,6 +53,7 @@ urlpatterns = [
     path('notifications/', include(notifications.urls, namespace='notifications')),
     path('accounts/', include('allauth.urls')),
     # path('accounts/profile/', views.account_profile, name='account_profile'),
+    path('', include('apps.blog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

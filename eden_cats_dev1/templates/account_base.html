@@ -2,6 +2,7 @@
 {% load static %}
 {% load base_info %}
 <html class="theme-next gemini use-motion" lang="zh-Hans">
+------------ head end line ------------------------->
 <head>
     <!---------------meta--------------------->
     <meta charset="UTF-8">
@@ -98,7 +99,7 @@
         }), daovoice("update")
     </script>
 </head>
-<!------------- head end line ------------------------->
+<!-
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -144,20 +145,11 @@
             }
         }
     </style>
-    {% get_base_info as infos %}
-    <!--- left up sidebar ------------->
-    {% include 'leftupSidebar.html' %}
-    <!---------main sidebar content ----------------------->
     <main id="main" class="main">
         <div class="main-inner">
-
-            {% block content %}
-            {% endblock %}
-
-            <!--------left down sidebar start -------------->
-            {% block leftdownSidebar %}
-            {% endblock %}
-            <!---------left down sidebar end------------->
+            <!--------- register ------------->
+            {% block login %}
+            {% endblock login %}
 
         </div>
     </main>

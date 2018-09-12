@@ -44,7 +44,7 @@ def account_profile(request):
 
     # 如果是 get 请求，则使用 user 生成表单
     form = UserDetailForm(instance=request.user)
-    return render(request, 'accounts/user_detail.html', context={'form': form, 'messages': message, })
+    return render(request, 'account/user_detail.html', context={'form': form, 'messages': message, })
 
 
 # About me

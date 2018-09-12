@@ -1,0 +1,76 @@
+<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner">
+            <div class="site-brand-wrapper">
+                <div class="site-meta">
+                    {% for info in infos %}
+                        <div class="custom-logo-site-title">
+                            <a href="/" class="brand" rel="start">
+                                <span class="logo-line-before"> <i> </i> </span>
+                                <span class="site-title">{{ info.website_title }} </span>
+                                <span class="logo-line-after"> <i> </i> </span> </a>
+                        </div>
+                        <p class="site-subtitle">
+                            {{ info.small_website_title }} </a>
+                        </p>
+                    {% endfor %}
+                </div>
+                <div class="site-nav-toggle">
+                    <button>
+                        <span class="btn-bar"></span>
+                        <span class="btn-bar"></span>
+                        <span class="btn-bar"></span>
+                    </button>
+                </div>
+            </div>
+            <nav class="site-nav">
+                <ul id="menu" class="menu">
+                    <li class="menu-item menu-item-home">
+                        <a href="/" rel="section"> <i class="menu-item-icon fa fa-fw fa-home"></i>
+                            <br>
+                            首页</a>
+                    </li>
+                    <li class="menu-item menu-item-about">
+                        <a href="/about/" rel="section"> <i class="menu-item-icon fa fa-fw fa-user"></i>
+                            <br>
+                            关于</a>
+                    </li>
+                    <li class="menu-item menu-item-tags">
+                        <a href="/tags/" rel="section"> <i class="menu-item-icon fa fa-fw fa-tags"></i>
+                            <br>
+                            标签</a>
+                    </li>
+                    <li class="menu-item menu-item-categories">
+                        <a href="/categories/" rel="section"> <i class="menu-item-icon fa fa-fw fa-th"></i>
+                            <br>
+                            分类</a>
+                    </li>
+                    <li class="menu-item menu-item-archives">
+                        <a href="/archives/" rel="section"> <i class="menu-item-icon fa fa-fw fa-archive"></i>
+                            <br>
+                            归档</a>
+                    </li>
+                    <li class="menu-item menu-item-commonweal">
+                        <a href="/columns/" rel="section"> <i class="menu-item-icon fa fa-fw fa-book"></i>
+                            <br>
+                            专栏</a>
+                    </li>
+                    <li class="menu-item menu-item-commonweal">
+                        <a href="/admin/" rel="section"> <i class="menu-item-icon fa fa-fw fa-windows"></i>
+                            <br>
+                            登录</a>
+                    </li>
+                    <li class="menu-item menu-item-search">
+                        <a href="#" class="search-form">
+                            <form role="search" method="get" class="search-button" action="{% url 'haystack_search' %}">
+                                <button type="submit" class="button-style"><i
+                                        class="menu-item-icon fa fa-search fa-fw"></i></button>
+                                <input type="search" name="q" placeholder="search" required>
+                            </form>
+                            <br>
+                        </a>
+                    </li>
+                    <li></li>
+                </ul>
+            </nav>
+        </div>
+    </header>

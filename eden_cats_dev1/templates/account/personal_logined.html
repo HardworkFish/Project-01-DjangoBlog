@@ -1,0 +1,19 @@
+{% if request.user.is_authenticated %}
+        <div class="butauthor author">
+          <div id="user_info">
+              <img src="{{ request.user.get_avatar_url}}" alt="头像"/>
+          </div>
+          <div id="dashboard">
+              <ul>
+                  <li style="color: #203e50">{{ request.user.username }}</li>
+                  <li><a href="{% url 'apps.blog:account_profile' %}">设置</a></li>
+                  <li><a href="{% url 'apps.notifications:unread' %}" target="_blank">
+                        消息
+                        <span class="unread-count"></span>
+                      </a>
+                  </li>
+                  <li><a href="{% url 'account_logout' %}?next={{ request.path }}">登出</a></li>
+              </ul>
+          </div>
+        </div>
+{% endif %}
