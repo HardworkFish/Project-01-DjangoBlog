@@ -318,3 +318,9 @@ dl dt {
 #comments{
     padding:65px;
 }
+
+.live-notify-badge{
+    font-size: 0.9em;
+    color: rgb(220, 204, 204);
+    font-weight: 700;
+}

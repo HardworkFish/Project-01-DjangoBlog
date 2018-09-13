@@ -1,4 +1,4 @@
- {% load static %}
+{% load static %}
 {% load base_info %}
 {% load socialaccount %}
 {% load crispy_forms_tags %}
@@ -20,18 +20,18 @@
                 <div class="butauthor author">
                     <div id="user_info">
                         {% if  request.user.socialaccount_set.all.0.get_avatar_url %}
-                          <img src="{{ request.user.socialaccount_set.all.0.get_avatar_url }}" alt="头像"/>
+                            <img src="{{ request.user.socialaccount_set.all.0.get_avatar_url }}" alt="头像"/>
                         {% else %}
                             <img src="{{ request.user.avatar.url }}" alt="头像"/>
                         {% endif %}
                     </div>
                     <div id="dashboard">
                         <ul>
-                            <li style="color: #203e50">{{ request.user.username }}</li>
+                            <div style="color: #203e50">{{ request.user.username }}</div>
                             <li><a href="{% url 'apps.blog:account_profile' %}">设置</a></li>
-                            <li><a href="{% url 'notifications:unread' %}"target="_blank"> 消息
+                            <li><a href="{% url 'notifications:unread' %}" target="_blank"> 消息
                                 <span class="unread-count"></span>
-                            </a>
+                                <span class="live-notify-badge"></span></a>
                             </li>
                             <li><a href="{% url 'account_logout' %}?next={{ request.path }}">登出</a></li>
                         </ul>
