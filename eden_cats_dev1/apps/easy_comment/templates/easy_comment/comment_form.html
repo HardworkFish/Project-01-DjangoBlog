@@ -6,7 +6,11 @@
     {% if request.user.is_authenticated %}
         <div class="comment-header">
             <a class="comment-avatar">
-                <img class="img-rounded"  src="{{ request.user.avatar.url }}">
+                {% if  request.user.socialaccount_set.all.0.get_avatar_url %}
+                    <img src="{{ request.user.socialaccount_set.all.0.get_avatar_url }}" alt="头像"/>
+                {% else %}
+                    <img src="{{ request.user.avatar.url }}" alt="头像"/>
+                {% endif %}
             </a>
             <span><strong>
             {{ request.user.username }}

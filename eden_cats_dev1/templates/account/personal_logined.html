@@ -19,7 +19,11 @@
 
                 <div class="butauthor author">
                     <div id="user_info">
-                          <img src="{{ request.user.avatar.url }}" alt="头像"/>
+                        {% if  request.user.socialaccount_set.all.0.get_avatar_url %}
+                          <img src="{{ request.user.socialaccount_set.all.0.get_avatar_url }}" alt="头像"/>
+                        {% else %}
+                            <img src="{{ request.user.avatar.url }}" alt="头像"/>
+                        {% endif %}
                     </div>
                     <div id="dashboard">
                         <ul>

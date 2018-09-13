@@ -16,7 +16,12 @@
                      id="c{{ node.id }}">
                     <div class="col-md-1 comment-left">
                         <a class="comment-avatar">
-                            <img src="{{ node.user.avatar.url }}" alt="{{ node.user_name }}头像">
+                            {#  <img src="{{ node.user.avatar.url }}" alt="{{ node.user_name }}头像"> #}
+                            {% if  node.user.socialaccount_set.all.0.get_avatar_url %}
+                                <img src="{{ node.user.socialaccount_set.all.0.get_avatar_url }}" alt="头像"/>
+                            {% else %}
+                                <img src="{{ node.user.avatar.url }}" alt="头像"/>
+                            {% endif %}
                         </a>
                     </div>
                     <div class="col-md-11 comment-right">
