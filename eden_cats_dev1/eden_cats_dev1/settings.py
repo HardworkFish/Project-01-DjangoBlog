@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.weibo',
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.baidu',
+    'allauth.socialaccount.providers.gitlab',
     'crispy_forms',
     'imagekit',
 ]

@@ -16,22 +16,7 @@
 </head>
 <body>
 
-{% block message %}
-    {% if messages %}
-        <div class="container">
-            {% for message in messages %}
-                <div class="alert {% if message.tags %}alert-
-                    {{ message.tags }}{% else %}alert-secondary{% endif %} alert-dismissible rounded-0 fade show"
-                     role="alert">
-                    {{ message }}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            {% endfor %}
-        </div>
-    {% endif %}
-{% endblock %}
+
 
 {% block base_content %}
     <div class="container">

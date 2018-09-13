@@ -230,9 +230,9 @@
                         <div class="butauthor author">
                             <div id="user_info">
                                 {% if  request.user.socialaccount_set.all.0.get_avatar_url %}
-                                    <img src="{{ request.user.socialaccount_set.all.0.get_avatar_url }}" alt="头像"/>
+                                    <img src="{{ request.user.socialaccount_set.all.0.get_avatar_url }}" alt="avatar"/>
                                 {% else %}
-                                    <img src="{{ request.user.avatar.url }}" alt="头像"/>
+                                    <img src="{{ request.user.avatar.url }}" alt="avatar"/>
                                 {% endif %}
                             </div>
                             <div id="dashboard">
