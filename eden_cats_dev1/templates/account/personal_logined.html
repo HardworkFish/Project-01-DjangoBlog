@@ -29,8 +29,7 @@
                         <ul>
                             <li style="color: #203e50">{{ request.user.username }}</li>
                             <li><a href="{% url 'apps.blog:account_profile' %}">设置</a></li>
-                            <li><a{# href="{% url 'notifications:unread' %}"target="_blank"#}>
-                                消息
+                            <li><a href="{% url 'notifications:unread' %}"target="_blank"> 消息
                                 <span class="unread-count"></span>
                             </a>
                             </li>

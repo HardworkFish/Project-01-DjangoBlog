@@ -194,8 +194,8 @@
         <!-- 评论框、评论列表和通知列表的样式 -->
         <link rel="stylesheet" href="{% static 'easy_comment/css/comment.css' %}">
         <!-- 代码块的高亮 -->
-        <link rel="stylesheet" href="{% static 'easy_comment/css/prism.css' %}">
-        <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
+       {#   <link rel="stylesheet" href="{% static 'easy_comment/css/prism.css' %}">#}
+        {#  <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>#}
 
         <!--------------comments end ------------------>
         <!--- 来必力评论系统 --->
@@ -239,7 +239,7 @@
                                 <ul>
                                     <li style="color: #203e50">{{ request.user.username }}</li>
                                     <li><a href="{% url 'apps.blog:account_profile' %}">设置</a></li>
-                                    <li><a{# href="{% url 'notifications:unread' %}"target="_blank"#}>
+                                    <li><a href="{% url 'notifications:unread' %}" target="_blank"#}>
                                         消息
                                         <span class="unread-count"></span>
                                     </a>
