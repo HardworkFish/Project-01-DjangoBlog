@@ -39,6 +39,9 @@ jQuery(function ($) {
                         blink.is_flashing = true;
                         blink.show();
                     }
+                    else if(data.unread_count == 0){
+                        $(".live-notify-badge").text(data.unread_count);
+                    }
                     else {
                         blink.clear();
                     }
