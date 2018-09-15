@@ -2,11 +2,11 @@
 
 
 #msgBox {
-    width: 710px;
+    width: 100%;
     background: rgb(15, 110, 101);
     border-radius: 5px;
-    margin: 10px auto;
-    padding-top: 10px;
+    margin: -18px 5px;
+    padding-top: 22px;
 }
 
 #msgBox form h2 {
@@ -37,7 +37,7 @@
 }
 
 #conBox {
-    width: 448px;
+    width: 72%;
     resize: none;
     height: 65px;
     overflow: auto;
@@ -82,7 +82,7 @@
     width: 112px;
     height: 30px;
     cursor: pointer;
-    margin-left: 300px;
+    margin-left: 56%;
     background: url(../img/btn.png) no-repeat;
 }
 
