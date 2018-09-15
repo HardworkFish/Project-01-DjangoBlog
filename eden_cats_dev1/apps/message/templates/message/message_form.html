@@ -4,15 +4,22 @@
 
 
 <form  method="post" action="" >
-    <h2>Say, What you wnant to say!</h2>
+    <h2>Say, What you want to say!</h2>
    {% csrf_token %}
-    <div><input id="conBox" name="message" class="f-text" target="id_iframe"></input></div>
+    <div><input id="conBox"  name="message" class="f-text"></input></div>
     <div class="tr">
         <p>
             <span class="countTxt">还能输入</span><strong class="maxNum">140</strong><span>个字</span>
-            <input id="sendBtn" type="submit" value="" title="快捷键 Ctrl+Enter">提交</input>
+            <input id="sendBtn" type="submit" value="" title="快捷键 Enter">提交</input>
         </p>
     </div>
 </form>
-<iframe id="id_iframe" name="id_iframe" style="display: none;"></iframe>
 
+<script>
+    function dosubmit(){
+            var input=document.getElementById("conBox");
+            input.disabled='diabled';
+            return ture;
+        }
+
+</script>

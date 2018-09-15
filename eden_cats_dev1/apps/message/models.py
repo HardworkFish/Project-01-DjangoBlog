@@ -17,5 +17,5 @@ class Message(models.Model):
         db_table = 'message'  # 数据库表
 
     def __str__(self):
-        return '%s 留言' % self.user_name
+        return '%s 留言: %s' % (self.user_name, self.content)
 

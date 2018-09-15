@@ -31,8 +31,8 @@ from apps.message import models
 
 def submit_message(request):
     message_list = models.Message.objects.all()
-    if request.method == 'POST':
-       content = request.POST.get("message", None)
+    if request.method == 'POST'and request.POST.get("message"):
+       content = request.POST.get("message")
        user = request.user
        user_name = request.user.username
        models.Message.objects.create(
