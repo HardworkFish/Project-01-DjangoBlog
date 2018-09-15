@@ -2,24 +2,48 @@
 {% load staticfiles %}
 
 
+{% if request.user.is_authenticated %}
+    <form method="post" action="">
+        <h2>Say, What you want to say!</h2>
+        {% csrf_token %}
+        <div><input id="conBox" name="message" class="f-text"></input></div>
+        <div class="tr">
+            <p>
+                <span class="countTxt">还能输入</span><strong class="maxNum">140</strong><span>个字</span>
+                <input id="sendBtn" type="submit" value="" title="快捷键 Enter">提交</input>
+            </p>
+        </div>
+    </form>
 
-<form  method="post" action="" >
-    <h2>Say, What you want to say!</h2>
-   {% csrf_token %}
-    <div><input id="conBox"  name="message" class="f-text"></input></div>
-    <div class="tr">
-        <p>
-            <span class="countTxt">还能输入</span><strong class="maxNum">140</strong><span>个字</span>
-            <input id="sendBtn" type="submit" value="" title="快捷键 Enter">提交</input>
-        </p>
-    </div>
-</form>
-
-<script>
-    function dosubmit(){
-            var input=document.getElementById("conBox");
-            input.disabled='diabled';
-            return ture;
+    <script>
+   // 提交表单数据到后台处理
+$.ajax({
+    type: "post",
+    data: studentInfo,
+    contentType: "application/json",
+    url: "/messages",
+    beforeSend: function () {
+        // 禁用按钮防止重复提交
+        $("#conBox").attr({ disabled: "disabled" });
+    },
+    success: function (data) {
+        if (data == "Success") {
+            //清空输入框
+            clearBox();
         }
+    },
+    complete: function () {
+        $("#conBox").removeAttr("disabled");
+    },
+    error: function (data) {
+        console.info("error: " + data.responseText);
+    }
+});
 
 </script>
+{% else %}
+    <div class="jumbotron">
+        <h3 class="text-center"><a href="{% url 'account_login' %} ">登录</a>后参与留言</h3>
+    </div>
+{% endif %}
+

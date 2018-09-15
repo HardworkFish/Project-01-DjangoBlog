@@ -40,7 +40,7 @@ def submit_message(request):
            user=user,
            content=content,
        )
-       return render(request, "message/message.html", {'message_list': message_list})
+       return HttpResponseRedirect(reverse('message:submit_message'))
     return render(request, "message/message.html", {'message_list': message_list})
 
 
