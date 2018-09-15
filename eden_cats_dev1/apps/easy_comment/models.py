@@ -7,7 +7,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Comment(MPTTModel):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True,on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True, on_delete=models.CASCADE)
     user_name = models.CharField(max_length=50, blank=True, null=True)
     post = models.ForeignKey(settings.COMMENT_ENTRY_MODEL, verbose_name='文章', on_delete=models.CASCADE)
     parent = TreeForeignKey('self', blank=True, null=True, verbose_name='父级评论', on_delete=models.CASCADE)
@@ -15,7 +15,7 @@ class Comment(MPTTModel):
     submit_date = models.DateTimeField(auto_now_add=True, verbose_name='提交时间')
 
     class MPTTMeta:
-        order_insertion_by = ['submit_date']
+        order_insertion_by = ['-submit_date']
 
     def __str__(self):
         if self.parent is not None:

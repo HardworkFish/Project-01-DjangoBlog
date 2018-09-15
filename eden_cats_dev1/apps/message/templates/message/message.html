@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="../../static/css/message.css">
+
+    <script type="text/javascript" src="../../static/js/message.js"></script>
+
+
+    <div id="msgBox">
+
+       {% include 'message/message_form.html' %}
+       {% include 'message/message_list.html' %}
+    </div>
+
+   {% if request.user.is_authenticated %}
+        {% include "account/personal_logined.html" %}
+    {% else %}
+        {% include "leftSidebar.html" %}
+    {% endif %}
+
+{% endblock %}

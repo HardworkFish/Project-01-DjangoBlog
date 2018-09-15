@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.gitlab',
     'crispy_forms',
     'imagekit',
+    'apps.message',
 ]
 # 使用bootstrap3的样式，前端需要引入相应的css
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -91,7 +92,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 LOGIN_REDIRECT_URL = '/'
 
 # 默认情况下不发邮件通知,开启邮件通知功能后，只有当用户不在线的情况下，才会发邮件。
-SEND_NOTIFICATION_EMAIL = True   # 开启邮件通知
+# SEND_NOTIFICATION_EMAIL = True   # 开启邮件通知
 # Email setting
 # SMTP服务器，使用sendclound的服务
 EMAIL_HOST = 'smtp587.sendcloud.net'
