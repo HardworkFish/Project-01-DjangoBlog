@@ -1,6 +1,7 @@
 from django import template
 from ..forms import MessageForm
 from ..models import Message
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 register = template.Library()
 
@@ -12,8 +13,23 @@ def generate_form_for():
 
 
 @register.simple_tag
-def get_message_list_of():
+def get_messages():
     return Message.objects.all()
+
+
+@register.simple_tag
+def get_message_list_of(request):
+    messages = Message.objects.all()
+
+    paginator = Paginator(messages, 5, 2)
+    message = request.GET.get('page')
+    try:
+        message_list = paginator.page(message)
+    except PageNotAnInteger:
+        message_list = paginator.page(1)
+    except EmptyPage:
+        message_list = paginator.page(paginator.num_pages)
+    return message_list
 
 
 @register.simple_tag

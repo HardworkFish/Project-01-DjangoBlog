@@ -7,6 +7,9 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.views.decorators.http import require_POST
 from django.http import JsonResponse
 from apps.message import models
+from apps.blog.visit_info import refresh_visit_count
+from django.conf import Settings
+from django.core.paginator import Paginator
 # Create your views here.
 # 文章详情页
 
@@ -30,7 +33,9 @@ from apps.message import models
 
 
 def submit_message(request):
-    message_list = models.Message.objects.all()
+    refresh_visit_count(request)
+
+    # message_list = models.Message.objects.all()
     if request.method == 'POST'and request.POST.get("message"):
        content = request.POST.get("message")
        user = request.user
@@ -40,8 +45,9 @@ def submit_message(request):
            user=user,
            content=content,
        )
+
        return HttpResponseRedirect(reverse('message:submit_message'))
-    return render(request, "message/message.html", {'message_list': message_list})
+    return render(request, "message/message.html")
 
 
 #

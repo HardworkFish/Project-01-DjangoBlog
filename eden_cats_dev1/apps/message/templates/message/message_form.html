@@ -15,32 +15,7 @@
         </div>
     </form>
 
-    <script>
-   // 提交表单数据到后台处理
-$.ajax({
-    type: "post",
-    data: studentInfo,
-    contentType: "application/json",
-    url: "/messages",
-    beforeSend: function () {
-        // 禁用按钮防止重复提交
-        $("#conBox").attr({ disabled: "disabled" });
-    },
-    success: function (data) {
-        if (data == "Success") {
-            //清空输入框
-            clearBox();
-        }
-    },
-    complete: function () {
-        $("#conBox").removeAttr("disabled");
-    },
-    error: function (data) {
-        console.info("error: " + data.responseText);
-    }
-});
 
-</script>
 {% else %}
     <div class="jumbotron">
         <h3 class="text-center"><a href="{% url 'account_login' %} ">登录</a>后参与留言</h3>
