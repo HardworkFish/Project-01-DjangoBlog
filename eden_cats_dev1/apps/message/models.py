@@ -7,7 +7,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class Message(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True, on_delete=models.CASCADE)
     user_name = models.CharField(max_length=50, blank=True, null=True)
-    content = models.TextField(max_length=320, verbose_name='留言')
+    content = models.TextField(max_length=280, verbose_name='留言')
     submit_date = models.DateTimeField(auto_now_add=True, verbose_name='提交时间')
 
     class Meta:

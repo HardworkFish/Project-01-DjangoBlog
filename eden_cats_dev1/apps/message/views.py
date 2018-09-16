@@ -34,9 +34,9 @@ from django.core.paginator import Paginator
 
 def submit_message(request):
     refresh_visit_count(request)
-
     # message_list = models.Message.objects.all()
-    if request.method == 'POST'and request.POST.get("message"):
+    if request.method == 'POST'and len(request.POST.get("message"))> 0 \
+            and len(request.POST.get("message")) < 167:
        content = request.POST.get("message")
        user = request.user
        user_name = request.user.username

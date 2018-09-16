@@ -21,7 +21,7 @@ def get_messages():
 def get_message_list_of(request):
     messages = Message.objects.all()
 
-    paginator = Paginator(messages, 5, 2)
+    paginator = Paginator(messages, 8, 2)
     message = request.GET.get('page')
     try:
         message_list = paginator.page(message)
