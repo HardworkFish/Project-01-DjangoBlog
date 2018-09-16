@@ -33,7 +33,7 @@ def get_message_list_of(request):
 
 
 @register.simple_tag
-def get_message_user_count(Message):
+def get_message_user_count():
     user_list = []
     for message in Message.objects.all():
         if not message.user in user_list:

@@ -17,7 +17,8 @@
                         {% include 'message/message_form.html' %}
                         {% include 'message/message_list.html' %}
                         {% get_messages as messages %}
-                        <div class="msg_paginator">共有 {{ messages|length }} 条留言</div>
+                        <div class="msg_paginator">共有 {{ messages|length }} 条留言 | {% get_message_user_count %} 位用户参与</div>
+
                     </div>
                 </div>
             </div>
