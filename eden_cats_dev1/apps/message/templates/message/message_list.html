@@ -1,24 +1,42 @@
 {% load message_tags %}
 
- <div class="list">
-            <h3><span>Soya sause</span></h3>
-            <ul>
-                {% for msg in message_list %}
-                <li>
-                            {% if  msg.user.socialaccount_set.all.0.get_avatar_url %}
-                                 <div class="userPic"><img src="{{ msg.user.socialaccount_set.all.0.get_avatar_url}}" alt="avatar"/></div>
-                            {% else %}
-                                <div class="userPic"><img src="{{ msg.user.avatar.url}}" alt="avatar"/></div>
-                            {% endif %}
+<div class="list">
+    <h3><span>Soya sause</span></h3>
+    <ul>
 
-                    <div class="content">
-                        <div class="userName"><a href="javascript:;">{{ msg.user_name }}</a>:</div>
-                        <div class="msgInfo">{{ msg.content|safe}}</div>
-                        <div class="times"><span>{{ msg.submit_date }}</span><a class="del" href="javascript:;">删除</a></div>
+        {% for msg in message_list %}
+            <li>
+                {% if  msg.user.socialaccount_set.all.0.get_avatar_url %}
+                    <div class="userPic"><img src="{{ msg.user.socialaccount_set.all.0.get_avatar_url }}" alt="avatar"/>
                     </div>
+                {% else %}
+                    <div class="userPic"><img src="{{ msg.user.avatar.url }}" alt="avatar"/></div>
+                {% endif %}
+                {% csrf_token %}
+                <div class="content">
+                    <div class="userName">{{ msg.user_name }}:</div>
+                    <div class="msgInfo">{{ msg.content|safe }}</div>
+                    <div class="times"><span>{{ msg.submit_date }}</span>
+                        {% if request.user.is_authenticated %}
+                            {% if msg.user == request.user %}
+                                <a class="del" href="/delete_message/?id={{ msg.id }}" style="display:block;" onclick="rec();return false">删除</a>
+                                {% endif %}
+                            <a class="del" href="#" >删除</a>
+                        {% endif %}
+                    {#  onclick="rec();return false" #}
+                    <script type="text/javascript">
+                        function rec() {
+                            if(confirm("确认删除该条留言?")){
+                                a.setAttribute("onclick", "");
+                                return true;
+                            }
+                            return false;
+                        }
+                    </script>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
 
-                </li>
-                {% endfor %}
-
-            </ul>
-        </div>
+    </ul>
+</div>

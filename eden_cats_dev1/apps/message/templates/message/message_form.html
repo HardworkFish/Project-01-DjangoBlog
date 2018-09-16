@@ -1,7 +1,6 @@
 {% load static %}
 {% load staticfiles %}
 
-
 {% if request.user.is_authenticated %}
     <form method="post" action="">
         <h2>Say, What you want to say!</h2>
@@ -9,7 +8,7 @@
         <input id="conBox" name="message" class="f-text" onkeyup="checkLength(this);" ></input>
         <div class="tr">
             <p>
-                <span class="countTxt">还能输入</span><strong class="maxNum">140</strong><span>个字</span>
+                <span class="countTxt">输入限制</span><strong class="maxNum">280</strong><span>个字节哦！</span>
                 <input id="sendBtn" type="submit" value="" title="快捷键 Enter" ></input>
             </p>
         </div>

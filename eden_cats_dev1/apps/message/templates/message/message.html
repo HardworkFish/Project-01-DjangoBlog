@@ -5,8 +5,9 @@
     {% load pagetag %}
     {% load message_tags %}
     {% get_message_list_of request as message_list %}
-    <link rel="stylesheet" type="text/css" href="../../static/css/message.css">
-    {  <script type="text/javascript" src="../../static/js/message.js"></script>}
+    {#% get_messages as message_list %#}
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/message.css' %}">
+     <script type="text/javascript" src="{% static 'js/message.js' %}"></script>
 
     <div class="content-wrap">
         <div id="content" class="content">
@@ -22,8 +23,6 @@
             </div>
 
             <nav class="pagination">
-
-
                 {% if message_list.has_previous %}
                     <a class="extend next" rel="next" href="?page={{ message_list.previous_page_number }}">
                         <i class="fa fa-angle-left"></i>

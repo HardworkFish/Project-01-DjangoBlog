@@ -1,3 +1,7 @@
+/*-------------------------- +
+  留言框字数限制
+ +-------------------------- */
+
    function checkLength(which) {
 	var maxChars = 280; //
 	if(which.value.length > maxChars){

@@ -1,4 +1,4 @@
-from django.shortcuts import render, reverse
+from django.shortcuts import render, reverse, redirect
 from apps.blog.visit_info import refresh_visit_count  # 当网站被访问，更新网站访问次数
 from .models import Message
 from django.http import HttpResponse, HttpResponseRedirect
@@ -32,6 +32,9 @@ from django.core.paginator import Paginator
 #     })
 
 
+def message_show(request):
+    return render(request, 'message/message.html')
+
 def submit_message(request):
     refresh_visit_count(request)
     # message_list = models.Message.objects.all()
@@ -50,7 +53,12 @@ def submit_message(request):
     return render(request, "message/message.html")
 
 
-#
+def delete_message(request):
+    uid = request.GET.get("id")
+    models.Message.objects.filter(id=uid).delete()
+    return redirect('/messages')
+
+
 # def submit_message(request):
 #     if request.method == 'GET':
 #         form = MessageForm()
