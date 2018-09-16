@@ -149,7 +149,7 @@
 
 #msgBox .list .content {
     float: left;
-    width: 400px;
+    width: 678px;
     font-size: 14px;
     margin-left: 10px;
     font-family: arial;
@@ -208,3 +208,16 @@
 .tr * {
     float: left;
 }
+
+.messagge-jumbotron {
+            background: #9e9e9e36;
+            height: 180px;
+            display: block;
+            border-radius: 6px;
+        }
+
+        .message-text-center {
+            text-align: center;
+            margin: 0px 0px;
+            padding-top: 72px;
+        }

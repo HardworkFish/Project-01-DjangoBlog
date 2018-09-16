@@ -17,7 +17,7 @@
                         {% include 'message/message_form.html' %}
                         {% include 'message/message_list.html' %}
                         {% get_messages as messages %}
-                        <div class="msg_paginator">共有 {{ messages|length }} 页</div>
+                        <div class="msg_paginator">共有 {{ messages|length }} 条留言</div>
                     </div>
                 </div>
             </div>
@@ -32,14 +32,10 @@
                     <a class="extend next" rel="next" href="?page={{ message_list.next_page_number }}"><i
                             class="fa fa-angle-right"></i></a>
                 {% endif %}
-
-
             </nav>
 
         </div>
     </div>
-
-
 
     {% if request.user.is_authenticated %}
         {% include "account/personal_logined.html" %}

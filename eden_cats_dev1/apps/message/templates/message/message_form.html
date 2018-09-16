@@ -5,19 +5,19 @@
     <form method="post" action="">
         <h2>Say, What you want to say!</h2>
         {% csrf_token %}
-        <input id="conBox" name="message" class="f-text" onkeyup="checkLength(this);" ></input>
+        <input id="conBox" name="message" class="f-text" onkeyup="checkLength(this);"></input>
         <div class="tr">
             <p>
                 <span class="countTxt">输入限制</span><strong class="maxNum">280</strong><span>个字节哦！</span>
-                <input id="sendBtn" type="submit" value="" title="快捷键 Enter" ></input>
+                <input id="sendBtn" type="submit" value="" title="快捷键 Enter"></input>
             </p>
         </div>
     </form>
-
-
 {% else %}
-    <div class="jumbotron">
-        <h3 class="text-center"><a href="{% url 'account_login' %} ">登录</a>后参与留言</h3>
+
+    <div class="messagge-jumbotron">
+        <h3 class="message-text-center"><a href="{% url 'account_login' %} ">登录</a>后参与留言</h3>
     </div>
+
 {% endif %}
 
