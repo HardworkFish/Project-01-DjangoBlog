@@ -39,25 +39,22 @@
     <link rel="stylesheet" href="{% static 'css/sidebar-menu.css' %}">
     <link rel="stylesheet" href="{% static 'css/highlight/style.css' %}" type="text/css">
     {#语法高亮#}
-
     <!------------------images or else------------------>
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/cat_head.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/cat_head.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/cat_head.png' %}">
-    <link rel="mask-icon" href="{% static 'images/cat_head.png' %}" color="#222">
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/cat.png' %}"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/logo.jpg' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/logo.jpg' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/logo.jpg' %}">
+    <link rel="mask-icon" href="{% static 'images/logo.jpg' %}" color="#222">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo.jpg' %}"/>
     <link rel="alternate" href="/atom.xml" title="Eden's Cats" type="application/atom+xml">
     <link rel="alternate" type="application/vnd.wap.xhtml+xml" media="handheld" href="target"/>
     <link rel="canonical" href="http://trskycooik.com/">
     <!----------- body -------------->
-    <title>{% block title %} Eden's Cats {% endblock %}</title>
+    <title>{% block title %} Eden's Cats|Account {% endblock %}</title>
     <style>
         span.highlighted {
             color: red;
         }
     </style>
-
-
     <script type="text/javascript" id="hexo.configurations">
         var NexT = window.NexT || {}, CONFIG = {
             root: "/",
@@ -87,19 +84,8 @@
 
         }
     </script>
-    <!---- DaoVoice Chat ---->
-    <script>
-        !function (e, t, o, c, i, a, n) {
-            e.DaoVoiceObject = i, e[i] = e[i] ||
-                function () {
-                    (e[i].q = e[i].q || []).push(arguments)
-                }, e[i].l = 1 * new Date, a = t.createElement("script"), n = t.getElementsByTagName("script")[0], a.async = 1, a.src = c, a.charset = "utf-8", n.parentNode.insertBefore(a, n)
-        }(window, document, 0, ("https:" == document.location.protocol ? "https:" : "http:") + "//widget.daovoice.io/widget/a0f99982.js", "daovoice"), daovoice("init", {
-            app_id: "a0f99982"
-        }), daovoice("update")
-    </script>
+
 </head>
-<!-
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 

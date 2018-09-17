@@ -38,13 +38,12 @@
     <link rel="stylesheet" href="{% static 'css/sidebar-menu.css' %}">
     <link rel="stylesheet" href="{% static 'css/highlight/style.css' %}" type="text/css">
     {#语法高亮#}
-
     <!------------------images or else------------------>
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/cat_head.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/cat_head.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/cat_head.png' %}">
-    <link rel="mask-icon" href="{% static 'images/cat_head.png' %}" color="#222">
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/cat.png' %}"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/logo.jpg' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/logo.jpg' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/logo.jpg' %}">
+    <link rel="mask-icon" href="{% static 'images/logo.jpg' %}" color="#222">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/logo.jpg' %}"/>
     <link rel="alternate" href="/atom.xml" title="Eden's Cats" type="application/atom+xml">
     <link rel="alternate" type="application/vnd.wap.xhtml+xml" media="handheld" href="target"/>
     <link rel="canonical" href="http://trskycooik.com/">
@@ -55,8 +54,6 @@
             color: red;
         }
     </style>
-
-
     <script type="text/javascript" id="hexo.configurations">
         var NexT = window.NexT || {}, CONFIG = {
             root: "/",
@@ -89,11 +86,8 @@
     <!---- DaoVoice Chat ---->
 </head>
 <!------------- head end line ------------------------->
-
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
 {% include "rightSidebar.html" %}
-
 <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <!--- Github svg view --->
@@ -140,27 +134,22 @@
     <!---------main sidebar content ----------------------->
     <main id="main" class="main">
         <div class="main-inner">
-
             {% block content %}
             {% endblock %}
-
             <!--------left down sidebar start -------------->
             {% block leftdownSidebar %}
             {% endblock %}
             <!---------left down sidebar end------------->
-
-
         </div>
     </main>
-
     <!------footer----------------->
     <footer id="footer" class="footer">
         <div class="footer-inner">
             <div class="copyright">
-                &copy; 2018 <span itemprop="copyrightYear"></span>
-                <span class="with-love"> <i class="fa fa-user"></i> </span>
-                <span class="author" itemprop="copyrightHolder">TRsky</span>|
-                <span class="post-count">Eden's Cats Blog</span>
+                copyright&copy;2018<span itemprop="copyrightYear"></span>
+                <span class="with-love"><i class="fa fa-user"></i> </span>
+                <span class="author" itemprop="copyrightHolder">TRsky</span> |
+                <span class="post-count">粤ICP备17074521号</span>
             </div>
             {% get_visit_ip as visitors %}
             {% get_visit_count as visits %}

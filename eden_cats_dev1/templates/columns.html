@@ -1,15 +1,14 @@
 {% extends "base.html" %}
+{% block title %}Eden's Cat|Columns{% endblock %}
 {% block content %}
     {% load pagetag %}
     <div class="content-wrap">
       <div class="post-block-sub">
         <div id="content" class="content">
             <div class="post-block archive">
-
                 <div id="posts" class="posts-collapse">
                     <span class="archive-move-on"></span>
                     <span class="archive-page-counter"> (◍´꒳`◍)共有 {{ columns.count }}项专栏哦！！</span>
-
                     {% for column_category in column_category_list %}
                         {% if column_category.column_set.count > 0 %}
                             <div class="collection-title">

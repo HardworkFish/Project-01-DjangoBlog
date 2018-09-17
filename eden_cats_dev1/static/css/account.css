@@ -123,3 +123,8 @@
     width: 44%;
 }}
 
+.avatar img{
+    max-width: 25%;
+    left: 35%;
+    position: relative;
+}

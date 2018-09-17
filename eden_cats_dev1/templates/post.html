@@ -2,6 +2,7 @@
 {% load static %}
 {% load custom_filter %}
 {% load base_info %}
+{% block title %}Eden's Cat|Article{% endblock %}
 {% block content %}
     <!---------------------------------article start------------------------------------------------------------------------------------>
     <div class="content-wrap">
@@ -14,7 +15,7 @@
                             <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
                       <meta itemprop="name" content="{{ post.author }}">
                       <meta itemprop="description" content="{{ post.title }}">
-                      <meta itemprop="image" content="{% static 'images/avatar.jpg' %}"></span>
+                      <meta itemprop="image" content="{% static 'images/logo.png' %}"></span>
                             <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
                       <meta itemprop="name" content="Eden's Cats"></span>
                             <header class="post-header">
@@ -194,7 +195,7 @@
         <!-- 评论框、评论列表和通知列表的样式 -->
         <link rel="stylesheet" href="{% static 'easy_comment/css/comment.css' %}">
         <!-- 代码块的高亮 -->
-       {#   <link rel="stylesheet" href="{% static 'easy_comment/css/prism.css' %}">#}
+        {#   <link rel="stylesheet" href="{% static 'easy_comment/css/prism.css' %}">#}
         {#  <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>#}
 
         <!--------------comments end ------------------>
@@ -242,7 +243,7 @@
                                     <li><a href="{% url 'notifications:unread' %}" target="_blank"#}>
                                         消息
                                         <span class="unread-count"></span>
-                                         <span class="live-notify-badge fa fa-fw fa-border"></span>
+                                        <span class="live-notify-badge fa fa-fw fa-border"></span>
                                     </a>
                                     </li>
                                     <li><a href="{% url 'account_logout' %}?next={{ request.path }}">登出</a></li>
@@ -332,7 +333,4 @@
             </section>
         </div>
     </aside>
-
-
-
 {% endblock %}

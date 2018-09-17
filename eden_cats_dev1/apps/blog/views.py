@@ -68,7 +68,7 @@ def about(request):
 def home(request):
     refresh_visit_count(request)
     posts = Article.objects.all().filter(status='publish', public_time__isnull=False)   # 获取主页的全部 Article 对象, 状态为已发布，发布时间不为空
-    paginator = Paginator(posts, settings.PAGE_NUM, 2)  # 每页显示数量，对应settings.py中的PAGE_NUM， 当只有2时候，合并为上一页
+    paginator = Paginator(posts, 5, 2)  # 每页显示数量，对应settings.py中的PAGE_NUM， 当只有2时候，合并为上一页
     page = request.GET.get('page')  # 获取URL中page参数的值
     try:
         post_list = paginator.page(page)

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% block title %}Eden's Cat|Tag{% endblock %}
 {% block content %}
-{% load pagetag %}
+    {% load pagetag %}
     <div class="content-wrap">
         <div id="content" class="content">
             <div class="post-block tag" style="opacity: 1; display: block;">
@@ -53,8 +54,6 @@
             </nav>
         </div>
     </div>
-
-
     {% if request.user.is_authenticated %}
         {% include "account/personal_logined.html" %}
     {% else %}

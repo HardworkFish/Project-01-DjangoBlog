@@ -1161,8 +1161,9 @@ pre .javascript .function, pre .keyword {
 }
 
 .site-title {
-    font-size: 15px;
-    font-weight: 320;
+    font-size: 25px;
+    font-weight: 32;
+    font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
 }
 
 .site-subtitle {
@@ -1203,7 +1204,7 @@ pre .javascript .function, pre .keyword {
     }
 
     .post-body {
-        word-break: break-word
+        word-break: break-word;
     }
 }
 
@@ -3301,6 +3302,10 @@ img:hover {
     padding: 5px 12px;
     text-align: left;
     transition-property: background-color
+}
+
+.menu .menu-item a:hover{
+    color: rgb(0, 0, 0);
 }
 
 .menu .menu-item a:hover, .menu-item-active a {
