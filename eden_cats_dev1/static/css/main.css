@@ -1114,7 +1114,7 @@ pre .javascript .function, pre .keyword {
 @media (min-width: 768px) and (max-width: 991px) {
     .back-to-top {
         display: block;
-        right: 18px
+        right: 8px
     }
 }
 

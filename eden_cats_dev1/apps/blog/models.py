@@ -211,7 +211,7 @@ class Article(models.Model):
     # 文章标题
     title = models.CharField(verbose_name='标题', max_length=100)
     # 文章标语 slogan blank=True 表示数值可为空
-    slogan = models.TextField(verbose_name='标语', blank=True, null=True)
+    slogan = models.CharField(verbose_name='标语', blank=True, null=True, max_length=300)
     # 文章摘要
     digest = MDTextField(verbose_name='文章摘要', max_length=500, blank=True)  # blank 为 True，字段可以为空
     # 文章正文内容
