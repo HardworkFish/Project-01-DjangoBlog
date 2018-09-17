@@ -7,14 +7,17 @@ from django.db.models.aggregates import Count
 
 register = template.Library()
 
+
 @register.simple_tag
 def generate_form_for(post):
-    form = CommentForm(initial={'post':post.id})
+    form = CommentForm(initial={'post': post.id})
     return form
+
 
 @register.simple_tag
 def get_comment_list_of(post):
     return post.comment_set.all()
+
 
 @register.simple_tag
 def get_comments_user_count(post):
@@ -24,23 +27,27 @@ def get_comments_user_count(post):
             user_list.append(comment.user)
     return len(user_list)
 
+
 @register.simple_tag
 def get_like_action(user, comment):
     if user.is_anonymous:
         return 0
     try:
-        obj = Like.objects.get(user = user, comment = comment)
+        obj = Like.objects.get(user=user, comment=comment)
         return 1 if obj.status else -1
     except Like.DoesNotExist:
         return 0
 
+
 @register.simple_tag
 def get_like_count(comment):
-    return comment.like_set.filter(status = True).count()
+    return comment.like_set.filter(status=True).count()
+
 
 @register.simple_tag
 def get_dislike_count(comment):
-    return -comment.like_set.filter(status = False).count()
+    return -comment.like_set.filter(status=False).count()
+
 
 @register.simple_tag
 def get_comment_rank(num=5):

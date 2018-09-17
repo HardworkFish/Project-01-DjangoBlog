@@ -6,7 +6,7 @@
     {% endif %}
     {{ notice.verb }}
   </h4>
-  
+  {{ notice.target.get_absolute_url }}
   <p>{{ notice.timesince }} 前</p>
   
   <p>{{ notice.description|safe|linebreaksbr }}</p>

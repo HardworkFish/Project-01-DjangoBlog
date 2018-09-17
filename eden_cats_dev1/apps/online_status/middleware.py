@@ -5,8 +5,8 @@ from . import settings
 from .models import OnlineStatus
 from django.utils.deprecation import MiddlewareMixin
 
-class OnlineStatusMiddleware(MiddlewareMixin):
 
+class OnlineStatusMiddleware(MiddlewareMixin):
     def process_request(self, request):
         if request.user.is_authenticated() and (not request.path == '/notifications/api/unread_count/'):
             cache_key = '%s_last_login' % request.user.username

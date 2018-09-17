@@ -25,11 +25,11 @@ def email_handler(*args):
                 context = {'receiver':user.username,
                            'unsend_count':user.notifications.filter(unread=True, emailed=False).count(),
                            'notice_list':user.notifications.filter(unread=True, emailed=False),
-                           'unread_link':'http://www.aaron-zhao.com/notifications/unread/'}
+                           'unread_link':'http://www.trskycooik.com/notifications/unread/'}
                 msg_plain = render_to_string("notifications/email/email.txt", context=context)
-                send_mail("来自[AA的博客] 您有未读的评论通知",
+                send_mail("来自[TRsky的博客] 您有未读的评论通知",
                           msg_plain,
-                          'support@aaron-zhao.com',
+                          'support@trskycooik.com',
                           recipient_list=[user.email])
                 user.notifications.unsent().update(emailed=True)
         except Exception as e:
@@ -66,6 +66,7 @@ def comment_handler(sender, instance, created, **kwargs):
                     email_handler(*recipient)
 
 post_save.connect(comment_handler, sender=Comment)
+
 
 def like_handler(sender, instance, created, **kwargs):
     if created:

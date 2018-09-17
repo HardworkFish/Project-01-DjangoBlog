@@ -20,6 +20,7 @@
 	position: relative;
 	margin: 0;
 	padding: 0;
+	width: 230px;
 }
 .sidebar-menu > li > a {
 	padding: 12px 5px 12px 15px;

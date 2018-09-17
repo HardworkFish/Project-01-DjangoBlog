@@ -43,13 +43,12 @@ a {
  -------------------------------- */
 .columnist {
     position: fixed;
-    left: 0;
-    height: 27px;
-    width: 100%;
+    height: 18px;
+    /* width: 100%; */
     z-index: 2000;
     right: 30px;
-    bottom: 160px;
-    /* Force Hardware Acceleration in WebKit */
+    bottom: 87px;
+    left: 53px;
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;
     -webkit-transition-property: -webkit-transform;
@@ -81,9 +80,9 @@ columnist.is-fixed {
 
 #cd-menu-trigger {
     position: absolute;
-    right: 20px;
+    right: -22px;
     height: 100%;
-    width: 50px;
+    width: 54px;
     background-color: #000000;
 }
 

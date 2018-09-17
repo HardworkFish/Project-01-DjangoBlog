@@ -2,7 +2,7 @@
 {% load static %}
 {% load custom_filter %}
 {% load base_info %}
-{% block title %}Eden's Cat|Article{% endblock %}
+{% block title %}Eden's Cats|Article{% endblock %}
 {% block content %}
     <!---------------------------------article start------------------------------------------------------------------------------------>
     <div class="content-wrap">
@@ -197,6 +197,9 @@
         <!-- 代码块的高亮 -->
         {#   <link rel="stylesheet" href="{% static 'easy_comment/css/prism.css' %}">#}
         {#  <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>#}
+         <!-- jquery要放在其他script上面 -->
+        <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+        <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
 
         <!--------------comments end ------------------>
         <!--- 来必力评论系统 --->

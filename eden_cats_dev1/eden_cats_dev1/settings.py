@@ -210,8 +210,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'online_status.middleware.OnlineStatusMiddleware',
+    # 'apps.online_status.middleware.OnlineStatusMiddleware',
 ]
+
+# USER_ONLINE_TIMEOUT = 600
 
 ROOT_URLCONF = 'eden_cats_dev1.urls'
 

@@ -1094,7 +1094,7 @@ pre .javascript .function, pre .keyword {
     box-sizing: border-box;
     position: fixed;
     bottom: -100px;
-    right: 15px;
+    right: 8px;
     z-index: 1050;
     padding: 0 8px;
     width: initial;
@@ -1121,7 +1121,7 @@ pre .javascript .function, pre .keyword {
 @media (max-width: 767px) {
     .back-to-top {
         display: block;
-        right: 18px
+        right: 8px
     }
 
     .site-meta {
