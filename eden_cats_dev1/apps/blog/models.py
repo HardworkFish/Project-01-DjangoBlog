@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.timezone import now
 from mdeditor.fields import MDTextField
+from django.urls import reverse
 # Create your models here.
 # 所有数据库表列 Id 自动创建
 # 创建四个表：Category（分类）、Post（文章）、Tag（标签）、Links（友情链接）
@@ -244,6 +245,10 @@ class Article(models.Model):
     # 下一篇
     def next_article(self):  # id比当前id大，状态为已发布，发布时间不为空
         return Article.objects.filter(id__gt=self.id, status='publish', public_time__isnull=False).first()
+
+    # 文章绝对路径
+    def get_absolute_url(self):
+        return reverse('apps.blog:detail', kwargs={'pk': self.pk})
 
     def __str__(self):
         return self.title

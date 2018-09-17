@@ -22,10 +22,10 @@ def email_handler(*args):
     for user in args:
         try:
             if not (hasattr(user, 'onlinestatus') and user.onlinestatus.is_online()):
-                context = {'receiver':user.username,
-                           'unsend_count':user.notifications.filter(unread=True, emailed=False).count(),
-                           'notice_list':user.notifications.filter(unread=True, emailed=False),
-                           'unread_link':'http://www.trskycooik.com/notifications/unread/'}
+                context = {'receiver': user.username,
+                           'unsend_count': user.notifications.filter(unread=True, emailed=False).count(),
+                           'notice_list': user.notifications.filter(unread=True, emailed=False),
+                           'unread_link': 'http://www.trskycooik.com/notifications/unread/'}
                 msg_plain = render_to_string("notifications/email/email.txt", context=context)
                 send_mail("来自[TRsky的博客] 您有未读的评论通知",
                           msg_plain,

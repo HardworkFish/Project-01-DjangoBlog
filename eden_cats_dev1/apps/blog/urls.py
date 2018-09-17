@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('home/', views.home, name='home'),
-    path('articles/<int:id>/', views.detail, name='detail'),
+    path('article/<int:id>/', views.detail, name='detail'),
+    url(r'^article/(?P<pk>[0-9]+)/$', views.detail, name='detail'),
     path('category/<int:id>/', views.search_category, name='category_menu'),
     path('tag/<str:tag>/', views.search_tag, name='search_tag'),
     path('archives/<str:year>/<str:month>', views.archives, name='archives'),  # 按月归档

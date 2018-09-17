@@ -22,6 +22,7 @@ from django.conf.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
 from apps.blog.feeds import BlogRssFeed
+from django.conf.urls import url
 import notifications.urls
 from django.views.static import serve
 # from eden_cats_dev1.settings import STATIC_ROOT
@@ -31,7 +32,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('home/', views.home, name='home'),
-    path('articles/<int:id>/', views.detail, name='detail'),
+    path('article/<int:id>/', views.detail, name='detail'),
+    url(r'^article/(?P<pk>[0-9]+)/$', views.detail, name='detail'),
+    # path('articles/<int:id>/', views.detail, name='detail'),
     path('category/<int:id>/', views.search_category, name='category_menu'),  # 分类搜索
     path('categories/', views.category_show, name='category_show'),  # 归类页
     path('tags/<str:tag>/', views.search_tag, name='search_tag'),  # 标签搜索

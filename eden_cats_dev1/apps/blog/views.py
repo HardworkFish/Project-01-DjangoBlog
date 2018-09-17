@@ -46,6 +46,7 @@ def account_profile(request):
     form = UserDetailForm(instance=request.user)
     return render(request, 'account/user_detail.html', context={'form': form, 'messages': message, })
 
+
 # About me
 def about(request):
     refresh_visit_count(request)
