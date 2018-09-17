@@ -15,6 +15,7 @@
 #msgBox form {
     padding: 20px 27px 0px;
     background: #2e54725e;
+    border-radius: 6px;
 }
 
 #userName, #conBox {
@@ -29,6 +30,7 @@
 
 #userName.active, #conBox.active {
     border: 1px solid #7abb2c;
+    border-radius: 6px;
 }
 
 #userName {
@@ -186,6 +188,7 @@
     float: right;
     color: #607D8B;
     display: none;
+
 }
 
 .msg_paginator {
@@ -210,14 +213,23 @@
 }
 
 .messagge-jumbotron {
-            background: #9e9e9e36;
-            height: 180px;
-            display: block;
-            border-radius: 6px;
-        }
+    background: #9e9e9e36;
+    height: 180px;
+    display: block;
+    border-radius: 6px;
+}
 
-        .message-text-center {
-            text-align: center;
-            margin: 0px 0px;
-            padding-top: 72px;
-        }
+.message-text-center {
+    text-align: center;
+    margin: 0px 0px;
+    padding-top: 72px;
+}
+
+.msg-status {
+    left: 380px;
+    position: relative;
+}
+
+.times a:hover {
+    background: #d5d5d5;
+}

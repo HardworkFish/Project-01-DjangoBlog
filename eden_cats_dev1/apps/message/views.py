@@ -59,6 +59,20 @@ def delete_message(request):
     return redirect('/messages')
 
 
+def hide_message(request):
+    uid = request.GET.get("id")
+    models.Message.objects.filter(id=uid).update(status="hide")
+    return redirect('/messages')
+
+
+def public_message(request):
+    uid = request.GET.get("id")
+    models.Message.objects.filter(id=uid).update(status="public")
+    return redirect('/messages')
+
+
+
+
 # def submit_message(request):
 #     if request.method == 'GET':
 #         form = MessageForm()

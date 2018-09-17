@@ -5,6 +5,13 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Message(models.Model):
+    # 留言状态
+    STATUS_CHOICES = (
+        ('hide', '隐藏'),
+        ('public', '公开'),
+    )
+    # 默认公开
+    status = models.CharField(verbose_name='留言状态', max_length=10, choices=STATUS_CHOICES, default='public')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True, on_delete=models.CASCADE)
     user_name = models.CharField(max_length=50, blank=True, null=True)
     content = models.TextField(max_length=280, verbose_name='留言')

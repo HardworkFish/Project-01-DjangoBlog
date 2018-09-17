@@ -7,6 +7,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Comment(MPTTModel):
+
     user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True, on_delete=models.CASCADE)
     user_name = models.CharField(max_length=50, blank=True, null=True)
     post = models.ForeignKey(settings.COMMENT_ENTRY_MODEL, verbose_name='文章', on_delete=models.CASCADE)

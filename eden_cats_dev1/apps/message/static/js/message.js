@@ -17,10 +17,11 @@ function checkLength(which) {
 }
 
 
-function rec() {
-    if (confirm("确认删除该条留言?")) {
+function rec(str) {
+    if (confirm(str)) {
         a.setAttribute("onclick", "");
         return true;
     }
     return false;
 }
+
