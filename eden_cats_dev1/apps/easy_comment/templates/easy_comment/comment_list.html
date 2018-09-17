@@ -28,6 +28,7 @@
                     <span class="comment-user"><strong>
                         {{ node.user_name }}
                     </strong></span>
+
                         {% if not node.is_root_node %}
                             <span class="glyphicon glyphicon-share-alt"></span>
                             <span class="comment-reply-to">@{{ node.parent.user_name }}</span>

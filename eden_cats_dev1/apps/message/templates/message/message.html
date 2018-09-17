@@ -27,6 +27,11 @@
                 </div>
             </div>
 
+            {% if request.user.is_authenticated %}
+                {% get_private_message_list_of request as message_list %}
+            {% else %}
+                {% get_public_message_list_of request as message_list %}
+            {% endif %}
             <nav class="pagination">
                 {% if message_list.has_previous %}
                     <a class="extend next" rel="next" href="?page={{ message_list.previous_page_number }}">

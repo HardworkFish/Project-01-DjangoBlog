@@ -186,7 +186,7 @@
 }
 
 .comment-box {
-    background: #637a86;
+    background: #637a864f;
     display: block;
     padding: 48px;
     width: 630px;
@@ -195,4 +195,5 @@
     /* left: 0px; */
     position: relative;
     margin: 21px auto;
+    border-radius: 15px;
 }
