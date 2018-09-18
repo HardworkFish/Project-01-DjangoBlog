@@ -21,9 +21,9 @@ class Favour(models.Model):
 
     def __str__(self):
         if self.liked:
-            return "{} 喜欢 {} 链接：/article/{}/".format(self.user.username, self.content_object.title, self.object_id)
+            return "{} 喜欢了文章 {}|链接：/article/{}/".format(self.user.username, self.content_object.title, self.object_id)
         else:
-            return "{} 取消了喜欢 {}_{}".format(self.user.username, self.content_object.title,
+            return "{} 取消了喜欢文章 {}|链接：/article/{}/".format(self.user.username, self.content_object.title,
                                         self.object_id)
 
 
