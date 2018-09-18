@@ -85,6 +85,127 @@
                                 {{ post.content|safe }}
                             </div>
                             <!--- end 0f article --->
+                            <div class="like_share">
+                                <a href="javascript:void(0)" id="like-btn"
+                                   class="button button-glow button-border button-rounded">
+                                    <i class="fa fa-heart-o"></i>
+                                    喜欢
+                                    <span class="like-count">0</span>
+                                </a>
+                                <!-- JiaThis Button BEGIN -->
+                                <div class="jiathis_style_32x32">
+                                    <a class="jiathis_button_tsina"></a>
+                                    <a class="jiathis_button_weixin"></a>
+                                    <a class="jiathis_button_cqq"></a>
+                                    <div class="clear"></div>
+                                </div>
+                                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js"
+                                        charset="utf-8"></script>
+                                <!-- JiaThis Button END -->
+                            </div>
+                            <script type="text/javascript">
+                                $('.article-content').find(':header').each(function () {
+                                    $(this).attr('id', $(this).text());
+                                });
+                                $('.article-content img').removeAttr('style');
+                                $('.pinglun-text img').removeAttr('style');
+                                $(".django-ckeditor-widget").removeAttr('style');
+                                var page = 1;
+                                var empty_page = false;
+                                var block_request = false;
+
+
+
+                                $("#like-btn").click(function () {
+                                    if ($(this).hasClass('no-login')) {
+                                        alert("请登录后参与此操作~");
+                                        return false;
+                                    }
+                                    $.ajax({
+                                        type: 'post',
+                                        url: "{% url 'easy_comment:post_favour' post.id %}",
+                                        data: {'action': $(this).data('action')},
+                                        dataType: 'json',
+                                        success: function (data) {
+                                            alert(data.count);
+                                        },
+                                        error: function (data) {
+                                            alert(data.status);
+                                        }
+                                    });
+                                    var n = $(this).find('.like-count').text();
+                                    if ($(this).data('action') == 'like') {
+                                        $(this).css({
+                                            'background-color': '#1abc9c',
+                                            'color': '#fff'
+                                        }).removeClass('button-glow');
+                                        $(this).find('i').removeClass('fa-heart-o').addClass('fa-heart');
+                                        $(this).data('action', 'unlike');
+                                        $(this).find('.like-count').text(Number(n) + 1);
+                                    }
+                                    else {
+                                        $(this).css({
+                                            'background-color': '#fff',
+                                            'color': '#1abc9c'
+                                        }).addClass('button-glow');
+                                        $(this).find('i').removeClass('fa-heart').addClass('fa-heart-o');
+                                        $(this).data('action', 'like');
+                                        $(this).find('.like-count').text(Number(n) - 1);
+                                    }
+                                });
+                                $.get(
+                                    "{% url 'easy_comment:post_favour_count' post.id %}",
+                                    function (data) {
+                                        $("#like-btn").data('action', 'like');
+                                        if (data.status == 1) {
+                                            $("#like-btn").css({
+                                                'background-color': '#1abc9c',
+                                                'color': '#fff'
+                                            }).removeClass('button-glow');
+                                            $("#like-btn").find('i').removeClass('fa-heart-o').addClass('fa-heart');
+                                            $("#like-btn").data('action', 'unlike');
+                                        }
+                                        if (data.status == -1) {
+                                            $("#like-btn").addClass('no-login')
+                                        }
+                                        $('.like-count').text(data.count);
+                                    }
+                                );
+                            </script>
+                            <style>
+                                .jiathis_style_32x32 {
+                                    display: inline-block;
+                                    float: right;
+                                }
+
+                                .jiathis_style_32x32 a {
+                                    display: inline-block;
+                                }
+
+                                #like-btn {
+                                    color: #1abc9c;
+                                    padding: 0 16px;
+                                    font-size: 14.5px;
+                                    line-height: 32px;
+                                    height: 36px;
+                                }
+
+                                #like-btn span {
+                                    font-size: 14.5px;
+                                    font-family: inherit;
+                                }
+
+                                .like_share {
+                                    margin-top: 60px;
+                                }
+
+                                .like-count {
+                                    border-left: solid 1px;
+                                    margin-left: 5px;
+                                    padding-left: 8px;
+                                }
+                            </style>
+
                             <div>
                                 <div>
                                     <div style="text-align:center;color:#ccc;font-size:12px">-------------本文结束
