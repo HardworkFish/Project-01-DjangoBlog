@@ -104,17 +104,6 @@
                                 <!-- JiaThis Button END -->
                             </div>
                             <script type="text/javascript">
-                                $('.article-content').find(':header').each(function () {
-                                    $(this).attr('id', $(this).text());
-                                });
-                                $('.article-content img').removeAttr('style');
-                                $('.pinglun-text img').removeAttr('style');
-                                $(".django-ckeditor-widget").removeAttr('style');
-                                var page = 1;
-                                var empty_page = false;
-                                var block_request = false;
-
-
 
                                 $("#like-btn").click(function () {
                                     if ($(this).hasClass('no-login')) {
@@ -126,12 +115,12 @@
                                         url: "{% url 'easy_comment:post_favour' post.id %}",
                                         data: {'action': $(this).data('action')},
                                         dataType: 'json',
-                                        success: function (data) {
+                                        /*success: function (data) {
                                             alert(data.count);
                                         },
                                         error: function (data) {
                                             alert(data.status);
-                                        }
+                                        }*/
                                     });
                                     var n = $(this).find('.like-count').text();
                                     if ($(this).data('action') == 'like') {
@@ -184,10 +173,12 @@
 
                                 #like-btn {
                                     color: #1abc9c;
-                                    padding: 0 16px;
+                                    padding: 3px 8px;
                                     font-size: 14.5px;
                                     line-height: 32px;
                                     height: 36px;
+                                    background-color: rgb(255, 255, 255);
+                                    color: rgb(26, 188, 156);
                                 }
 
                                 #like-btn span {
@@ -197,6 +188,25 @@
 
                                 .like_share {
                                     margin-top: 60px;
+                                    margin-left: 44%;
+
+                                }
+
+                                .like_share a:hover{
+                                    color: #FFF0;
+                                    border-bottom-color: rgb(26, 188, 156);
+                                }
+
+                                .like_share button:visited {
+                                    color: #666;
+                                }
+
+                                .button-border, .button-border-thick, .button-border-thin {
+                                    background: 0 0;
+                                    border-width: 0.95px;
+                                    border-style: solid;
+                                    line-height: 36px;
+                                    border-radius: 6px;
                                 }
 
                                 .like-count {
