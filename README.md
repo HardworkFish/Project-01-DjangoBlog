@@ -19,8 +19,8 @@
 ![](images/article2.png)
 
 #### About Comment
-![](images/commnent1.png)
-![](images/commnent2.png)
+![](images/comnent1.png)
+![](images/comnent2.png)
 
 
 #### About Messages
