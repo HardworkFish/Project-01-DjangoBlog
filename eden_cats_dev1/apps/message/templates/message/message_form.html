@@ -16,7 +16,7 @@
 {% else %}
 
     <div class="messagge-jumbotron">
-        <h3 class="message-text-center"><a href="{% url 'account_login' %} ">登录</a>后参与留言</h3>
+        <h3 class="message-text-center"><a href="{% url 'account_login' %}?next={{ request.path }}" rel="section">登录</a>后参与留言</h3>
     </div>
 
 {% endif %}

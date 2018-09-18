@@ -60,7 +60,7 @@
                         留言</a>
                 </li>
                 <li class="menu-item menu-item-commonweal">
-                    <a href="{% url 'account_login' %}" rel="section"> <i class="menu-item-icon fa fa-fw fa-signal"></i>
+                    <a href="{% url 'account_login' %}?next={{ request.path }}" rel="section"> <i class="menu-item-icon fa fa-fw fa-signal"></i>
                         <br>
                         登录</a>
                 </li>

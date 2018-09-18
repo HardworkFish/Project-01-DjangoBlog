@@ -16,15 +16,6 @@
         {% endif %}
         {#  <a class="secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>#}
         <button class="pull-right btn btn-info btn-sm rounded-0" type="submit">{% trans "Sign In" %}</button>
-    <style>
-        .regis{
-    font-size: 12px;
-    text-align: left;
-    border-bottom: 22px;
-    margin-bottom: 30px;
-        }
-
-    </style>
         <div class="regis">
             <a href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
             <a class="pull-center" href="{% url 'account_signup' %}">新用户注册</a>
