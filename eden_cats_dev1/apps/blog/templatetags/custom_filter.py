@@ -51,5 +51,3 @@ def toc_markdown(article):
 
 
 
-if __name__ == '__main__':
-    pass

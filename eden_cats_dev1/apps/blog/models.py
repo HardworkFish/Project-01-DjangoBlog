@@ -202,6 +202,7 @@ class Article(models.Model):
     STATUS_CHOICES = (
         ('draft', '草稿'),
         ('publish', '发表'),
+        ('hide', '隐藏')
     )
     # 文章状态
     status = models.CharField(verbose_name='文章状态', max_length=10, choices=STATUS_CHOICES, default='publish')

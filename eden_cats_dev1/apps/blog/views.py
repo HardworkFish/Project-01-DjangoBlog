@@ -8,6 +8,7 @@ from apps.blog.templatetags import custom_filter
 from .visit_info import refresh_visit_count  # 当网站被访问，更新网站访问次数
 from .forms import UserDetailForm
 from django.contrib.auth.decorators import login_required
+
 import markdown
 from django.db.models import Q
 from django.views.generic import ListView, DetailView
@@ -68,7 +69,10 @@ def about(request):
 # 主页
 def home(request):
     refresh_visit_count(request)
-    posts = Article.objects.all().filter(status='publish', public_time__isnull=False)   # 获取主页的全部 Article 对象, 状态为已发布，发布时间不为空
+    if request.user.is_superuser:
+        posts = Article.objects.all()
+    else:
+        posts = Article.objects.all().filter(status='publish', public_time__isnull=False)   # 获取主页的全部 Article 对象, 状态为已发布，发布时间不为空
     paginator = Paginator(posts, 5, 2)  # 每页显示数量，对应settings.py中的PAGE_NUM， 当只有2时候，合并为上一页
     page = request.GET.get('page')  # 获取URL中page参数的值
     try:
@@ -98,6 +102,8 @@ def detail(request, id):
     refresh_visit_count(request)
     try:
         post = Article.objects.get(id=str(id))
+        if not request.user.is_superuser and post.status != 'publish':
+            raise Http404
         post.viewed()  # 更新文章浏览次数
         tags = post.tags.all()  # 获取文章对应的所有标签
         next_post = post.next_article()  # 下一篇文章对象
