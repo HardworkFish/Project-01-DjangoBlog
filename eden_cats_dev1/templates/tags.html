@@ -19,7 +19,7 @@
                                     <div class="tag-cloud-title"> 目前共计{{ tags_list.count }} 个标签</div>
                                     {% for tag in tags_list %}
                                         <a href="{% url 'search_tag' tag=tag %}"
-                                           style="font-size:{% widthratio tag.article_set.count 1 5 %}px;color:#363636">{{ tag.name }}</a>
+                                           style="font-size:{% widthratio tag.article_set.count 1 5 %}px;">{{ tag.name }}</a>
                                     {% endfor %}
                                 </div>
                             </div>

@@ -365,3 +365,15 @@ ul > li > a:hover {
 .comments-num-home a:hover{
     color: #f44336;
 }
+
+.tag-cloud a {
+    display: inline-block;
+    margin: 10px;
+    color: rgba(6, 144, 206, 0.85);
+    text-decoration: none;
+}
+
+.tag-cloud a:hover{
+    color: #f44336;
+    text-decoration: none;
+}
