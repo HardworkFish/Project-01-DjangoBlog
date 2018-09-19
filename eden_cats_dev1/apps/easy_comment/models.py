@@ -3,10 +3,12 @@ from django.conf import settings
 from mptt.models import TreeForeignKey, MPTTModel
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.contrib.contenttypes.models import ContentType
-from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
+from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 # Create your models here.
 
+
+# 文章点赞功能
 class Favour(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='favours', on_delete=models.CASCADE)
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
@@ -23,8 +25,7 @@ class Favour(models.Model):
         if self.liked:
             return "{} 喜欢了文章 {}|链接：/article/{}/".format(self.user.username, self.content_object.title, self.object_id)
         else:
-            return "{} 取消了喜欢文章 {}|链接：/article/{}/".format(self.user.username, self.content_object.title,
-                                        self.object_id)
+            return "{} 取消了喜欢文章 {}|链接：/article/{}/".format(self.user.username, self.content_object.title, self.object_id)
 
 
 # 评论

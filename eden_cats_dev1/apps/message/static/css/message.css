@@ -38,7 +38,7 @@
 }
 
 #conBox {
-    width: 72%;
+    width: 58%;
     resize: none;
     height: 65px;
     overflow: auto;
@@ -83,8 +83,42 @@
     width: 112px;
     height: 30px;
     cursor: pointer;
-    margin-left: 56%;
+    margin-left: 50%;
     background: url(../img/btn.png) no-repeat;
+}
+
+.msg-status {
+/*    left: 380px;*/
+    position: relative;
+}
+
+
+
+@media (min-width: 992px) {
+    #sendBtn{
+        margin-left: 47%;
+    }
+    .msg-status {
+    left: 380px;
+}
+}
+
+@media (max-width: 991px) and (min-width: 768px){
+    #sendBtn{
+        margin-left: 44%;
+    }
+    .msg-status {
+    left: 266px;
+}
+}
+
+@media screen and (max-width: 767px) {
+    #sendBtn{
+        margin-left: 42%;
+    }
+    .msg-status {
+    left: 260px;
+}
 }
 
 #sendBtn.hover {
@@ -208,6 +242,10 @@
     line-height: 30px;
 }
 
+@media screen and (max-width: 767px) {
+
+
+}
 .tr * {
     float: left;
 }
@@ -225,10 +263,12 @@
     padding-top: 72px;
 }
 
+/*
 .msg-status {
     left: 380px;
     position: relative;
 }
+*/
 
 .times a:hover {
     background: #d5d5d5;
