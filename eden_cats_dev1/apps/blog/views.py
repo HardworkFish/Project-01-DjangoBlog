@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from apps.blog.models import Article, Category, Tag, About, Column, ColumnCategory
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import Http404
@@ -9,9 +9,6 @@ from .visit_info import refresh_visit_count  # 当网站被访问，更新网站
 from .forms import UserDetailForm
 from django.contrib.auth.decorators import login_required
 
-import markdown
-from django.db.models import Q
-from django.views.generic import ListView, DetailView
 # from django.http import HttpResponse
 # Create your views here.
 
