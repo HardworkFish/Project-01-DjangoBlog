@@ -433,7 +433,7 @@ table {
     border: 1px solid #ddd;
     font-size: 13px;
     table-layout: fixed;
-    word-wrap: break-all;
+    word-wrap: break-word;
 }
 
 .header-inner, .main-inner {
@@ -1204,7 +1204,7 @@ pre .javascript .function, pre .keyword {
     }
 
     .post-body {
-        word-break: break-word;
+        word-wrap: break-word;
     }
 }
 
@@ -1467,7 +1467,7 @@ pre .javascript .function, pre .keyword {
 
 .posts-expand .post-title {
     text-align: center;
-    word-break: break-word;
+    word-wrap: break-word;
     font-weight: 400
 }
 
@@ -3198,7 +3198,7 @@ img:hover {
     .content-wrap {
         width: 100%;
         padding: 20px;
-        min-height: auto;
+        /*min-height: auto;*/
         border-radius: initial
     }
 
@@ -3528,7 +3528,7 @@ img:hover {
 }
 
 .comments {
-    margin: 12px initial initial
+    margin: 12px ;
 }
 
 .posts-expand {
@@ -3652,7 +3652,7 @@ img:hover {
 
     .post-block {
         padding: 12px;
-        min-height: auto;
+        /*min-height: auto;*/
         border-radius: initial
     }
 
