@@ -192,11 +192,13 @@
                                     <p>
                                         <span>原始链接:</span>
                                         <a href="{% url 'detail' id=post.id %}"
-                                           title="{{ post.title }}">{% url 'detail' id=post.id %}</a>
+                                           title="{{ post.title }}">{% url 'detail' id=post.id %}
+                                        </a>
                                         <span class="copy-path" title="点击复制文章链接">
-                            <i class="fa fa-clipboard" data-clipboard-text="{ % url 'detail' id=post.id %}"
-                               aria-label="复制成功！"></i>
-                          </span>
+                                          <i class="fa fa-clipboard" data-clipboard-text="http://127.0.0.1:8088/article/{{ post.id }}"
+                                             aria-label="复制成功！">
+                                          </i>
+                                        </span>
                                     </p>
                                     <p>
                                         <span>许可协议:</span>
@@ -334,9 +336,7 @@
                                 </ul>
                             </div>
                         </div>
-
                     {% else %}
-
                         {% get_base_info as infos %}
                         {% for info in infos %}
                             <div class="site-author motion-element" itemprop="author" itemscope
