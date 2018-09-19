@@ -131,7 +131,7 @@ def detail(request, id):
 
 # 分类搜索
 def search_category(request, id):
-    posts = Article.objects.filter(category_id=str(id))
+    posts = Article.objects.filter(category_id=str(id)).filter(status='publish', public_time__isnull=False)
     category = categories.get(id=str(id))
     paginator = Paginator(posts, 8)  # 每页显示数量
     try:
@@ -164,7 +164,7 @@ def tags_cloud(request):
 
 # 标签搜索
 def search_tag(request, tag):
-    posts = Article.objects.filter(tags__name__contains=tag)
+    posts = Article.objects.filter(tags__name__contains=tag).filter(status='publish', public_time__isnull=False)
     paginator = Paginator(posts, 8)
     try:
         page = request.GET.get('page')
