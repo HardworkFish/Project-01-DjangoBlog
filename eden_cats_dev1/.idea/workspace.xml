@@ -29,7 +29,18 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eden_cats_dev1/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="251" column="28" lean-forward="true" selection-start-line="251" selection-start-column="28" selection-end-line="251" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -139,6 +150,16 @@
             <path>
               <item name="eden_cats" type="b2602c69:ProjectViewProjectNode" />
               <item name="eden_cats_dev1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eden_cats" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eden_cats_dev1" type="462c0819:PsiDirectoryNode" />
+              <item name="eden_cats_dev1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eden_cats" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eden_cats_dev1" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -473,10 +494,10 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32601157" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42427745" sideWeight="0.49784017" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37456647" sideWeight="0.6560475" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22894168" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37456647" sideWeight="0.6560475" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22894168" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17602591" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5398844" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39819586" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -664,6 +685,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-481">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -728,6 +750,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -852,82 +875,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1539">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1537422995872" expanded="true" signature="148:176" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="178:402" ph="CREATE TABLE... about" />
-            <marker date="1537422995872" expanded="true" signature="476:509" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="511:697" ph="CREATE TABLE... auth_group" />
-            <marker date="1537422995872" expanded="true" signature="775:807" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="809:1190" ph="CREATE TABLE... base_info" />
-            <marker date="1537422995872" expanded="true" signature="1267:1299" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="1301:1986" ph="CREATE TABLE... blog_user" />
-            <marker date="1537422995872" expanded="true" signature="2378:2421" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="2423:2919" ph="CREATE TABLE... account_emailaddress" />
-            <marker date="1537422995872" expanded="true" signature="3023:3071" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="3073:3619" ph="CREATE TABLE... account_emailconfirmation" />
-            <marker date="1537422995872" expanded="true" signature="3719:3758" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="3760:4357" ph="CREATE TABLE... blog_user_groups" />
-            <marker date="1537422995872" expanded="true" signature="4443:4477" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="4479:4722" ph="CREATE TABLE... blog_userip" />
-            <marker date="1537422995872" expanded="true" signature="4872:4910" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="4912:5096" ph="CREATE TABLE... blog_visitcount" />
-            <marker date="1537422995872" expanded="true" signature="5222:5253" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="5255:5505" ph="CREATE TABLE... category" />
-            <marker date="1537422995872" expanded="true" signature="5587:5625" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="5627:5884" ph="CREATE TABLE... column_category" />
-            <marker date="1537422995872" expanded="true" signature="5964:5993" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="5995:6486" ph="CREATE TABLE... column" />
-            <marker date="1537422995872" expanded="true" signature="6558:6588" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="6590:7740" ph="CREATE TABLE... article" />
-            <marker date="1537422995872" expanded="true" signature="7835:7887" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="7889:8360" ph="CREATE TABLE... dashboard_userdashboardmodule" />
-            <marker date="1537422995872" expanded="true" signature="11129:11171" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="11173:11483" ph="CREATE TABLE... django_content_type" />
-            <marker date="1537422995872" expanded="true" signature="12452:12491" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="12493:13317" ph="CREATE TABLE... django_admin_log" />
-            <marker date="1537422995872" expanded="true" signature="13644:13682" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="13684:14182" ph="CREATE TABLE... auth_permission" />
-            <marker date="1537422995872" expanded="true" signature="18727:18776" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="18778:19445" ph="CREATE TABLE... blog_user_user_permissions" />
-            <marker date="1537422995872" expanded="true" signature="19552:19597" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="19599:20261" ph="CREATE TABLE... auth_group_permissions" />
-            <marker date="1537422995872" expanded="true" signature="20359:20399" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="20401:20648" ph="CREATE TABLE... django_migrations" />
-            <marker date="1537422995872" expanded="true" signature="25602:25639" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="25641:25912" ph="CREATE TABLE... django_session" />
-            <marker date="1537422995872" expanded="true" signature="26381:26415" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="26417:26685" ph="CREATE TABLE... django_site" />
-            <marker date="1537422995872" expanded="true" signature="26841:26884" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="26886:28186" ph="CREATE TABLE... easy_comment_comment" />
-            <marker date="1537422995872" expanded="true" signature="28284:28326" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="28328:29114" ph="CREATE TABLE... easy_comment_favour" />
-            <marker date="1537422995872" expanded="true" signature="29209:29249" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="29251:29948" ph="CREATE TABLE... easy_comment_like" />
-            <marker date="1537422995872" expanded="true" signature="30036:30071" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="30073:30349" ph="CREATE TABLE... friend_links" />
-            <marker date="1537422995872" expanded="true" signature="30432:30467" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="30469:30731" ph="CREATE TABLE... jet_bookmark" />
-            <marker date="1537422995872" expanded="true" signature="30823:30867" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="30869:31113" ph="CREATE TABLE... jet_pinnedapplication" />
-            <marker date="1537422995872" expanded="true" signature="31200:31230" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="31232:31703" ph="CREATE TABLE... message" />
-            <marker date="1537422995872" expanded="true" signature="31795:31844" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="31846:33868" ph="CREATE TABLE... notifications_notification" />
-            <marker date="1537422995872" expanded="true" signature="33979:34028" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="34030:34404" ph="CREATE TABLE... online_status_onlinestatus" />
-            <marker date="1537422995872" expanded="true" signature="34516:34566" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="34568:35218" ph="CREATE TABLE... socialaccount_socialaccount" />
-            <marker date="1537422995872" expanded="true" signature="35327:35373" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="35375:35681" ph="CREATE TABLE... socialaccount_socialapp" />
-            <marker date="1537422995872" expanded="true" signature="35792:35844" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="35846:36531" ph="CREATE TABLE... socialaccount_socialapp_sites" />
-            <marker date="1537422995872" expanded="true" signature="36644:36692" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="36694:37456" ph="CREATE TABLE... socialaccount_socialtoken" />
-            <marker date="1537422995872" expanded="true" signature="37543:37569" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="37571:37816" ph="CREATE TABLE... tag" />
-            <marker date="1537422995872" expanded="true" signature="37890:37925" ph="DROP TABLE I... " />
-            <marker date="1537422995872" expanded="true" signature="37927:38480" ph="CREATE TABLE... article_tags" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
