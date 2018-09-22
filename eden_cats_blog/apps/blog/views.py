@@ -3,7 +3,7 @@ from apps.blog.models import Article, Category, Tag, About, Column, ColumnCatego
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import Http404
 from django.conf import settings
-from eden_cats_dev1.settings import MEDIA_URL
+from eden_cats_blog.settings import MEDIA_URL
 from apps.blog.templatetags import custom_filter
 from .visit_info import refresh_visit_count  # 当网站被访问，更新网站访问次数
 from .forms import UserDetailForm
