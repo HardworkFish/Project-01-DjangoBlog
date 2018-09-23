@@ -1,5 +1,5 @@
 version: '2'
-services: 
+services:
   db:
     image: mariadb
     container_name: db
@@ -42,18 +42,15 @@ services:
     depends_on:
       - web
     restart: always
-
-  volumes:
-    db:
-      driver: local
-    media:
-      driver: local
-    static:
-      driver: local
   
-  networks:
-    front:
-    back:
+volumes:
+  db:
+    driver: local
+  media:
+    driver: local
+  static:
+    driver: local
 
- 
-
+networks:
+  front:
+  back:

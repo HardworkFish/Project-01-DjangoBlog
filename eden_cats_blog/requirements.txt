@@ -7,5 +7,13 @@ Django==2.0.5
 Whoosh
 Markdown
 django_haystack
-imagekit
 django_mptt
+django-mdeditor
+django_imagekit
+django_jet
+django-notifications
+django-notificatioins-hq
+djnago-allauth
+django-crispy-forms
+pilkit
+pillow
