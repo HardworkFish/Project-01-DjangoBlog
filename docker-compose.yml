@@ -1,0 +1,53 @@
+version: "3"
+
+services:
+
+  db:
+    image: mysql
+    environment:
+       MYSQL_DATABASE: edencatsdb
+       MYSQL_ROOT_PASSWORD: admin
+    volumes:
+      - ./eden_cats_blog/dockermysql:/var/lib/mysql:rw
+    restart: always
+    expose:
+        - "3306"
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --init-connect='SET NAMES utf8mb4;' --innodb-flush-log-at-trx-commit=0    
+
+  redis:
+    image: redis
+    restart: always
+
+  memcached:
+    image: memcached
+    restart: always
+
+  web:
+    build: ./eden_cats_blog
+    ports:
+    - "8088:8088"
+    volumes:
+    - ./eden_cats_blog:/eden_cats_blog
+    - /tmp/logs:/tmp
+    command: python3 manage.py runserver 0.0.0.0:8088 --insecure 
+    links:
+    - redis
+    - memcached
+    - db
+    depends_on:
+      - db
+    restart: always
+
+
+  nginx:
+    build: ./nginx
+    ports:
+    - "80:80"
+    volumes:
+    - ./eden_cats_blog/static:/usr/share/nginx/html/static:ro
+    - ./eden_cats_blog/media:/usr/share/nginx/html/media:ro
+    links:
+    - web
+    depends_on:
+    - web
+    restart: always

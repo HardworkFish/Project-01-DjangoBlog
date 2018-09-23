@@ -25,7 +25,7 @@ SECRET_KEY = '=0dnupswsjy%ip$4f4&$02-e7uh-9+w595dsc@r$0v9)i)y298'
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 DEBUG = True
-# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', ]
 # ALLOWED_HOSTS = [
 #     '127.0.0.1',  # Allow domain and subdomains
 #     'localhost',  # Also allow FQDN and subdomains
@@ -248,8 +248,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'edencatsdb',
         'USER': 'root',
-        'PASSWORD': 'mymysql',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'admin',
+        'HOST': 'db',
         'PORT': '3306',
     }
 }
