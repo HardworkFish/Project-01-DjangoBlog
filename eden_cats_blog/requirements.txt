@@ -8,5 +8,12 @@ Whoosh==2.7.4
 Markdown==2.6.11
 django_haystack==2.8.1
 imagekit==1.0.6
+django-imagekit
 mdeditor==0.3.2
 django_mptt==0.9.1
+django-mdeditor==0.1.6
+django-jet==2.0.5
+django-notifications==
+django-notifications-hq==
+django-notifications==
+django-crispy-forms==
