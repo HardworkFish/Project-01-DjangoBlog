@@ -1,0 +1,56 @@
+version: '2'
+services:
+  db:
+    image: mariadb
+    container_name: db
+    ports:
+      - "3306:3306"
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: edencatsdb
+      MYSQL_ROOT_PASSWORD: admin
+    command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+    restart: always
+    networks:
+      - back
+
+  web:
+    build: ./
+    container_name: web
+    volumes:
+      - media:/var/www/eden_cats_blog/media
+      - static:/var/www/eden_cats_blog/static
+    restart: always
+    networks:
+      - front
+      - back
+    expose:
+      - "8088"
+    depends_on:
+      - db
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - static:/usr/share/nginx/html/static:ro
+      - media:/usr/share/nginx/html/media:ro
+    networks:
+      - front
+    depends_on:
+      - web
+    restart: always
+  
+volumes:
+  db:
+    driver: local
+  media:
+    driver: local
+  static:
+    driver: local
+
+networks:
+  front:
+  back:
