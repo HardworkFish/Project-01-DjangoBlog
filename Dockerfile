@@ -5,7 +5,7 @@ LABEL maintainer="TRsky <625310581.com>"
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories && \ 
         apk update && apk add --no-cache git && rm -rf /var/cache/apk/* && \
-	git clone https://github.com/imquanquan/Project-01-DjangoBlog.git
+	git clone https://github.com/HardworkFish/Project-01-DjangoBlog.git
 
 
 FROM alpine:latest

@@ -12,7 +12,7 @@ django-mdeditor
 django_imagekit
 django_jet
 django-notifications
-django-notificatioins-hq
+django-notifications-hq
 djnago-allauth
 django-crispy-forms
 pilkit

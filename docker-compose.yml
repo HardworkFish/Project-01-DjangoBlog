@@ -35,8 +35,8 @@ services:
     ports:
       - "80:80"
     volumes:
-      - static:/usr/share/nginx/html/static:ro
-      - media:/usr/share/nginx/html/media:ro
+      - static:/var/www/eden_cats_blog/static:ro
+      - media:/var/www/eden_cats_blog/media:ro
     networks:
       - front
     depends_on:
