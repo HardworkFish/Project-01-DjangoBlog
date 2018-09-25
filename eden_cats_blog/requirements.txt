@@ -13,7 +13,7 @@ django_imagekit
 django_jet
 django-notifications
 django-notifications-hq
-djnago-allauth
+django-allauth
 django-crispy-forms
 pilkit
 pillow
