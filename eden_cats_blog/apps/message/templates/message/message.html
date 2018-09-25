@@ -7,7 +7,6 @@
     {% load message_tags %}
     {% get_private_message_list_of request as private_message_list %}
     {% get_public_message_list_of request as public_message_list %}
-    {% get_useruser_message_list_of request as superuser_messages_list %}
     {% get_all_messages as all_messages %}
     {#% get_messages as message_list %#}
     <link rel="stylesheet" type="text/css" href=" {% static 'css/message.css' %}">
@@ -19,20 +18,17 @@
                 <div class="post-block-sub">
                     <div id="msgBox">
                         {% include 'message/message_form.html' %}
-                        {% if request.user.is_authenticated and request.user.is_superuser %}
-                            {% include 'message/superuser_message_list.html' %}
-                        {% elif request.user.is_authenticated %}
+                        {% if request.user.is_authenticated %}
                             {% include 'message/private_message_list.html' %}
-                        {% else %}
+                            {% else %}
                             {% include 'message/public_message_list.html' %}
                         {% endif %}
                         <div class="msg_paginator">共有  {{ all_messages|length }} 条留言 | {% get_message_user_count %} 位用户参与</div>
                     </div>
                 </div>
             </div>
-            {% if request.user.is_authenticated and request.user.is_superuser %}
-                {% get_useruser_message_list_of  request as message_list %}
-            {% elif request.user.is_authenticated %}
+
+            {% if request.user.is_authenticated %}
                 {% get_private_message_list_of request as message_list %}
             {% else %}
                 {% get_public_message_list_of request as message_list %}

@@ -92,12 +92,12 @@ ACCOUNT_EMAIL_REQUIRED = True
 LOGIN_REDIRECT_URL = '/'
 
 # 默认情况下不发邮件通知,开启邮件通知功能后，只有当用户不在线的情况下，才会发邮件。
-SEND_NOTIFICATION_EMAIL = False  # 不开启邮件通知
+# SEND_NOTIFICATION_EMAIL = True   # 开启邮件通知
 # Email setting
 # SMTP服务器，使用sendclound的服务
 EMAIL_HOST = 'smtp587.sendcloud.net'
 EMAIL_HOST_USER = 'TRsky_STMP_Mail'
-EMAIL_HOST_PASSWORD = '*********'
+EMAIL_HOST_PASSWORD = 'QshvCVKIwfwR4S27'
 EMAIL_PORT = 587
 
 # 是否使用了SSL 或者TLS
@@ -253,8 +253,6 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 

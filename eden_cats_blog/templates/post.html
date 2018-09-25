@@ -5,8 +5,6 @@
 {% block title %}{{ post.title }}{% endblock %}
 {% block content %}
     <!---------------------------------article start------------------------------------------------------------------------------------>
-    <link href="{% static 'css/like.css' %}" rel="stylesheet">
-
     <div class="content-wrap">
         <div id="content" class="content">
             <div id="posts" class="posts-expand">
@@ -87,82 +85,6 @@
                                 {{ post.content|safe }}
                             </div>
                             <!--- end 0f article --->
-                            <div class="like_share">
-                                <a href="javascript:void(0)" id="like-btn"
-                                   class="button button-glow button-border button-rounded">
-                                    <i class="fa fa-heart-o"></i>
-                                    喜欢
-                                    <span class="like-count">0</span>
-                                </a>
-                                <!-- JiaThis Button BEGIN -->
-                                <div class="jiathis_style_32x32">
-                                    <a class="jiathis_button_tsina"></a>
-                                    <a class="jiathis_button_weixin"></a>
-                                    <a class="jiathis_button_cqq"></a>
-                                    <div class="clear"></div>
-                                </div>
-                                <!-- JiaThis Button END -->
-                            </div>
-
-                            <script type="text/javascript">
-
-                                $("#like-btn").click(function () {
-                                    if ($(this).hasClass('no-login')) {
-                                        alert("请登录后参与此操作~");
-                                        return false;
-                                    }
-                                    $.ajax({
-                                        type: 'post',
-                                        url: "{% url 'easy_comment:post_favour' post.id %}",
-                                        data: {'action': $(this).data('action')},
-                                        dataType: 'json',
-                                        /*success: function (data) {
-                                            alert(data.count);
-                                        },
-                                        error: function (data) {
-                                            alert(data.status);
-                                        }*/
-                                    });
-                                    var n = $(this).find('.like-count').text();
-                                    if ($(this).data('action') == 'like') {
-                                        $(this).css({
-                                            'background-color': '#1abc9c',
-                                            'color': '#fff'
-                                        }).removeClass('button-glow');
-                                        $(this).find('i').removeClass('fa-heart-o').addClass('fa-heart');
-                                        $(this).data('action', 'unlike');
-                                        $(this).find('.like-count').text(Number(n) + 1);
-                                    }
-                                    else {
-                                        $(this).css({
-                                            'background-color': '#fff',
-                                            'color': '#1abc9c'
-                                        }).addClass('button-glow');
-                                        $(this).find('i').removeClass('fa-heart').addClass('fa-heart-o');
-                                        $(this).data('action', 'like');
-                                        $(this).find('.like-count').text(Number(n) - 1);
-                                    }
-                                });
-                                $.get(
-                                    "{% url 'easy_comment:post_favour_count' post.id %}",
-                                    function (data) {
-                                        $("#like-btn").data('action', 'like');
-                                        if (data.status == 1) {
-                                            $("#like-btn").css({
-                                                'background-color': '#1abc9c',
-                                                'color': '#fff'
-                                            }).removeClass('button-glow');
-                                            $("#like-btn").find('i').removeClass('fa-heart-o').addClass('fa-heart');
-                                            $("#like-btn").data('action', 'unlike');
-                                        }
-                                        if (data.status == -1) {
-                                            $("#like-btn").addClass('no-login')
-                                        }
-                                        $('.like-count').text(data.count);
-                                    }
-                                );
-                            </script>
-
                             <div>
                                 <div>
                                     <div style="text-align:center;color:#ccc;font-size:12px">-------------本文结束
@@ -172,12 +94,9 @@
                             </div>
                             <div>
                                 <div class="my_post_copyright">
-                                    {#  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>#}
-                                    <script src="{% static 'js/article/clipboard.min.js' %}"></script>
-                                    {# <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script> #}
-                                    <script src="{% static 'js/article/jquery.min.js' %}"></script>
-                                    {#  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>#}
-                                    <script src="{% static 'js/article/sweetalert.min.js' %}"></script>
+                                    <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+                                    <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+                                    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
                                     <p>
                                         <span>本文标题:</span>
                                         <a href="{% url 'detail' id=post.id %}">{{ post.title }}</a></p>
@@ -192,13 +111,11 @@
                                     <p>
                                         <span>原始链接:</span>
                                         <a href="{% url 'detail' id=post.id %}"
-                                           title="{{ post.title }}">{% url 'detail' id=post.id %}
-                                        </a>
+                                           title="{{ post.title }}">{% url 'detail' id=post.id %}</a>
                                         <span class="copy-path" title="点击复制文章链接">
-                                          <i class="fa fa-clipboard" data-clipboard-text="http://127.0.0.1:8088/article/{{ post.id }}"
-                                             aria-label="复制成功！">
-                                          </i>
-                                        </span>
+                            <i class="fa fa-clipboard" data-clipboard-text="{ % url 'detail' id=post.id %}"
+                               aria-label="复制成功！"></i>
+                          </span>
                                     </p>
                                     <p>
                                         <span>许可协议:</span>
@@ -336,7 +253,9 @@
                                 </ul>
                             </div>
                         </div>
+
                     {% else %}
+
                         {% get_base_info as infos %}
                         {% for info in infos %}
                             <div class="site-author motion-element" itemprop="author" itemscope

@@ -9,5 +9,5 @@ class BlogIndex(indexes.SearchIndex, indexes.Indexable):
         return Article
 
     def index_queryset(self, using=None):
-        return self.get_model().objects.all().filter(status='publish', public_time__isnull=False)
+        return self.get_model().objects.all()
 

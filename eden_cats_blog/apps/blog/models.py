@@ -3,9 +3,6 @@ from django.contrib.auth.models import AbstractUser
 from django.utils.timezone import now
 from mdeditor.fields import MDTextField
 from django.urls import reverse
-from django.contrib.contenttypes.fields import GenericRelation
-from apps.easy_comment.models import Favour
-from django.core.cache import cache
 # Create your models here.
 # 所有数据库表列 Id 自动创建
 # 创建四个表：Category（分类）、Post（文章）、Tag（标签）、Links（友情链接）
@@ -75,6 +72,8 @@ class About(models.Model):
     # content = models.TextField(verbose_name='详细信息', blank=True, null=True)
     # priority
     priority = models.PositiveIntegerField(verbose_name='优先级', default=10000)
+    # 图片
+    image = models.ImageField(upload_to='photos', blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -200,7 +199,6 @@ class Article(models.Model):
     STATUS_CHOICES = (
         ('draft', '草稿'),
         ('publish', '发表'),
-        ('hide', '隐藏')
     )
     # 文章状态
     status = models.CharField(verbose_name='文章状态', max_length=10, choices=STATUS_CHOICES, default='publish')
@@ -233,20 +231,6 @@ class Article(models.Model):
     author = models.ForeignKey(User, verbose_name='作者', on_delete=models.CASCADE, blank=False, null=False)
     # 文章专栏 文章与专栏的关系，多对一
     column = models.ForeignKey(Column, verbose_name='专栏', on_delete=models.CASCADE, blank=True, null=True)
-    # 喜欢文章
-    favours = GenericRelation(Favour, related_query_name='posts')
-
-    # 喜欢文章数
-    def favour_count(self, update=0):
-        key = 'post_{}_favour_count'.format(self.id)
-        count = cache.get(key)
-        if count is None:
-            count = self.favours.filter(liked=True).count()
-            cache.set(key, count, timeout=300)
-        elif update:
-            count += update
-            cache.set(key, count, timeout=300)
-        return count
 
     # 更新文章浏览量
     def viewed(self):

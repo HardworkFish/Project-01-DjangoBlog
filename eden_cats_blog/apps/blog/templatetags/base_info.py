@@ -1,6 +1,7 @@
 from django import template
 from apps.blog.models import ColumnCategory, Article, Category, Tag, BaseInfo, FriendsLinks, UserIp, VisitCount
 from eden_cats_blog.settings import MEDIA_URL
+from django.db import models
 register = template.Library()
 
 

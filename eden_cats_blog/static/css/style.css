@@ -337,43 +337,4 @@ ul > li > a:hover {
     color: #FF5722;
 }
 
-.like-num-home {
-    float: left;
-    padding: 0 18px;
-    font-size: 14px;
-}
 
-.like-num-home a{color: #000;
-
-}
-
-.like-num-home a:hover{
-    color: #f44336;
-}
-
-
-.comments-num-home {
-    float: left;
-    padding: 0 0px;
-    font-size: 14px;
-}
-
-.comments-num-home a{
-    color: #000;
-}
-
-.comments-num-home a:hover{
-    color: #f44336;
-}
-
-.tag-cloud a {
-    display: inline-block;
-    margin: 10px;
-    color: rgba(6, 144, 206, 0.85);
-    text-decoration: none;
-}
-
-.tag-cloud a:hover{
-    color: #f44336;
-    text-decoration: none;
-}
