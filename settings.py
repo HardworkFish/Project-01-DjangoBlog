@@ -85,7 +85,7 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
-# 前面我们app里添加了django.contrib.sites,需要设置SITE_ID
+# app里添加了django.contrib.sites,需要设置SITE_ID
 SITE_ID = 1
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -294,7 +294,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = 'static'  # debug=False
+STATIC_ROOT = os.path.join(BASE_DIR,'static/')  # debug=False
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, "static"),
 #     os.path.join(BASE_DIR, "recommend", "static"),
