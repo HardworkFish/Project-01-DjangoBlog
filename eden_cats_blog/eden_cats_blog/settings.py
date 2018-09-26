@@ -248,8 +248,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'edencatsdb',
         'USER': 'root',
-        'PASSWORD': 'admin',
-        'HOST': 'db',
+        'PASSWORD': 'mymysql',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
@@ -303,7 +303,7 @@ TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
 # 纯文本设置为富文本
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # 富文本编辑器设置
 # SUMMERNOTE_CONFIG = {
