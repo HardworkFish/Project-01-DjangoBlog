@@ -1901,6 +1901,11 @@ pre .javascript .function, pre .keyword {
     .sidebar {
         display: none !important
     }
+
+    #hexo-helper-live2d{
+        display: none !important
+    }
+
 }
 
 .my_post_copyright .copy-path:hover {
@@ -1960,13 +1965,24 @@ pre .javascript .function, pre .keyword {
     .sidebar, .sidebar-toggle {
         display: none !important
     }
+
+     #hexo-helper-live2d{
+        display: none !important
+    }
+
 }
 
 @media (max-width: 767px) {
     .sidebar-toggle {
         display: none !important
     }
+
+     #hexo-helper-live2d{
+        display: none !important
+    }
 }
+
+
 
 .sidebar-toggle-line {
     position: relative;

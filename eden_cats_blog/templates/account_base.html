@@ -7,7 +7,7 @@
     <!---------------meta--------------------->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <!---cache--->
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
@@ -182,12 +182,7 @@
 <script type="text/javascript" src="{% static 'js/src/post-details.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/src/bootstrap.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/av-core-mini-0.6.4.js' %}"></script>
-<script type="text/javascript" src="{% static 'lib/needsharebutton/needsharebutton.js' %}"></script>
-<link rel="stylesheet" href="{% static 'lib/needsharebutton/needsharebutton.css' %}">
-<!--- needshare --->
-<script>
-    pbOptions = {}, pbOptions.iconStyle = "default", pbOptions.boxForm = "horizontal", pbOptions.position = "bottomCenter", pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook", new needShareButton("#needsharebutton-postbottom", pbOptions), flOptions = {}, flOptions.iconStyle = "default", flOptions.boxForm = "horizontal", flOptions.position = "middleRight", flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook", new needShareButton("#needsharebutton-float", flOptions)
-</script>
+
 
 <!---------------支持数学公式------------------->
 
@@ -213,8 +208,11 @@
 
 
 </script>
-<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+{#  <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>#}
 
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 <!------- a cue cat ------------>
 <div id="hexo-helper-live2d">
     <canvas id="live2dcanvas" width="140" height="232"></canvas>
