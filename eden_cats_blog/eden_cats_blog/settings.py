@@ -69,8 +69,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'imagekit',
     'apps.message',
-    'corsheaders',
-    'apps.middleware'
 ]
 # 使用bootstrap3的样式，前端需要引入相应的css
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -204,68 +202,18 @@ JET_THEMES = [
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
-#跨域增加忽略
-
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = True
-CORS_ORIGIN_WHITELIST = (
-    'localhost:8088',
-'google.com',
-    '*',
-    '127.0.0.1:8088'
-
-)
-CORS_ORIGIN_REGEX_WHITELIST = (
-'google.com',
-    '*'
-    'localhost:8088',
-)
-CORS_ALLOW_METHODS = (
-    'DELETE',
-    'GET',
-    'OPTIONS',
-    'PATCH',
-    'POST',
-    'PUT',
-    'VIEW',
-)
-
-CORS_ALLOW_HEADERS = (
-    'XMLHttpRequest',
-    'X_FILENAME',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
-    'Pragma',
-)
-
-
 MIDDLEWARE = [
-
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',# 默认 ✔
-    # 注意顺序，即在上一个的下面
-    'django.middleware.common.CommonMiddleware', # 新增 ✔
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'apps.online_status.middleware.OnlineStatusMiddleware',
-    # 'apps.middleware.corsMiddleware',
-
+    # 'apps.online_status.middleware.OnlineStatusMiddleware',
 ]
 
-
 # USER_ONLINE_TIMEOUT = 600
-
 ROOT_URLCONF = 'eden_cats_blog.urls'
 
 TEMPLATES = [
