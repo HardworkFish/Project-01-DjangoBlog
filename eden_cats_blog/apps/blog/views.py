@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from apps.blog.models import Article, Category, Tag, About, Column, ColumnCategory
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from django.http import Http404
+from django.http import Http404, HttpResponse
+import json
 from django.conf import settings
 from eden_cats_blog.settings import MEDIA_URL
 from apps.blog.templatetags import custom_filter
@@ -95,6 +96,13 @@ def category_show(request):
 
 # 文章详情页
 def detail(request, id):
+    response = HttpResponse(json.dumps({"key": "value", "key2": "value"}))
+    response["Access-Control-Allow-Origin"] = "*"
+    response["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
+    response["Access-Control-Max-Age"] = "1000"
+    response["Access-Control-Allow-Headers"] = "*"
+
+
     refresh_visit_count(request)
     try:
         post = Article.objects.get(id=str(id))
@@ -122,7 +130,8 @@ def detail(request, id):
         'category_list': categories,
         'next_post': next_post,
         'prev_post': prev_post,
-        'months': months
+        'months': months,
+        'response': response
     })
 
 
