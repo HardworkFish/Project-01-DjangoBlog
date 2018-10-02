@@ -34,6 +34,7 @@
 .comment-list {
     border-top: solid 1px;
     border-color: #e74851;
+    display: block;
 }
 
 .first-generation {
@@ -43,7 +44,7 @@
 
 .comment-root {
     padding: 2px 0 0px;
-    margin: 0;
+    margin: 0px 0px;
 }
 
 .comment-leaf {
@@ -56,10 +57,12 @@
 
 .comment-left {
     padding: 0;
+    margin: 0px 0px;
 }
 
 .comment-right {
     padding: 0;
+     margin: 0px 0px;
 }
 
 .comment-reply-to {
@@ -83,6 +86,12 @@
 .comment-content {
     margin: 0;
     width: 633px;;
+}
+
+.comment-content img{
+    margin: auto;
+    width: auto;
+    height: auto;
 }
 
 #cke_id_content {
@@ -189,10 +198,10 @@
     background: #637a864f;
     display: block;
     padding: 48px;
-    width: 630px;
-    height: 300px;
+    width: auto;
+    height: auto;
     text-align: center;
-    /* left: 0px; */
+    left: auto;
     position: relative;
     margin: 21px auto;
     border-radius: 15px;
