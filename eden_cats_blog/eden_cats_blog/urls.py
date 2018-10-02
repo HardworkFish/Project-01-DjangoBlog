@@ -25,7 +25,7 @@ from apps.blog.feeds import BlogRssFeed
 from django.conf.urls import url
 import notifications.urls
 from django.views.static import serve
-# from eden_cats_blog.settings import STATIC_ROOT
+# from eden_cats_dev1.settings import STATIC_ROOT
 from django.urls import re_path
 
 urlpatterns = [

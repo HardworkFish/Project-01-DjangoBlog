@@ -16,13 +16,14 @@
                     <div class="times"><span>{{ msg.submit_date }}</span>
                         {% if request.user.is_authenticated %}
                             {% if msg.user == request.user %}
-                                <span class="msg-status">当前状态:{{ msg.get_status_display }}&nbsp;</span>
+                                <span class="msg-status">当前状态:{{ msg.get_status_display }}&nbsp;
                                 <a class="del" href="/delete_message/?id={{ msg.id }}" style="display:block;"
                                    onclick="rec('确认删除该条留言?');return false">&nbsp;删除&nbsp;</a>
                                 <a class="hide" href="/hide_message/?id={{ msg.id }}" style="display:block;"
                                    onclick="rec('确认隐藏该条留言?');return false">&nbsp;隐藏&nbsp;</a>
                                 <a class="public" href="/public_message/?id={{ msg.id }}" style="display:block;"
                                    onclick="rec('确认公开该条留言?');return false">&nbsp;公开&nbsp;</a>
+                                </span>
                             {% endif %}
                         {% endif %}
                     </div>

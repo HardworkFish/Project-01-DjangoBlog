@@ -1,4 +1,4 @@
-"""eden_cats_dev1 URL Configuration
+"""eden_cats_blog URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -25,7 +25,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('home/', views.home, name='home'),
     path('article/<int:id>/', views.detail, name='detail'),
-    # url(r'^article/(?P<pk>[0-9]+)/$', views.detail, name='detail'),
+    url(r'^article/(?P<pk>[0-9]+)/$', views.detail, name='detail'),
     path('category/<int:id>/', views.search_category, name='category_menu'),
     path('tag/<str:tag>/', views.search_tag, name='search_tag'),
     path('archives/<str:year>/<str:month>', views.archives, name='archives'),  # 按月归档

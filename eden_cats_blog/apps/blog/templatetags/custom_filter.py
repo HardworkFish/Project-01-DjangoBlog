@@ -5,7 +5,6 @@ from django.template.defaultfilters import stringfilter
 from django.utils.safestring import mark_safe
 from django.utils.text import slugify
 from markdown.extensions.toc import TocExtension
-from apps.blog.models import Article as article
 
 register = template.Library()  # 自定义filter时必须加上
 
@@ -51,5 +50,3 @@ def toc_markdown(article):
 
 
 
-if __name__ == '__main__':
-    pass

@@ -11,10 +11,27 @@ def generate_form_for():
     form = MessageForm()
     return form
 
-# 所以留言
+
+# 所有留言
 @register.simple_tag
 def get_all_messages():
     return Message.objects.all()
+
+
+# 超级用户查看留言
+@register.simple_tag
+def get_useruser_message_list_of(request):
+    msg_list = Message.objects.all()
+    paginator = Paginator(msg_list, 8, 2)
+    message = request.GET.get('page')
+    try:
+        message_list = paginator.page(message)
+    except PageNotAnInteger:
+        message_list = paginator.page(1)
+    except EmptyPage:
+        message_list = paginator.page(paginator.num_pages)
+    return message_list
+
 
 # 私有留言
 @register.simple_tag

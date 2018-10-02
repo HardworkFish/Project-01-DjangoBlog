@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Category, Tag, Article, About, Column, ColumnCategory, FriendsLinks, BaseInfo,VisitCount, UserIp, User
 from django.db import models
 from mdeditor.widgets import MDEditorWidget
-from mptt.admin import MPTTModelAdmin
+# from mptt.admin import MPTTModelAdmin
 # from django_summernote.admin import SummernoteModelAdmin
 # Register your models here.
 
