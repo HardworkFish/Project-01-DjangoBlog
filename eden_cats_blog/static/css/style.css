@@ -413,6 +413,7 @@ ul > li > a:hover {
     background-size: 42% 65%;
     /* background: #FF0; */
 }
+
 .cover-cat-avatar {
     background: #5a92ab8f;
     z-index: 20;
@@ -423,4 +424,24 @@ ul > li > a:hover {
     margin: auto;
     border: #FF5F7B;
     background: #ffcb05;
+}
+
+.digest-note {
+   /* background: #2d73a94a;*/
+    background-image: url(../../static/images/home_bg.png);
+    display: block;
+    border-radius: 6px;
+    margin: 0 21px;
+    top: -32px;
+    /* border-bottom: 30px; */
+    padding: 0px 20px;
+    position: relative;
+}
+
+.digest-note .note {
+    padding: 32px 16px;
+    border-left-width: 5px;
+    border-radius: 3px;
+    position: static;
+    margin: 0 0;
 }

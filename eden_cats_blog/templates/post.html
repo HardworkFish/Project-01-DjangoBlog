@@ -76,9 +76,12 @@
                                         </div>
                                     </blockquote>
                                 {% endif %}
+
                                 {% if post.digest %}
-                                    <div class="note">
-                                        {{ post.digest|custom_markdown }}
+                                    <div class="digest-note">
+                                        <div class="note">
+                                            {{ post.digest|custom_markdown }}
+                                        </div>
                                     </div>
                                 {% endif %}
                                 {#striptags用于过滤正文中所有的HTML标签#}
@@ -195,7 +198,8 @@
                                            title="{{ post.title }}">{% url 'detail' id=post.id %}
                                         </a>
                                         <span class="copy-path" title="点击复制文章链接">
-                                          <i class="fa fa-clipboard" data-clipboard-text="http://127.0.0.1:8088/article/{{ post.id }}"
+                                          <i class="fa fa-clipboard"
+                                             data-clipboard-text="http://127.0.0.1:8088/article/{{ post.id }}"
                                              aria-label="复制成功！">
                                           </i>
                                         </span>
