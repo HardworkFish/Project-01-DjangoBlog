@@ -16,10 +16,11 @@
     position: relative;
     display: block;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 #social-login span {
-    color: #999;
+    color: #fff;
 }
 
 #social-login span:before,

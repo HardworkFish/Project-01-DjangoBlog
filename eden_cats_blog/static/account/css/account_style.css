@@ -1,0 +1,188 @@
+/** login **/
+/*.account-login {
+    background: #FF5F7B;
+}*/
+body {
+    background-image: url('../../images/home_bg.png');
+}
+
+.account-login form {
+    padding: 52px 17px 52px;
+    margin: 34px 420px;
+    background: #FFFF;
+}
+
+
+
+.local-login {
+    background: #5c99b694;
+    border-radius: 12px;
+}
+
+.header {
+    text-align: center;
+    background-color: #2c3e50;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    line-height: 40px;
+    margin-bottom: 15px;
+    border-top-left-radius: 6px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    border: 1px solid #ccc;
+
+}
+
+.sign-up-button{
+
+    padding: 0 17px;
+    background-color: #1abc9c;
+    height: 34px;
+}
+
+.button-primary, .button-primary-flat {
+    background-color: #1b9af7;
+    border-color: #1b9af7;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 8px;
+    border-radius: 2px;
+}
+
+ .button-logout{
+           margin: 12px;
+    }
+
+.local-login {
+    margin-bottom: 15px;
+}
+
+.login button {
+    padding: 3px 18px;
+    background-color: #1abc9c;
+    color: #FFF;
+
+}
+
+/** social **/
+.login-link a {
+    margin: 0 20px;
+    text-decoration: none;
+}
+
+.login-link {
+    text-align: center;
+    /* margin: 14px 24px; */
+    padding: 12px;
+
+}
+
+
+
+@media (max-width: 413px) {
+    .container {
+        font-size: 90%;
+    }
+
+    .form-control {
+        height: 32px;
+        font-size: 81%;
+    }
+
+    .header {
+        line-height: 72px;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+
+    .regis {
+        font-size: 15px;
+    }
+
+    .login button {
+        padding: 10px 25px;
+        font-size: 12px;
+    }
+
+    #id_remember {
+        background-color: #d52b2b;
+    }
+
+    .account-login form {
+        padding: 45px 12px 45px;
+    margin: 58px 25px;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .account-login form {
+    padding: 42px 17px 42px;
+        margin: 34px 25px;
+
+}
+
+    .login button {
+    padding: 8px 21px;
+}
+
+
+
+}
+
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+.account-login form {
+    padding: 67px 12px 67px;
+    margin: 63px 115px;
+}
+
+    .regis {
+    font-size: 15px;
+}
+.header {
+    line-height: 56px;
+}
+#id_remember{
+    zoom: 120%;
+}
+
+.login button {
+    padding: 9px 27px;
+}
+}
+
+@media (min-width: 992px) {
+.account-login form {
+    padding: 32px 17px 32px;
+    margin: 30px 360px;
+}
+      .regis {
+    font-size: 15px;
+}
+      #id_remember{
+    zoom: 130%;
+}
+}
+
+@media (min-width: 1600px) {
+.account-login form {
+   padding: 52px 17px 52px;
+    margin: 34px 420px;
+}
+
+      .regis {
+    font-size: 16px;
+}
+      #id_remember{
+    zoom: 125%;
+}
+}
+

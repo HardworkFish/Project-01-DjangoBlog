@@ -4,13 +4,10 @@
 {% load account socialaccount %}
 {% load crispy_forms_tags %}
 
-<title></title>
-{% block head_title %} 用户登录-TRsky的博客 {% endblock %}
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-    <div class="local-login">
-    <div class="header"><h2>登录</h2></div>
-   <div class="account-login">
+
     <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form|crispy }}
@@ -24,10 +21,5 @@
             <a class="pull-center" href="{% url 'account_signup' %}">新用户注册</a>
         </div>
     </form>
-   </div>
-     {% include 'account/social.html' %}
-
-    </div>
-
-
+    {% include 'account/social.html' %}
 {% endblock %}
