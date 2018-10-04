@@ -250,8 +250,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'edencatsdb',
         'USER': 'root',
-        'PASSWORD': 'mymysql',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'blog_db_pass',
+        'HOST': 'db',
         'PORT': '3306',
     }
 }
