@@ -26,11 +26,12 @@ SECRET_KEY = '=0dnupswsjy%ip$4f4&$02-e7uh-9+w595dsc@r$0v9)i)y298'
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 DEBUG = True
-ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS = [
-#     '127.0.0.1',  # Allow domain and subdomains
-#     'localhost',  # Also allow FQDN and subdomains
-# ]
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    '127.0.0.1',  # Allow domain and subdomains
+    '127.0.0.1:8088',  # Allow domain and subdomains
+    'localhost',  # Also allow FQDN and subdomains
+]
 # ALLOWED_HOSTS = []
 
 
@@ -87,7 +88,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # 前面我们app里添加了django.contrib.sites,需要设置SITE_ID
-SITE_ID = 1
+SITE_ID = 2
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 LOGIN_REDIRECT_URL = '/'
@@ -98,7 +99,7 @@ SEND_NOTIFICATION_EMAIL = False  # 不开启邮件通知
 # SMTP服务器，使用sendclound的服务
 EMAIL_HOST = 'smtp587.sendcloud.net'
 EMAIL_HOST_USER = 'TRsky_STMP_Mail'
-EMAIL_HOST_PASSWORD = '*********'
+EMAIL_HOST_PASSWORD = 'QshvCVKIwfwR4S27'
 EMAIL_PORT = 587
 
 # 是否使用了SSL 或者TLS
