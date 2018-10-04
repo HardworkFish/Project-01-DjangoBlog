@@ -156,7 +156,7 @@
     clear: both;
     width: 100%;
     border-bottom: 1px dashed #6a666654;
-    padding: 1px 0;
+    padding: 5px 0;
     background: #f5f5f5;
     overflow: hidden;
     left: -18px;
@@ -202,7 +202,6 @@
 }
 
 #msgBox .list .msgInfo {
-    display: inline;
     word-wrap: break-word;
 }
 
@@ -275,4 +274,44 @@
 
 .times a:hover {
     background: #d5d5d5;
+}
+
+
+
+
+@media (max-width: 413px) {
+
+
+#msgBox .list ul li {
+
+    left: -15%;
+}
+#msgBox .list .content {
+
+    font-size: 11px;
+}
+
+
+}
+
+@media (max-width: 767px) {
+#msgBox .list .content {
+
+    font-size: 11px;
+}
+
+    #msgBox .list ul li {
+
+    left: -10%;
+}
+}
+
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #msgBox .list ul li {
+
+        left: -3%;
+    }
+
 }
