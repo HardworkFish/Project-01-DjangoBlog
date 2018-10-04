@@ -62,10 +62,10 @@ urlpatterns = [
 
 
 # 配置全局404页面
-# handler404 = 'apps.blog.views.page_not_found'4
+handler404 = 'apps.blog.views.page_not_found'
 
 # 配置全局505页面
-# handler500 = 'apps.blog.views.server_error'
+handler500 = 'apps.blog.views.server_error'
 
 
 if settings.DEBUG:

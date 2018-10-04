@@ -26,7 +26,7 @@ SECRET_KEY = '=0dnupswsjy%ip$4f4&$02-e7uh-9+w595dsc@r$0v9)i)y298'
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = False
 DEBUG = True
-# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']
 # ALLOWED_HOSTS = [
 #     '127.0.0.1',  # Allow domain and subdomains
 #     'localhost',  # Also allow FQDN and subdomains
@@ -123,9 +123,9 @@ ADMINS = (('TRsky', '625310581@qq.com'),)  # 网站管理员
 # EMAIL_USE_SSL =
 
 
-#ckeditor setup
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_URL = '/media/'
+# ckeditor setup
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 CKEDITOR_UPLOAD_PATH = 'upload/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
 CKEDITOR_CONFIGS = {
@@ -200,9 +200,9 @@ JET_THEMES = [
 ]
 
 # 静态文件放置
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -296,17 +296,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = 'static'  # debug=False
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static"),
-#     os.path.join(BASE_DIR, "recommend", "static"),
-# ]
+# STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
+# TEMPLATE_DEBUG = False
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
 
 # 纯文本设置为富文本
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+#
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # 富文本编辑器设置
 # SUMMERNOTE_CONFIG = {
