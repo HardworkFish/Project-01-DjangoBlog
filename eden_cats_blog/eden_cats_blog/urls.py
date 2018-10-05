@@ -27,6 +27,7 @@ import notifications.urls
 from django.views.static import serve
 # from eden_cats_dev1.settings import STATIC_ROOT
 from django.urls import re_path
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -58,6 +59,7 @@ urlpatterns = [
     # path('accounts/profile/', views.account_profile, name='account_profile'),
     path('', include('apps.blog.urls')),
     path('', include('apps.message.urls')),
+    # path('favicon.ico/', RedirectView.as_view(url=r'/static/images/favicon.ico')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

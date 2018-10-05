@@ -24,15 +24,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '=0dnupswsjy%ip$4f4&$02-e7uh-9+w595dsc@r$0v9)i)y298'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
-DEBUG = True
-# ALLOWED_HOSTS = ['*']
+DEBUG = False
+# DEBUG = True
+ALLOWED_HOSTS = ['*']
 # ALLOWED_HOSTS = [
 #     '127.0.0.1',  # Allow domain and subdomains
 #     '127.0.0.1:8088',  # Allow domain and subdomains
 #     'localhost',  # Also allow FQDN and subdomains
 # ]
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -99,7 +99,7 @@ SEND_NOTIFICATION_EMAIL = False  # 不开启邮件通知
 # SMTP服务器，使用sendclound的服务
 EMAIL_HOST = 'smtp587.sendcloud.net'
 EMAIL_HOST_USER = 'TRsky_STMP_Mail'
-EMAIL_HOST_PASSWORD = '********'
+EMAIL_HOST_PASSWORD = 'QshvCVKIwfwR4S27'
 EMAIL_PORT = 587
 
 # 是否使用了SSL 或者TLS
@@ -250,7 +250,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'edencatsdb',
         'USER': 'root',
-        'PASSWORD': '****',
+        'PASSWORD': 'mymysql',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -297,12 +297,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = 'static'  # debug=False
-# STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
+STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
 # TEMPLATE_DEBUG = False
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
-
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+# ]
+#
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
 
 # 纯文本设置为富文本
