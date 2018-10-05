@@ -99,7 +99,7 @@ SEND_NOTIFICATION_EMAIL = False  # 不开启邮件通知
 # SMTP服务器，使用sendclound的服务
 EMAIL_HOST = 'smtp587.sendcloud.net'
 EMAIL_HOST_USER = 'TRsky_STMP_Mail'
-EMAIL_HOST_PASSWORD = 'kWN3ckefwEaQbNbx'
+EMAIL_HOST_PASSWORD = 'QshvCVKIwfwR4S27'
 EMAIL_PORT = 587
 
 # 是否使用了SSL 或者TLS
@@ -297,12 +297,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = 'static'  # debug=False
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
 # TEMPLATE_DEBUG = False
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
-
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+# ]
+#
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
 
 # 纯文本设置为富文本
