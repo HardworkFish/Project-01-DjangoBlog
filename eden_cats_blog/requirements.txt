@@ -3,7 +3,7 @@ jieba
 PyMySQL
 django_ckeditor
 django_imagekit
-Django==2.0.5
+Django==2.0.8
 Whoosh
 Markdown
 django_haystack
