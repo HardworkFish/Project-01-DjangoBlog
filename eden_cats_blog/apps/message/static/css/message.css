@@ -155,7 +155,7 @@
 #msgBox .list ul li {
     clear: both;
     width: 100%;
-    border-bottom: 1px dashed #6a666654;
+    border-bottom: 1px dashed rgba(106, 102, 102, 0.33);
     padding: 5px 0;
     background: #f5f5f5;
     overflow: hidden;
@@ -253,7 +253,7 @@
 }
 
 .messagge-jumbotron {
-    background: #9e9e9e36;
+    background: rgba(158, 158, 158, 0.21);
     height: 180px;
     display: block;
     border-radius: 6px;
@@ -288,21 +288,21 @@
 }
 #msgBox .list .content {
 
-    font-size: 11px;
+    font-size: 9px;
 }
 
 
 }
 
-@media (max-width: 767px) {
+@media (min-width: 414px) and (max-width: 767px) {
 #msgBox .list .content {
 
-    font-size: 11px;
+    font-size: 9px;
 }
 
     #msgBox .list ul li {
 
-    left: -10%;
+    left: -4%;
 }
 }
 

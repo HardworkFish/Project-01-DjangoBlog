@@ -415,7 +415,7 @@ ul > li > a:hover {
 }
 
 .cover-cat-avatar {
-    background: #5a92ab8f;
+    background: rgba(90, 146, 171, 0.56);
     z-index: 20;
     border-radius: 6px;
 }

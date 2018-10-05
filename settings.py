@@ -25,14 +25,14 @@ SECRET_KEY = '=0dnupswsjy%ip$4f4&$02-e7uh-9+w595dsc@r$0v9)i)y298'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-# DEBUG = True
+#DEBUG = True
 ALLOWED_HOSTS = ['*']
 # ALLOWED_HOSTS = [
 #     '127.0.0.1',  # Allow domain and subdomains
 #     '127.0.0.1:8088',  # Allow domain and subdomains
 #     'localhost',  # Also allow FQDN and subdomains
 # ]
-# ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -99,7 +99,7 @@ SEND_NOTIFICATION_EMAIL = False  # 不开启邮件通知
 # SMTP服务器，使用sendclound的服务
 EMAIL_HOST = 'smtp587.sendcloud.net'
 EMAIL_HOST_USER = 'TRsky_STMP_Mail'
-EMAIL_HOST_PASSWORD = 'QshvCVKIwfwR4S27'
+EMAIL_HOST_PASSWORD = 'kWN3ckefwEaQbNbx'
 EMAIL_PORT = 587
 
 # 是否使用了SSL 或者TLS
@@ -112,6 +112,19 @@ DEFAULT_FROM_EMAIL = 'TRsky <noreply@mail.trskycooik.com>'
 COMMENT_ENTRY_MODEL = 'blog.article' # 格式是 app_name+model_name
 AUTH_USER_MODEL = 'blog.User'     # 格式是 app_name+model_name
 ADMINS = (('TRsky', '625310581@qq.com'),)  # 网站管理员
+
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+# 默认值是'optional'，当其等于'mandatory’时，在email未验证之前，本地注册的用户无法登陆。'optional' 和 'none' 则不要求必须验证邮箱，\
+# 两者区别是'optional' 依然会发送验证邮件，而'none' 则不会
+
+SOCIALACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+# 与ACCOUNT_EMAIL_VERIFICATION 同理，作用于第三方账号的注册，默认值等于前者，
+
+LOGIN_URL = '/accounts/login'
+
+# 如果当前没有登录的用户，则会指向LOGIN_URL
 
 
 # 邮件通知
@@ -300,8 +313,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # TEMPLATE_DEBUG = False
 STATICFILES_DIRS = [
-     os.path.join(BASE_DIR, "static"),
- ]
+    os.path.join(BASE_DIR, "static"),
+]
 #
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
 
