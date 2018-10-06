@@ -3565,10 +3565,6 @@ img:hover {
     margin-top: 12px
 }
 
-.comments {
-    margin: 12px ;
-}
-
 .posts-expand {
     padding-top: initial;
 }
@@ -3648,7 +3644,7 @@ img:hover {
         margin-top: 20px
     }
 
-    #posts > article + article .post-block, .comments {
+    #posts > article + article .post-block {
         margin-top: 10px
     }
 
@@ -3658,9 +3654,7 @@ img:hover {
         border-radius: initial
     }
 
-    .comments {
-        padding: 10px 20px
-    }
+
 
     .pagination {
         margin: 10px 0 0
@@ -3684,7 +3678,7 @@ img:hover {
         margin-top: 12px
     }
 
-    #posts > article + article .post-block, .comments {
+    #posts > article + article .post-block {
         margin-top: 8px
     }
 
@@ -3698,9 +3692,6 @@ img:hover {
         border-radius: initial
     }
 
-    .comments {
-        padding: 0 12px
-    }
 
     .pagination {
         margin: 8px 0 0

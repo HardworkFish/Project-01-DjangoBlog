@@ -8,11 +8,13 @@ html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%
 }
+
 @font-face {
     font-family: 'Glyphicons Halflings';
     src:url(../fonts/bootstrap_3.3.7_fonts_glyphicons-halflings-regular.eot);
     src:url(../fonts/bootstrap_3.3.7_fonts_glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'), url(../fonts/bootstrap_3.3.7_fonts_glyphicons-halflings-regular.woff2) format('woff2'), url(../fonts/bootstrap_3.3.7_fonts_glyphicons-halflings-regular.woff) format('woff'), url(../fonts/bootstrap_3.3.7_fonts_glyphicons-halflings-regular.ttf) format('truetype'), url(../fonts/bootstrap_3.3.7_fonts_glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')
 }
+
 .glyphicon {
     position: relative;
     top: 1px;
@@ -5179,7 +5181,6 @@ button.close {
 .btn-group-vertical > .btn-group:after, .btn-toolbar:after, .clearfix:after, .container-fluid:after, .container:after, .dl-horizontal dd:after, .form-horizontal .form-group:after, .modal-footer:after, .modal-header:after, .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after, .pager:after, .panel-body:after, .row:after {
     clear: both
 }
-
 
 
 
