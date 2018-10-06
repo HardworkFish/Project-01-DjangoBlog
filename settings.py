@@ -99,7 +99,7 @@ SEND_NOTIFICATION_EMAIL = False  # 不开启邮件通知
 # SMTP服务器，使用sendclound的服务
 EMAIL_HOST = 'smtp587.sendcloud.net'
 EMAIL_HOST_USER = 'TRsky_STMP_Mail'
-EMAIL_HOST_PASSWORD = 'kWN3ckefwEaQbNbx'
+EMAIL_HOST_PASSWORD = '******'
 EMAIL_PORT = 587
 
 # 是否使用了SSL 或者TLS
@@ -263,7 +263,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'edencatsdb',
         'USER': 'root',
-        'PASSWORD': 'admin',
+        'PASSWORD': '******',
         'HOST': 'db',
         'PORT': '3306',
     }
